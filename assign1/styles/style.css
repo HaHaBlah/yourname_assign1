@@ -1,6 +1,18 @@
 /* styles/style.css */
 
-/* Reset some default browser styles */
+/* Some variables */
+:root {
+    --body-color-1: #333;
+    --body-color-2: #fff;
+    --accent-color-1: #333;
+    --accent-color-2: #fff;
+    --link-color: #333;
+    --link-color-hover: #000;
+    --body-background-image: url('../images/bg.jpg');
+    --headings-font: 'Arial';
+    --body-font: 'Arial';
+}
+
 * {
     margin: 0;
     padding: 0;
