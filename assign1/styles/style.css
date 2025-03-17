@@ -4,19 +4,24 @@
 :root {
     --body-color-1: #333;
     --body-color-2: #fff;
+    --body-background-image: url('../images/bg.jpg');
+    --body-background-color: #f0f0f0;
+    --border-color: #ccc;
     --accent-color-1: #333;
     --accent-color-2: #fff;
     --link-color: #333;
     --link-color-hover: #000;
-    --body-background-image: url('../images/bg.jpg');
     --headings-font: 'Arial';
     --body-font: 'Arial';
+    --border-radius: 4px;
+    --padding: 10px;
+    --margin: 10px;
 }
 
 /* Login Page Prototype Start */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: var(--body-font);
+    background-color: var(--body-background-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +29,7 @@ body {
     margin: 0;
 }
 .login-container {
-    background-color: #fff;
+    background-color: var(--body-color-2);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -36,8 +41,8 @@ body {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
 }
 .login-container button {
     width: 100%;
@@ -45,7 +50,7 @@ body {
     background-color: #007BFF;
     border: none;
     border-radius: 4px;
-    color: #fff;
+    color: var(--body-color-2);
     font-size: 16px;
 }
 .login-container button:hover {
