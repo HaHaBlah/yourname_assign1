@@ -2,17 +2,22 @@
 
 /* Some variables */
 :root {
+    --background-color: #A99175;
     --body-color-1: #333;
     --body-color-2: #fff;
     --body-background-image: url('../images/bg.jpg');
-    --body-background-color: #f0f0f0;
+    --body-background-color: #F2E9DE;
     --border-color: #ccc;
-    --accent-color-1: #333;
-    --accent-color-2: #fff;
-    --link-color: #333;
-    --link-color-hover: #000;
-    --headings-font: 'Arial';
-    --body-font: 'Arial';
+    --accent-color-1: #E74C3C;
+    --decorative-color: #09F1E2;
+    --top-navigation-color: #388048;
+    --text-color: #0B0F14;
+    --link-color: #2213F6;
+    --link-color-hover: #2213F6;
+    --link-color-visited: #B5ED96;
+    --footer-background: #5A7DA0;
+    --headings-font: 'Montserrat';
+    --body-font: 'Open Sans';
     --border-radius: 4px;
     --padding: 10px;
     --margin: 10px;
