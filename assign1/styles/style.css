@@ -152,7 +152,7 @@ nav ul {
     grid-template-columns: repeat(auto-fit, minmax(2ch, max-content));
     column-gap: 24px;
     width: 100%;
-
+    align-self: right;
 }
 
 nav ul li {
