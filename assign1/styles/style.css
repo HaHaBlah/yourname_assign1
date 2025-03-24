@@ -26,8 +26,13 @@
 
 /* Animations Testing Start */
 @keyframes example {
-    from {background-color: red;}
-    to {background-color: yellow;}
+    from {
+        background-color: red;
+    }
+
+    to {
+        background-color: yellow;
+    }
 }
 
 :hover a {
@@ -39,6 +44,7 @@
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
+
 /* Animations Testing End */
 
 /* Login Page Prototype Start */
@@ -51,15 +57,18 @@ body {
     height: 100vh;
     margin: 0;
 }
+
 .login-container {
     background-color: var(--body-background-color);
     padding: 20px;
     border-radius: var(--border-radius);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .login-container h2 {
     margin-bottom: 20px;
 }
+
 .login-container input {
     width: 100%;
     padding: 10px;
@@ -67,6 +76,7 @@ body {
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
 }
+
 .login-container button {
     width: 100%;
     padding: 10px;
@@ -76,9 +86,11 @@ body {
     color: var(--body-background-color);
     font-size: 16px;
 }
+
 .login-container button:hover {
     background-color: var(--accent-color-1);
 }
+
 /* Login Page Prototype End */
 
 * {
@@ -113,7 +125,7 @@ header {
     text-align: center;
 }
 
-/* Navigation styles */
+/* Navigation styles START */
 nav {
     background-color: var(--top-navigation-color);
     height: 75px;
@@ -121,6 +133,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
+    display: flex;
 }
 
 nav img {
@@ -135,6 +148,11 @@ nav img {
 nav ul {
     list-style: none;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(2ch, max-content));
+    column-gap: 24px;
+    width: 100%;
+
 }
 
 nav ul li {
@@ -146,6 +164,8 @@ nav ul li a {
     text-decoration: none;
     color: var(--link-color);
 }
+
+/* Navigation styles END */
 
 /* Main content styles */
 main {
@@ -170,14 +190,14 @@ footer {
 
 /*Ricardo's Setting: */
 /*Cursor*/
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
+body {
     position: relative;
     height: fit-content;
     width: 100%;
@@ -189,18 +209,19 @@ body{
     align-items: center;
 }
 
-a{
+a {
     text-decoration: none;
     cursor: pointer;
 }
 
-button, input{
+button,
+input {
     background-color: none;
     outline: none;
     border: none;
 }
 
-.main-section{
+.main-section {
     max-width: 1800px;
     width: 100%;
     min-height: 100%;
@@ -208,7 +229,7 @@ button, input{
     padding: 0 10%;
 }
 
-.navbar{
+.navbar {
     width: 100%;
     height: fit-content;
     display: flex;
@@ -219,31 +240,31 @@ button, input{
     position: relative;
 }
 
-.logo{
+.logo {
     width: 80px;
 }
 
-.logo img{
+.logo img {
     width: 100%;
 }
 
-.navibar ul{
+.navibar ul {
     list-style-type: none;
 }
 
-.navbar ul li{
+.navbar ul li {
     display: inline-block;
-    margin:  0 15px;
+    margin: 0 15px;
 }
 
-.navbar ul a{
+.navbar ul a {
     color: white;
     font-size: 14px;
     position: relative;
     transition: 0.1s linear;
 }
 
-.navbar ul a::before{
+.navbar ul a::before {
     content: '';
     position: absolute;
     bottom: -6px;
@@ -254,16 +275,18 @@ button, input{
     transition: 0.1s linear;
 }
 
-.navbar ul a:hover::before, ul a:hover{
+.navbar ul a:hover::before,
+ul a:hover {
     color: #fb4b29;
     width: 100%;
 }
 
-.toggle-btn{
+.toggle-btn {
     display: none;
 }
 
-.login-btn, .btn-sec button{
+.login-btn,
+.btn-sec button {
     background-color: #fb4b29;
     color: white;
     width: auto;
@@ -277,13 +300,14 @@ button, input{
     transition: 0.1s linear;
 }
 
-.login-btn:hover, .btn-sec button:hover{
+.login-btn:hover,
+.btn-sec button:hover {
     background-color: transparent;
     color: #ed4827;
     border: 2px solid #ed4827;
 }
 
-.bottom-content{
+.bottom-content {
     width: 100%;
     height: fit-content;
     display: flex;
@@ -294,7 +318,7 @@ button, input{
     position: relative;
 }
 
-.bottom-left{
+.bottom-left {
     width: 50%;
     height: fit-content;
     margin-top: 50px;
@@ -304,7 +328,7 @@ button, input{
     align-items: flex-start;
 }
 
-.bottom-left h1{
+.bottom-left h1 {
     color: white;
     font-size: 6rem;
     letter-spacing: 2px;
@@ -315,19 +339,19 @@ button, input{
     position: relative;
 }
 
-.bottom-left p{
+.bottom-left p {
     font-size: 18px;
     color: white;
     font-weight: 300;
     margin: 10px 0 30px 0;
 }
 
-.btn-sec{
+.btn-sec {
     display: flex;
     gap: 20px;
 }
 
-.btn-sec button:last-child{
+.btn-sec button:last-child {
     border: 2px solid white;
     background-color: transparent;
     color: white;
