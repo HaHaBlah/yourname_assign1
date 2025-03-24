@@ -2,10 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Kalnia+Glaze:wght@100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&display=swap');
 
 /* Some variables */
-
-
-
-
 :root {
     --background-color: #A99175;
     --body-color-1: #333;
@@ -28,6 +24,7 @@
     --margin: 10px;
 }
 
+/* Animations Testing Start */
 @keyframes example {
     from {background-color: red;}
     to {background-color: yellow;}
@@ -42,6 +39,7 @@
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
+/* Animations Testing End */
 
 /* Login Page Prototype Start */
 body {
