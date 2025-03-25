@@ -184,13 +184,19 @@ footer {
     width: 80%;
     padding: 10px;
     background-color: var(--body-background-color);
-    border-radius: var(--border-radius);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .profiletable, .profiletable th, .profiletable td {
-    border: var(--border-color) 1px solid;
+    border: var(--border-color) 5px solid;
     border-collapse: collapse;
+    padding: var(--padding);
+}
+
+.profiletable th {
+    padding: 10px;
+    background-color: var(--accent-color-1);
+    color: var(--body-background-color);
 }
 
 /* Profile Page END */
