@@ -122,3 +122,42 @@ a {
     margin: 0 8px;
     transition: .25s;
 }
+
+h3 {
+    margin-top: 120px; /* Adjust to ensure it is not hidden by the navbar */
+    font-size: 24px; /* Optional: Adjust font size for better visibility */
+    color: white; /* Optional: Ensure text color contrasts with the background */
+}
+
+.about-table {
+    float: left; /* Move the table to the left */
+    margin-right: 20px; /* Add space for the profile picture */
+    margin-top: 100px; /* Ensure it is positioned below the navbar */
+    width: 60%; /* Adjust width to fit the layout */
+    border-collapse: collapse;
+}
+
+.about-table th, .about-table td {
+    text-align: left;
+    padding: 5px;
+    border: none;
+}
+
+.about-table th {
+    width: 30%;
+}
+
+.about-table td {
+    width: 70%;
+}
+
+.details-table {
+    clear: both; /* Ensure content displays below the header */
+    display: flex;
+    align-items: center;
+    padding: 60px 9%;
+}
+
+.details-table tr td {
+    border: 2px solid #593C26;
+}
