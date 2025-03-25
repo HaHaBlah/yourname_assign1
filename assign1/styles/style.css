@@ -4,14 +4,12 @@
 /* Some variables */
 :root {
     --background-color: #A99175;
-    --body-color-1: #333;
-    --body-color-2: #fff;
     --body-background-image: url('../images/bg.jpg');
-    --body-background-color: #F2E9DE;
+    --container-background-color: #F2E9DE;
     --border-color: #ccc;
     --accent-color-1: #E74C3C;
     --decorative-color: #09F1E2;
-    --top-navigation-color: #F2E9DE;
+    --top-navigation-color: none; /* formerly F2E9DE */
     --text-color: #0B0F14;
     --link-color: #2213F6;
     --link-color-hover: #2213F6;
@@ -59,7 +57,7 @@ body {
 }
 
 .login-container {
-    background-color: var(--body-background-color);
+    background-color: var(--container-background-color);
     padding: 20px;
     border-radius: var(--border-radius);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -83,7 +81,7 @@ body {
     background-color: var(--accent-color-1);
     border: none;
     border-radius: var(--border-radius);
-    color: var(--body-background-color);
+    color: var(--container-background-color);
     font-size: 16px;
 }
 
@@ -175,7 +173,7 @@ footer {
 .profiletable {
     width: 80%;
     padding: 10px;
-    background-color: var(--body-background-color);
+    background-color: var(--container-background-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -188,178 +186,7 @@ footer {
 .profiletable th {
     padding: 10px;
     background-color: var(--accent-color-1);
-    color: var(--body-background-color);
+    color: var(--container-background-color);
 }
 
 /* Profile Page END */
-
-
-/*Ricardo's Setting: */
-/*
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-    position: relative;
-    height: fit-content;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    padding: 30px 0;
-    justify-content: center;
-    align-items: center;
-}
-
-a {
-    text-decoration: none;
-    cursor: pointer;
-}
-
-button,
-input {
-    background-color: none;
-    outline: none;
-    border: none;
-}
-
-.main-section {
-    max-width: 1800px;
-    width: 100%;
-    min-height: 100%;
-    background-color: #c4a749;
-    padding: 0 10%;
-}
-
-.navbar {
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px 0;
-    position: relative;
-}
-
-.logo {
-    width: 80px;
-}
-
-.logo img {
-    width: 100%;
-}
-
-.navibar ul {
-    list-style-type: none;
-}
-
-.navbar ul li {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-.navbar ul a {
-    color: white;
-    font-size: 14px;
-    position: relative;
-    transition: 0.1s linear;
-}
-
-.navbar ul a::before {
-    content: '';
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background-color: #fb4b29;
-    transition: 0.1s linear;
-}
-
-.navbar ul a:hover::before,
-ul a:hover {
-    color: #fb4b29;
-    width: 100%;
-}
-
-.toggle-btn {
-    display: none;
-}
-
-.login-btn,
-.btn-sec button {
-    background-color: #fb4b29;
-    color: white;
-    width: auto;
-    padding: 0 15px;
-    height: 40px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 6px;
-    border: 2px solid #ed4827;
-    transition: 0.1s linear;
-}
-
-.login-btn:hover,
-.btn-sec button:hover {
-    background-color: transparent;
-    color: #ed4827;
-    border: 2px solid #ed4827;
-}
-
-.bottom-content {
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    position: relative;
-}
-
-.bottom-left {
-    width: 50%;
-    height: fit-content;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.bottom-left h1 {
-    color: white;
-    font-size: 6rem;
-    letter-spacing: 2px;
-    word-spacing: 4px;
-    line-height: 90px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.bottom-left p {
-    font-size: 18px;
-    color: white;
-    font-weight: 300;
-    margin: 10px 0 30px 0;
-}
-
-.btn-sec {
-    display: flex;
-    gap: 20px;
-}
-
-.btn-sec button:last-child {
-    border: 2px solid white;
-    background-color: transparent;
-    color: white;
-}
-*/
