@@ -176,15 +176,12 @@ footer {
 }
 
 /* Profile Page START */
-/*.profile{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}*/
+.profile *{
+    margin: 0 auto;
+}
 
 .profiletable {
     width: 80%;
-    margin: 0 auto;
     padding: 10px;
     background-color: var(--body-background-color);
     border-radius: var(--border-radius);
