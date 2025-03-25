@@ -176,6 +176,21 @@ footer {
 }
 
 /* Profile Page START */
+/*.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+
+.profiletable {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: var(--body-background-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .profiletable, .profiletable th, .profiletable td {
     border: var(--border-color) 1px solid;
     border-collapse: collapse;
