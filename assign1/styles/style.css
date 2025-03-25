@@ -22,9 +22,10 @@
     --border-radius: 8px;
     --padding: 10px;
     --margin: 10px;
+    --navbar-height: 75px;
 }
 
-/* Animations Testing Start */
+/* Animations Testing Start 
 @keyframes example {
     from {
         background-color: red;
@@ -51,7 +52,6 @@
 body {
     font-family: var(--body-font);
     background-color: var(--background-color);
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -90,31 +90,13 @@ body {
 .login-container button:hover {
     background-color: var(--accent-color-1);
 }
-
 /* Login Page Prototype End */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Basic typography */
-
-
-
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--body-font);
     line-height: 1.6;
-    color: #333;
+    color: var(--text-color);
     background-color: var(--background-color);
-}
-
-/* Container class for layout */
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
 }
 
 /* Header styles */
@@ -128,12 +110,13 @@ header {
 /* Navigation styles START */
 nav {
     background-color: var(--top-navigation-color);
-    height: 75px;
+    height: var(--navbar-height);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
+    z-index: 1000; /* Ensure the nav is on top */
 }
 
 nav img {
@@ -164,28 +147,51 @@ nav ul li a {
     text-decoration: none;
     color: var(--link-color);
 }
-
 /* Navigation styles END */
 
 /* Main content styles */
 main {
-    background: #fff;
+    background: var(--background-color);
     padding: 20px;
+    margin-top: var(--navbar-height);
     margin-bottom: 20px;
 }
 
-/* Footer styles */
+/* Footer START */
 footer {
     background: var(--footer-background);
     color: var(--text-color);
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    bottom: 0;
     width: 100%;
 }
+/* Footer END */
 
+/* Profile Page START */
+.profile *{
+    margin: 0 auto;
+}
 
+.profiletable {
+    width: 80%;
+    padding: 10px;
+    background-color: var(--body-background-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profiletable, .profiletable th, .profiletable td {
+    border: var(--border-color) 5px solid;
+    border-collapse: collapse;
+    padding: var(--padding);
+}
+
+.profiletable th {
+    padding: 10px;
+    background-color: var(--accent-color-1);
+    color: var(--body-background-color);
+}
+
+/* Profile Page END */
 
 
 /*Ricardo's Setting: */
