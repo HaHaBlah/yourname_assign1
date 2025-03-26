@@ -61,6 +61,14 @@ a {
     color: #8B00FF;
 }
 
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the nav is on top */
+}
+
 .home {
     display: flex;
     align-items: center;
@@ -68,6 +76,7 @@ a {
     width: 100%;
     padding: 60px 9% 0;
     color: white;
+    margin-top: 100px; /* Push content below the navbar */
 }
 
 .home-content h1 {
@@ -124,16 +133,16 @@ a {
 }
 
 h3 {
-    margin-top: 120px; /* Adjust to ensure it is not hidden by the navbar */
-    font-size: 24px; /* Optional: Adjust font size for better visibility */
-    color: white; /* Optional: Ensure text color contrasts with the background */
+    margin-top: 120px;
+    font-size: 24px;
+    color: white;
 }
 
 .about-table {
-    float: left; /* Move the table to the left */
-    margin-right: 20px; /* Add space for the profile picture */
-    margin-top: 100px; /* Ensure it is positioned below the navbar */
-    width: 60%; /* Adjust width to fit the layout */
+    float: left;
+    margin-right: 20px;
+    margin-top: 100px;
+    width: 60%;
     border-collapse: collapse;
 }
 
@@ -151,8 +160,30 @@ h3 {
     width: 70%;
 }
 
+.email-link a {
+    color: #593C26;
+    text-decoration: underline;
+}
+
+.profile-photo {
+    float: right;
+    margin-top: 100px;
+    width: 30%;
+    height: 30%;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 15px solid #593C26;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-photo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 .details-table {
-    clear: both; /* Ensure content displays below the header */
+    clear: both;
     display: flex;
     align-items: center;
     padding: 60px 9%;
