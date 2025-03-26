@@ -24,29 +24,6 @@
     --navbar-height: 75px;
 }
 
-/* Animations Testing Start 
-@keyframes example {
-    from {
-        background-color: red;
-    }
-
-    to {
-        background-color: yellow;
-    }
-}
-
-:hover a {
-    color: black;
-    animation-name: example;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    animation-delay: 2s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-/* Animations Testing End */
-
 /* Login Page Prototype Start */
 body {
     font-family: var(--body-font);
@@ -117,6 +94,9 @@ nav {
     width: 100%;
     display: flex;
     z-index: 1000;
+    padding: var(--padding);
+    justify-content: space-between;
+    align-items: center;
     /* Ensure the nav is on top */
 }
 
@@ -130,23 +110,42 @@ nav img {
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(2ch, max-content));
-    column-gap: 24px;
-    width: 100%;
-    align-self: right;
+    display: flex;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 10px;
+    list-style: none;
+    margin-left: 35px;
 }
 
-nav ul li a {
+nav a {
     text-decoration: none;
-    color: var(--link-color);
+    color: white;
+}
+
+
+.Dropdown_Start {
+    position: relative;
+    display: inline-block;
+}
+
+.Dropdown_Content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.Dropdown_Start:hover .Dropdown_Content {
+    display: block;
+}
+
+nav a:hover,
+nav a.active {
+    color: #8B00FF;
 }
 
 /* Navigation styles END */
@@ -179,7 +178,11 @@ footer {
     margin-left: 10em;
 }
 
-.profile img {
+#student_id {
+    color: var(--accent-color-1);
+}
+
+.profilepicture {
     border-radius: 50%;
     border: groove 5px var(--border-color);
     padding: 20px;
@@ -188,7 +191,7 @@ footer {
     margin: 0 auto 20px auto;
 }
 
-.profile table{
+.profile table {
     width: 80%;
     padding: 10px;
 }
