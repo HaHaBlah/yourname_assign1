@@ -61,6 +61,14 @@ a {
     color: #8B00FF;
 }
 
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the nav is on top */
+}
+
 .home {
     display: flex;
     align-items: center;
@@ -68,6 +76,7 @@ a {
     width: 100%;
     padding: 60px 9% 0;
     color: white;
+    margin-top: 100px; /* Push content below the navbar */
 }
 
 .home-content h1 {
@@ -121,4 +130,65 @@ a {
     color: #593C26;
     margin: 0 8px;
     transition: .25s;
+}
+
+h3 {
+    margin-top: 120px;
+    font-size: 24px;
+    color: white;
+}
+
+.about-table {
+    float: left;
+    margin-right: 20px;
+    margin-top: 100px;
+    width: 60%;
+    border-collapse: collapse;
+}
+
+.about-table th, .about-table td {
+    text-align: left;
+    padding: 5px;
+    border: none;
+}
+
+.about-table th {
+    width: 30%;
+}
+
+.about-table td {
+    width: 70%;
+}
+
+.email-link a {
+    color: #593C26;
+    text-decoration: underline;
+}
+
+.profile-photo {
+    float: right;
+    margin-top: 100px;
+    width: 30%;
+    height: 30%;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 15px solid #593C26;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-photo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.details-table {
+    clear: both;
+    display: flex;
+    align-items: center;
+    padding: 60px 9%;
+}
+
+.details-table tr td {
+    border: 2px solid #593C26;
 }
