@@ -233,4 +233,8 @@ footer {
     color: var(--container-background-color);
 }
 
+audio {
+    width: 100%;
+    border-radius: 111px;
+}
 /* Profile Page END */
