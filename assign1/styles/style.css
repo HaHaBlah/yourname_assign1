@@ -253,6 +253,8 @@ footer {
     color: var(--container-background-color);
 }
 
+/* Add css for the profile "Email Me" buttons later */
+
 audio {
     width: 100%;
     border-radius: 111px;
