@@ -4,54 +4,30 @@
 /* Some variables */
 :root {
     --background-color: #A99175;
-    --body-color-1: #333;
-    --body-color-2: #fff;
     --body-background-image: url('../images/bg.jpg');
-    --body-background-color: #F2E9DE;
+    --container-background-color: #F2E9DE;
     --border-color: #ccc;
     --accent-color-1: #E74C3C;
     --decorative-color: #09F1E2;
-    --top-navigation-color: #F2E9DE;
+    --top-navigation-color: none;
+    /* formerly F2E9DE */
     --text-color: #0B0F14;
     --link-color: #2213F6;
     --link-color-hover: #2213F6;
     --link-color-visited: #B5ED96;
-    --footer-background: #5A7DA0;
-    --headings-font: 'Montserrat';
-    --body-font: 'Open Sans';
+    --footer-background: #F2E9DE;
+    --headings-font: Montserrat, sans-serif;
+    --body-font: Arial, sans-serif;
     --border-radius: 8px;
     --padding: 10px;
     --margin: 10px;
+    --navbar-height: 75px;
 }
-
-/* Animations Testing Start */
-@keyframes example {
-    from {
-        background-color: red;
-    }
-
-    to {
-        background-color: yellow;
-    }
-}
-
-:hover a {
-    color: black;
-    animation-name: example;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    animation-delay: 2s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-/* Animations Testing End */
 
 /* Login Page Prototype Start */
 body {
     font-family: var(--body-font);
     background-color: var(--background-color);
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -59,7 +35,7 @@ body {
 }
 
 .login-container {
-    background-color: var(--body-background-color);
+    background-color: var(--container-background-color);
     padding: 20px;
     border-radius: var(--border-radius);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -83,7 +59,7 @@ body {
     background-color: var(--accent-color-1);
     border: none;
     border-radius: var(--border-radius);
-    color: var(--body-background-color);
+    color: var(--container-background-color);
     font-size: 16px;
 }
 
@@ -93,28 +69,11 @@ body {
 
 /* Login Page Prototype End */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Basic typography */
-
-
-
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--body-font);
     line-height: 1.6;
-    color: #333;
+    color: var(--text-color);
     background-color: var(--background-color);
-}
-
-/* Container class for layout */
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
 }
 
 /* Header styles */
@@ -128,12 +87,17 @@ header {
 /* Navigation styles START */
 nav {
     background-color: var(--top-navigation-color);
-    height: 75px;
+    height: var(--navbar-height);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
+    z-index: 1000;
+    padding: var(--padding);
+    justify-content: space-between;
+    align-items: center;
+    /* Ensure the nav is on top */
 }
 
 nav img {
@@ -146,214 +110,127 @@ nav img {
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(2ch, max-content));
-    column-gap: 24px;
-    width: 100%;
-    align-self: right;
+    display: flex;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 10px;
+    list-style: none;
+    margin-left: 35px;
 }
 
-nav ul li a {
+nav a {
     text-decoration: none;
-    color: var(--link-color);
+    color: white;
 }
+
+
+nav a:hover {
+    color: #8B00FF;
+    text-decoration: underline;
+}
+
+
+.Dropdown_Start {
+    position: relative;
+    display: inline-block;
+    color: white;
+}
+
+.Dropdown_Content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    color: var(--text-color);
+    flex-direction: column;
+}
+
+.Dropdown_Content a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+}
+
+.Dropdown_Start:hover .Dropdown_Content {
+    display: flex;
+}
+
+.Dropdown_Content ul li a:hover {
+    background-color: var(--accent-color-1); /* Highlight on hover */
+    color: white; 
+}
+
 
 /* Navigation styles END */
 
 /* Main content styles */
 main {
-    background: #fff;
+    background: var(--background-color);
     padding: 20px;
+    margin-top: var(--navbar-height);
     margin-bottom: 20px;
 }
 
-/* Footer styles */
+/* Footer START */
 footer {
     background: var(--footer-background);
     color: var(--text-color);
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    bottom: 0;
     width: 100%;
 }
 
+/* Footer END */
 
-
-
-/*Ricardo's Setting: */
-/*
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+/* Profile Page START */
+.profile * {
+    margin: 0 auto;
 }
 
-body {
-    position: relative;
-    height: fit-content;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    padding: 30px 0;
-    justify-content: center;
-    align-items: center;
+.profile h1 {
+    margin-left: 10em;
 }
 
-a {
-    text-decoration: none;
-    cursor: pointer;
+#student_id {
+    color: var(--accent-color-1);
 }
 
-button,
-input {
-    background-color: none;
-    outline: none;
-    border: none;
+.profilepicture {
+    border-radius: 50%;
+    border: groove 5px var(--border-color);
+    padding: 20px;
+    max-width: 150px;
+    display: block;
+    margin: 0 auto 20px auto;
 }
 
-.main-section {
-    max-width: 1800px;
-    width: 100%;
-    min-height: 100%;
-    background-color: #c4a749;
-    padding: 0 10%;
+.profile table {
+    width: 80%;
+    padding: 10px;
 }
 
-.navbar {
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px 0;
-    position: relative;
+.profiletable {
+    width: 80%;
+    padding: 10px;
+    background-color: var(--container-background-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-    width: 80px;
+.profiletable,
+.profiletable th,
+.profiletable td {
+    border: var(--border-color) 5px solid;
+    border-collapse: collapse;
+    padding: var(--padding);
 }
 
-.logo img {
-    width: 100%;
+.profiletable th {
+    padding: 10px;
+    background-color: var(--accent-color-1);
+    color: var(--container-background-color);
 }
 
-.navibar ul {
-    list-style-type: none;
-}
-
-.navbar ul li {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-.navbar ul a {
-    color: white;
-    font-size: 14px;
-    position: relative;
-    transition: 0.1s linear;
-}
-
-.navbar ul a::before {
-    content: '';
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background-color: #fb4b29;
-    transition: 0.1s linear;
-}
-
-.navbar ul a:hover::before,
-ul a:hover {
-    color: #fb4b29;
-    width: 100%;
-}
-
-.toggle-btn {
-    display: none;
-}
-
-.login-btn,
-.btn-sec button {
-    background-color: #fb4b29;
-    color: white;
-    width: auto;
-    padding: 0 15px;
-    height: 40px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 6px;
-    border: 2px solid #ed4827;
-    transition: 0.1s linear;
-}
-
-.login-btn:hover,
-.btn-sec button:hover {
-    background-color: transparent;
-    color: #ed4827;
-    border: 2px solid #ed4827;
-}
-
-.bottom-content {
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    position: relative;
-}
-
-.bottom-left {
-    width: 50%;
-    height: fit-content;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.bottom-left h1 {
-    color: white;
-    font-size: 6rem;
-    letter-spacing: 2px;
-    word-spacing: 4px;
-    line-height: 90px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.bottom-left p {
-    font-size: 18px;
-    color: white;
-    font-weight: 300;
-    margin: 10px 0 30px 0;
-}
-
-.btn-sec {
-    display: flex;
-    gap: 20px;
-}
-
-.btn-sec button:last-child {
-    border: 2px solid white;
-    background-color: transparent;
-    color: white;
-}
-*/
+/* Profile Page END */
