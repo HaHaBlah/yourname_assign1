@@ -94,8 +94,7 @@ nav {
     display: flex;
     z-index: 1000;
     padding: var(--padding);
-    justify-content: space-between;
-    align-items: center;
+    font-size: 1.5em;
     /* Ensure the nav is on top */
 }
 
@@ -145,6 +144,10 @@ nav a:hover {
     z-index: 1;
     color: var(--text-color);
     flex-direction: column;
+}
+
+.Dropdown_Content ul {
+    display: block;
 }
 
 .Dropdown_Content a {
