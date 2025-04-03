@@ -72,11 +72,9 @@ nav {
 .home {
     display: flex;
     align-items: center;
-    height: 100vh;
     width: 100%;
     padding: 60px 9% 0;
     color: white;
-    margin-top: 100px; /* Push content below the navbar */
 }
 
 .home-content h1 {
@@ -85,7 +83,6 @@ nav {
 
 .home-content h2 {
     font-size: 32px;
-    margin-top: -10px;
 }
 
 .home-content p {
