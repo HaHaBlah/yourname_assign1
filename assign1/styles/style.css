@@ -279,3 +279,26 @@ audio {
     border-radius: 111px;
 }
 /* Profile Page END */
+
+
+/* Scrollbar styles START */
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color-1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--border-color);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--link-color-hover);
+}
+/* Scrollbar styles END */
