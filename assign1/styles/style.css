@@ -13,7 +13,7 @@
     /* formerly F2E9DE */
     --text-color: #0B0F14;
     --link-color: #2213F6;
-    --link-color-hover: #2213F6;
+    --link-color-hover: #8B00FF;;
     --link-color-visited: #B5ED96;
     --footer-background: #F2E9DE;
     --headings-font: Montserrat, sans-serif;
@@ -126,12 +126,30 @@ nav a {
     color: white;
     line-height: var(--navbar-height);
     display: inline-block;
+    position: relative;
+    
 }
 
 
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 1em;
+    width: 0; /* Start with no underline */
+    height: 3px; /* Thickness of the underline */
+    background-color: var(--link-color-hover); /* Color of the underline */
+    transition: width 0.25s ease; 
+}
+
 nav a:hover {
-    color: #8B00FF;
-    text-decoration: underline;
+    color: var(--link-color-hover);
+    transition: 0.35s; 
+    
+}
+
+nav a:hover::after {
+    width: 100%; /* Expand the underline to full width */
 }
 
 
@@ -211,7 +229,8 @@ footer {
 }
 
 .profile h1 {
-    margin-left: 10em;
+    margin: 0 auto;
+    text-align: center;
 }
 
 #student_id {
