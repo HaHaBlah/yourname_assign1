@@ -9,7 +9,8 @@
     --border-color: #ccc;
     --accent-color-1: #E74C3C;
     --decorative-color: #09F1E2;
-    --top-navigation-color: none; /* formerly F2E9DE */
+    --top-navigation-color: none;
+    /* formerly F2E9DE */
     --text-color: #0B0F14;
     --link-color: #2213F6;
     --link-color-hover: #593C26;
@@ -238,7 +239,8 @@ footer {
     margin: 0 auto;
 }
 
-.profile h1, .profile h2 {
+.profile h1,
+.profile h2 {
     margin: 0 auto;
     text-align: center;
 }
@@ -282,6 +284,21 @@ footer {
     color: var(--container-background-color);
 }
 
+.games {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    text-align: center;
+}
+
+.games img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px;
+}
+
 /* Add css for the profile "Email Me" buttons later */
 
 audio {
@@ -318,4 +335,5 @@ body {
     overflow: scroll;
     scrollbar-color: var(--accent-color-1) var(--border-color);
 }
+
 /* Scrollbar styles END */

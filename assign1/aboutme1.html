@@ -1,53 +1,14 @@
 <!--Kelvin Profile-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            text-align: center;
-            font-size: 200%;
-            font-weight: bold;
-        }
-        .student-number {
-            font-family: Arial, sans-serif;
-        }
-        .course {
-            color: rgb(100, 150, 255); /* Example RGB color */
-        }
-        .profile-pic {
-            float: right;
-            border: groove 5px #000;
-            padding: 20px;
-            max-width: 150px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th {
-            background-color: #884cff;
-            font-weight: bold;
-            text-align: center;
-        }
-        td {
-            background-color: #dbabff;
-            padding: 10px;
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-    </style>
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
     <nav>
         <a href="index.html"><img src="images/Brew & Go logo.png" alt="Brew & Go logo"></a>
@@ -92,53 +53,72 @@
             <li><a href="login.html">Login</a></li>
         </ul>
     </nav>
-    <h1>Kelvin Lau Sze Hoon</h1>
-    <p class="student-number">Student ID: 104391559</p>
-    <p class="course">Course: Bachelor of Computer Science</p>
+    <main class="profile">
+        <img class="profilepicture" src="images/Kelvin Lau Sze Hoon.jpg" alt="Kelvin's Profile Picture" class="profile-pic">
+        <h1>Kelvin Lau Sze Hoon</h1>
+        <h2 id="student_id">104391559</h2>
+        <h2>Bachelor of Computer Science</h2>
 
-    <img src="images/Kelvin Lau Sze Hoon.jpg" alt="Your Photo" class="profile-pic">
-
-    <table border="1">
-        <tr>
-            <th>Category</th>
-            <th>Details</th>
-        </tr>
-        <tr>
-            <td>Demographic Information</td>
-            <td>My name is Kelvin Lau Sze Hoon. I am from Kuching, Sarawak, Malaysia. I am 19 years old and currently pursuing studies in computer science. I grew up in Kuching, a city known for its rich cultural heritage and strong sense of community.I speak English, Mandarin & Malay and enjoy learning about technology, microelectronics, and innovation. My academic interests align with my passion for semiconductor development and computing, which I hope to pursue in the future.
-
-            </td>
-        </tr>
-        <tr>
-            <td>Description of Hometown</td>
-            <td>Kuching is the capital city of Sarawak, located on the island of Borneo, Malaysia. Known as the "City of Cats," it is famous for its rich cultural heritage, diverse communities, and delicious local cuisine like Sarawak Laksa and Kolo Mee. The city is home to scenic spots such as the Kuching Waterfront and Bako National Park, offering a mix of modern development and natural beauty.</td>
-        </tr>
-        <tr>
-            <td>Great Achievement</td>
-            <td>My greatest achievement so far is completing my foundation in computer science, where I developed strong problem-solving skills and a passion for microelectronics.Additionally, I have worked on projects that challenged me to apply my knowledge in real-world scenarios, further strengthening my confidence in the field.</td>
-        </tr>
-        <tr>
-                <td>Favorite Games</td>
-                <td>
-                    <div style="display: flex; gap: 40px; justify-content: center;">
-                        <div style="text-align: center;">
-                            <img src="images/mllogo.png" alt="mllogo.png" style="width: 80px; height: 80px; object-fit: contain; display: block; margin: 0 auto 10px;">
-                            <span>Mobile Legends: Bang Bang</span>
+        <table class="profiletable">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Age</td>
+                    <td>19</td>
+                </tr>
+                <tr>
+                    <td>Demographic Information</td>
+                    <td>My name is Kelvin Lau Sze Hoon. I am from Kuching, Sarawak, Malaysia. I am 19 years old and currently
+                        pursuing studies in computer science. I grew up in Kuching, a city known for its rich cultural heritage
+                        and strong sense of community.I speak English, Mandarin & Malay and enjoy learning about technology,
+                        microelectronics, and innovation. My academic interests align with my passion for semiconductor
+                        development and computing, which I hope to pursue in the future.</td>
+                </tr>
+                <tr>
+                    <td>My Hometown</td>
+                    <td>Kuching is the capital city of Sarawak, located on the island of Borneo, Malaysia. Known as the "City of
+                        Cats," it is famous for its rich cultural heritage, diverse communities, and delicious local cuisine
+                        like Sarawak Laksa and Kolo Mee. The city is home to scenic spots such as the Kuching Waterfront and
+                        Bako National Park, offering a mix of modern development and natural beauty.</td>
+                </tr>
+                <tr>
+                    <td>My Achievements</td>
+                    <td>My greatest achievement so far is completing my foundation in computer science, where I developed strong
+                        problem-solving skills and a passion for microelectronics.Additionally, I have worked on projects that
+                        challenged me to apply my knowledge in real-world scenarios, further strengthening my confidence in the
+                        field.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Favourite Games</td>
+                    <td>
+                        <div class="games">
+                            <div>
+                                <img src="images/mllogo.png" alt="mllogo.png">
+                                <span>Mobile Legends: Bang Bang</span>
+                            </div>
+                            <div>
+                                <img src="images/gtavlogo.png" alt="gtavlogo.png">
+                                <span>Grand Theft Auto V</span>
+                            </div>
                         </div>
-                        <div style="text-align: center;">
-                            <img src="images/gtavlogo.png" alt="gtavlogo.png" style="width: 80px; height: 80px; object-fit: contain; display: block; margin: 0 auto 10px;">
-                            <span>Grand Theft Auto V</span>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-    </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
 
     <footer>
-        <a href="mailto:104391559@students.swinburne.edu.my?subject=Contact%20from%20Profile%20Page&body=Hello%20Kelvin,%20I%20saw%20your%20profile...">
-            Contact Me 
-        </a>
+        <form action="mailto:104391559@students.swinburne.edu.my" method="post" enctype="text/plain">
+            <button type="submit">Email Me</button>
+        </form>
+        <p>&copy; 2021 Brew & Go Coffee</p>
     </footer>
-
 </body>
+
 </html>
