@@ -238,7 +238,7 @@ footer {
     margin: 0 auto;
 }
 
-.profile h1 {
+.profile h1, .profile h2 {
     margin: 0 auto;
     text-align: center;
 }
@@ -318,5 +318,4 @@ body {
     overflow: scroll;
     scrollbar-color: var(--accent-color-1) var(--border-color);
 }
-
 /* Scrollbar styles END */
