@@ -36,6 +36,11 @@ a {
     z-index: 100;
 }
 
+.navbar .logo {
+    font-size: 30px;
+    font-weight: 700;
+}
+
 .navbar .logo a {
     font-size: px;
     font-weight: 900;
@@ -65,7 +70,6 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Ensure the nav is on top */
 }
 
 nav ul li a.active {
