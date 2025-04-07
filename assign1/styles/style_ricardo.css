@@ -3,7 +3,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -150,7 +149,8 @@ h3 {
     border-collapse: collapse;
 }
 
-.about-table th, .about-table td {
+.about-table th,
+.about-table td {
     text-align: left;
     padding: 5px;
     border: none;
