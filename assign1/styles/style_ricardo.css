@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-** {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -60,3 +60,68 @@ a {
     color: #593C26;
 }
 
+.home {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 60px 9% 0;
+    color: white;
+}
+
+.home-content h1 {
+    font-size: 55px;
+}
+
+.home-content h2 {
+    font-size: 32px;
+    margin-top: -10px;
+}
+
+.home-content p {
+    font-size: 16px;
+    margin: 10px 0 25px;
+}
+
+.home-content .btn-sci {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background: #593C26;
+    border: 2px solid #593C26;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #593C26;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    transition: .25s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: #593C26;
+    box-shadow: none;
+}
+
+.home-content .btn-sci .sci {
+    margin-left: 20px;
+}
+
+.home-content .btn-sci .sci a {
+    display: inline-flex;
+    padding: 8px;
+    border:2px solid #593C26;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #593C26;
+    margin: 0 8px;
+}
+
+.home-content .btn-sci .sci a:hover {
+    background: #593C26;
+    color: #A99175;
+    box-shadow: 0 0 10px #593C26;
+}
