@@ -118,6 +118,7 @@ a {
     font-size: 20px;
     color: #593C26;
     margin: 0 8px;
+    transition: .25s;
 }
 
 .home-content .btn-sci .sci a:hover {
@@ -126,6 +127,27 @@ a {
     box-shadow: 0 0 10px #593C26;
 }
 
+.home-img .img-box {
+    width: 32vw;
+    height: 32vw;
+    background: #593C26;
+    border-radius: 50%;
+}
+
+.home-img .img-box .img-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #A99175;
+    border-radius: 50%;
+}
+
+.home-img .img-box .img-item img {
+    position: absolute;
+    display: block;
+    width: 85%;
+    object-fit: cover;
+}
 /*
 10.26
 https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
