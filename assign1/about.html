@@ -1,61 +1,34 @@
 <!--Ricardo's Webpage-->
 <!--https://www.youtube.com/watch?v=6egO0WgqYaU-->
+<!--Don't mix by CSS code first-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./images/Brew & Go logo.png" type="image/icon type">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="images/Brew & Go logo.png" type="image/icon type">
     <link rel="stylesheet" href="styles/style_ricardo.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>About Us</title>
 </head>
 
 <body>
-    <nav>
-        <a href="index.html"><img src="images/Brew & Go logo.png" alt="Brew & Go logo"></a>
-        <a href="index.html">Brew & Go Coffee</a>
-        <ul>
-            <li>
-                <div class="Dropdown_Start"><a href="products.html">Products</a>
-                    <div class="Dropdown_Content">
-                        <ul>
-                            <li><a href="product1.html">Basic Brew</a></li>
-                            <li><a href="product2.html">Artisan Brew</a></li>
-                            <li><a href="product3.html">Non-Coffee</a></li>
-                            <li><a href="product4.html">Hot Beverages</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="Dropdown_Start"><a class="active" href="about.html">About</a>
-                    <div class="Dropdown_Content">
-                        <ul>
-                            <li><a href="aboutme1.html">Kelvin</a></li>
-                            <li><a href="aboutme2.html">Patrick</a></li>
-                            <li><a href="aboutme3.html">Ricardo</a></li>
-                            <li><a href="aboutme4.html">Wei Bao</a></li>
-                        </ul>
-                    </div>
-                </div>
+    
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <!--<img src="images/Brew & Go logo.png" alt="Brew & Go logo">-->
+            <span>Brew & Go Coffee.</span>
+        </a>
 
-            </li>
-            <li>
-                <div class="Dropdown_Start"><a href="locations.html">Locations</a>
-                    <div class="Dropdown_Content">
-                        <ul>
-                            <li><a href="location1.html">One Jaya</a></li>
-                            <li><a href="location2.html">Plaza Merdeka</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            <li><a href="enquiry.html">Help</a></li>
-            <li><a href="login.html">Login</a></li>
+        <ul class="nav-links">
+            <li><a href="index.html">Products</a></li>
+            <li class="active"><a href="about.html">About</a></li>
+            <li><a href="products.html">Locations</a></li>
+            <li><a href="locations.html">Help</a></li>
+            <li><a href="joinus.html">Login</a></li>
         </ul>
+
     </nav>
 
     <section class="home">
@@ -73,6 +46,7 @@
                     <a href="#"><i class='bx bxl-instagram' ></i></a>
                 </div>
             </div>
+        </div>
     </section>
 
-</body>
+    </nav>
