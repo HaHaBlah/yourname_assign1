@@ -3,7 +3,6 @@
 ** {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -36,6 +35,11 @@ a {
     z-index: 100;
 }
 
+.navbar .logo {
+    font-size: 30px;
+    font-weight: 700;
+}
+
 .navbar .logo a {
     font-size: px;
     font-weight: 900;
@@ -53,12 +57,11 @@ a {
 .navbar ul li a {
     font-size: 20px;
     font-weight: 500;
-    transition: .25s;
+    transition: .5s;
 }
 
-.navbar ul li:hover a,
-.navbar ul li.active a {
-    color: #8B00FF;
+.navbar ul li:hover a {
+    color: #593C26;
 }
 
 nav {
@@ -66,17 +69,18 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Ensure the nav is on top */
+}
+
+nav ul li a.active {
+    color: #593C26;
 }
 
 .home {
     display: flex;
     align-items: center;
-    height: 100vh;
     width: 100%;
     padding: 60px 9% 0;
     color: white;
-    margin-top: 100px; /* Push content below the navbar */
 }
 
 .home-content h1 {
@@ -85,7 +89,6 @@ nav {
 
 .home-content h2 {
     font-size: 32px;
-    margin-top: -10px;
 }
 
 .home-content p {
@@ -146,7 +149,8 @@ h3 {
     border-collapse: collapse;
 }
 
-.about-table th, .about-table td {
+.about-table th,
+.about-table td {
     text-align: left;
     padding: 5px;
     border: none;
