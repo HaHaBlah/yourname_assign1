@@ -1,13 +1,49 @@
-<!--Plaza Merdeka-->
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Locations</title>
-        <meta name="description" content="">
+        <title>Plaza Merdeka Location | Brew & Go Coffee</title>
+        <meta name="description" content="Visit our Plaza Merdeka location for great coffee">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles/style.css">
+        <style>
+            /* Pure CSS solution - no JavaScript */
+            .map-container {
+                width: 100%;
+                margin: 20px 0;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            
+            .map-image {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            
+            .map-link {
+                display: block;
+                text-align: center;
+                padding: 10px;
+                background: #f5f5f5;
+                color: #0066cc;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            
+            .map-link:hover {
+                background: #e5e5e5;
+            }
+            
+            .location-info {
+                margin: 20px 0;
+                padding: 20px;
+                background-color: #f9f9f9;
+                border-radius: 8px;
+            }
+        </style>
     </head>
     <body>
         <nav>
@@ -37,7 +73,6 @@
                             </ul>
                         </div>
                     </div>
-    
                 </li>
                 <li>
                     <div class="Dropdown_Start"><a href="locations.html">Locations</a>
@@ -53,5 +88,44 @@
                 <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
+
+        <main class="content">
+            <h1>Brew & Go at Plaza Merdeka</h1>
+            
+            <!-- Pure HTML/CSS Google Map Alternative -->
+            <div class="map-container">
+                <!-- Static map image with link to Google Maps -->
+                <a href="https://maps.google.com/maps?q=Plaza+Merdeka+Kuching" target="_blank">
+                    <img src="images/product1/Plaza Merdeka Brew n go.jpg"
+                        alt="Map to Plaza Merdeka" 
+                        class="map-image">
+                </a>
+                <a href="https://maps.google.com/maps?q=Plaza+Merdeka+Kuching" 
+                   target="_blank" 
+                   class="map-link">
+                    Open in Google Maps →
+                </a>
+            </div>
+            
+            <div class="location-info">
+                <h2>Visit Us</h2>
+                <p>
+                    <strong>Address:</strong><br>
+                    Level 2, Plaza Merdeka,<br>
+                    Jalan Tun Abang Haji Openg,<br>
+                    93000 Kuching, Sarawak
+                </p>
+                <p>
+                    <strong>Opening Hours:</strong><br>
+                    Monday - Friday: 8:00 AM - 10:00 PM<br>
+                    Saturday - Sunday: 9:00 AM - 11:00 PM
+                </p>
+                <p>
+                    <strong>Contact:</strong><br>
+                    Phone: +60 12-345 6789<br>
+                    Email: plazamerdeka@brewandgo.com
+                </p>
+            </div>
+        </main>
     </body>
 </html>
