@@ -24,6 +24,14 @@
     --navbar-height: 75px;
 }
 
+.temp {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    padding-left: 80px;
+}
+
 /* Login Page Prototype Start */
 body {
     font-family: var(--body-font);
@@ -128,11 +136,9 @@ nav a {
     line-height: var(--navbar-height);
     display: inline-block;
     position: relative;
-
 }
 
-
-nav a::after {
+nav a:not(:has(img))::after { /*The not(:has(img)) part is to stop underlining the logo*/
     content: '';
     position: absolute;
     left: 0;
@@ -335,13 +341,22 @@ body {
     overflow: scroll;
     scrollbar-color: var(--accent-color-1) var(--border-color);
 }
-
 /* Scrollbar styles END */
 
-.temp {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+/* Responsive styles START */
+/* For screens smaller than ???px */
+/* Responsive styles END */
+
+/* Background image styles START */
+.background-image { /* Just give an <img> tag the class="background-image" */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 100vh;
-    padding-left: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
+/* Background image styles END */
