@@ -7,9 +7,9 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
-    background: #A99175;
-}
+/* body { */
+    /* background: #A99175; */
+/* } */
 
 a {
     color: white;
@@ -29,7 +29,7 @@ a {
     top: 0;
     width: 100%;
     padding: 25px 9%;
-    background: #A99175;
+    /* background: #A99175; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,8 +37,27 @@ a {
 }
 
 .navbar .logo {
+    display: flex;
+    align-items: center; /* Aligns image and text vertically */
     font-size: 30px;
     font-weight: 700;
+    gap: 10px; /* Adds spacing between the image and text */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/*Fix this code*/
+.logo img {
+    max-height: 60px;
+    height: auto;
+    width: auto;
+    margin: 0; /* Removes unnecessary margins */
+    display: inline-block;
 }
 
 .navbar ul {
@@ -63,9 +82,21 @@ a {
 .home {
     display: flex;
     align-items: center;
+    gap: 50px; /* Adds spacing between the image and text; Different page different value */
     height: 100vh;
     padding: 60px 9% 0;
     color: white;
+    visibility: hidden;
+    opacity: 0;
+    animation: show-content 0.5s linear forwards;
+    animation-delay: 1s;
+}
+
+@keyframes show-content {
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
 }
 
 .home-content h1 {
@@ -75,6 +106,25 @@ a {
 .home-content h2 {
     font-size: 32px;
     margin-top: -10px;
+    background: slateblue;
+}
+
+.home-content h2 span {
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: .7px #593C26;
+    animation: display-text 12s linear infinite;
+    animation-delay: calc(-4s * var(--i));
+}
+
+/**Fix the awkward pause in the animation
+https://chatgpt.com/share/67f5c117-8510-800c-b643-c5c07875d0e5*/
+
+@keyframes display-text {
+    25%, 
+    100% {
+        display: none;
+    }
 }
 
 .home-content p {
@@ -128,27 +178,72 @@ a {
 }
 
 .home-img .img-box {
+    position: relative;
     width: 32vw;
     height: 32vw;
-    background: #593C26;
+    /* background: white; */
     border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.home-img .img-box::before,
+.home-img .img-box::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: conic-gradient(transparent, transparent, transparent, #593C26);
 }
 
 .home-img .img-box .img-item {
     position: relative;
     width: 100%;
     height: 100%;
-    background: #A99175;
+    background: #593C26;
     border-radius: 50%;
+    border: .1px solid #593C26;
+    display: flex; 
+    justify-content: center;
+    z-index: 1;
+    overflow: hidden;
 }
 
 .home-img .img-box .img-item img {
     position: absolute;
     display: block;
-    width: 85%;
+    width: 99.4%;
     object-fit: cover;
+
 }
+
+.bars-animate {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: -1;
+}
+
+.bars-animate .bar {
+    width: 100%;
+    height: 100%;
+    background: #A99175;
+    transform: translateY(-100%);
+    animation: show-bars .5s ease-in-out forwards; /*Can remove if don't like*/
+    animation-delay: calc(var(--i) * .1s);
+}
+
+@keyframes show-bars { /*Can remove if don't like*/
+    100% {
+        transform: translateY(0%);
+    }
+}
+
 /*
-10.26
+18.54
 https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 */
