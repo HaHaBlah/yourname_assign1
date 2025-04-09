@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     margin: 0;
@@ -28,7 +28,7 @@ a {
     left: 0;
     top: 0;
     width: 100%;
-    padding: 25px 9%;
+    padding: 25px 3%;
     /* background: #A99175; */
     display: flex;
     justify-content: space-between;
@@ -106,13 +106,13 @@ nav {
 .home-content h2 {
     font-size: 32px;
     margin-top: -10px;
-    background: slateblue;
+    /* background: slateblue; */
 }
 
 .home-content h2 span {
     display: inline-block;
     color: transparent;
-    -webkit-text-stroke: .7px #593C26;
+    -webkit-text-stroke: .9px #593C26;
     animation: display-text 12s linear infinite;
     animation-delay: calc(-4s * var(--i));
 }
@@ -121,8 +121,7 @@ nav {
 https://chatgpt.com/share/67f5c117-8510-800c-b643-c5c07875d0e5*/
 
 @keyframes display-text {
-    25%, 
-    100% {
+    33.33%, 100% {
         display: none;
     }
 }
