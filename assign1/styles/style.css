@@ -480,36 +480,39 @@ body {
     }
 }
 
-.cd__main {
-    display: block !important;
+.carousel {
+    max-width: 37.5rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    font-family: 'Lato', sans-serif;
 }
 
-* {
+.carousel * {
     box-sizing: border-box;
     scrollbar-color: transparent transparent;
     /* thumb and track color */
     scrollbar-width: 0px;
 }
 
-*::-webkit-scrollbar {
+.carousel::-webkit-scrollbar {
     width: 0;
 }
 
-*::-webkit-scrollbar-track {
+.carousel::-webkit-scrollbar-track {
     background: transparent;
 }
 
-*::-webkit-scrollbar-thumb {
+.carousel::-webkit-scrollbar-thumb {
     background: transparent;
     border: none;
 }
 
-* {
+.carousel * {
     -ms-overflow-style: none;
 }
 
-ol,
-li {
+.carousel ol,
+.carousel li {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -517,11 +520,9 @@ li {
 
 .carousel {
     position: relative;
+    padding-top: 75%;
     filter: drop-shadow(0 0 10px #0003);
     perspective: 100px;
-    max-width: 650px;
-    height: 450px;
-    margin: 15px auto;
 }
 
 .carousel__viewport {
@@ -531,7 +532,7 @@ li {
     bottom: 0;
     left: 0;
     display: flex;
-    overflow-x: hidden;
+    overflow-x: scroll;
     counter-reset: item;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
@@ -542,7 +543,7 @@ li {
     flex: 0 0 100%;
     width: 100%;
     background-color: #f99;
-
+    counter-increment: item;
 }
 
 .carousel__slide:nth-child(even) {
@@ -550,6 +551,7 @@ li {
 }
 
 .carousel__slide:before {
+    content: counter(item);
     position: absolute;
     top: 50%;
     left: 50%;
