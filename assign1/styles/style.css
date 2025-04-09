@@ -537,6 +537,7 @@ With some parts edited for compatibility since they applied to whole webpage*/
     counter-reset: item;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+    overflow-y: hidden;
 }
 
 .carousel__slide {
@@ -552,7 +553,7 @@ With some parts edited for compatibility since they applied to whole webpage*/
 }
 
 .carousel__slide:before {
-    content: counter(item);
+    /* content: counter(item); */ /* Shows slide number */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -602,6 +603,11 @@ With some parts edited for compatibility since they applied to whole webpage*/
     text-align: center;
 }
 
+.carousel img {
+    max-width: 100%;
+    overflow: hidden;
+}
+
 .carousel__navigation-list,
 .carousel__navigation-item {
     display: inline-block;
@@ -626,10 +632,10 @@ With some parts edited for compatibility since they applied to whole webpage*/
     position: absolute;
     top: 0;
     margin-top: 10%;
-    width: 4rem;
-    height: 4rem;
+    width: 2.5rem;
+    height: 5rem;
     transform: translateY(-50%);
-    border-radius: 50%;
+    border-radius: 10px;
     font-size: 0;
     outline: 0;
 }
