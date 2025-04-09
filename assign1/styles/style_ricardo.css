@@ -104,15 +104,16 @@ nav {
 }
 
 .home-content h2 {
+    display: inline-block;
     font-size: 32px;
     margin-top: -10px;
-    /* background: slateblue; */
 }
 
 .home-content h2 span {
+    position: relative;
     display: inline-block;
     color: transparent;
-    -webkit-text-stroke: .9px #593C26;
+    -webkit-text-stroke: 1px #593C26;
     animation: display-text 12s linear infinite;
     animation-delay: calc(-4s * var(--i));
 }
@@ -123,6 +124,29 @@ https://chatgpt.com/share/67f5c117-8510-800c-b643-c5c07875d0e5*/
 @keyframes display-text {
     33.33%, 100% {
         display: none;
+    }
+}
+
+.home-content h2 span::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    border-right: 2px solid #593C26;
+    color: #593C26;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: fill-text 4s linear infinite;
+}
+
+@keyframes fill-text {
+    10%, 
+    100% {
+        width: 0;
+    }
+
+    70%, 
+    90% {
+        width: 100%;
     }
 }
 
@@ -165,6 +189,8 @@ https://chatgpt.com/share/67f5c117-8510-800c-b643-c5c07875d0e5*/
     border:2px solid #593C26;
     border-radius: 50%;
     font-size: 20px;
+    height: 40px;
+    width: 40px;
     color: #593C26;
     margin: 0 8px;
     transition: .25s;
@@ -196,6 +222,18 @@ https://chatgpt.com/share/67f5c117-8510-800c-b643-c5c07875d0e5*/
     width: 500px;
     height: 500px;
     background: conic-gradient(transparent, transparent, transparent, #593C26);
+    transform: rotate(0deg);
+    animation: rotate-border 16s linear infinite;
+}
+
+.home-img .img-box::after {
+    animation-delay: 8s;
+}
+
+@keyframes rotate-border {
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .home-img .img-box .img-item {
@@ -214,7 +252,7 @@ https://chatgpt.com/share/67f5c117-8510-800c-b643-c5c07875d0e5*/
 .home-img .img-box .img-item img {
     position: absolute;
     display: block;
-    width: 99.4%;
+    width: 99.7%;
     object-fit: cover;
 
 }
