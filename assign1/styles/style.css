@@ -379,8 +379,7 @@ body {
 
 /* Locations styles START */
 .map-container {
-    width: 40%;
-    margin: auto;
+    width: 20vw;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
@@ -389,7 +388,7 @@ body {
 
 .map-container iframe {
     width: 100%;
-    height: 400px;
+    height: 20vw;
     border: none;
 }
 
@@ -426,6 +425,16 @@ body {
 
 .location-header {
     position: relative;
+}
+
+.location-header:not(.no-overlay):after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, var(--background-color), transparent);
 }
 
 .location-header h1 {
