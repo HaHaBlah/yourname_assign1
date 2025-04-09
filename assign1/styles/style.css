@@ -425,7 +425,8 @@ body {
 
 
 /* Image Slideshow styles START */
-/* https://codepel.com/carousel/css-carousel-slider-without-javascript/ */
+/* https://codepel.com/carousel/css-carousel-slider-without-javascript/  
+With some parts edited for compatibility since they applied to whole webpage*/
 @keyframes tonext {
     75% {
         left: 0;
@@ -481,7 +482,7 @@ body {
 }
 
 .carousel {
-    max-width: 37.5rem;
+    max-width: 70%;
     margin: 0 auto;
     padding: 0 1.25rem;
     font-family: 'Lato', sans-serif;
@@ -494,15 +495,15 @@ body {
     scrollbar-width: 0px;
 }
 
-.carousel::-webkit-scrollbar {
+.carousel *::-webkit-scrollbar {
     width: 0;
 }
 
-.carousel::-webkit-scrollbar-track {
+.carousel *::-webkit-scrollbar-track {
     background: transparent;
 }
 
-.carousel::-webkit-scrollbar-thumb {
+.carousel *::-webkit-scrollbar-thumb {
     background: transparent;
     border: none;
 }
@@ -520,7 +521,7 @@ body {
 
 .carousel {
     position: relative;
-    padding-top: 75%;
+    padding-top: 30vw;
     filter: drop-shadow(0 0 10px #0003);
     perspective: 100px;
 }
@@ -624,7 +625,7 @@ body {
 .carousel__next {
     position: absolute;
     top: 0;
-    margin-top: 37.5%;
+    margin-top: 10%;
     width: 4rem;
     height: 4rem;
     transform: translateY(-50%);
@@ -665,5 +666,4 @@ body {
 .carousel::after {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
 }
-
 /* Image Slideshow styles END */
