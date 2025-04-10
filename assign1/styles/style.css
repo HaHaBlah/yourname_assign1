@@ -93,7 +93,7 @@ header {
 }
 
 /* Navigation styles START */
-/* Credits: Patrick */
+/* Credits: Ricardo */
 nav {
     background-color: var(--top-navigation-color);
     height: var(--navbar-height);
@@ -508,7 +508,7 @@ With some parts edited for compatibility since they applied to whole webpage*/
     max-width: 70%;
     margin: 0 auto;
     padding: 0 1.25em;
-    font-family: 'Lato', sans-serif;
+    font-family: var(--body-font);
 }
 
 .carousel * {
