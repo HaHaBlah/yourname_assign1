@@ -30,7 +30,7 @@
     --padding: 10px;
     --margin: 10px;
     --navbar-height: 75px;
-    scroll-behavior:smooth
+    scroll-behavior: smooth
 }
 
 .temp {
@@ -101,6 +101,7 @@ header {
 }
 
 /* Navigation styles START */
+/* Credits: Patrick */
 nav {
     background-color: var(--top-navigation-color);
     height: var(--navbar-height);
@@ -269,7 +270,7 @@ footer {
 }
 
 #student_id {
-    color: var(--accent-color-1);
+    color: rgb(var(--accent-color-1-rgb));
 }
 
 .profilepicture {
@@ -353,6 +354,7 @@ audio {
 ::-webkit-scrollbar-thumb:active {
     background: #BA3B30;
 }
+
 /* Scrollbar styles END */
 
 /* Background image styles START */
@@ -372,6 +374,7 @@ audio {
 /* Background image styles END */
 
 /* Locations styles START */
+/* Credits: Kelvin, Patrick */
 .map-container {
     width: 20vw;
     border: 1px solid #ddd;
@@ -448,6 +451,7 @@ audio {
 
 
 /* Image Slideshow styles START */
+/* Credits: Patrick */
 /* https://codepel.com/carousel/css-carousel-slider-without-javascript/  
 With some parts edited for compatibility since they applied to whole webpage*/
 @keyframes tonext {
@@ -679,7 +683,7 @@ With some parts edited for compatibility since they applied to whole webpage*/
 .carousel::after {
     content: '';
     z-index: 1;
-    background-color: rgba(var(--accent-color-1-rgb), 0.5) ;
+    background-color: rgba(var(--accent-color-1-rgb), 0.5);
     background-size: 1.5rem 1.5rem;
     background-repeat: no-repeat;
     background-position: center center;
@@ -708,10 +712,12 @@ With some parts edited for compatibility since they applied to whole webpage*/
 /* Background Images END */
 
 /* Back to top button START */
+/* Credits: Patrick */
 /* https://dev.to/jackherizsmith/making-a-back-to-top-button-without-javascript-2ej6 */
 .scroll-top {
     position: absolute;
-    top: 120vh; /* where it appears. Basically it appears 20% after whole page scrolled down */
+    top: 120vh;
+    /* where it appears. Basically it appears 20% after whole page scrolled down */
     bottom: 2rem;
     right: 2rem;
 }
@@ -732,4 +738,5 @@ With some parts edited for compatibility since they applied to whole webpage*/
 .scroll-top__link:hover {
     opacity: initial;
 }
+
 /* Back to top button END */
