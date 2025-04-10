@@ -247,6 +247,10 @@ main {
     position: relative;
 }
 
+.no-margin-top{
+    margin-top: 0;
+}
+
 /* Footer START */
 footer {
     background: var(--footer-background);
