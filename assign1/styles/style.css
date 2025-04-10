@@ -42,15 +42,6 @@
 }
 
 /* Login Page Prototype Start */
-body {
-    font-family: var(--body-font);
-    background-color: var(--background-color);
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
 .login-container {
     background-color: var(--container-background-color);
     padding: 20px;
@@ -91,6 +82,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
+    margin: 0;
 }
 
 /* Header styles */
@@ -664,7 +656,7 @@ With some parts edited for compatibility since they applied to whole webpage*/
 .carousel__next {
     position: absolute;
     top: 0;
-    margin-top: 10%;
+    margin-top: 25%;
     width: 2.5rem;
     height: 5rem;
     transform: translateY(-50%);
@@ -675,12 +667,19 @@ With some parts edited for compatibility since they applied to whole webpage*/
 
 .carousel::before,
 .carousel__prev {
-    left: -1rem;
+    left: -0rem;
 }
 
 .carousel::after,
 .carousel__next {
-    right: -1rem;
+    right: -0rem;
+}
+
+.carousel__prev:hover,
+.carousel__next:hover {
+    background-color: var(--accent-color-1);
+    background-clip: content-box;
+    border: 0.25rem solid var(--background-color);
 }
 
 .carousel::before,
