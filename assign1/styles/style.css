@@ -15,6 +15,7 @@
     --container-background-color: #F2E9DE;
     --border-color: #ccc;
     --accent-color-1: #E74C3C;
+    --accent-color-1-rgb: 231, 76, 60;
     --decorative-color: #09F1E2;
     --top-navigation-color: none;
     /* formerly F2E9DE */
@@ -352,17 +353,7 @@ audio {
 ::-webkit-scrollbar-thumb:active {
     background: #BA3B30;
 }
-
-body {
-    overflow: scroll;
-    scrollbar-color: var(--accent-color-1) var(--border-color);
-}
-
 /* Scrollbar styles END */
-
-/* Responsive styles START */
-/* For screens smaller than ???px */
-/* Responsive styles END */
 
 /* Background image styles START */
 .background-image {
@@ -446,8 +437,8 @@ body {
 
 .location-header h1 {
     top: 40%;
-    margin-left: 3rem;
-    font-size: 3rem;
+    margin-left: 1em;
+    font-size: 3em;
     position: absolute;
     color: white;
     z-index: 1;
@@ -516,7 +507,7 @@ With some parts edited for compatibility since they applied to whole webpage*/
 .carousel {
     max-width: 70%;
     margin: 0 auto;
-    padding: 0 1.25rem;
+    padding: 0 1.25em;
     font-family: 'Lato', sans-serif;
 }
 
@@ -651,7 +642,7 @@ With some parts edited for compatibility since they applied to whole webpage*/
     display: inline-block;
     width: 1.5rem;
     height: 1.5rem;
-    background-color: #333;
+    background-color: var(--accent-color-1);
     background-clip: content-box;
     border: 0.25rem solid transparent;
     border-radius: 50%;
@@ -688,13 +679,14 @@ With some parts edited for compatibility since they applied to whole webpage*/
 .carousel::after {
     content: '';
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(var(--accent-color-1-rgb), 0.5) ;
     background-size: 1.5rem 1.5rem;
     background-repeat: no-repeat;
     background-position: center center;
-    color: rgba(255, 255, 255, 0.5);
+    color: white;
     pointer-events: none;
 }
+
 
 .carousel::before {
     /* creates left arrows using svg */
@@ -733,8 +725,8 @@ With some parts edited for compatibility since they applied to whole webpage*/
     background-color: var(--accent-color-1);
     padding: .5rem;
     color: white;
-    font-size: 2rem;
-    opacity: .3;
+    font-size: 2em;
+    opacity: .5;
 }
 
 .scroll-top__link:hover {
