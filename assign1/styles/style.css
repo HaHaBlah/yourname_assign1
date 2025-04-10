@@ -94,7 +94,6 @@ body {
 header {
     background: var(--background-color);
     color: var(--text-color);
-    padding: 10px 0;
     text-align: center;
 }
 
@@ -241,7 +240,6 @@ main {
     background: var(--background-color);
     padding: 20px;
     margin-top: var(--navbar-height);
-    margin-bottom: 20px;
 }
 
 /* Footer START */
@@ -381,8 +379,7 @@ body {
 
 /* Locations styles START */
 .map-container {
-    width: 40%;
-    margin: auto;
+    width: 20vw;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
@@ -391,7 +388,7 @@ body {
 
 .map-container iframe {
     width: 100%;
-    height: 400px;
+    height: 20vw;
     border: none;
 }
 
@@ -419,6 +416,33 @@ body {
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
+}
+
+.location-header img {
+    width: 100%;
+    max-height: 50vh;
+}
+
+.location-header {
+    position: relative;
+}
+
+.location-header:not(.no-overlay):after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, var(--background-color), transparent);
+}
+
+.location-header h1 {
+    top: 50%;
+    margin-left: 3rem;
+    font-size: 3rem;
+    position: absolute;
+    color: white;
 }
 
 /* Locations styles END */
@@ -537,6 +561,8 @@ With some parts edited for compatibility since they applied to whole webpage*/
     counter-reset: item;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+    overflow-y: hidden;
+    border-radius: 10px;
 }
 
 .carousel__slide {
@@ -552,7 +578,7 @@ With some parts edited for compatibility since they applied to whole webpage*/
 }
 
 .carousel__slide:before {
-    content: counter(item);
+    /* content: counter(item); */ /* Shows slide number */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -602,6 +628,11 @@ With some parts edited for compatibility since they applied to whole webpage*/
     text-align: center;
 }
 
+.carousel img {
+    max-width: 100%;
+    overflow: hidden;
+}
+
 .carousel__navigation-list,
 .carousel__navigation-item {
     display: inline-block;
@@ -626,10 +657,10 @@ With some parts edited for compatibility since they applied to whole webpage*/
     position: absolute;
     top: 0;
     margin-top: 10%;
-    width: 4rem;
-    height: 4rem;
+    width: 2.5rem;
+    height: 5rem;
     transform: translateY(-50%);
-    border-radius: 50%;
+    border-radius: 10px;
     font-size: 0;
     outline: 0;
 }
@@ -648,22 +679,19 @@ With some parts edited for compatibility since they applied to whole webpage*/
 .carousel::after {
     content: '';
     z-index: 1;
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.5);
     background-size: 1.5rem 1.5rem;
     background-repeat: no-repeat;
     background-position: center center;
-    color: #fff;
-    font-size: 2.5rem;
-    line-height: 4rem;
-    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
     pointer-events: none;
 }
 
-.carousel::before {
+.carousel::before { /* creates left arrows using svg */
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
 }
 
-.carousel::after {
+.carousel::after { /* creates right arrows using svg */ 
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
 }
 /* Image Slideshow styles END */
