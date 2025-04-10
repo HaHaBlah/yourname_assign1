@@ -50,8 +50,6 @@ nav {
     align-items: center;
 }
 
-
-/*Fix this code*/
 .logo img {
     max-height: 60px;
     height: auto;
@@ -66,7 +64,7 @@ nav {
 
 .navbar ul li {
     list-style: none;
-    margin-left: 35px
+    margin-left: 35px;
 }
 
 .navbar ul li a {
@@ -109,45 +107,22 @@ nav {
     margin-top: -10px;
 }
 
-.home-content h2 span {
-    position: relative;
-    display: inline-block;
-    color: transparent;
-    -webkit-text-stroke: 1px #593C26;
-    animation: display-text 12s linear infinite;
-    animation-delay: calc(-4s * var(--i));
-}
-
-/**Fix the awkward pause in the animation
-https://chatgpt.com/share/67f5c117-8510-800c-b643-c5c07875d0e5*/
-
-@keyframes display-text {
-    33.33%, 100% {
-        display: none;
-    }
-}
-
-.home-content h2 span::before {
-    content: attr(data-text);
-    position: absolute;
-    width: 0;
-    border-right: 2px solid #593C26;
+h2 span {
     color: #593C26;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: fill-text 4s linear infinite;
+    display: flex;
 }
 
-@keyframes fill-text {
-    10%, 
-    100% {
-        width: 0;
-    }
+.home-content h2 span {
+    display: inline-block;
+    margin: 0 5px; /* Adds spacing around the separator */
+    position: relative;
+}
 
-    70%, 
-    90% {
-        width: 100%;
-    }
+.home-content h2 span:not(:last-child)::after {
+    content: '|'; /* Adds the separator */
+    position: absolute;
+    right: -15px; /* Adjusts the position of the separator */
+    color: white; /* Matches the design */
 }
 
 .home-content p {
@@ -186,7 +161,7 @@ https://chatgpt.com/share/67f5c117-8510-800c-b643-c5c07875d0e5*/
 .home-content .btn-sci .sci a {
     display: inline-flex;
     padding: 8px;
-    border:2px solid #593C26;
+    border: 2px solid #593C26;
     border-radius: 50%;
     font-size: 20px;
     height: 40px;
@@ -206,7 +181,6 @@ https://chatgpt.com/share/67f5c117-8510-800c-b643-c5c07875d0e5*/
     position: relative;
     width: 32vw;
     height: 32vw;
-    /* background: white; */
     border-radius: 50%;
     padding: 5px;
     display: flex;
@@ -251,10 +225,10 @@ https://chatgpt.com/share/67f5c117-8510-800c-b643-c5c07875d0e5*/
 
 .home-img .img-box .img-item img {
     position: absolute;
+    top: 1px;
     display: block;
     width: 99.7%;
     object-fit: cover;
-
 }
 
 .bars-animate {
@@ -270,16 +244,56 @@ https://chatgpt.com/share/67f5c117-8510-800c-b643-c5c07875d0e5*/
     height: 100%;
     background: #A99175;
     transform: translateY(-100%);
-    animation: show-bars .5s ease-in-out forwards; /*Can remove if don't like*/
+    animation: show-bars .5s ease-in-out forwards;
     animation-delay: calc(var(--i) * .1s);
 }
 
-@keyframes show-bars { /*Can remove if don't like*/
+@keyframes show-bars {
     100% {
         transform: translateY(0%);
     }
 }
 
+/* <!--New Section--> */
+
+/* Fix navbar overlapping content */
+.profiles-container {
+    padding-top: 100px; /* Adjust based on navbar height */
+}
+
+/* Correct profile visibility */
+#profile1:checked ~ .profiles-container #ricardo,
+#profile2:checked ~ .profiles-container #weibao {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+}
+
+/* Ensure profiles are positioned correctly */
+.profile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Fix bar animations */
+.bars-animate .bar {
+    background: inherit; /* Use parent's background */
+}
+
+.ricardo .bars-animate .bar { background: #A99175; }
+.weibao .bars-animate .bar { background: #0b8db5; }
+
+/* Adjust home section positioning */
+.home {
+    position: relative;
+    z-index: 1;
+    padding-top: 0;
+}
 /*
 18.54
 https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
