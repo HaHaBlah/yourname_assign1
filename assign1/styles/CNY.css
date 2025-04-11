@@ -1,0 +1,104 @@
+/* styles/style.css */
+.cny-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+.cny-banner {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #FF0000, #FF6B00);
+    color: #FFD700;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.cny-banner h1 {
+    font-size: 3rem;
+    margin: 0;
+    font-family: 'Ma Shan Zheng', cursive;
+}
+
+.cny-subtitle {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.cny-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.cny-promo, .cny-hours, .cny-tradition {
+    background-color: #FFF9F9;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+h2 {
+    color: #C10B0B;
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+.promo-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #FFF0F0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 5px solid #FF6B00;
+}
+
+.orange-icon {
+    width: 100px;
+    height: 100px;
+}
+
+.special-hours {
+    list-style-type: none;
+    padding: 0;
+}
+
+.special-hours li {
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed #E0E0E0;
+}
+
+.date {
+    font-weight: bold;
+    color: #C10B0B;
+    display: inline-block;
+    width: 120px;
+}
+
+.resume-notice {
+    background-color: #FFF0F0;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .cny-banner h1 {
+        font-size: 2rem;
+    }
+    
+    .promo-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .date {
+        width: 90px;
+    }
+}
