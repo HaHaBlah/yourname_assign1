@@ -239,7 +239,7 @@ main {
     position: relative;
 }
 
-.no-margin-top{
+.no-margin-top {
     margin-top: 0;
 }
 
@@ -257,6 +257,8 @@ footer {
     text-align: center;
     padding: 10px 0;
     width: 100%;
+    clear: both;
+    position: relative;
 }
 
 /* Footer END */
