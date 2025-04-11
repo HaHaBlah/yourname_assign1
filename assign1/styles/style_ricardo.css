@@ -39,6 +39,7 @@ a {
     gap: 10px;
 }
 
+/* 
 nav {
     display: flex;
     justify-content: space-between;
@@ -70,7 +71,7 @@ nav {
 .navbar ul li:hover a,
 .navbar ul li.active a {
     color: #593C26;
-}
+} */
 
 .home {
     display: flex;
