@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Hii Wei Bao">
-    <title>Memberhsip Registration Page</title>
+    <title>Membership Registration Page</title>
     <link rel="stylesheet" href="styles/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,30 +58,42 @@
             <li><a href="login.html">Login</a></li>
         </ul>
     </nav>
-<header>
-    <h1>Memberhsip Registration Form</h1>
-</header>
-    <p>Fill in the form below to register as a member of Brew & Go Coffee.</p>
-    <p>As a member, you will be entitled to exclusive discounts and promotions.</p>
-    <p>We will send you a confirmation email once your registration is successful.</p>
+    <header>
+        <h1>Membership Registration Form</h1>
+    </header>
+    <main>
+        <p>Fill in the form below to register as a member of Brew & Go Coffee.</p>
+        <p>As a member, you will be entitled to exclusive discounts and promotions.</p>
+        <p>We will send you a confirmation email once your registration is successful.</p>
 
-    <form name="form" action="mailto:104390572@students.swinburne.edu.my" method="post" enctype="text/plain">
-        <fieldset>
-            <legend>
-                <strong>Contact Information</strong>
-            </legend>
-            <p>First Name: <input type="text" placeholder="First name" name="name" maxlength="25" required="required"></p>
-            <p>Last Name: <input type="text" placeholder="Last name" name="name" maxlength="25" required="required"></p>
-            <p>E-mail Address:	<input type="email" placeholder="Enter your e-mail address" name="email" required="required"></p>
-            <p>Login ID: <input type="text" placeholder="Enter your login id" name="login id" maxlength="25"></p>
-            <p>Password: <input type="password" placeholder="Enter your password" name="password" maxlength="25" required="required"></p>
-        </fieldset>
-        <p>
-            <input type="submit" value="Submit Form">
-            <input type="reset" value="Clear">
-        </p>
-    </form>
-    
+        <form name="form" action="mailto:104390572@students.swinburne.edu.my" method="post" enctype="text/plain">
+            <fieldset>
+                <legend>
+                    <strong>Contact Information</strong>
+                </legend>
+                <p>First Name: <input type="text" placeholder="First name" name="name" maxlength="25"
+                        required="required"></p>
+                <p>Last Name: <input type="text" placeholder="Last name" name="name" maxlength="25" required="required">
+                </p>
+                <p>E-mail Address: <input type="email" placeholder="Enter your e-mail address" name="email"
+                        required="required"></p>
+                <p>Login ID: <input type="text" placeholder="Enter your login id" name="login id" maxlength="25"></p>
+                <p>Password: <input type="password" placeholder="Enter your password" name="password" maxlength="25"
+                        required="required"></p>
+            </fieldset>
+            <p>
+                <input type="submit" value="Submit Form">
+                <input type="reset" value="Clear">
+            </p>
+        </form>
+
+
+
+        <div class="scroll-top">
+            <!--/* https://dev.to/jackherizsmith/making-a-back-to-top-button-without-javascript-2ej6 */-->
+            <a class="scroll-top__link" href="#">&#11165;</a> <!--href="#" navigates to the top of the page -->
+        </div>
+    </main>
 </body>
-</html>
 
+</html>
