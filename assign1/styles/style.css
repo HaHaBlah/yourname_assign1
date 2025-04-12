@@ -26,7 +26,7 @@
     --footer-background: #F2E9DE;
     --headings-font: Montserrat, sans-serif;
     --body-font: Arial, sans-serif;
-    --border-radius: 8px;
+    --border-radius: 15px;
     --padding: 10px;
     --margin: 10px;
     --navbar-height: 75px;
@@ -453,6 +453,14 @@ audio {
     z-index: 1;
 }
 
+.location-other {
+    width: 750px;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--border-radius);
+}
+
 /* Locations styles END */
 
 
@@ -519,6 +527,13 @@ With some parts edited for compatibility since they applied to whole webpage*/
     margin: 0 0 var(--padding) auto;
     padding: 0 1.25em;
     font-family: var(--body-font);
+}
+
+.carousel img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
 }
 
 .carousel * {
