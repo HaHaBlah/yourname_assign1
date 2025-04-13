@@ -106,6 +106,7 @@ nav {
     z-index: 1000;
     padding: var(--padding);
     font-size: 1.5em;
+    line-height: var(--navbar-height);
 }
 
 nav img {
@@ -140,7 +141,6 @@ nav ul li a {
 nav a {
     text-decoration: none;
     color: white;
-    line-height: var(--navbar-height);
     display: inline-block;
     position: relative;
     margin-left: 10px;
@@ -186,15 +186,15 @@ nav a:hover::after {
     background-color: white;
     width: max-content;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    padding: 9px 0;
+    padding: 12px 0;
     z-index: 1;
     color: var(--text-color);
     transform: translateX(-50%);
     left: 50%;
-    border-radius: var(--border-radius);
+    border-radius: 10px;
     min-width: 70%;
     top: 100%;
-
+    line-height: calc(1em + 18px);
 }
 
 .Dropdown_Content ul {
@@ -216,9 +216,8 @@ nav a:hover::after {
     text-decoration: none;
     display: block;
     font-size: 0.75em;
-    border-radius: var(--border-radius);
-    padding-left: 9px;
-    padding-right: 9px;
+    border-radius: 5px;
+    padding: 0 9px;
     text-decoration: none;
 }
 
