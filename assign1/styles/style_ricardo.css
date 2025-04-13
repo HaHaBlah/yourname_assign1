@@ -167,10 +167,18 @@ h2 span {
     box-sizing: border-box;
 }
 
+.home-content .btn-sci .sci a img {
+    filter: invert(22%) sepia(18%) saturate(1418%) hue-rotate(343deg) brightness(94%) contrast(86%);
+}
+
 .home-content .btn-sci .sci a:hover {
     background: #593C26;
     color: #A99175;
     box-shadow: 0 0 10px #593C26;
+}
+
+.home-content .btn-sci .sci a:hover img {
+    filter: invert(64%) sepia(29%) saturate(331%) hue-rotate(352deg) brightness(87%) contrast(90%);
 }
 
 .home-img .img-box {
