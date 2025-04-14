@@ -255,12 +255,13 @@ nav a:hover::after {
 
 /* Navigation styles END */
 
-/* .banner content styles */
-.banner {
+/* Main content styles */
+main {
     background: var(--background-color);
     padding: 20px;
     margin-top: var(--navbar-height);
     position: relative;
+    min-height: calc(75vh - var(--navbar-height));
 }
 
 .no-margin-top {
@@ -360,31 +361,6 @@ audio {
 }
 
 /* Profile Page END */
-
-
-/* Scrollbar styles START */
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--background-color);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--accent-color-1);
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--border-color);
-}
-
-::-webkit-scrollbar-thumb:active {
-    background: #BA3B30;
-}
-
-/* Scrollbar styles END */
 
 /* Background image styles START */
 .background-image {
@@ -771,11 +747,10 @@ With some parts edited for compatibility since they applied to whole webpage*/
 /* Credits: Patrick */
 /* https://dev.to/jackherizsmith/making-a-back-to-top-button-without-javascript-2ej6 */
 .scroll-top {
-    position: absolute;
-    top: 120vh;
-    /* where it appears. Basically it appears 20% after whole page scrolled down */
+    position: fixed;
     bottom: 2rem;
     right: 2rem;
+    z-index: 1;
 }
 
 .scroll-top__link {
@@ -798,12 +773,7 @@ With some parts edited for compatibility since they applied to whole webpage*/
 /* Back to top button END */
 
 /*Index.html*/
-.welcome {
-    padding:2em;
-    text-align: center;
-    background-image: linear-gradient(to bottom, rgba(169, 145, 117, 0.10), rgba(169, 145, 117, 1)), url("../images/Coffee Beans Bg.png");
-    margin: 0;
-    padding: 0;
+.intro {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -811,41 +781,27 @@ With some parts edited for compatibility since they applied to whole webpage*/
     text-align: center;
     position: relative;
     min-width: none;
-    width: 100%;
     min-height: 100vh;
-    object-fit: cover;
+    width: 100%;
+    background-image: linear-gradient(to bottom right, rgba(96, 76, 76, .6), rgba(96, 76, 76, .6)), url("../images/Coffee Beans Bg.png");
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 
-.welcome h1 {
-    text-align: center;
+.intro h1 {
     font-size: 3em;
     color: white;
     margin-bottom: 0.5em;
 }
 
-.welcome h1 span {
-    color: transparent;
-    -webkit-text-stroke: 1.8px white;
+.intro h1 span {
+    color: #A99175;
     font-weight: bold;
     font-style: italic;
 }
 
-.welcome p {
-    color: white;
-}
-
-.introduction {
-    /* margin-top: 100vh;
-    padding: 2em; */
-    text-align: center;
-    color: white;
-}
-
-.introduction h2  {
-    font-size: 2.5em;
+.intro p {
     color: white;
 }
