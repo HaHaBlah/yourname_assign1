@@ -65,6 +65,12 @@
     border-radius: var(--border-radius);
 }
 
+.login-container input:focus {
+    outline: 2px solid black;
+    border-color: black;
+    transition: none;
+}
+
 .login-container button {
     width: 100%;
     padding: 10px;
