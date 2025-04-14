@@ -1190,19 +1190,52 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 .why-choose p {
     color: white;
     font-size: 1.2em;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
 }
 
-.why-choose p span {
-    display: inline-block;
-    padding: 10vh;
-    margin: 30px;
-    color: white;
-    font-weight: bold;
-    border: solid 2px #593C26;
-    /* text-decoration: underline; */
+.feature-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 20px 0;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.feature-box {
+    width: 250px; /* Fixed width */
+    min-height: 300px; /* Fixed height */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(89, 60, 38, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-right: 50px;
     margin-bottom: 20vh;
 }
 
+.feature-box img {
+    width: 100%; 
+    height: 300px; /* Fixed image height */
+    object-fit: contain; /* Keeps aspect ratio intact */
+    margin-bottom: 15px;
+}
 
+.feature-box h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 20px 0;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    margin-bottom: 20vh;
+    color: white;
+}
