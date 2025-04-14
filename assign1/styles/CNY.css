@@ -1,4 +1,93 @@
-/* styles/style.css */
+/* Hiring Page Styles */
+.hiring-banner {
+    background-color: #3e2723;
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.hiring-banner h1 {
+    font-size: 3rem;
+    margin: 0;
+    line-height: 1;
+}
+
+.job-opening {
+    background-color: white;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 800px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+.job-opening h2 {
+    color: #5d4037;
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+.location {
+    color: #8d6e63;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.benefits {
+    background-color: #efebe9;
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin-top: 1.5rem;
+}
+
+.benefits h3 {
+    color: #5d4037;
+    margin-top: 0;
+    font-size: 1.3rem;
+}
+
+.benefits-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.benefits-list li {
+    padding: 0.3rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.benefits-list li:before {
+    content: "•";
+    color: #6d4c41;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.salary {
+    font-weight: bold;
+    color: #3e2723;
+    margin-top: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hiring-banner h1 {
+        font-size: 2.2rem;
+    }
+    
+    .job-opening {
+        padding: 1.5rem;
+    }
+    
+    .job-opening h2 {
+        font-size: 1.5rem;
+    }
+}
 .cny-container {
     max-width: 1200px;
     margin: 0 auto;
