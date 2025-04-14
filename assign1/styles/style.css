@@ -31,6 +31,7 @@
     --padding: 10px;
     --margin: 10px;
     --navbar-height: 75px;
+    --transition: ease 0.3s;
     scroll-behavior: smooth
 }
 
@@ -169,12 +170,12 @@ nav a:not(:has(img))::after {
     /* Thickness of the underline */
     background-color: var(--link-color-hover);
     /* Color of the underline */
-    transition: width 0.25s ease;
+    transition: width var(--transition);
 }
 
 nav a:hover {
     color: var(--link-color-hover);
-    transition: 0.35s;
+    transition: var(--transition);
 
 }
 
@@ -296,14 +297,14 @@ footer {
 }
 
 .responsive-hover:hover {
-    transition: ease 0.3s;
+    transition: var(--transition);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
 
 .responsive-hover-img:hover {
     filter: brightness(0.8);
-    transition: ease 0.3s;
+    transition: var(--transition);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
