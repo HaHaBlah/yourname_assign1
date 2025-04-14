@@ -96,7 +96,7 @@ header {
 /* Navigation styles START */
 /* Credits: Ricardo */
 nav {
-    background-color: var(--top-navigation-color);
+    background-image: linear-gradient(to top, rgba(169, 145, 117, 0.0) 0%, rgba(169, 145, 117, 1) 100%);
     height: var(--navbar-height);
     position: fixed;
     top: 0;
@@ -107,6 +107,7 @@ nav {
     padding: var(--padding);
     font-size: 1.5em;
     line-height: var(--navbar-height);
+    color: #A99175;
 }
 
 nav img {
@@ -750,7 +751,7 @@ With some parts edited for compatibility since they applied to whole webpage*/
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    z-index: 1;
+    z-index: 10;
 }
 
 .scroll-top__link {
@@ -773,7 +774,14 @@ With some parts edited for compatibility since they applied to whole webpage*/
 /* Back to top button END */
 
 /*Index.html*/
-.intro {
+.welcome {
+    padding: 2em;
+    text-align: center;
+    background-image: 
+        linear-gradient(to bottom, rgba(169, 145, 117, 0) 70%, rgba(169, 145, 117, 1) 100%), 
+        url("../images/Coffee Beans Bg.png");
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -787,7 +795,7 @@ With some parts edited for compatibility since they applied to whole webpage*/
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: scroll; /* Ensures the gradient scrolls with the image */
 }
 
 .intro h1 {
@@ -802,6 +810,54 @@ With some parts edited for compatibility since they applied to whole webpage*/
     font-style: italic;
 }
 
-.intro p {
+.welcome p {
     color: white;
+}
+
+.introduction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    color: white;
+}
+
+.introduction .introduction-image {
+    width: 500px;
+    height: 500px;
+    margin-left: 10%;
+    margin-right: 10%; 
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.introduction .introduction-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.introduction .introduction-content {
+    text-align: left;
+    flex: 1;
+    margin-right: 10%;
+}
+
+.introduction .introduction-content h2  {
+    font-size: 2.5em;
+    color: white;
+}
+
+.introduction .introduction-content h3 {
+    font-size: 1.5em;
+    color: white;
+}
+
+.introduction .introduction-content p {
+    color: white;
+    font-size: 1.2em;
 }
