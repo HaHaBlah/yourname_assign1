@@ -15,7 +15,7 @@
     --container-background-color: #F2E9DE;
     --border-color: #ccc;
     --accent-color-1: #E74C3C;
-    --accent-color-1-rgb: 231, 76, 60;
+    --accent-color-1-rgb: rgb(231, 76, 60);
     --decorative-color: #09F1E2;
     --top-navigation-color: none;
     /* formerly F2E9DE */
@@ -27,7 +27,7 @@
     --footer-background: #F2E9DE;
     --headings-font: Montserrat, sans-serif;
     --body-font: Arial, sans-serif;
-    --border-radius: 15px;
+    --border-radius: 8px;
     --padding: 10px;
     --margin: 10px;
     --navbar-height: 75px;
@@ -48,6 +48,8 @@
     padding: 20px;
     border-radius: var(--border-radius);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 0 auto;
 }
 
 .login-container h2 {
@@ -56,7 +58,7 @@
 
 .login-container input {
     width: 100%;
-    padding: 10px;
+    padding: 10px 0;
     margin: 10px 0;
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
@@ -91,6 +93,13 @@ header {
     background: var(--background-color);
     color: var(--text-color);
     text-align: center;
+}
+
+header img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* Navigation styles START */
@@ -165,7 +174,7 @@ nav a:not(:has(img))::after {
 
 nav a:hover {
     color: var(--link-color-hover);
-    transition: ease 0.35s;
+    transition: 0.35s;
 
 }
 
@@ -256,13 +265,12 @@ nav a:hover::after {
 
 /* Navigation styles END */
 
-/* Common content styles START */
-main {
+/* .banner content styles */
+.banner {
     background: var(--background-color);
     padding: 20px;
     margin-top: var(--navbar-height);
     position: relative;
-    min-height: calc(75vh - var(--navbar-height));
 }
 
 .no-margin-top {
@@ -276,6 +284,7 @@ main {
     text-align: center;
 }
 
+/* Footer START */
 footer {
     background: var(--footer-background);
     color: var(--text-color);
@@ -319,10 +328,7 @@ footer {
     border-radius: 50%;
     border: groove 5px var(--border-color);
     padding: 20px;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    object-position: center;
+    max-width: 150px;
     display: block;
     margin: 0 auto 20px auto;
 }
@@ -376,6 +382,31 @@ audio {
 }
 
 /* Profile Page END */
+
+
+/* Scrollbar styles START */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color-1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--border-color);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #BA3B30;
+}
+
+/* Scrollbar styles END */
 
 /* Background image styles START */
 .background-image {
@@ -762,16 +793,33 @@ With some parts edited for compatibility since they applied to whole webpage*/
 /* Credits: Patrick */
 /* https://dev.to/jackherizsmith/making-a-back-to-top-button-without-javascript-2ej6 */
 .scroll-top {
-    position: fixed;
+    /* position: absolute; */
+    /* position: -webkit-sticky; */
+    position: sticky;
     bottom: 2rem;
-    right: 2rem;
+    /* top: 120vh; */
+    /* top: calc(100vh - 100px); */
+    height: 0;
+    /* right: 2rem; */
+    width: 100%;
     z-index: 10;
+    margin-top: -50px;
+    text-align: right;
+    /* pointer-events: none; Is this necessary? */
 }
 
 .scroll-top__link {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 90vh;
+    /* position: -webkit-sticky; */
+    /* position: sticky; */
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    pointer-events: auto;
+    /* bottom: 2rem; */
+    display: inline-block;
+    /* top: 90vh; */
+    /* margin-bottom: 4rem; */
+    /* margin-right: 2rem; */
     text-decoration: none;
     border-radius: .5rem;
     background-color: var(--accent-color-1);
@@ -779,20 +827,250 @@ With some parts edited for compatibility since they applied to whole webpage*/
     color: white;
     font-size: 2em;
     opacity: .5;
+    z-index: 10;
+    transition: opacity 0.3s ease-in-out;
+    /* z-index: 1000; */
 }
+
 
 .scroll-top__link:hover {
-    opacity: initial;
+    opacity: auto;
 }
 
-/* Back to top button END */
+/*about.html*/
+* {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Poppins', sans-serif; */
+}
+
+a {
+    text-decoration: none;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    height: 100vh;
+    padding: 60px 9% 0;
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+    animation: show-content 0.5s linear forwards;
+    animation-delay: 1s;
+}
+
+@keyframes show-content {
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.home-content {
+    flex: 1;
+    text-align: left;
+}
+
+.home-content h1 {
+    font-size: 55px;
+}
+
+.home-content h2 {
+    display: inline-block;
+    font-size: 32px;
+    margin-top: -10px;
+}
+
+h2 span {
+    color: #593C26;
+    display: flex;
+}
+
+.home-content h2 span {
+    display: inline-block;
+    margin: 0 5px;
+    position: relative;
+}
+
+.home-content h2 span:not(:last-child)::after {
+    content: '|';
+    position: absolute;
+    right: -15px;
+    color: white;
+}
+
+.home-content p {
+    font-size: 16px;
+    margin: 10px 0 25px;
+}
+
+.home-content .btn-sci {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background: #593C26;
+    border: 2px solid #593C26;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #593C26;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    transition: .25s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: #593C26;
+    box-shadow: none;
+}
+
+.home-content .btn-sci .sci {
+    margin-left: 20px;
+}
+
+.home-content .btn-sci .sci a {
+    display: inline-flex;
+    padding: 8px;
+    border: 2px solid #593C26;
+    border-radius: 50%;
+    font-size: 20px;
+    height: 40px;
+    width: 40px;
+    color: #593C26;
+    margin: 0 8px;
+    transition: .25s;
+    box-sizing: border-box;
+}
+
+.home-content .btn-sci .sci a img {
+    filter: invert(22%) sepia(18%) saturate(1418%) hue-rotate(343deg) brightness(94%) contrast(86%);
+}
+
+.home-content .btn-sci .sci a:hover {
+    background: #593C26;
+    color: #A99175;
+    box-shadow: 0 0 10px #593C26;
+}
+
+.home-content .btn-sci .sci a:hover img {
+    filter: invert(64%) sepia(29%) saturate(331%) hue-rotate(352deg) brightness(87%) contrast(90%);
+}
+
+.home-img {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: auto;
+}
+
+.home-img .img-box {
+    position: relative;
+    width: 32vw;
+    height: 32vw;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.home-img .img-box::before,
+.home-img .img-box::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: conic-gradient(transparent, transparent, transparent, #593C26);
+    transform: rotate(0deg);
+    animation: rotate-border 16s linear infinite;
+}
+
+.home-img .img-box::after {
+    animation-delay: 8s;
+}
+
+@keyframes rotate-border {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.home-img .img-box .img-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #593C26;
+    border-radius: 50%;
+    border: .1px solid #593C26;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.home-img .img-box .img-item img {
+    position: absolute;
+    top: 1px;
+    display: block;
+    width: 99.7%;
+    object-fit: cover;
+}
+
+/*Additonal CSS for smooth scrolling*/
+
+body {
+    overflow: auto;
+    overflow-x: hidden;
+    background: #A99175;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
+.profile {
+    scroll-snap-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*
+18.54
+https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
+*/
+
 
 /*Index.html*/
 .welcome {
     padding: 2em;
     text-align: center;
-    background-image:
-        linear-gradient(to bottom, rgba(169, 145, 117, 0) 70%, rgba(169, 145, 117, 1) 100%),
+    background-image: 
+        linear-gradient(to bottom, rgba(169, 145, 117, 0) 70%, rgba(169, 145, 117, 1) 100%), 
         url("../images/Coffee Beans Bg.png");
     margin: 0;
     padding: 0;
@@ -803,24 +1081,25 @@ With some parts edited for compatibility since they applied to whole webpage*/
     text-align: center;
     position: relative;
     min-width: none;
-    min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(to bottom right, rgba(96, 76, 76, .6), rgba(96, 76, 76, .6)), url("../images/Coffee Beans Bg.png");
+    min-height: 100vh;
+    object-fit: cover;
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: scroll;
-    /* Ensures the gradient scrolls with the image */
+    background-attachment: scroll; /* Ensures the gradient scrolls with the image */
 }
 
-.intro h1 {
+.welcome h1 {
+    text-align: center;
     font-size: 3em;
     color: white;
     margin-bottom: 0.5em;
 }
 
-.intro h1 span {
-    color: #A99175;
+.welcome h1 span {
+    color: transparent;
+    -webkit-text-stroke: 1.8px white;
     font-weight: bold;
     font-style: italic;
 }
@@ -842,7 +1121,7 @@ With some parts edited for compatibility since they applied to whole webpage*/
     width: 500px;
     height: 500px;
     margin-left: 10%;
-    margin-right: 10%;
+    margin-right: 10%; 
     object-fit: cover;
     object-position: center;
     border-radius: var(--border-radius);
@@ -857,12 +1136,12 @@ With some parts edited for compatibility since they applied to whole webpage*/
 }
 
 .introduction .introduction-content {
-    text-align: left;
+    text-align: justify;
     flex: 1;
     margin-right: 10%;
 }
 
-.introduction .introduction-content h2 {
+.introduction .introduction-content h2  {
     font-size: 2.5em;
     color: white;
 }
@@ -876,3 +1155,54 @@ With some parts edited for compatibility since they applied to whole webpage*/
     color: white;
     font-size: 1.2em;
 }
+
+.why-choose {
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    min-width: none;
+}
+
+.why-choose .why-us {
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #593C26;
+    border-radius: 25px;
+    padding: 10px;
+    width: 100px;
+    height: auto;
+}
+
+.why-choose h2 {
+    font-size: 3em;
+    color: white;
+    margin-bottom: 0.2em;
+}
+
+.why-choose p {
+    color: white;
+    font-size: 1.2em;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.why-choose p span {
+    display: inline-block;
+    padding: 10vh;
+    margin: 30px;
+    color: white;
+    font-weight: bold;
+    border: solid 2px #593C26;
+    /* text-decoration: underline; */
+    margin-bottom: 20vh;
+}
+
+
