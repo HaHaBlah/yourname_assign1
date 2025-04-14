@@ -101,6 +101,21 @@ body {
     color: var(--text-color);
     background-color: var(--background-color);
     margin: 0;
+
+    /*Additonal CSS for smooth scrolling*/
+    overflow: auto;
+    overflow-x: hidden;
+    background: #A99175;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+main { 
+    margin-top: var(--navbar-height);
+    padding: var(--padding);
+    position: relative;
 }
 
 /* Header styles */
@@ -350,9 +365,12 @@ footer {
     border-radius: 50%;
     border: groove 5px var(--border-color);
     padding: 20px;
-    max-width: 150px;
+    width: 150px;
+    height: 150px;
     display: block;
     margin: 0 auto 20px auto;
+    object-fit: cover;
+    object-position: center;
 }
 
 .profile table {
@@ -845,30 +863,22 @@ With some parts edited for compatibility since they applied to whole webpage*/
     text-decoration: none;
     border-radius: .5rem;
     background-color: var(--accent-color-1);
-    padding: .5rem;
+    padding: 0 .5rem;
     color: white;
     font-size: 2em;
     opacity: .5;
     z-index: 10;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
     /* z-index: 1000; */
 }
 
 
 .scroll-top__link:hover {
-    opacity: auto;
+    opacity: 1;
 }
 
 /*about.html*/
-* {
-    margin: 0;
-    padding: 0;
-    /* font-family: 'Poppins', sans-serif; */
-}
 
-a {
-    text-decoration: none;
-}
 
 .home {
     display: flex;
@@ -1047,17 +1057,6 @@ h2 span {
     object-fit: cover;
 }
 
-/*Additonal CSS for smooth scrolling*/
-
-body {
-    overflow: auto;
-    overflow-x: hidden;
-    background: #A99175;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-}
 
 .profile-container {
     display: flex;
@@ -1073,12 +1072,8 @@ body {
 
 .profile {
     scroll-snap-align: center;
-    display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
