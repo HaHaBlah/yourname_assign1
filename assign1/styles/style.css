@@ -772,18 +772,33 @@ With some parts edited for compatibility since they applied to whole webpage*/
 /* Credits: Patrick */
 /* https://dev.to/jackherizsmith/making-a-back-to-top-button-without-javascript-2ej6 */
 .scroll-top {
-    position: absolute;
-    /* position: fixed; */
-    top: 120vh;
+    /* position: absolute; */
+    /* position: -webkit-sticky; */
+    position: sticky;
     bottom: 2rem;
-    right: 2rem;
+    /* top: 120vh; */
+    /* top: calc(100vh - 100px); */
+    height: 0;
+    /* right: 2rem; */
+    width: 100%;
     z-index: 10;
+    margin-top: -50px;
+    text-align: right;
+    /* pointer-events: none; Is this necessary? */
 }
 
 .scroll-top__link {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 90vh;
+    /* position: -webkit-sticky; */
+    /* position: sticky; */
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    pointer-events: auto;
+    /* bottom: 2rem; */
+    display: inline-block;
+    /* top: 90vh; */
+    /* margin-bottom: 4rem; */
+    /* margin-right: 2rem; */
     text-decoration: none;
     border-radius: .5rem;
     background-color: var(--accent-color-1);
@@ -791,13 +806,14 @@ With some parts edited for compatibility since they applied to whole webpage*/
     color: white;
     font-size: 2em;
     opacity: .5;
+    z-index: 10;
+    transition: opacity 0.3s ease-in-out;
+    /* z-index: 1000; */
 }
 
 .scroll-top__link:hover {
-    opacity: initial;
+    opacity: auto;
 }
-
-/* Back to top button END */
 
 /*Index.html*/
 .welcome {
@@ -889,3 +905,4 @@ With some parts edited for compatibility since they applied to whole webpage*/
     color: white;
     font-size: 1.2em;
 }
+
