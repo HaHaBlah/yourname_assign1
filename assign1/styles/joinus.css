@@ -104,24 +104,6 @@ ul li {
     background-color: #f39c12;
 }
 
-/* Scroll to Top Button Styling */
-.scroll-top__link {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #e74c3c;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 20px;
-    transition: background 0.3s ease;
-}
-
-.scroll-top__link:hover {
-    background: #c0392b;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .hiring-banner h1 {
