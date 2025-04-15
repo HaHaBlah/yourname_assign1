@@ -7,32 +7,6 @@ body {
     text-align: center;
 }
 
-/* Navigation Bar Styling */
-nav {
-    background-color: #6d4c41;
-    padding: 20px;
-    text-align: center;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    margin-right: 20px;
-    font-weight: bold;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-ul li {
-    margin: 0 10px;
-}
 
 /* Hiring Banner Styling */
 .hiring-banner {
@@ -102,24 +76,6 @@ ul li {
 
 .apply-btn:hover {
     background-color: #f39c12;
-}
-
-/* Scroll to Top Button Styling */
-.scroll-top__link {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #e74c3c;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 20px;
-    transition: background 0.3s ease;
-}
-
-.scroll-top__link:hover {
-    background: #c0392b;
 }
 
 /* Responsive Design */
