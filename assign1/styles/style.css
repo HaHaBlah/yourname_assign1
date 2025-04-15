@@ -21,7 +21,7 @@
     /* formerly F2E9DE */
     --text-color: #0B0F14;
     --link-color: #2213F6;
-    --link-color-hover: #593C26;
+    --link-color-hover: #593C26; 
     --link-color-hover-filter: invert(22%) sepia(25%) saturate(954%) hue-rotate(344deg) brightness(98%) contrast(89%);
     --link-color-visited: #B5ED96;
     --footer-background: #F2E9DE;
@@ -1400,8 +1400,6 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     }
 }
 
-/* //How to leave space between this two? */
-
 .latest-news {
     margin-top: 20vh;
     padding: 0;
@@ -1463,40 +1461,110 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     box-shadow: none;
 }
 
-.location {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 20px 0;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+/*Locations section*/
+.location-section {
     margin-bottom: 20vh;
-    color: white;
 }
 
-.location-card img {
-    width: 300px; /* Adjust the size as needed */
-    height: 300px; /* Ensure the height matches the width for a perfect circle */
-    object-fit: cover;
-    border-radius: 50%; /* Makes the image circular */
-    overflow: hidden;
+.location-section h2 {
+    font-size: 3em;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    min-width: none;
 }
 
 .location-cards {
     display: flex;
-    justify-content: space-between; /* Align cards to the left and right */
-    gap: 20px; /* Add spacing between cards */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    
+    justify-content: space-between;
+    margin: 0 7.5%;
+    flex-wrap: wrap;
 }
 
 .location-card {
+    position: relative;
     display: flex;
-    flex-direction: column; /* Stack content vertically */
-    align-items: center; /* Center-align content */
-    text-align: center; /* Center-align text */
-    width: 45%; /* Adjust width for two cards side by side */
-    margin-bottom: 20px; /* Add spacing below cards */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    margin: 2% 0;
+    perspective: 1000px;
+    gap: 20px;
 }
 
+.flip-container {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    perspective: 1000px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 15px 5px rgba(89, 60, 38, 0.5);
+    transition: all 0.7s ease-in-out;
+}
+
+.flip-container:hover {
+    box-shadow: 0 0 25px 10px rgba(255, 255, 255, 1);
+}
+
+.location-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-container:hover .location-card-inner {
+    transform: rotateY(180deg);
+}
+
+.location-card-front, 
+.location-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.location-card-front {
+    background-color: #593C26;
+    color: white;
+}
+
+.location-card-back {
+    transform: rotateY(180deg);
+}
+
+.location-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.location-card h3 {
+    font-size: 2em;
+    color: white;
+    margin-bottom: 0.1em;
+}
+
+.location-card p {
+    font-size: 1.2em;
+    color: white;
+    margin-top: 0.1em;
+    margin-bottom: 1.2em;
+    line-height: 1.5;
+}
 
