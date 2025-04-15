@@ -1474,3 +1474,29 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     color: white;
 }
 
+.location-card img {
+    width: 300px; /* Adjust the size as needed */
+    height: 300px; /* Ensure the height matches the width for a perfect circle */
+    object-fit: cover;
+    border-radius: 50%; /* Makes the image circular */
+    overflow: hidden;
+}
+
+.location-cards {
+    display: flex;
+    justify-content: space-between; /* Align cards to the left and right */
+    gap: 20px; /* Add spacing between cards */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    
+}
+
+.location-card {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center-align content */
+    text-align: center; /* Center-align text */
+    width: 45%; /* Adjust width for two cards side by side */
+    margin-bottom: 20px; /* Add spacing below cards */
+}
+
+
