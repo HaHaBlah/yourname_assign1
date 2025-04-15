@@ -9,7 +9,7 @@ body {
 
 /* Navigation Bar Styling */
 nav {
-    background-color: #6d4c41;
+    background-color: #A99175;
     padding: 20px;
     text-align: center;
 }
@@ -102,24 +102,6 @@ ul li {
 
 .apply-btn:hover {
     background-color: #f39c12;
-}
-
-/* Scroll to Top Button Styling */
-.scroll-top__link {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #e74c3c;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 20px;
-    transition: background 0.3s ease;
-}
-
-.scroll-top__link:hover {
-    background: #c0392b;
 }
 
 /* Responsive Design */
