@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login Page</title>
+    <title>Login to Brew & Go. Coffee</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/Brew & Go logo.png" type="image/icon type">
@@ -51,8 +51,8 @@
             </div>
             <div class="login-right">
                 <form action="/login" method="post">
-                    <input class="responsive-hover" type="text" name="username" placeholder="Username" required>
-                    <input class="responsive-hover" type="password" name="password" placeholder="Password" required>
+                    <input class="responsive-hover" type="text" name="username" placeholder="Username" required maxlength="10" pattern="[A-Za-z]+" title="Alphabetical characters only; Maximum 10 characters.">
+                    <input class="responsive-hover" type="text" name="password" placeholder="Password" required maxlength="25" pattern="[A-Za-z]+" title="Alphabetical characters only; Maximum 25 characters.">
                     <button class="responsive-hover-button" type="submit">Login</button>
                 </form>
 
