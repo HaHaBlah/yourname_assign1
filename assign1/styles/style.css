@@ -32,6 +32,7 @@
     --margin: 10px;
     --navbar-height: 75px;
     --transition: ease 0.3s;
+    --responsive-max-width: 1200px;
     scroll-behavior: smooth
 }
 
