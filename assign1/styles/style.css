@@ -268,7 +268,11 @@ nav a:not(:has(img))::after {
 nav a:hover {
     color: var(--link-color-hover);
     transition: var(--transition);
+}
 
+nav img:hover {
+    filter: var(--link-color-hover-filter);
+    transition: var(--transition);
 }
 
 nav a:hover::after {
@@ -386,6 +390,7 @@ footer {
     width: 100%;
     clear: both;
     position: relative;
+    margin-top: var(--navbar-height);
 }
 
 .responsive-hover:hover {
@@ -1131,13 +1136,6 @@ h2 span {
     margin: 0;
     padding: 0;
     background: transparent;
-}
-
-.profile {
-    scroll-snap-align: center;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
 }
 
 /*
