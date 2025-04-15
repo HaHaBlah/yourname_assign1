@@ -1287,6 +1287,113 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     drop-shadow(0 0 15px #A99175);
 }
 
+////
+
+
+/* Parent container for both sections */
+.promotion-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 1200px; /* maximum width to control layout */
+    margin: 0 auto;    /* center within viewport */
+    padding: 40px;
+    /* Remove flex-wrap to enforce side-by-side layout */
+}
+
+/* Text section */
+.latest-promotion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 32px 0;
+    width: 48%;  /* adjust as needed */
+}
+
+/* Sticky notes/poster section */
+.promotion-poster {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 20px 0;
+    width: 48%;  /* adjust as needed */
+    /* Ensure no floating interferes */
+}
+
+/* Sticky notes styling */
+.promotion-poster .poster {
+    width: 200px;
+    height: 200px;
+    background: #fff8dc;
+    border: 1px solid #d4af37;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+    margin: 15px;
+    border-radius: 10px;
+    transform: rotate(-2deg);
+    position: relative;
+    z-index: 1;
+}
+.promotion-poster .poster:nth-child(odd) {
+    transform: rotate(-3deg);
+    z-index: 2;
+}
+.promotion-poster .poster:nth-child(even) {
+    transform: rotate(2deg);
+    z-index: 3;
+}
+.promotion-poster .poster::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    width: 30px;
+    height: 10px;
+    background: #d4af37;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Headings and text */
+.latest-promotion h2 {
+    font-size: 3em;
+    color: white;
+    margin-bottom: 0.2em;
+}
+.latest-promotion p {
+    color: white;
+    font-size: 1.2em;
+}
+
+.promotion-poster .poster-content h3 {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #8b4513;
+}
+.promotion-poster .poster-content p {
+    font-family: 'Arial', sans-serif;
+    color: #4b3621;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .promotion-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .latest-promotion,
+    .promotion-poster {
+        width: 90%;
+        text-align: center;
+    }
+}
+
+
+
+
+
 .location {
     display: flex;
     justify-content: center;
@@ -1297,3 +1404,4 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     margin-bottom: 20vh;
     color: white;
 }
+
