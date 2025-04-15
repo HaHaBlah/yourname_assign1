@@ -31,6 +31,7 @@
     --padding: 10px;
     --margin: 10px;
     --navbar-height: 75px;
+    --transition: ease 0.3s;
     scroll-behavior: smooth
 }
 
@@ -52,16 +53,28 @@
     margin: 0 auto;
 }
 
+.login-container * {
+    box-sizing: border-box;
+}
+
 .login-container h2 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .login-container input {
     width: 100%;
     padding: 10px 0;
+    padding-left: 10px;
     margin: 10px 0;
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
+}
+
+.login-container input:focus {
+    outline: 2px solid black;
+    border-color: black;
+    transition: none;
+    box-sizing: border-box;
 }
 
 .login-container button {
@@ -71,7 +84,9 @@
     border: none;
     border-radius: var(--border-radius);
     color: var(--container-background-color);
-    font-size: 16px;
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
 }
 
 .login-container button:hover {
@@ -86,6 +101,21 @@ body {
     color: var(--text-color);
     background-color: var(--background-color);
     margin: 0;
+
+    /*Additonal CSS for smooth scrolling*/
+    overflow: auto;
+    overflow-x: hidden;
+    background: #A99175;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+main { 
+    margin-top: var(--navbar-height);
+    padding: var(--padding);
+    position: relative;
 }
 
 /* Header styles */
@@ -169,12 +199,12 @@ nav a:not(:has(img))::after {
     /* Thickness of the underline */
     background-color: var(--link-color-hover);
     /* Color of the underline */
-    transition: width 0.25s ease;
+    transition: width var(--transition);
 }
 
 nav a:hover {
     color: var(--link-color-hover);
-    transition: 0.35s;
+    transition: var(--transition);
 
 }
 
@@ -296,15 +326,22 @@ footer {
 }
 
 .responsive-hover:hover {
-    transition: ease 0.3s;
+    transition: var(--transition);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
 
 .responsive-hover-img:hover {
     filter: brightness(0.8);
-    transition: ease 0.3s;
+    transition: var(--transition);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.responsive-hover-button:hover {
+    filter: brightness(1.2);
+    transition: var(--transition);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: scale(1.01);
 }
 
 /* Common content styles END */
@@ -328,9 +365,12 @@ footer {
     border-radius: 50%;
     border: groove 5px var(--border-color);
     padding: 20px;
-    max-width: 150px;
+    width: 150px;
+    height: 150px;
     display: block;
     margin: 0 auto 20px auto;
+    object-fit: cover;
+    object-position: center;
 }
 
 .profile table {
@@ -823,30 +863,22 @@ With some parts edited for compatibility since they applied to whole webpage*/
     text-decoration: none;
     border-radius: .5rem;
     background-color: var(--accent-color-1);
-    padding: .5rem;
+    padding: 0 .5rem;
     color: white;
     font-size: 2em;
     opacity: .5;
     z-index: 10;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
     /* z-index: 1000; */
 }
 
 
 .scroll-top__link:hover {
-    opacity: auto;
+    opacity: 1;
 }
 
 /*about.html*/
-* {
-    margin: 0;
-    padding: 0;
-    /* font-family: 'Poppins', sans-serif; */
-}
 
-a {
-    text-decoration: none;
-}
 
 .home {
     display: flex;
@@ -1025,17 +1057,6 @@ h2 span {
     object-fit: cover;
 }
 
-/*Additonal CSS for smooth scrolling*/
-
-body {
-    overflow: auto;
-    overflow-x: hidden;
-    background: #A99175;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-}
 
 .profile-container {
     display: flex;
@@ -1051,14 +1072,11 @@ body {
 
 .profile {
     scroll-snap-align: center;
-    display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
+
 /*
 18.54
 https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
@@ -1069,8 +1087,8 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 .welcome {
     padding: 2em;
     text-align: center;
-    background-image: 
-        linear-gradient(to bottom, rgba(169, 145, 117, 0) 70%, rgba(169, 145, 117, 1) 100%), 
+    background-image:
+        linear-gradient(to bottom, rgba(169, 145, 117, 0) 70%, rgba(169, 145, 117, 1) 100%),
         url("../images/Coffee Beans Bg.png");
     margin: 0;
     padding: 0;
@@ -1087,7 +1105,8 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: scroll; /* Ensures the gradient scrolls with the image */
+    background-attachment: scroll;
+    /* Ensures the gradient scrolls with the image */
 }
 
 .welcome h1 {
@@ -1124,7 +1143,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     width: 500px;
     height: 500px;
     margin-left: 10%;
-    margin-right: 10%; 
+    margin-right: 10%;
     object-fit: cover;
     object-position: center;
     border-radius: var(--border-radius);
@@ -1144,7 +1163,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     margin-right: 10%;
 }
 
-.introduction .introduction-content h2  {
+.introduction .introduction-content h2 {
     font-size: 2.5em;
     color: white;
 }
