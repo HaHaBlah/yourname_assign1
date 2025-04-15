@@ -152,6 +152,7 @@ nav {
 }
 
 nav img {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
     max-height: 60px;
     max-width: 100%;
     height: auto;
@@ -1289,43 +1290,58 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     drop-shadow(0 0 15px #A99175);
 }
 
-////
-
-
-/* Parent container for both sections */
 .promotion-section {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 2rem;
-    max-width: 1200px; /* maximum width to control layout */
-    margin: 0 auto;    /* center within viewport */
-    padding: 40px;
-    /* Remove flex-wrap to enforce side-by-side layout */
-}
-
-/* Text section */
-.latest-promotion {
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 32px 0;
-    width: 48%;  /* adjust as needed */
+    text-align: center;
+    position: relative;
+    min-width: none;
 }
 
-/* Sticky notes/poster section */
+.latest-promotion h2 {
+    font-size: 3em;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    min-width: none;
+    margin-bottom: 0.2em;
+}
+
+.latest-promotion p {
+    color: white;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    min-width: none;
+}
+
 .promotion-poster {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
     padding: 20px 0;
-    width: 48%;  /* adjust as needed */
-    /* Ensure no floating interferes */
+    width: 100%;
+    margin: 0 auto;
 }
 
-/* Sticky notes styling */
 .promotion-poster .poster {
     width: 200px;
     height: 200px;
@@ -1339,14 +1355,17 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     position: relative;
     z-index: 1;
 }
+
 .promotion-poster .poster:nth-child(odd) {
     transform: rotate(-3deg);
     z-index: 2;
 }
+
 .promotion-poster .poster:nth-child(even) {
     transform: rotate(2deg);
     z-index: 3;
 }
+
 .promotion-poster .poster::before {
     content: '';
     position: absolute;
@@ -1359,27 +1378,16 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Headings and text */
-.latest-promotion h2 {
-    font-size: 3em;
-    color: white;
-    margin-bottom: 0.2em;
-}
-.latest-promotion p {
-    color: white;
-    font-size: 1.2em;
-}
-
 .promotion-poster .poster-content h3 {
     font-family: 'Comic Sans MS', cursive, sans-serif;
     color: #8b4513;
 }
+
 .promotion-poster .poster-content p {
     font-family: 'Arial', sans-serif;
     color: #4b3621;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
     .promotion-section {
         flex-direction: column;
@@ -1392,9 +1400,68 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     }
 }
 
+/* //How to leave space between this two? */
 
+.latest-news {
+    margin-top: 20vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    min-width: none;
+}
 
+.latest-news h2 {
+    font-size: 3em;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    min-width: none;
+}
 
+.latest-news p {
+    color: white;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    min-width: none;
+}
+
+.learn-more .btn {
+    margin: 15px;
+    display: inline-block;
+    padding: 10px 30px;
+    background: #593C26;
+    border: 2px solid #593C26;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #593C26;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    transition: .25s;
+    margin-bottom: 20vh;
+}
+
+.learn-more .btn:hover {
+    background: transparent;
+    color: #593C26;
+    box-shadow: none;
+}
 
 .location {
     display: flex;
@@ -1406,4 +1473,30 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     margin-bottom: 20vh;
     color: white;
 }
+
+.location-card img {
+    width: 300px; /* Adjust the size as needed */
+    height: 300px; /* Ensure the height matches the width for a perfect circle */
+    object-fit: cover;
+    border-radius: 50%; /* Makes the image circular */
+    overflow: hidden;
+}
+
+.location-cards {
+    display: flex;
+    justify-content: space-between; /* Align cards to the left and right */
+    gap: 20px; /* Add spacing between cards */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    
+}
+
+.location-card {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center-align content */
+    text-align: center; /* Center-align text */
+    width: 45%; /* Adjust width for two cards side by side */
+    margin-bottom: 20px; /* Add spacing below cards */
+}
+
 
