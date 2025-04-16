@@ -14,8 +14,9 @@
     --body-background-image: url('../images/bg.jpg');
     --container-background-color: #F2E9DE;
     --border-color: #ccc;
-    --accent-color-1: #E74C3C;
-    --accent-color-1-rgb: 231, 76, 60;
+    --accent-color-1: #593C26;
+    /* formerly E74C3C */
+    --accent-color-1-rgb: 89, 60, 38;
     --decorative-color: #09F1E2;
     --top-navigation-color: none;
     /* formerly F2E9DE */
