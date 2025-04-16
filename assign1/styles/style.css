@@ -289,7 +289,7 @@ nav a {
     margin-left: 10px;
 }
 
-nav a:not(:has(img))::after {
+nav a:not(:has(img))::after, #nav-login a::after{
     /*The not(:has(img)) part is to stop underlining the logo*/
     content: '';
     position: absolute;
@@ -385,10 +385,10 @@ nav a:hover::after {
 }
 
 #nav-login {
-    height: 100%;
-    border-radius: var(--border-radius);
-    border: white 2px solid;
     display: flex;
+    transition: var(--transition);
+    justify-content: center;
+    align-items: center;
 }
 
 #nav-login:hover {
@@ -547,6 +547,11 @@ footer {
     background-color: #ffffff;
 }
 
+.footer-blank {
+    padding: 0;
+    margin: 0;
+}
+
 footer iframe {
     width: 100%;
     height: 610px;
@@ -560,6 +565,10 @@ footer iframe {
     .footer-col {
         width: 50%;
         margin-bottom: 25px;
+    }
+    .footer-blank {
+        padding: 0;
+        margin: 0;
     }
 }
 
