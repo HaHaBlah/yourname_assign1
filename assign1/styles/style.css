@@ -286,7 +286,7 @@ nav a {
     color: white;
     display: inline-block;
     position: relative;
-    margin-left: 10px;
+    margin-right: 10px;
 }
 
 nav a:not(:has(img))::after {
@@ -390,16 +390,42 @@ nav a:hover::after {
     align-items: center;
 }
 
+
+#nav-login img {
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+}
+
+.nav-selector a {
+    height: 100%;
+}
+
+.nav-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.nav-selector:hover a::after {
+    width: 100%;
+    /* Expand the underline to full width */
+}
+
 #nav-login a:hover img {
     filter: none;
     fill: var(--link-color-hover);
     transition: var(--transition);
 }
 
-#nav-login img {
-    height: 30px;
-    width: 30px;
-    margin-right: 5px;
+.nav-selector:hover a {
+    color: var(--link-color-hover);
+}
+
+.nav-selector:hover img {
+    filter: var(--link-color-hover-filter);
+    transition: var(--transition);
 }
 
 /* https://codepen.io/massiebn/pen/RwRavV
@@ -556,6 +582,7 @@ footer iframe {
         width: 50%;
         margin-bottom: 25px;
     }
+
     .footer-blank {
         padding: 0;
         margin: 0;
