@@ -547,6 +547,14 @@ footer {
     background-color: #ffffff;
 }
 
+footer iframe {
+    width: 100%;
+    height: 610px;
+    border-radius: 25px;
+    background-color: white;
+}
+
+
 /*responsive*/
 @media(max-width: 768px) {
     .footer-col {
