@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Activities</title>
+        <title>Locations</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
+        <link rel="icon" href="images/Brew & Go logo.png" type="image/icon type">
         <link rel="stylesheet" href="styles/style.css">
     </head>
     <body>
         <nav>
-            <a href="index.html"><img src="images/Brew&Go_logo.png" alt="Brew & Go logo"></a>
-            <a href="index.html">Brew & Go. Coffee</a>
+            <a href="index.html"><img src="images/Brew & Go logo.png" alt="Brew & Go logo"></a>
+            <a href="index.html">Brew & Go Coffee</a>
             <ul>
                 <li>
                     <div class="Dropdown_Start"><a href="products.html">Products</a>
@@ -37,7 +37,6 @@
                             </ul>
                         </div>
                     </div>
-                
     
                 </li>
                 <li>
@@ -50,8 +49,7 @@
                             </ul>
                         </div>
                     </div>
-                </li> 
-                
+                </li>
                 <li><a href="joinus.html">Join Us</a></li>
                 <li><a href="registration.html">Membership</a></li>
                 <li><a href="enquiry.html">Enquiry</a></li>
@@ -59,12 +57,30 @@
             </ul>
         </nav>
 
-            
-        <div class="scroll-top">
-            <!--/* https://dev.to/jackherizsmith/making-a-back-to-top-button-without-javascript-2ej6 */-->
-            <a class="scroll-top__link" href="#">&#11165;</a> <!--href="#" navigates to the top of the page -->
-        </div>
-
+        <main>
+            <!--Can you suggest a nice way to present the two locations from location1.html and location2.html in a general form?-->
+            <section class="locations">
+                <h2>Our Locations</h2>
+                <div class="location-cards">
+                    <div class="location-card">
+                        <img src="images/location/one jaya.jpg" alt="Location 1 Image">
+                        <h3>Location 1</h3>
+                        <p>123 Coffee Street, Brewtown</p>
+                        <a href="location1.html" class="btn">Learn more</a>
+                    </div>
+                    <div class="location-card">
+                        <img src="images/location/plaza merdeka.jpg" alt="Location 2 Image">
+                        <h3>Location 2</h3>
+                        <p>456 Espresso Avenue, Roast City</p>
+                        <a href="location2.html" class="btn">Learn more</a>
+                    </div>
+                </div>
+            </section>
+            <div class="scroll-top">
+                <!--/* https://dev.to/jackherizsmith/making-a-back-to-top-button-without-javascript-2ej6 */-->
+                <a class="scroll-top__link" href="#">&#11165;</a> <!--href="#" navigates to the top of the page -->
+            </div>
+        </main>
         <footer>
             <p>
                 <strong>Contact:</strong><br>
@@ -72,6 +88,5 @@
                 Email: <a href="mailto:brewngo.coffee@gmail.com">brewngo.coffee@gmail.com</a>
             </p>
         </footer>
-        
     </body>
 </html>
