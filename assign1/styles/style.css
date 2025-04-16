@@ -45,6 +45,43 @@
     padding-left: 80px;
 }
 
+/* Registration form start */
+
+.registration-container {
+    background-color: var(--container-background-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    margin: auto;
+    height: 500px;
+}
+
+.registration-container * {
+    box-sizing: border-box;
+}
+
+.registration-left img {
+    width: 6em;
+}
+
+.registration-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 300px;
+    height: 400px;
+}
+
+.registration-right {
+    position: absolute;
+    right: 0;
+    box-sizing: border-box;
+    padding: 30px;
+    width: 500px;
+}
+
 /* Login Page Prototype Start */
 .login-container {
     background-color: var(--container-background-color);
