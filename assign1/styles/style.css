@@ -82,6 +82,39 @@
     width: 500px;
 }
 
+.registration-container input {
+    width: 100%;
+    padding: 10px 0;
+    padding-left: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+.registration-container input:focus {
+    outline: 2px solid var(--accent-color-1);
+    border-color: var(--accent-color-1);
+    transition: none;
+    box-sizing: border-box;
+}
+
+.registration-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--accent-color-1);
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--container-background-color);
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.registration-container button:hover {
+    background-color: var(--accent-color-1);
+}
+
+
 /* Login Page Prototype Start */
 .login-container {
     background-color: var(--container-background-color);
