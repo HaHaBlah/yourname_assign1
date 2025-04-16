@@ -169,6 +169,14 @@
     font-size: 0.9em;
 }
 
+input:focus:valid {
+    outline: 3px solid var(--accent-color-1);
+}
+
+input:focus:invalid {
+    outline: 3px solid red;
+}
+
 @media (max-width: 768px) {
     .login-container {
         width: 90%;
@@ -549,12 +557,12 @@ footer {
     text-align: center;
     line-height: 40px;
     border-radius: 50%;
-    color: #ffffff;
+    fill: #ffffff;
     transition: all 0.3s ease;
 }
 
 .footer-col .social-links a:hover {
-    color: #24262b;
+    fill: #24262b;
     background-color: #ffffff;
 }
 
