@@ -145,11 +145,20 @@
     border-radius: var(--border-radius);
 }
 
-.login-container input:focus {
+input:focus:valid, input:focus {
     outline: 2px solid var(--accent-color-1);
     border-color: var(--accent-color-1);
     transition: none;
     box-sizing: border-box;
+}
+
+input:user-valid {
+    outline: 2px solid var(--accent-color-1);
+}
+
+input:user-invalid {
+    outline: 2px solid red;
+    color: red;
 }
 
 .login-container button {
@@ -200,14 +209,6 @@
 .login-bottom p {
     margin: 0;
     font-size: 0.9em;
-}
-
-input:focus:valid {
-    outline: 3px solid var(--accent-color-1);
-}
-
-input:focus:invalid {
-    outline: 3px solid red;
 }
 
 @media (max-width: 768px) {
