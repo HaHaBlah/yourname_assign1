@@ -15,7 +15,7 @@
     --container-background-color: #F2E9DE;
     --border-color: #ccc;
     --accent-color-1: #E74C3C;
-    --accent-color-1-rgb: rgb(231, 76, 60);
+    --accent-color-1-rgb: 231, 76, 60;
     --decorative-color: #09F1E2;
     --top-navigation-color: none;
     /* formerly F2E9DE */
@@ -194,7 +194,7 @@ header img {
 }
 
 /* Navigation styles START */
-/* Credits: Ricardo */
+
 nav {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
@@ -268,7 +268,11 @@ nav a:not(:has(img))::after {
 nav a:hover {
     color: var(--link-color-hover);
     transition: var(--transition);
+}
 
+nav img:hover {
+    filter: var(--link-color-hover-filter);
+    transition: var(--transition);
 }
 
 nav a:hover::after {
@@ -386,6 +390,7 @@ footer {
     width: 100%;
     clear: both;
     position: relative;
+    margin-top: var(--navbar-height);
 }
 
 .responsive-hover:hover {
@@ -1131,13 +1136,6 @@ h2 span {
     margin: 0;
     padding: 0;
     background: transparent;
-}
-
-.profile {
-    scroll-snap-align: center;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
 }
 
 /*
