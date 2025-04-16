@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Locations</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
-        <link rel="stylesheet" href="styles/style.css">
-    </head>
-    <body>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Hii Wei Bao">
+    <title>Enquiry form</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/registration.css">
+</head>
+
+<body>
+    <header>
         <nav>
             <a href="index.html"><img src="images/Brew&Go_logo.png" alt="Brew & Go logo"></a>
             <a href="index.html">Brew & Go. Coffee</a>
@@ -56,14 +61,51 @@
                 <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
-        
+    </header>
+
+    
+        <section class="registration-container">
+            <div class="registration-left">
+                <img src="images/Brew&Go_logo.png" alt="Brew & Go logo">
+                <h2>Contact Us ☕</h2>
+            </div>
+            <div class="registration-right">
+                <form name="form" action="mailto:104390572@students.swinburne.edu.my" method="post" enctype="text/plain">
+                    <fieldset>
+                        <p>
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required />
+                        </p>
+                
+                        <p>
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required />
+                        </p>
+                
+                        <p>
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" />
+                        </p>
+                
+                        <p>
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </p>
+                
+                        <button type="submit">Send Enquiry</button>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+          
+
         <main>
-            
         <div class="scroll-top">
             <!--/* https://dev.to/jackherizsmith/making-a-back-to-top-button-without-javascript-2ej6 */-->
             <a class="scroll-top__link" href="#">&#11165;</a> <!--href="#" navigates to the top of the page -->
         </div>
         </main>
+
         <footer>
             <p>
                 <strong>Contact:</strong><br>
