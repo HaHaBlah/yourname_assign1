@@ -1362,6 +1362,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     text-align: center;
     position: relative;
     min-width: none;
+    margin-bottom: 20vh;
 }
 
 .latest-promotion h2 {
@@ -1464,7 +1465,17 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 }
 
 .latest-news {
-    margin-top: 20vh;
+    padding: 2em;
+    text-align: center;
+    background-image:
+        linear-gradient(to bottom, rgba(169, 145, 117, 1) 0%, rgba(29, 25, 19, 0.2) 20% 80%, rgba(169, 145, 117, 1) 100%),
+        url("../images/Coffee Beans.jpeg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 100vh;
+    margin: 5vh 0;
+    object-fit: scale-down;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -1472,12 +1483,12 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     justify-content: center;
     text-align: center;
     position: relative;
-    min-width: none;
 }
 
 .latest-news h2 {
     font-size: 3em;
     color: white;
+    margin: 20px 0;
     margin: 0;
     padding: 0;
     display: flex;
@@ -1492,7 +1503,8 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 .latest-news p {
     color: white;
     font-size: 1.2em;
-    margin: 0;
+    margin: 20px 0;
+    max-width: 600px;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -1515,7 +1527,6 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     color: white;
     font-weight: 600;
     transition: .25s;
-    margin-bottom: 20vh;
 }
 
 .learn-more .btn:hover {
@@ -1526,6 +1537,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 
 /*Locations section*/
 .location-section {
+    margin-top: 20vh;
     margin-bottom: 20vh;
 }
 
