@@ -13,8 +13,10 @@
 
 <body class="location-page">
     <nav>
-        <a href="index.html"><img src="images/Brew&Go_logo.png" alt="Brew & Go logo"></a>
-        <a href="index.html">Brew & Go Coffee</a>
+        <div class="nav-selector">
+            <a href="index.html"><img src="images/Brew&Go_logo.png" alt="Brew & Go logo"></a>
+            <a href="index.html">Brew & Go. Coffee</a>
+        </div>
         <ul>
             <li>
                 <div class="Dropdown_Start"><a href="products.html">Products</a>
@@ -29,21 +31,8 @@
                 </div>
             </li>
             <li>
-                <div class="Dropdown_Start"><a href="about.html">About us</a>
-                    <div class="Dropdown_Content">
-                        <ul>
-                            <li><a href="aboutme1.html">Kelvin</a></li>
-                            <li><a href="aboutme2.html">Patrick</a></li>
-                            <li><a href="aboutme3.html">Ricardo</a></li>
-                            <li><a href="aboutme4.html">Wei Bao</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-            </li>
-            <li>
                 <div class="Dropdown_Start"> <a href="activities.html">Activities</a>
-                    <div class="Dropdown_Content">   
+                    <div class="Dropdown_Content">
                         <ul>
                             <li><a href="Current.html">Current</a></li>
                             <li><a href="Coming_Soon.html">Coming Soon</a></li>
@@ -53,12 +42,15 @@
                 </div>
             </li>
             <li><a href="joinus.html">Join Us</a></li>
-            <li><a href="registration.html">Membership</a></li>
             <li><a href="enquiry.html">Enquiry</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="registration.html">Membership</a></li>
+            <li id="nav-login" class="nav-selector">
+                <a href="login.html">Login</a>
+                <a class="center" href="login.html"><img src="images/Icons/user-circle-svgrepo-com(black).svg"></a>
+            </li>
         </ul>
     </nav>
-    
+
     <header class="location-header" id="image-location2">
         <h1>Plaza Merdeka</h1>
     </header>
@@ -76,13 +68,12 @@
 
         <div class="location-container">
             <div class="map-container">
-                <a href="https://maps.app.goo.gl/NZVsMVxM2MDohCQt5"
-                    target="_blank" class="map-link">
+                <a href="https://maps.app.goo.gl/NZVsMVxM2MDohCQt5" target="_blank" class="map-link">
                     Open in Google Maps →
                 </a>
                 <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.34225343413!2d110.3414420749661!3d1.5585741984268633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba7ee0ea57329%3A0x104e8cca7140a048!2sPlaza%20Merdeka!5e0!3m2!1sen!2smy!4v1744162850777!5m2!1sen!2smy"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.34225343413!2d110.3414420749661!3d1.5585741984268633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba7ee0ea57329%3A0x104e8cca7140a048!2sPlaza%20Merdeka!5e0!3m2!1sen!2smy!4v1744162850777!5m2!1sen!2smy"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
             <!--https://codepel.com/carousel/css-carousel-slider-without-javascript/-->
@@ -136,7 +127,7 @@
         <section>
             <h2 class="center">Check Out Our Other Store at<br>
                 One Jaya</h2>
-            <div class="center" >
+            <div class="center">
                 <a href="location1.html"><img class="location-other responsive-hover-img"
                         src="images/location/one_jaya.jpg" alt=""></a>
             </div>
@@ -147,12 +138,63 @@
             <a class="scroll-top__link" href="#">&#11165;</a> <!--href="#" navigates to the top of the page -->
         </div>
     </main>
-    <footer>
-        <p>
-            <strong>Contact:</strong><br>
-            Phone: +60 12-345 6789<br>
-            Email: <a href="mailto:plazamerdeka@brewandgo.com">plazamerdeka@brewandgo.com</a>
-        </p>
+    <footer> <!--https://codepen.io/alvarotrigo/pen/vYRRxje-->
+        <div class="footer-container">
+            <div class="row">
+                <div class="footer-col"> <!--Column 1-->
+                    <h4>Overview</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="Activities.html">Activities</a></li>
+                        <li><a href="joinus.html">Work for us</a></li>
+                        <li><a href="locations.html">Visit Us</a></li>
+                        <li><a href="enquiry.html">FAQ</a></li>
+                        <li><a href="registration.html">Register</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4><a href="about.html">The Team</a></h4>
+                    <ul>
+                        <li><a href="aboutme1.html">Kelvin</a></li>
+                        <li><a href="aboutme2.html">Patrick</a></li>
+                        <li><a href="aboutme3.html">Ricardo</a></li>
+                        <li><a href="aboutme4.html">Wei Bao</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Extra</h4>
+                    <ul>
+                        <li><a href="acknowledgement.html">Acknowledgements</a></li>
+                        <li><a href="enhancements.html">Enhancements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col"> <!--Blank-->
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a class="responsive-hover-img" href="https://www.instagram.com/p/DGdDmXOPD-J/"><img
+                                class="responsive-hover" src="images/Icons/bxl-instagram.svg"></img></a>
+                        <a class="responsive-hover-img"
+                            href="https://www.facebook.com/profile.php?id=61554234958482"><img class="responsive-hover"
+                                src="images/Icons/bxl-facebook-circle.svg"></img></a>
+                    </div>
+                    <h4>Contact Us</h4>
+                    <p>Phone: +60 11-1653 1886</p>
+                    <p>Email: <a href="mailto:brewngo.coffee@gmail.com" method="post"
+                            enctype="text/plain">brewngo.coffee@gmail.com</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Latest from us</h4>
+                    <iframe class="responsive-hover-img"
+                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0Ro5XUkWsugqwP6cFKBsd7MWcqumoxyF4wDd8xdPcGCLZK7udVGAtrpvjBrnVUgJSl%26id%3D61554234958482&show_text=true&width=500"
+                        style="border:none;overflow:hidden" scrolling="no" allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="footer-col"> <!--Column 2-->
+                    <small>&copy; 2025 Brew & Go Coffee</small>
+                </div>
+            </div>
     </footer>
 </body>
 
