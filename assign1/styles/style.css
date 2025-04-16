@@ -289,7 +289,7 @@ nav a {
     margin-left: 10px;
 }
 
-nav a:not(:has(img))::after, #nav-login a::after{
+nav a:not(:has(img))::after {
     /*The not(:has(img)) part is to stop underlining the logo*/
     content: '';
     position: absolute;
@@ -319,7 +319,6 @@ nav a:hover::after {
     width: 100%;
     /* Expand the underline to full width */
 }
-
 
 .Dropdown_Start {
     position: relative;
@@ -391,24 +390,15 @@ nav a:hover::after {
     align-items: center;
 }
 
-#nav-login:hover {
-    border-color: var(--link-color-hover);
-}
-
 #nav-login a:hover img {
     filter: none;
-    /* Remove any existing filter */
     fill: var(--link-color-hover);
-    /* Change the color of the SVG */
     transition: var(--transition);
-    /* Smooth transition */
 }
 
 #nav-login img {
-    max-height: 30px;
-    max-width: 100%;
-    height: auto;
-    width: auto;
+    height: 30px;
+    width: 30px;
     margin-right: 5px;
 }
 
