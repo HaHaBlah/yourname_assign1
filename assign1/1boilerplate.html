@@ -9,15 +9,17 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="images/Brew & Go logo.png" type="image/icon type">
+    <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
     <main>
         <nav>
-            <a href="index.html"><img src="images/Brew & Go logo.png" alt="Brew & Go logo"></a>
-            <a href="index.html">Brew & Go. Coffee</a>
+            <div class="nav-selector">
+                <a href="index.html"><img src="images/Brew&Go_logo.png" alt="Brew & Go logo"></a>
+                <a href="index.html">Brew & Go. Coffee</a>
+            </div>
             <ul>
                 <li>
                     <div class="Dropdown_Start"><a href="products.html">Products</a>
@@ -32,21 +34,8 @@
                     </div>
                 </li>
                 <li>
-                    <div class="Dropdown_Start"><a href="about.html">About us</a>
-                        <div class="Dropdown_Content">
-                            <ul>
-                                <li><a href="aboutme1.html">Kelvin</a></li>
-                                <li><a href="aboutme2.html">Patrick</a></li>
-                                <li><a href="aboutme3.html">Ricardo</a></li>
-                                <li><a href="aboutme4.html">Wei Bao</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </li>
-                <li>
                     <div class="Dropdown_Start"> <a href="activities.html">Activities</a>
-                        <div class="Dropdown_Content">   
+                        <div class="Dropdown_Content">
                             <ul>
                                 <li><a href="Current.html">Current</a></li>
                                 <li><a href="Coming_Soon.html">Coming Soon</a></li>
@@ -54,11 +43,14 @@
                             </ul>
                         </div>
                     </div>
-                </li> 
+                </li>
                 <li><a href="joinus.html">Join Us</a></li>
-                <li><a href="registration.html">Membership</a></li>
                 <li><a href="enquiry.html">Enquiry</a></li>
-                <li id="nav-login"><a class="center" href="login.html"><img src="images/Icons/user-circle-svgrepo-com(black).svg">Login</a></li>
+                <li><a href="registration.html">Membership</a></li>
+                <li id="nav-login" class="nav-selector">
+                    <a class="center" href="login.html">Login</a>
+                    <a class="center" href="login.html"><img src="images/Icons/user-circle-svgrepo-com(black).svg"></a>
+                </li>
             </ul>
         </nav>
 
@@ -68,53 +60,58 @@
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Brew & Go Coffee</p>
+    <footer> <!--https://codepen.io/alvarotrigo/pen/vYRRxje-->
+        <div class="footer-container">
+            <div class="row">
+                <div class="footer-col"> <!--Column 1-->
+                    <h4>Overview</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="Activities.html">Activities</a></li>
+                        <li><a href="joinus.html">Work for us</a></li>
+                        <li><a href="enquiry.html">FAQ</a></li>
+                        <li><a href="registration.html">Register</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>The Team</h4>
+                    <ul>
+                        <li><a href="aboutme1.html">Kelvin</a></li>
+                        <li><a href="aboutme2.html">Patrick</a></li>
+                        <li><a href="aboutme3.html">Ricardo</a></li>
+                        <li><a href="aboutme4.html">Wei Bao</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="#">watch</a></li>
+                        <li><a href="#">bag</a></li>
+                        <li><a href="#">shoes</a></li>
+                        <li><a href="#">dress</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col"> <!--Column 2-->
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/p/DGdDmXOPD-J/"><img src="images/Icons/bxl-instagram.svg"></img></a>
+                        <a href="https://www.facebook.com/profile.php?id=61554234958482"><img src="images/Icons/bxl-facebook-circle.svg"></img></a>
+                    </div>
+                    <small>&copy; 2025 Brew & Go Coffee</small>
+                </div>
+                <div class="footer-col footer-blank"> <!--Blank-->
+                </div>
+                <div class="footer-col">
+                    <h4>Latest from us</h4>
+                    <iframe
+                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0Ro5XUkWsugqwP6cFKBsd7MWcqumoxyF4wDd8xdPcGCLZK7udVGAtrpvjBrnVUgJSl%26id%3D61554234958482&show_text=true&width=500"
+                        style="border:none;overflow:hidden" scrolling="no" allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+            </div>
     </footer>
-
-    <footer class="footer"> <!--https://codepen.io/alvarotrigo/pen/vYRRxje-->
-        <div class="container">
-         <div class="row">
-           <div class="footer-col">
-             <h4>company</h4>
-             <ul>
-               <li><a href="#">about us</a></li>
-               <li><a href="#">our services</a></li>
-               <li><a href="#">privacy policy</a></li>
-               <li><a href="#">affiliate program</a></li>
-             </ul>
-           </div>
-           <div class="footer-col">
-             <h4>get help</h4>
-             <ul>
-               <li><a href="#">FAQ</a></li>
-               <li><a href="#">shipping</a></li>
-               <li><a href="#">returns</a></li>
-               <li><a href="#">order status</a></li>
-               <li><a href="#">payment options</a></li>
-             </ul>
-           </div>
-           <div class="footer-col">
-             <h4>online shop</h4>
-             <ul>
-               <li><a href="#">watch</a></li>
-               <li><a href="#">bag</a></li>
-               <li><a href="#">shoes</a></li>
-               <li><a href="#">dress</a></li>
-             </ul>
-           </div>
-           <div class="footer-col">
-             <h4>follow us</h4>
-             <div class="social-links">
-               <a href="#"><i class="fab fa-facebook-f"></i></a>
-               <a href="#"><i class="fab fa-twitter"></i></a>
-               <a href="#"><i class="fab fa-instagram"></i></a>
-               <a href="#"><i class="fab fa-linkedin-in"></i></a>
-             </div>
-           </div>
-         </div>
-        </div>
-     </footer>
 </body>
 
 </html>

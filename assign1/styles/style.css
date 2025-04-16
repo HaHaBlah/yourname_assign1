@@ -202,6 +202,14 @@
     font-size: 0.9em;
 }
 
+input:focus:valid {
+    outline: 3px solid var(--accent-color-1);
+}
+
+input:focus:invalid {
+    outline: 3px solid red;
+}
+
 @media (max-width: 768px) {
     .login-container {
         width: 90%;
@@ -319,7 +327,7 @@ nav a {
     color: white;
     display: inline-block;
     position: relative;
-    margin-left: 10px;
+    margin-right: 10px;
 }
 
 nav a:not(:has(img))::after {
@@ -352,7 +360,6 @@ nav a:hover::after {
     width: 100%;
     /* Expand the underline to full width */
 }
-
 
 .Dropdown_Start {
     position: relative;
@@ -418,21 +425,47 @@ nav a:hover::after {
 }
 
 #nav-login {
-    height: 100%;
-    border-radius: var(--border-radius);
-    border: white 2px solid;
     display: flex;
+    transition: var(--transition);
+    justify-content: center;
+    align-items: center;
 }
+
 
 #nav-login img {
-    max-height: 30px;
-    max-width: 100%;
-    height: auto;
-    width: auto;
+    height: 30px;
+    width: 30px;
     margin-right: 5px;
-    filter: var(--link-color-hover-filter)
 }
 
+.nav-selector a {
+    height: 100%;
+}
+
+.nav-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.nav-selector:hover a::after {
+    width: 100%;
+    /* Expand the underline to full width */
+}
+
+.nav-selector:hover a {
+    color: var(--link-color-hover);
+}
+
+.nav-selector:hover img {
+    filter: var(--link-color-hover-filter);
+    transition: var(--transition);
+}
+
+/* https://codepen.io/massiebn/pen/RwRavV
+https://codepen.io/ImBobby/pen/DdPRYZ
+*/
 /* Navigation styles END */
 
 /* .banner content styles */
@@ -471,7 +504,7 @@ footer {
 footer {
     line-height: 1.5;
     font-family: var(--headings-font);
-    
+
     width: 100%;
     clear: both;
     position: relative;
@@ -484,8 +517,8 @@ footer * {
     box-sizing: border-box;
 }
 
-.container {
-    max-width: 1170px;
+.footer-container {
+    max-width: 1200px;
     margin: auto;
 }
 
@@ -494,18 +527,19 @@ footer * {
     flex-wrap: wrap;
 }
 
-.footer ul {
+footer ul {
     list-style: none;
 }
 
-.footer {
+footer {
     background-color: var(--footer-background);
     padding: 70px 0;
 }
 
 .footer-col {
-    width: 25%;
+    width: 33.33%;
     padding: 0 15px;
+    margin-bottom: 25px;
 }
 
 .footer-col h4 {
@@ -522,9 +556,9 @@ footer * {
     left: 0;
     bottom: -10px;
     background-color: var(--link-color-hover);
-    height: 2px;
+    height: 3px;
     box-sizing: border-box;
-    width: 50px;
+    width: 10em;
 }
 
 .footer-col ul li:not(:last-child) {
@@ -556,20 +590,37 @@ footer * {
     text-align: center;
     line-height: 40px;
     border-radius: 50%;
-    color: #ffffff;
+    fill: #ffffff;
     transition: all 0.3s ease;
 }
 
 .footer-col .social-links a:hover {
-    color: #24262b;
+    fill: #24262b;
     background-color: #ffffff;
 }
+
+.footer-blank {
+    padding: 0;
+    margin: 0;
+}
+
+footer iframe {
+    width: 100%;
+    height: 610px;
+    border-radius: 25px;
+    background-color: white;
+}
+
 
 /*responsive*/
 @media(max-width: 768px) {
     .footer-col {
         width: 50%;
-        margin-bottom: 30px;
+    }
+
+    .footer-blank {
+        padding: 0;
+        margin: 0;
     }
 }
 
@@ -1339,7 +1390,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     text-align: center;
     background-image:
         linear-gradient(to bottom, rgba(169, 145, 117, 0) 70%, rgba(169, 145, 117, 1) 100%),
-        url("../images/Coffee Beans Bg.png");
+        url("../images/Coffee_Beans_Bg.png");
     margin: 0;
     padding: 0;
     display: flex;
