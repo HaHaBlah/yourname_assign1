@@ -1289,12 +1289,9 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 .feature-box {
     position: relative;
     overflow: hidden;
-
     transition: background-color 0.45s ease-in-out, color 0.45s ease-in-out;
     width: 250px;
-    /* Fixed width */
     min-height: 300px;
-    /* Fixed height */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 15px rgba(89, 60, 38, 0.8);
@@ -1350,6 +1347,27 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
         drop-shadow(0 0 5px #A99175) drop-shadow(0 0 15px #A99175);
 }
 
+.product-showcase h2 {
+    text-align: center;
+    font-size: 3em;
+    color: white;
+    margin-bottom: 0.2em;
+}
+
+.product-showcase p {
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+}
+
+.product-showcase .explore {
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .promotion-section {
     margin: 0;
     padding: 0;
@@ -1360,6 +1378,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     text-align: center;
     position: relative;
     min-width: none;
+    margin-top: 20vh;
     margin-bottom: 20vh;
 }
 
@@ -1404,17 +1423,26 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 }
 
 .promotion-poster .poster {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     background: #fff8dc;
     border: 1px solid #d4af37;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-    padding: 32px;
+    padding: 16px;
     margin: 15px;
     border-radius: 10px;
     transform: rotate(-2deg);
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.9em;
+    overflow-wrap: break-word;
+    overflow: visible;
+    line-height: 1.2;
 }
 
 .promotion-poster .poster:nth-child(odd) {
@@ -1437,6 +1465,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     background: #d4af37;
     border-radius: 2px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
 }
 
 .promotion-poster .poster-content h3 {
