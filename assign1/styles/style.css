@@ -414,7 +414,7 @@ footer * {
     box-sizing: border-box;
 }
 
-.container {
+.footer-container {
     max-width: 1170px;
     margin: auto;
 }
@@ -424,17 +424,17 @@ footer * {
     flex-wrap: wrap;
 }
 
-.footer ul {
+footer ul {
     list-style: none;
 }
 
-.footer {
+footer {
     background-color: var(--footer-background);
     padding: 70px 0;
 }
 
 .footer-col {
-    width: 25%;
+    width: 33.33%;
     padding: 0 15px;
 }
 
@@ -499,7 +499,6 @@ footer * {
 @media(max-width: 768px) {
     .footer-col {
         width: 50%;
-        margin-bottom: 30px;
     }
 }
 
