@@ -22,7 +22,7 @@
     /* formerly F2E9DE */
     --text-color: #0B0F14;
     --link-color: #2213F6;
-    --link-color-hover: #593C26; 
+    --link-color-hover: #593C26;
     --link-color-hover-filter: invert(22%) sepia(25%) saturate(954%) hue-rotate(344deg) brightness(98%) contrast(89%);
     --link-color-visited: #B5ED96;
     --footer-background: #F2E9DE;
@@ -187,15 +187,17 @@
     .login-left img {
         width: 5em;
     }
+
     .login-left,
     .login-bottom {
         text-align: center;
     }
 }
+
 /* Login Page Prototype End */
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--body-font);
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
@@ -234,7 +236,7 @@ header img {
 /* Navigation styles START */
 
 nav {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--headings-font);
     font-weight: bold;
     background-image: linear-gradient(to top, rgba(169, 145, 117, 0.0) 0%, rgba(169, 145, 117, 1) 100%);
     height: var(--navbar-height);
@@ -420,6 +422,8 @@ nav a:hover::after {
 }
 
 /* Footer START */
+/* https://codepen.io/alvarotrigo/pen/vYRRxje */
+/*
 footer {
     background: var(--footer-background);
     color: var(--text-color);
@@ -429,7 +433,121 @@ footer {
     clear: both;
     position: relative;
     margin-top: var(--navbar-height);
+}*/
+
+footer {
+    line-height: 1.5;
+    font-family: var(--headings-font);
+    
+    width: 100%;
+    clear: both;
+    position: relative;
+    margin-top: var(--navbar-height);
 }
+
+footer * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer {
+    background-color: var(--footer-background);
+    padding: 70px 0;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: var(--link-color-hover);
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: 300;
+    color: #717171;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--link-color-hover);
+    transition: var(--transition);
+    transform: scale(1.05);
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 768px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
+
+/* Footer END */
+
 
 .responsive-hover:hover {
     transition: var(--transition);
@@ -1218,7 +1336,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 }
 
 .welcome h1 span {
-    font-family: poppins;
+    font-family: var(--headings-font);
     color: transparent;
     -webkit-text-stroke: 1.8px white;
     font-weight: bold;
@@ -1512,7 +1630,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 }
 
 .promotion-poster .poster-content p {
-    font-family: 'Arial', sans-serif;
+    font-family: var(--body-font);
     color: #4b3621;
 }
 
@@ -1667,7 +1785,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     transform: rotateY(180deg);
 }
 
-.location-card-front, 
+.location-card-front,
 .location-card-back {
     position: absolute;
     width: 100%;
@@ -1707,4 +1825,3 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     margin-bottom: 1.2em;
     line-height: 1.5;
 }
-
