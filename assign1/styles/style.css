@@ -391,15 +391,30 @@ nav a:hover::after {
     display: flex;
 }
 
+#nav-login:hover {
+    border-color: var(--link-color-hover);
+}
+
+#nav-login a:hover img {
+    filter: none;
+    /* Remove any existing filter */
+    fill: var(--link-color-hover);
+    /* Change the color of the SVG */
+    transition: var(--transition);
+    /* Smooth transition */
+}
+
 #nav-login img {
     max-height: 30px;
     max-width: 100%;
     height: auto;
     width: auto;
     margin-right: 5px;
-    filter: var(--link-color-hover-filter)
 }
 
+/* https://codepen.io/massiebn/pen/RwRavV
+https://codepen.io/ImBobby/pen/DdPRYZ
+*/
 /* Navigation styles END */
 
 /* .banner content styles */
@@ -438,7 +453,7 @@ footer {
 footer {
     line-height: 1.5;
     font-family: var(--headings-font);
-    
+
     width: 100%;
     clear: both;
     position: relative;
@@ -489,9 +504,9 @@ footer {
     left: 0;
     bottom: -10px;
     background-color: var(--link-color-hover);
-    height: 2px;
+    height: 3px;
     box-sizing: border-box;
-    width: 50px;
+    width: 10em;
 }
 
 .footer-col ul li:not(:last-child) {
