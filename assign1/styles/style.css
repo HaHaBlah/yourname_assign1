@@ -413,12 +413,6 @@ nav a:hover::after {
     /* Expand the underline to full width */
 }
 
-#nav-login a:hover img {
-    filter: none;
-    fill: var(--link-color-hover);
-    transition: var(--transition);
-}
-
 .nav-selector:hover a {
     color: var(--link-color-hover);
 }
