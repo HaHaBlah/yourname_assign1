@@ -145,7 +145,8 @@
     border-radius: var(--border-radius);
 }
 
-input:focus:valid, input:focus {
+input:focus:valid,
+input:focus {
     outline: 2px solid var(--accent-color-1);
     border-color: var(--accent-color-1);
     transition: none;
@@ -310,7 +311,7 @@ nav ul {
     padding: 0;
     list-style: none;
     margin-left: auto;
-    margin-right: var(--navbar-height);
+    margin-right: 20px;
 }
 
 nav ul li {
@@ -464,6 +465,28 @@ nav a:hover::after {
     transition: var(--transition);
 }
 
+@media (max-width: 1200px) {
+    nav {
+        font-size: 0.98em;
+    }
+
+    nav ul li {
+        margin-left: 15px;
+    }
+
+    .Dropdown_Content {
+        font-size: 1.2em;
+    }
+
+    nav img {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 850px) {
+
+}
+
 /* https://codepen.io/massiebn/pen/RwRavV
 https://codepen.io/ImBobby/pen/DdPRYZ
 */
@@ -543,7 +566,8 @@ footer {
     margin-bottom: 25px;
 }
 
-.footer-col h4, .footer-col h4 a {
+.footer-col h4,
+.footer-col h4 a {
     font-size: 18px;
     text-transform: capitalize;
     margin-bottom: 35px;
@@ -578,10 +602,15 @@ footer {
     transition: all 0.3s ease;
 }
 
-.footer-col ul li a:hover, .footer-col h4 a:hover {
+.footer-col ul li a:hover,
+.footer-col h4 a:hover {
     color: var(--link-color-hover);
     transition: var(--transition);
     transform: scale(1.05);
+}
+
+.footer-col h4 a:hover {
+    font-size: 1.1em;
 }
 
 .footer-col .social-links a {
