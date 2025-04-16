@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,10 +11,13 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/latte_2.css">
 </head>
+
 <body>
     <nav>
-        <a href="index.html"><img src="images/Brew&Go_logo.png" alt="Brew & Go logo"></a>
-        <a href="index.html">Brew & Go. Coffee</a>
+        <div class="nav-selector">
+            <a href="index.html"><img src="images/Brew&Go_logo.png" alt="Brew & Go logo"></a>
+            <a href="index.html">Brew & Go. Coffee</a>
+        </div>
         <ul>
             <li>
                 <div class="Dropdown_Start"><a href="products.html">Products</a>
@@ -28,20 +32,8 @@
                 </div>
             </li>
             <li>
-                <div class="Dropdown_Start"><a href="about.html">About us</a>
-                    <div class="Dropdown_Content">
-                        <ul>
-                            <li><a href="aboutme1.html">Kelvin</a></li>
-                            <li><a href="aboutme2.html">Patrick</a></li>
-                            <li><a href="aboutme3.html">Ricardo</a></li>
-                            <li><a href="aboutme4.html">Wei Bao</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            <li>
                 <div class="Dropdown_Start"> <a href="activities.html">Activities</a>
-                    <div class="Dropdown_Content">   
+                    <div class="Dropdown_Content">
                         <ul>
                             <li><a href="Current.html">Current</a></li>
                             <li><a href="Coming_Soon.html">Coming Soon</a></li>
@@ -51,9 +43,12 @@
                 </div>
             </li>
             <li><a href="joinus.html">Join Us</a></li>
-            <li><a href="registration.html">Membership</a></li>
             <li><a href="enquiry.html">Enquiry</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="registration.html">Membership</a></li>
+            <li id="nav-login" class="nav-selector">
+                <a href="login.html">Login</a>
+                <a class="center" href="login.html"><img src="images/Icons/user-circle-svgrepo-com(black).svg"></a>
+            </li>
         </ul>
     </nav>
 
@@ -62,38 +57,99 @@
             <section class="content">
                 <img src="images/Coffee/Cappuccino_Cold_foam.jpeg" alt="Iced Cappuccino">
                 <h3>Iced Cappuccino</h3>
-                <p class="price"><span class="mp-price">MP: RM13.90</span> <span class="divider">|</span> <span class="np-price">NP: RM15.90</span></p>
-                <button class="buy-1" onclick="window.open('https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?', '_blank')">Buy Now</button>
+                <p class="price"><span class="mp-price">MP: RM13.90</span> <span class="divider">|</span> <span
+                        class="np-price">NP: RM15.90</span></p>
+                <button class="buy-1"
+                    onclick="window.open('https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?', '_blank')">Buy
+                    Now</button>
 
             </section>
 
             <!-- Cheese Americano -->
             <section class="content">
                 <h3>Iced Americano</h3>
-                <p class="price"><span class="mp-price">MP: RM10.90</span> <span class="divider">|</span> <span class="np-price">NP: RM12.90</span></p>
-                <button class="buy-2" onclick="window.open('https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?', '_blank')">Buy Now</button>
+                <p class="price"><span class="mp-price">MP: RM10.90</span> <span class="divider">|</span> <span
+                        class="np-price">NP: RM12.90</span></p>
+                <button class="buy-2"
+                    onclick="window.open('https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?', '_blank')">Buy
+                    Now</button>
             </section>
 
             <!-- Butterscotch Creme Latte -->
             <section class="content">
                 <h3>Iced Latte</h3>
-                <p class="price"><span class="mp-price">MP: RM12.90</span> <span class="divider">|</span> <span class="np-price">NP: RM14.90</span></p>
-                <button class="buy-3" onclick="window.open('https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?', '_blank')">Buy Now</button>
+                <p class="price"><span class="mp-price">MP: RM12.90</span> <span class="divider">|</span> <span
+                        class="np-price">NP: RM14.90</span></p>
+                <button class="buy-3"
+                    onclick="window.open('https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?', '_blank')">Buy
+                    Now</button>
             </section>
 
             <div class="scroll-top">
-                <a class="scroll-top__link" href="#">&#11165;</a> <!-- Scroll to top link -->
+                <!--/* https://dev.to/jackherizsmith/making-a-back-to-top-button-without-javascript-2ej6 */-->
+                <a class="scroll-top__link" href="#">&#11165;</a> <!--href="#" navigates to the top of the page -->
             </div>
         </div>
     </main>
     <p class="price-details"><em>*MP: Member Price NP: Normal Price</em></p>
-    <footer>
-        <p>
-            <strong>Contact:</strong><br>
-            Phone: +60 11-1653 1886<br>
-            Email: <a href="mailto:brewngo.coffee@gmail.com">brewngo.coffee@gmail.com</a>
-        </p>
+    <footer> <!--https://codepen.io/alvarotrigo/pen/vYRRxje-->
+        <div class="footer-container">
+            <div class="row">
+                <div class="footer-col"> <!--Column 1-->
+                    <h4>Overview</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="Activities.html">Activities</a></li>
+                        <li><a href="joinus.html">Work for us</a></li>
+                        <li><a href="locations.html">Visit Us</a></li>
+                        <li><a href="enquiry.html">FAQ</a></li>
+                        <li><a href="registration.html">Register</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4><a href="about.html">The Team</a></h4>
+                    <ul>
+                        <li><a href="aboutme1.html">Kelvin</a></li>
+                        <li><a href="aboutme2.html">Patrick</a></li>
+                        <li><a href="aboutme3.html">Ricardo</a></li>
+                        <li><a href="aboutme4.html">Wei Bao</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Extra</h4>
+                    <ul>
+                        <li><a href="acknowledgement.html">Acknowledgements</a></li>
+                        <li><a href="enhancements.html">Enhancements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col"> <!--Blank-->
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a class="responsive-hover-img" href="https://www.instagram.com/p/DGdDmXOPD-J/"><img
+                                class="responsive-hover" src="images/Icons/bxl-instagram.svg"></img></a>
+                        <a class="responsive-hover-img"
+                            href="https://www.facebook.com/profile.php?id=61554234958482"><img class="responsive-hover"
+                                src="images/Icons/bxl-facebook-circle.svg"></img></a>
+                    </div>
+                    <h4>Contact Us</h4>
+                    <p>Phone: +60 11-1653 1886</p>
+                    <p>Email: <a href="mailto:brewngo.coffee@gmail.com" method="post"
+                            enctype="text/plain">brewngo.coffee@gmail.com</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Latest from us</h4>
+                    <iframe class="responsive-hover-img"
+                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0Ro5XUkWsugqwP6cFKBsd7MWcqumoxyF4wDd8xdPcGCLZK7udVGAtrpvjBrnVUgJSl%26id%3D61554234958482&show_text=true&width=500"
+                        style="border:none;overflow:hidden" scrolling="no" allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="footer-col"> <!--Column 2-->
+                    <small>&copy; 2025 Brew & Go Coffee</small>
+                </div>
+            </div>
     </footer>
 </body>
-</html>
 
+</html>
