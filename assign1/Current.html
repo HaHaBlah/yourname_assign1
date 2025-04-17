@@ -10,13 +10,16 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/CNY.css">
     <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <nav>
-        <a href="index.html"><img src="images/Brew&Go_logo.png" alt="Brew & Go logo"></a>
-        <a href="index.html">Brew & Go Coffee</a>
+        <div class="nav-selector">
+            <a href="index.html"><img src="images/Brew&Go_logo.png" alt="Brew & Go logo"></a>
+            <a href="index.html">Brew & Go. Coffee</a>
+        </div>
         <ul>
             <li>
                 <div class="Dropdown_Start"><a href="products.html">Products</a>
@@ -26,18 +29,6 @@
                             <li><a href="product2.html">Artisan Brew</a></li>
                             <li><a href="product3.html">Non-Coffee</a></li>
                             <li><a href="product4.html">Hot Beverages</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="Dropdown_Start"><a href="about.html">About us</a>
-                    <div class="Dropdown_Content">
-                        <ul>
-                            <li><a href="aboutme1.html">Kelvin</a></li>
-                            <li><a href="aboutme2.html">Patrick</a></li>
-                            <li><a href="aboutme3.html">Ricardo</a></li>
-                            <li><a href="aboutme4.html">Wei Bao</a></li>
                         </ul>
                     </div>
                 </div>
@@ -54,9 +45,12 @@
                 </div>
             </li>
             <li><a href="joinus.html">Join Us</a></li>
-            <li><a href="registration.html">Membership</a></li>
             <li><a href="enquiry.html">Enquiry</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="registration.html">Membership</a></li>
+            <li id="nav-login" class="nav-selector">
+                <a href="login.html">Login</a>
+                <a class="center" href="login.html"><img src="images/Icons/user-circle-svgrepo-com(black).svg"></a>
+            </li>
         </ul>
     </nav>
     <main class="cny-container">
@@ -64,7 +58,7 @@
             <h1>新年快乐! Happy Chinese New Year!</h1>
             <p class="cny-subtitle">Year of the Dragon 2024</p>
         </div>
-        
+
         <div class="cny-content">
             <section class="cny-promo">
                 <h2>Special Promotion</h2>
@@ -73,7 +67,7 @@
                     <p>Redeem <strong>FREE Mandarin Oranges</strong> when you purchase 2 drinks or more!</p>
                 </div>
             </section>
-            
+
             <section class="cny-hours">
                 <h2>Special Operating Hours</h2>
                 <div class="hours-card">
@@ -88,22 +82,77 @@
                     </div>
                 </div>
             </section>
-            
+
             <section class="cny-tradition">
                 <h2>CNY Tradition</h2>
-                <p>Mandarin oranges symbolize good luck and prosperity. We're sharing this tradition with our valued customers!</p>
+                <p>Mandarin oranges symbolize good luck and prosperity. We're sharing this tradition with our valued
+                    customers!</p>
             </section>
         </div>
+        <div class="scroll-top">
+            <!--/* https://dev.to/jackherizsmith/making-a-back-to-top-button-without-javascript-2ej6 */-->
+            <a class="scroll-top__link" href="#">&#11165;</a> <!--href="#" navigates to the top of the page -->
+        </div>
     </main>
-    <div class="scroll-top">
-        <a class="scroll-top__link" href="#">&#11165;</a>
-    </div>
-    <footer>
-        <p>
-            <strong>Contact:</strong><br>
-            Phone: +60 11-1653 1886<br>
-            Email: <a href="mailto:brewngo.coffee@gmail.com">brewngo.coffee@gmail.com</a>
-        </p>
+
+    <footer> <!--https://codepen.io/alvarotrigo/pen/vYRRxje-->
+        <div class="footer-container">
+            <div class="row">
+                <div class="footer-col"> <!--Column 1-->
+                    <h4>Overview</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="Activities.html">Activities</a></li>
+                        <li><a href="joinus.html">Work for us</a></li>
+                        <li><a href="locations.html">Visit Us</a></li>
+                        <li><a href="enquiry.html">FAQ</a></li>
+                        <li><a href="registration.html">Register</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4><a href="about.html">The Team</a></h4>
+                    <ul>
+                        <li><a href="aboutme1.html">Kelvin</a></li>
+                        <li><a href="aboutme2.html">Patrick</a></li>
+                        <li><a href="aboutme3.html">Ricardo</a></li>
+                        <li><a href="aboutme4.html">Wei Bao</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Extra</h4>
+                    <ul>
+                        <li><a href="acknowledgement.html">Acknowledgements</a></li>
+                        <li><a href="enhancements.html">Enhancements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col"> <!--Blank-->
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a class="responsive-hover-img" href="https://www.instagram.com/p/DGdDmXOPD-J/"><img
+                                class="responsive-hover" src="images/Icons/bxl-instagram.svg"></img></a>
+                        <a class="responsive-hover-img"
+                            href="https://www.facebook.com/profile.php?id=61554234958482"><img class="responsive-hover"
+                                src="images/Icons/bxl-facebook-circle.svg"></img></a>
+                    </div>
+                    <h4>Contact Us</h4>
+                    <p>Phone: +60 11-1653 1886</p>
+                    <p>Email: <a href="mailto:brewngo.coffee@gmail.com" method="post"
+                            enctype="text/plain">brewngo.coffee@gmail.com</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Latest from us</h4>
+                    <iframe class="responsive-hover-img"
+                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0Ro5XUkWsugqwP6cFKBsd7MWcqumoxyF4wDd8xdPcGCLZK7udVGAtrpvjBrnVUgJSl%26id%3D61554234958482&show_text=true&width=500"
+                        style="border:none;overflow:hidden" scrolling="no" allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="footer-col"> <!--Column 2-->
+                    <small>&copy; 2025 Brew & Go Coffee</small>
+                </div>
+            </div>
     </footer>
 </body>
+
 </html>

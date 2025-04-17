@@ -1,203 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Brew & Go.</title>
-        <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles/style.css">
-    </head>
-    <body>
-        <nav>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Brew & Go.</title>
+    <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-selector">
             <a href="index.html"><img src="images/Brew&Go_logo.png" alt="Brew & Go logo"></a>
             <a href="index.html">Brew & Go. Coffee</a>
-            <ul>
-                <li>
-                    <div class="Dropdown_Start"><a href="products.html">Products</a>
-                        <div class="Dropdown_Content">
-                            <ul>
-                                <li><a href="product1.html">Basic Brew</a></li>
-                                <li><a href="product2.html">Artisan Brew</a></li>
-                                <li><a href="product3.html">Non-Coffee</a></li>
-                                <li><a href="product4.html">Hot Beverages</a></li>
-                            </ul>
+        </div>
+        <ul>
+            <li>
+                <div class="Dropdown_Start"><a href="products.html">Products</a>
+                    <div class="Dropdown_Content">
+                        <ul>
+                            <li><a href="product1.html">Basic Brew</a></li>
+                            <li><a href="product2.html">Artisan Brew</a></li>
+                            <li><a href="product3.html">Non-Coffee</a></li>
+                            <li><a href="product4.html">Hot Beverages</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="Dropdown_Start"> <a href="activities.html">Activities</a>
+                    <div class="Dropdown_Content">
+                        <ul>
+                            <li><a href="Current.html">Current</a></li>
+                            <li><a href="Coming_Soon.html">Coming Soon</a></li>
+                            <li><a href="Past.html">Past</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li><a href="joinus.html">Join Us</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+            <li><a href="registration.html">Membership</a></li>
+            <li id="nav-login" class="nav-selector">
+                <a href="login.html">Login</a>
+                <a class="center" href="login.html"><img src="images/Icons/user-circle-svgrepo-com(black).svg"></a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <!--Main page starts here-->
+    <!--Intro Section-->
+    <div class="welcome">
+        <h1>Welcome to
+            <span>Brew & Go.</span>
+        </h1>
+        <p>Your one-stop shop for the best coffee in town!</p>
+    </div>
+
+    <!--Introduction to Company-->
+    <div class="introduction">
+        <div class="introduction-image">
+            <img src="images/location/one_jaya_1.jpg" alt="Brew & Go logo">
+        </div>
+        <div class="introduction-content">
+            <h2>About Brew & Go.</h2>
+            <h3>
+                Brew & Go. Coffee is a local Kuching-based brand specializing in handcrafted coffee beverages. In
+                addition to coffee, their menu also includes non-coffee beverages such as matcha and chocolate.
+            </h3>
+            <p>Established in 2023 as a home-based business, Brew & Go opened its first coffee kiosk at One Jaya Mall in
+                2024. Recently, they expanded and launched their second kiosk at Plaza Merdeka Shopping Centre and are
+                now seeking opportunities for further growth.</p>
+        </div>
+    </div>
+
+    <!--Why choose Brew and Go?-->
+    <div class="why-choose">
+        <div class="why-us">why us</div>
+        <h2>Why choose Brew and Go.</h2>
+        <p class="main-description">At Brew and Go, we prioritize quality and customer satisfaction. Our handcrafted
+            beverages are made from the finest ingredients, ensuring a delightful experience with every sip.</p>
+
+        <div class="feature-container">
+            <div class="feature-box">
+                <img src="images/Fast&Convenient.png" alt="Fast & Convenient"> <!--Image might not be relevant-->
+                <h3>Fast & Convenient</h3>
+            </div>
+            <div class="feature-box">
+                <img src="images/Consistent_Quality.svg" alt="Consistent Quality">
+                <h3>Consistent Quality</h3>
+            </div>
+            <div class="feature-box">
+                <img src="images/Perfect_for_On-the-Go.png" alt="Perfect for On-the-Go">
+                <h3>Perfect for On-the-Go</h3>
+            </div>
+        </div>
+    </div>
+
+    <!--Top Product Showcase-->
+    <div class="product-showcase">
+        <h2>Product Showcase</h2>
+        <p>Discover our wide range of handcrafted coffee beverages and non-coffee beverages.</p>
+        <div class="explore">
+            <a href="product1.html" class="btn">Explore</a>
+        </div>
+    </div>
+
+    <!-- Promotion Section -->
+    <div class="promotion-section">
+        <div class="latest-promotion">
+            <h2>Latest Promotion</h2>
+            <p>Check out our special offers and discounts!</p>
+        </div>
+        <div class="promotion-poster">
+            <!-- Promotion Poster 1 -->
+            <div class="poster">
+                <div class="poster-content">
+                    <h3>March Promotions</h3>
+                    <p>Get 1 FREE drink and 1 RM10 voucher if you topup with a minimum of RM50! Only available at our
+                        <a href="https://www.facebook.com/LovePlazaM">Plaza Merdeka</a> outlet.
+                    </p>
+                </div>
+            </div>
+            <!-- Promotion Poster 2 -->
+            <div class="poster">
+                <div class="poster-content">
+                    <h3>FREE ORANGES!!! 🍊🧧🪭</h3>
+                    <p>Redeem free oranges from us when you purchase 2 drinks & more. Starting from Saturday 25/1 and
+                        while stocks last. Come come!!</p>
+                </div>
+            </div>
+            <!-- Promotion Poster 3 -->
+            <div class="poster">
+                <div class="poster-content">
+                    <h3>Christmas Promotions</h3>
+                    <p>Join our membership to get our Christmas gift voucher! 🎄❄️ Perfect for your friends & family in
+                        this season of giving 😍</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Latest News-->
+    <div class="latest-news">
+        <h2>Latest News</h2>
+        <p>Stay tuned for our upcoming events and news updates!</p>
+        <div class="learn-more">
+            <a href="Activities.html" class="btn">Learn More</a>
+        </div>
+    </div>
+
+    <!--Location Section-->
+    <div class="location-section">
+        <h2>Our Locations</h2>
+        <div class="location-cards">
+
+            <div class="location-card">
+                <div class="flip-container">
+                    <div class="location-card-inner">
+                        <div class="location-card-front">
+                            <img src="images/location/one_jaya.jpg" alt="Location 1 Image">
+                        </div>
+                        <div class="location-card-back">
+                            <a href="https://maps.app.goo.gl/8ap6MykG7yn7rF7A6">
+                                <img src="images/location/Location_1.png" alt="Location 1 Back Image">
+                            </a>
                         </div>
                     </div>
-                </li>
-                <li>
-                    <div class="Dropdown_Start"><a href="about.html">About us</a></div>
-                        <!-- <div class="Dropdown_Content">
-                            <ul>
-                                <li><a href="aboutme1.html">Kelvin</a></li>
-                                <li><a href="aboutme2.html">Patrick</a></li>
-                                <li><a href="aboutme3.html">Ricardo</a></li>
-                                <li><a href="aboutme4.html">Wei Bao</a></li>
-                            </ul>
-                        </div> -->
-                </li>
-                <li><a href="activities.html">Activities</a></li>
-                <li><a href="joinus.html">Join Us</a></li>
-                <li><a href="registration.html">Membership</a></li>
-                <li><a href="enquiry.html">Enquiry</a></li>
-                <li><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
-
-
-        <!--Main page starts here-->
-        <!--Intro Section-->
-        <div class="welcome">
-            <h1>Welcome to 
-                <span>Brew & Go.</span>
-            </h1>
-            <p>Your one-stop shop for the best coffee in town!</p>
-        </div>
-
-        <!--Introduction to Company-->
-        <div class="introduction">
-            <div class="introduction-image">
-                <img src="images/location/one_jaya_1.jpg" alt="Brew & Go logo">
-            </div>
-            <div class="introduction-content">
-                <h2>About Brew & Go.</h2>
-                <h3>
-                    Brew & Go. Coffee is a local Kuching-based brand specializing in handcrafted coffee beverages. In addition to coffee, their menu also includes non-coffee beverages such as matcha and chocolate.
-                </h3>
-                <p>Established in 2023 as a home-based business, Brew & Go opened its first coffee kiosk at One Jaya Mall in 2024. Recently, they expanded and launched their second kiosk at Plaza Merdeka Shopping Centre and are now seeking opportunities for further growth.</p>
-            </div>
-        </div>
-            
-        <!--Why choose Brew and Go?-->
-        <div class="why-choose">
-            <div class="why-us">why us</div> 
-            <h2>Why choose Brew and Go.</h2>
-            <p class="main-description">At Brew and Go, we prioritize quality and customer satisfaction. Our handcrafted beverages are made from the finest ingredients, ensuring a delightful experience with every sip.</p>
-            
-            <div class="feature-container">
-                <div class="feature-box">
-                    <img src="images/Fast&Convenient.png" alt="Fast & Convenient"> <!--Image might not be relevant-->
-                    <h3>Fast & Convenient</h3>
                 </div>
-                <div class="feature-box">
-                    <img src="images/Consistent_Quality.svg" alt="Consistent Quality">
-                    <h3>Consistent Quality</h3>
-                </div>
-                <div class="feature-box">
-                    <img src="images/Perfect_for_On-the-Go.png" alt="Perfect for On-the-Go">
-                    <h3>Perfect for On-the-Go</h3>
-                </div>
+                <h3>One Jaya</h3>
+                <p>G63, Lot, Onejaya Shopping Complex</p>
+                <a href="location1.html" class="btn">Learn more</a>
             </div>
-        </div>
 
-        <!--Top Product Showcase-->
-        <div class="product-showcase">
-            <h2>Product Showcase</h2>
-            <p>Discover our wide range of handcrafted coffee beverages and non-coffee beverages.</p>
-            <div class="explore">
-                <a href="products1.html" class="btn">Explore</a>
-            </div>
-        </div>
-
-        <!-- Promotion Section -->
-        <div class="promotion-section">
-            <div class="latest-promotion">
-                <h2>Latest Promotion</h2>
-                <p>Check out our special offers and discounts!</p>
-            </div>
-            <div class="promotion-poster">
-                <!-- Promotion Poster 1 -->
-                <div class="poster">
-                    <div class="poster-content">
-                        <h3>March Promotions</h3>
-                        <p>Get 1 FREE drink and 1 RM10 voucher if you topup with a minimum of RM50! Only available at our 
-                            <a href="https://www.facebook.com/LovePlazaM">Plaza Merdeka</a> outlet.
-                        </p>
-                    </div>
-                </div>
-                <!-- Promotion Poster 2 -->
-                <div class="poster">
-                    <div class="poster-content">
-                        <h3>FREE ORANGES!!! 🍊🧧🪭</h3>
-                        <p>Redeem free oranges from us when you purchase 2 drinks & more. Starting from Saturday 25/1 and while stocks last. Come come!!</p>
-                    </div>
-                </div>
-                <!-- Promotion Poster 3 -->
-                <div class="poster">
-                    <div class="poster-content">
-                        <h3>Christmas Promotions</h3>
-                        <p>Join our membership to get our Christmas gift voucher! 🎄❄️ Perfect for your friends & family in this season of giving 😍</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!--Latest News-->
-        <div class="latest-news">
-            <h2>Latest News</h2>
-            <p>Stay tuned for our upcoming events and news updates!</p>
-            <div class="learn-more">
-                <a href="Activities.html" class="btn">Learn More</a>
-            </div>
-        </div>
-
-        <!--Location Section-->
-        <div class="location-section">
-            <h2>Our Locations</h2>
-            <div class="location-cards">
-                
-                <div class="location-card">
-                    <div class="flip-container">
-                        <div class="location-card-inner">
-                            <div class="location-card-front">
-                                <img src="images/location/one_jaya.jpg" alt="Location 1 Image">
-                            </div>
-                            <div class="location-card-back">
-                                <a href="https://maps.app.goo.gl/8ap6MykG7yn7rF7A6">
-                                    <img src="images/location/Location_1.png" alt="Location 1 Back Image">
-                                </a>
-                            </div>
+            <div class="location-card">
+                <div class="flip-container">
+                    <div class="location-card-inner">
+                        <div class="location-card-front">
+                            <img src="images/location/plaza_merdeka.jpg" alt="Location 2 Image">
+                        </div>
+                        <div class="location-card-back">
+                            <a href="https://maps.app.goo.gl/kzNmquJ9gRcB5vxL7">
+                                <img src="images/location/Location_2.png" alt="Location 2 Back Image">
+                            </a>
                         </div>
                     </div>
-                    <h3>One Jaya</h3>
-                    <p>G63, Lot, Onejaya Shopping Complex</p>
-                    <a href="location1.html" class="btn">Learn more</a>
                 </div>
-
-                <div class="location-card">
-                    <div class="flip-container">
-                        <div class="location-card-inner">
-                            <div class="location-card-front">
-                                <img src="images/location/plaza_merdeka.jpg" alt="Location 2 Image">
-                            </div>
-                            <div class="location-card-back">
-                                <a href="https://maps.app.goo.gl/kzNmquJ9gRcB5vxL7">
-                                    <img src="images/location/Location_2.png" alt="Location 2 Back Image">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <h3>Plaza Merdeka</h3>
-                    <p>Jalan Tun Abang Haji Openg</p>
-                    <a href="location2.html" class="btn">Learn more</a>
-                </div>
+                <h3>Plaza Merdeka</h3>
+                <p>Jalan Tun Abang Haji Openg</p>
+                <a href="location2.html" class="btn">Learn more</a>
             </div>
         </div>
-        
-        <!--Scrolling Section-->
-        <div class="scroll-top">
-            <!--/* https://dev.to/jackherizsmith/making-a-back-to-top-button-without-javascript-2ej6 */-->
-            <a class="scroll-top__link" href="#">&#11165;</a> <!--href="#" navigates to the top of the page -->
-        </div>
+    </div>
 
-        <!--Footer Section-->
-        <footer>
-            <p>
-                <strong>Contact:</strong><br>
-                Phone: +60 11-1653 1886<br>
-                Email: <a href="mailto:brewngo.coffee@gmail.com">brewngo.coffee@gmail.com</a>
-            </p>
-        </footer>
-    </body>
+    <!--Scrolling Section-->
+    <div class="scroll-top">
+        <!--/* https://dev.to/jackherizsmith/making-a-back-to-top-button-without-javascript-2ej6 */-->
+        <a class="scroll-top__link" href="#">&#11165;</a> <!--href="#" navigates to the top of the page -->
+    </div>
+
+    <!--Footer Section-->
+
+    <footer> <!--https://codepen.io/alvarotrigo/pen/vYRRxje-->
+        <div class="footer-container">
+            <div class="row">
+                <div class="footer-col"> <!--Column 1-->
+                    <h4>Overview</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="Activities.html">Activities</a></li>
+                        <li><a href="joinus.html">Work for us</a></li>
+                        <li><a href="locations.html">Visit Us</a></li>
+                        <li><a href="enquiry.html">FAQ</a></li>
+                        <li><a href="registration.html">Register</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4><a href="about.html">The Team</a></h4>
+                    <ul>
+                        <li><a href="aboutme1.html">Kelvin</a></li>
+                        <li><a href="aboutme2.html">Patrick</a></li>
+                        <li><a href="aboutme3.html">Ricardo</a></li>
+                        <li><a href="aboutme4.html">Wei Bao</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Extra</h4>
+                    <ul>
+                        <li><a href="acknowledgement.html">Acknowledgements</a></li>
+                        <li><a href="enhancements.html">Enhancements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col"> <!--Blank-->
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a class="responsive-hover-img" href="https://www.instagram.com/p/DGdDmXOPD-J/"><img
+                                class="responsive-hover" src="images/Icons/bxl-instagram.svg"></img></a>
+                        <a class="responsive-hover-img"
+                            href="https://www.facebook.com/profile.php?id=61554234958482"><img class="responsive-hover"
+                                src="images/Icons/bxl-facebook-circle.svg"></img></a>
+                    </div>
+                    <h4>Contact Us</h4>
+                    <p>Phone: +60 11-1653 1886</p>
+                    <p>Email: <a href="mailto:brewngo.coffee@gmail.com" method="post"
+                            enctype="text/plain">brewngo.coffee@gmail.com</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Latest from us</h4>
+                    <iframe class="responsive-hover-img"
+                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0Ro5XUkWsugqwP6cFKBsd7MWcqumoxyF4wDd8xdPcGCLZK7udVGAtrpvjBrnVUgJSl%26id%3D61554234958482&show_text=true&width=500"
+                        style="border:none;overflow:hidden" scrolling="no" allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="footer-col"> <!--Column 2-->
+                    <small>&copy; 2025 Brew & Go Coffee</small>
+                </div>
+            </div>
+    </footer>
+</body>
+
 </html>
