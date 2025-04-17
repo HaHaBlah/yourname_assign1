@@ -1302,6 +1302,10 @@ With some parts edited for compatibility since they applied to whole webpage*/
     background-image: url("../images/location/plaza_merdeka.jpg");
 }
 
+#image-joinus {
+    background-image: url("../images/Coffee/joey.jpg");
+}
+
 #image-Coffee_Beans_BG {
     background-image: url("../images/Coffee_Beans_Bg.png");
 }
