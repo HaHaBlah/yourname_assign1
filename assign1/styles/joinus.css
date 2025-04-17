@@ -32,7 +32,7 @@
 
 /* Title Text Styling */
 .hiring-banner h1 {
-    font-size: 3rem;
+    font-size: 13rem;
     letter-spacing: 5px;
     text-transform: uppercase;
     z-index: 2; /* Ensures text stays above the overlay */
