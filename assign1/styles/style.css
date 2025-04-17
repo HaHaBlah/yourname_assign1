@@ -157,6 +157,11 @@
 /*Registration form end*/
 
 /* Login Page Prototype Start */
+.login-pretext {
+    width: 800px;
+    margin: auto;
+}
+
 .login-container {
     background-color: var(--container-background-color);
     padding: 20px;
