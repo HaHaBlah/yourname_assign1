@@ -88,9 +88,10 @@
         font-size: 1.5rem;
     }
 }
+
 .cny-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 5rem auto;
     padding: 2rem;
     font-family: 'Noto Sans SC', sans-serif;
 }

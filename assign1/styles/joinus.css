@@ -2,7 +2,7 @@
 .hiring-banner {
     padding: 0; /* Remove padding, ensure the image covers full section */
     background-image: url("images/Coffee/joey.jpg"); /* Path to your image */
-    background-size: cover;
+    background-size: cover; /* Cover the full sectionp;
     background-position: center; /* Ensures the image is centered */
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -14,8 +14,14 @@
     text-align: center;
     position: relative;
     width: 100%;
-    min-height: 100vh; /* Make sure it covers the full screen height */
-    color: white; /* Default color for text */
+    color: white; /* Default color for text */ /* Ensures the image fits well in the section */
+}
+
+.img{
+    width: 100%;
+    height: 40vh; /* Full height of the viewport */
+    object-position: center;
+    object-fit: cover;
 }
 
 /* Optional: Adding an overlay to improve text visibility if you still want */
@@ -32,12 +38,19 @@
 
 /* Title Text Styling */
 .hiring-banner h1 {
-    font-size: 3rem;
+    font-size: 4.5rem;
     letter-spacing: 5px;
     text-transform: uppercase;
     z-index: 2; /* Ensures text stays above the overlay */
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Adds shadow for better visibility */
     position: absolute;
+}
+
+.hiring-banner img {
+    width: 100%;
+    height: 50vh; /* Full height of the viewport */
+    object-position: 50% 25%;
+    object-fit: cover;
 }
 
 /* Job Section Styling */
@@ -110,4 +123,8 @@
         font-size: 1rem;
     }
 }
+
+
+
+
 
