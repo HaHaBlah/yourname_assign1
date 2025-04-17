@@ -2140,5 +2140,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 }
 
 /* Enhancements START */
-
+.enhancements section {
+    margin: auto;
+}
 /* Enhancements END */
