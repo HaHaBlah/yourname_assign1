@@ -1316,6 +1316,10 @@ With some parts edited for compatibility since they applied to whole webpage*/
     background-image: url("../images/location/plaza_merdeka.jpg");
 }
 
+#image-joinus {
+    background-image: url("../images/Coffee/joey.jpg");
+}
+
 #image-Coffee_Beans_BG {
     background-image: url("../images/Coffee_Beans_Bg.png");
 }
@@ -2152,3 +2156,9 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     margin-bottom: 1.2em;
     line-height: 1.5;
 }
+
+/* Enhancements START */
+.enhancements section {
+    margin: auto;
+}
+/* Enhancements END */
