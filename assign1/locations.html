@@ -52,24 +52,48 @@
     </nav>
 
     <main>
-        <!--Can you suggest a nice way to present the two locations from location1.html and location2.html in a general form?-->
-        <section class="locations">
+        <!--Location Section-->
+        <div class="location-section">
             <h2>Our Locations</h2>
             <div class="location-cards">
+
                 <div class="location-card">
-                    <img src="images/location/one jaya.jpg" alt="Location 1 Image">
-                    <h3>Location 1</h3>
-                    <p>123 Coffee Street, Brewtown</p>
+                    <div class="flip-container">
+                        <div class="location-card-inner">
+                            <div class="location-card-front">
+                                <img src="images/location/one_jaya.jpg" alt="Location 1 Image">
+                            </div>
+                            <div class="location-card-back">
+                                <a href="https://maps.app.goo.gl/8ap6MykG7yn7rF7A6">
+                                    <img src="images/location/Location_1.png" alt="Location 1 Back Image">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>One Jaya</h3>
+                    <p>G63, Lot, Onejaya Shopping Complex</p>
                     <a href="location1.html" class="btn">Learn more</a>
                 </div>
+
                 <div class="location-card">
-                    <img src="images/location/plaza merdeka.jpg" alt="Location 2 Image">
-                    <h3>Location 2</h3>
-                    <p>456 Espresso Avenue, Roast City</p>
+                    <div class="flip-container">
+                        <div class="location-card-inner">
+                            <div class="location-card-front">
+                                <img src="images/location/plaza_merdeka.jpg" alt="Location 2 Image">
+                            </div>
+                            <div class="location-card-back">
+                                <a href="https://maps.app.goo.gl/kzNmquJ9gRcB5vxL7">
+                                    <img src="images/location/Location_2.png" alt="Location 2 Back Image">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Plaza Merdeka</h3>
+                    <p>Jalan Tun Abang Haji Openg</p>
                     <a href="location2.html" class="btn">Learn more</a>
                 </div>
             </div>
-        </section>
+        </div>
         <div class="scroll-top">
             <!--/* https://dev.to/jackherizsmith/making-a-back-to-top-button-without-javascript-2ej6 */-->
             <a class="scroll-top__link" href="#">&#11165;</a> <!--href="#" navigates to the top of the page -->
