@@ -73,14 +73,14 @@
                 <form name="form" action="mailto:104390572@students.swinburne.edu.my" method="post" enctype="text/plain">
                     <fieldset>
                         <legend>Personal Information</legend>
-                        <input type="text" placeholder="First name" name="name" maxlength="25" required="required">
-                        <input type="text" placeholder="Last name" name="name" maxlength="25" required="required">
-                        <input type="email" placeholder="Enter your e-mail address" name="email" required="required" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/">
+                        <input class="responsive-hover" type="text" placeholder="First name" name="name" maxlength="25" required="required" pattern="[A-Za-z]+" title="Alphabetical characters only; Maximum 25 characters.">
+                        <input class="responsive-hover" type="text" placeholder="Last name" name="name" maxlength="25" required="required" pattern="[A-Za-z]+" title="Alphabetical characters only; Maximum 25 characters."> 
+                        <input class="responsive-hover" type="email" placeholder="Enter your e-mail address" name="email" required="required" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/">
+                        <input class="responsive-hover" type="text" placeholder="Enter your login id" name="login id" maxlength="25" required="required"></p>
+                        <input class="responsive-hover" type="password" placeholder="Enter your password" name="password" maxlength="25" required="required"></p>
                     </fieldset>
-                    <p>
                         <input type="submit" value="Submit Form">
-                        <input type="reset" value="Clear">
-                    </p>
+                        <input id="reset" type="reset" value="Clear">
                 </form>
             </div>
         </section>

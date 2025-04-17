@@ -45,15 +45,82 @@
     padding-left: 80px;
 }
 
-/* Registration form start */
-
-.registration-container {
+/*Enquiry form start*/
+.enquiry-container {
     background-color: var(--container-background-color);
     border-radius: var(--border-radius);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     position: relative;
     margin: auto;
-    height: 500px;
+    height: 650px;
+}
+
+.enquiry-container * {
+    box-sizing: border-box;
+}
+
+.enquiry-left img {
+    width: 6em;
+}
+
+.enquiry-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 300px;
+    height: 400px;
+}
+
+.enquiry-right {
+    position: absolute;
+    right: 0;
+    box-sizing: border-box;
+    padding: 30px;
+    width: 500px;
+}
+
+.enquiry-container input {
+    width: 100%;
+    padding: 10px 0;
+    padding-left: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+.enquiry-container input:focus {
+    outline: 2px solid var(--accent-color-1);
+    border-color: var(--accent-color-1);
+    transition: none;
+    box-sizing: border-box;
+}
+
+.enquiry-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--accent-color-1);
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--container-background-color);
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.enquiry-container button:hover {
+    background-color: var(--accent-color-1);
+}
+/*Enquiry form end*/
+
+/* Registration form start */
+.registration-container {
+    background-color: var(--container-background-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    height: 545px;
 }
 
 .registration-container * {
@@ -83,37 +150,9 @@
 }
 
 .registration-container input {
-    width: 100%;
-    padding: 10px 0;
-    padding-left: 10px;
-    margin: 10px 0;
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
+    margin: 8px 0;
 }
-
-.registration-container input:focus {
-    outline: 2px solid var(--accent-color-1);
-    border-color: var(--accent-color-1);
-    transition: none;
-    box-sizing: border-box;
-}
-
-.registration-container button {
-    width: 100%;
-    padding: 10px;
-    background-color: var(--accent-color-1);
-    border: none;
-    border-radius: var(--border-radius);
-    color: var(--container-background-color);
-    margin-top: 10px;
-    font-size: 1.1em;
-    font-weight: bold;
-}
-
-.registration-container button:hover {
-    background-color: var(--accent-color-1);
-}
-
+/*Registration form end*/
 
 /* Login Page Prototype Start */
 .login-container {
