@@ -1501,6 +1501,81 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     color: white;
 }
 
+.scroll-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.scroll-indicator span {
+    font-size: 0.9em;
+    color: white;
+    margin-bottom: 5px;
+    animation: bounceText 2s infinite;
+}
+
+.scroll-indicator .mouse {
+    width: 20px;
+    height: 35px;
+    border: 2px solid white;
+    border-radius: 15px;
+    position: relative;
+}
+
+.scroll-indicator .scroll-wheel {
+    width: 6px;
+    height: 10px;
+    background-color: white;
+    border-radius: 3px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollWheel 1.5s infinite;
+}
+
+/* Animations */
+@keyframes scrollWheel {
+    0% {
+        top: 5px;
+        opacity: 1;
+    }
+    50% {
+        top: 15px;
+        opacity: 0.5;
+    }
+    100% {
+        top: 5px;
+        opacity: 1;
+    }
+}
+
+@keyframes bounceText {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .introduction {
     display: flex;
     align-items: center;
