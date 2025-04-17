@@ -162,6 +162,10 @@ input:user-invalid {
     color: red;
 }
 
+button {
+    cursor: pointer;
+}
+
 .login-container button {
     width: 100%;
     padding: 10px;
