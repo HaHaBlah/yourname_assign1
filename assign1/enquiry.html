@@ -57,6 +57,7 @@
     </header>
 
     
+    <section class="enquiry-pretext">
         <section class="enquiry-container">
             <div class="enquiry-left">
                 <img src="images/Brew&Go_logo.png" alt="Brew & Go logo">
@@ -66,23 +67,27 @@
             <div class="enquiry-right">
                 <form name="form" action="mailto:104390572@students.swinburne.edu.my" method="post" enctype="text/plain">
                     <fieldset>
-                        <input class="responsive-hover" type="text" placeholder="First name" name="name" maxlength="25" required="required" pattern="[A-Za-z]+" title="Alphabetical characters only; Maximum 25 characters.">
-                        <input class="responsive-hover" type="text" placeholder="Last name" name="name" maxlength="25" required="required" pattern="[A-Za-z]+" title="Alphabetical characters only; Maximum 25 characters."> 
+                        First Name:
+                        <input class="responsive-hover" type="text" placeholder="First name" name="name" maxlength="25" required="required" pattern="[A-Za-z]+" title="Alphabetical characters only; Maximum 25 characters."><br>
+                        Last Name:
+                        <input class="responsive-hover" type="text" placeholder="Last name" name="name" maxlength="25" required="required" pattern="[A-Za-z]+" title="Alphabetical characters only; Maximum 25 characters."><br>
+                        Email:
                         <input class="responsive-hover" type="email" placeholder="Enter your e-mail address" name="email" required="required" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/">
 
                             <fieldset>
                                 <legend>
-                                    <strong>Address<strong>
+                                    <strong>Address</strong>
                                 </legend>
                                     <label for="streetaddress">Street Address:</label>
                                     <input class="responsive-hover" type="text" placeholder="Street Address" id=“streetaddress” name="streetaddress" maxlength="40" required="required" pattern="[A-Za-z0-9\s]+" title="Alphanumeric characters only; Maximum 40 characters.">
-
+                                    <br>
                                     <label for="ct">City/Town:</label>
                                     <input class="responsive-hover" type="text" placeholder="City/Town" id=“ct” name="ct" maxlength="20" required="required" pattern="[A-Za-z\s]+" title="Alphabetical characters only; Maximum 20 characters.">
-                                    
+                                    <br>
                                     <label for="state">State:</label>
-                                        <br>
+                                        
                                         <select id="state" name="state" required="required">
+
                                             <option value="">Select a state</option>
                                             <option value="Perlis">Perlis</option>
                                             <option value="Kedah">Kedah</option>
@@ -107,23 +112,31 @@
                                     <input class="responsive-hover" type="text" placeholder="Postcode" id=“postcode” name="postcode" maxlength="5" required="required" pattern="\d{5}" title="5-digit postcode only.">
                             </fieldset>
 
+                        <label for="phone">Phone Number:</label>
+                        <input class="responsive-hover" type="text" placeholder="Phone Number" id="phone" name="phone" maxlength="10" required="required" pattern="\d{10}" title="Format:012-3456789.">
+                        <br>
                         
-                        <input class="responsive-hover" type="text" placeholder="Phone Number" id="phone" name="phone" maxlength="10" required="required" pattern="\d{10}" title="Format: 012-3456789.">
+                        <label for="ET">Enquiry Type:</label>
+                        <select id="ET" name="ET" required="required">
+                            <option value="">Select an enquiry type</option>
+                            <option value="Product">Products</option>
+                            <option value="Membership">Membership</option>
+                            <option value="Pop-up">Pop-up Market Activities</option>
+                        </select>
+                        <br>
 
-                        <label for="message">Your Message</label>
-                        membership
-                        popupmarlket activities
-                        products
-                        <textarea id="message" name="message" required></textarea>
+                        <label for="message">Your Message:</label>
+                        <textarea id="message" name="message" required="required" rows="3" cols="40"></textarea>
                         
                         <button type="submit">Send Enquiry</button>
                     </fieldset>
                 </form>
             </div>
         </section>
+    </section>
           
 
-        <main>
+    <main>    
         <div class="scroll-top">
             <!--/* https://dev.to/jackherizsmith/making-a-back-to-top-button-without-javascript-2ej6 */-->
             <a class="scroll-top__link" href="#">&#11165;</a> <!--href="#" navigates to the top of the page -->
