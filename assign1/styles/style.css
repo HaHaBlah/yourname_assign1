@@ -1477,7 +1477,6 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
-    /* Ensures the gradient scrolls with the image */
 }
 
 .welcome h1 {
