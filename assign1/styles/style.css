@@ -737,6 +737,7 @@ footer iframe {
 }
 
 #student_id {
+    font-family: Arial, Helvetica, sans-serif;
     color: rgb(var(--accent-color-1-rgb));
 }
 
