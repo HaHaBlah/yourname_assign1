@@ -6,7 +6,6 @@
     <meta name="author" content="Hii Wei Bao">
     <title>Membership Registration Page</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/registration.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
@@ -63,28 +62,34 @@
         <p>As a member, you will be entitled to exclusive discounts and promotions.</p>
         <p>We will send you a confirmation email once your registration is successful.</p>
 
-        <section class="registration-container">
-            <div class="registration-left">
+        <section class="login-container registration-container">
+            <div class="login-left">
                 <img src="images/Brew&Go_logo.png" alt="Brew & Go logo">
-
                 <h2>Membership Registration</h2>
+                <p>Become a member of Brew & Go. Coffee</p>
             </div>
-            <div class="registration-right">
-                <form name="form" action="mailto:104390572@students.swinburne.edu.my" method="post" enctype="text/plain">
-                    <fieldset>
-                        <legend>Personal Information</legend>
-                        <input class="responsive-hover" type="text" placeholder="First name" name="name" maxlength="25" required="required" pattern="[A-Za-z]+" title="Alphabetical characters only; Maximum 25 characters.">
-                        <input class="responsive-hover" type="text" placeholder="Last name" name="name" maxlength="25" required="required" pattern="[A-Za-z]+" title="Alphabetical characters only; Maximum 25 characters."> 
-                        <input class="responsive-hover" type="email" placeholder="Enter your e-mail address" name="email" required="required" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/">
-                        <input class="responsive-hover" type="text" placeholder="Enter your login id" name="login id" maxlength="25" required="required"></p>
-                        <input class="responsive-hover" type="password" placeholder="Enter your password" name="password" maxlength="25" required="required"></p>
-                    </fieldset>
-                        <input type="submit" value="Submit Form">
-                        <input id="reset" type="reset" value="Clear">
+            <div class="login-right">
+                <form action="/login" method="post">
+                    <input class="responsive-hover" type="text" placeholder="First name" name="name" maxlength="25"
+                        required="required" pattern="[A-Za-z]+"
+                        title="Alphabetical characters only; Maximum 25 characters.">
+                    <input class="responsive-hover" type="text" placeholder="Last name" name="name" maxlength="25"
+                        required="required" pattern="[A-Za-z]+"
+                        title="Alphabetical characters only; Maximum 25 characters.">
+                    <input class="responsive-hover" type="email" placeholder="Enter your e-mail address"
+                        name="email" required="required" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/">
+                    <input class="responsive-hover" type="text" name="username" placeholder="Username" required
+                        maxlength="10" pattern="[A-Za-z]+" title="Alphabetical characters only; Maximum 10 characters.">
+                    <input class="responsive-hover" type="text" name="password" placeholder="Password" required
+                        maxlength="25" pattern="[A-Za-z]+" title="Alphabetical characters only; Maximum 25 characters.">
+                    <button class="responsive-hover-button" type="submit">Become a Member</button>
                 </form>
+
+                <div class="login-bottom">
+                    <a href="registration.html">Already have an account?</a></p>
+                </div>
             </div>
         </section>
-
 
         <div class="scroll-top">
             <!--/* https://dev.to/jackherizsmith/making-a-back-to-top-button-without-javascript-2ej6 */-->
