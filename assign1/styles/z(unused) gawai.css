@@ -1,43 +1,40 @@
-body {
-    font-family: 'Noto Sans', sans-serif;
-    background-color: #a99175;
-    color: #fff7dd;
-    margin: 0;
-    padding: 0;
-}
-
-.gawai-container {
+.past-gawai-container {
     max-width: 800px;
     margin: 10vh auto;
     padding: 2rem;
     text-align: center;
+    
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #a99175;
+    color: #fff7dd;
+    padding: 0;
 }
 
-.gawai-banner {
+.past-gawai-banner {
     background-color: #3b1f0f;
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-.gawai-banner h1 {
+.past-gawai-banner h1 {
     font-family: 'Alice', serif;
     font-size: 3rem;
     margin-bottom: 0.5rem;
 }
 
-.gawai-subtitle {
+.past-gawai-subtitle {
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
-.gawai-hours {
+.past-gawai-hours {
     font-size: 1.2rem;
     color: #ffd700;
     font-weight: bold;
 }
 
-.tart-section {
+.past-tart-section {
     background-color: #5b351c;
     border-radius: 10px;
     padding: 2rem;
@@ -45,7 +42,7 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.tart-section h2 {
+.past-tart-section h2 {
     border-bottom: 2px solid #ffe066;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
@@ -53,47 +50,47 @@ body {
     color: #ffe066;
 }
 
-.tart-list {
+.past-tart-list {
     list-style: none;
     padding: 0;
 }
 
-.tart-list li {
+.past-tart-list li {
     font-size: 1.2rem;
     padding: 0.5rem 0;
     color: #fff5c2;
 }
 
-.date {
+.past-date {
     font-weight: bold;
     color: #ffdd57;
 }
 
-.gawai-footer {
+.past-gawai-footer {
     margin-top: 2rem;
     font-size: 1.5rem;
     color: #ff8c34;
     font-family: 'Alice', serif;
 }
 
-.brand-tag {
+.past-brand-tag {
     font-size: 1rem;
     margin-top: 0.5rem;
     color: #eac066;
 }
 
 @media (max-width: 600px) {
-    .gawai-banner h1 {
+    .past-gawai-banner h1 {
         font-size: 2rem;
     }
 
-    .gawai-subtitle,
-    .gawai-hours,
-    .tart-list li {
+    .past-gawai-subtitle,
+    .past-gawai-hours,
+    .past-tart-list li {
         font-size: 1rem;
     }
 
-    .tart-section h2 {
+    .past-tart-section h2 {
         font-size: 1.5rem;
     }
 }

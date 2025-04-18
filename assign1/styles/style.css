@@ -7,6 +7,7 @@
 /* styles/style.css */
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Noto+Sans:wght@400;700&display=swap');
 
 /* Some variables */
 :root {
@@ -2480,7 +2481,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     margin: 20px auto;
 }
 
-  .activity-header h1 {
+.activity-header h1 {
     margin: 0;
 }
 
@@ -2942,7 +2943,8 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     margin: 2rem auto 5rem auto;
 }
 
-.joinus-contact a, .joinus-contact a:visited {
+.joinus-contact a,
+.joinus-contact a:visited {
     color: var(--link-color);
     text-decoration: none;
 }
@@ -3013,3 +3015,103 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 
 
 /* joinus Page END */
+
+/* Past Page START */
+.past-gawai-container {
+    max-width: 800px;
+    margin: 10vh auto;
+    padding: 2rem;
+    text-align: center;
+
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #a99175;
+    color: #fff7dd;
+    padding: 0;
+}
+
+.past-gawai-banner {
+    background-color: #3b1f0f;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.past-gawai-banner h1 {
+    font-family: 'Alice', serif;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.past-gawai-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.past-gawai-hours {
+    font-size: 1.2rem;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.past-tart-section {
+    background-color: #5b351c;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.past-tart-section h2 {
+    border-bottom: 2px solid #ffe066;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: #ffe066;
+}
+
+.past-tart-list {
+    list-style: none;
+    padding: 0;
+}
+
+.past-tart-list li {
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+    color: #fff5c2;
+}
+
+.past-date {
+    font-weight: bold;
+    color: #ffdd57;
+}
+
+.past-gawai-footer {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: #ff8c34;
+    font-family: 'Alice', serif;
+}
+
+.past-brand-tag {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: #eac066;
+}
+
+@media (max-width: 600px) {
+    .past-gawai-banner h1 {
+        font-size: 2rem;
+    }
+
+    .past-gawai-subtitle,
+    .past-gawai-hours,
+    .past-tart-list li {
+        font-size: 1rem;
+    }
+
+    .past-tart-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Past Page END */
