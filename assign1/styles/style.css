@@ -386,7 +386,6 @@ header img {
     height: 50vw;
     object-fit: cover;
     object-position: center;
-    background-image: linear-gradient(0deg, rgba(var(--background-color-rgb), 1) 0%, rgba(var(--background-color-rgb), 0.6498248957786239) 15%, rgba(var(--background-color-rgb), 0.29968483975621496) 30%, rgba(var(--background-color-rgb), 0) 50%, rgba(var(--background-color-rgb), 0.09240192659094892) 70%, rgba(var(--background-color-rgb), 0.2520657921371674) 100%);
 }
 
 /* Navigation styles START */
