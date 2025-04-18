@@ -1850,6 +1850,54 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     font-size: 1.2em;
 }
 
+@media (max-width: 1000px) {
+    .introduction .introduction-image {
+        width: 300px;
+        height: 300px;
+        margin-right: 0;
+    }
+    
+    .introduction-content {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .introduction-content h3 {
+        font-size: 1em; /* Adjust font size for smaller screens */
+    }
+
+    .introduction-content h2 {
+        font-size: 1.5em; /* Reduce font size instead of hiding */
+    }
+
+    .introduction-content p {
+        font-size: 0.9em; /* Make paragraph text smaller */
+    }
+}
+
+@media (max-width: 600px) {
+    .introduction .introduction-image {
+        display: none;
+    }
+
+    .introduction-content {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .introduction-content h3 {
+        font-size: 0.8em; /* Further reduce font size for very small screens */
+    }
+
+    .introduction-content h2 {
+        font-size: 1.2em; /* Further reduce font size */
+    }
+
+    .introduction-content p {
+        font-size: 0.8em; /* Further reduce paragraph text size */
+    }
+}
+
 .why-choose {
     color: white;
     margin: 0;
@@ -1874,6 +1922,13 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     font-size: 1.2em;
     margin-left: 7.5%;
     margin-right: 7.5%;
+}
+
+@media (max-width: 600px) {
+    .why-choose h2 {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 }
 
 .feature-container {
@@ -1957,6 +2012,13 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     text-align: center;
     color: white;
     font-size: 1.2em;
+}
+
+@media (max-width: 800px) {
+    .product-showcase p {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 }
 
 .product-showcase .explore {
@@ -2083,6 +2145,11 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
         align-items: center;
     }
 
+    .promotion-poster .poster {
+        height: 300px; 
+        width: 250px; 
+    }
+
     .latest-promotion,
     .promotion-poster {
         width: 90%;
@@ -2141,6 +2208,13 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     min-width: none;
 }
 
+@media (max-width: 768px) {
+    .latest-news p {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
 .learn-more .btn {
     margin: 15px;
     display: inline-block;
@@ -2186,6 +2260,34 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     justify-content: space-between;
     margin: 0 7.5%;
     flex-wrap: wrap;
+}
+
+@media (max-width: 800px) {
+    .location-cards {
+        flex-direction: column;
+        align-items: center;
+        margin: 0 5%;
+    }
+
+    .location-card {
+        width: 80%;
+        margin: 10px 0;
+        gap: 0 !important;
+        margin-bottom: 10vh !important;
+    }
+
+    .flip-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .location-card h3 {
+        font-size: 1.5em;
+    }
+
+    .location-card p {
+        font-size: 1em;
+    }
 }
 
 .location-card {
