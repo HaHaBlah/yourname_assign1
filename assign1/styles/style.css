@@ -3230,7 +3230,7 @@ h2 span {
 .product-content .product-buy-2:hover,
 .product-content .product-buy-3:hover,
 .product-content .product-buy-4:hover {
-    background-color: #2c1f33;
+    background-color: var(--accent-color-1);
 }
 
 /* Price Details Styling */
