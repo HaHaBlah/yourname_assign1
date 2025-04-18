@@ -1,5 +1,5 @@
 /* Hiring Banner Styling */
-.hiring-banner {
+.joinus-hiring-banner {
     padding: 0;
     /* Remove padding, ensure the image covers full section */
     background-image: url("images/Coffee/joey.jpg");
@@ -29,7 +29,7 @@
     background-repeat: no-repeat;
 }
 
-.img {
+.joinus-img {
     width: 100%;
     height: 40vh;
     /* Full height of the viewport */
@@ -38,7 +38,7 @@
 }
 
 /* Optional: Adding an overlay to improve text visibility if you still want */
-.hiring-banner:before {
+.joinus-hiring-banner:before {
     content: '';
     position: absolute;
     top: 0;
@@ -52,7 +52,7 @@
 }
 
 /* Title Text Styling */
-.hiring-banner h1 {
+.joinus-hiring-banner h1 {
     font-size: 4.5rem;
     letter-spacing: 5px;
     text-transform: uppercase;
@@ -63,7 +63,7 @@
     position: absolute;
 }
 
-.hiring-banner img {
+.joinus-hiring-banner img {
     width: 100%;
     height: 50vw;
     max-height: 50vh;
@@ -72,7 +72,7 @@
     object-fit: cover;
 }
 
-.hiring-banner:after {
+.joinus-hiring-banner:after {
     content: "";
     position: absolute;
     top: 0;
@@ -86,7 +86,7 @@
 }
 
 /* Job Section Styling */
-.job-opening {
+.joinus-job-opening {
     background-color: #fff;
     padding: 2rem;
     max-width: 800px;
@@ -95,25 +95,25 @@
     margin: 2rem auto 20vh auto;
 }
 
-.job-opening h2 {
+.joinus-job-opening h2 {
     font-size: 2rem;
     color: #6d4c41;
 }
 
-.job-opening .location {
+.joinus-job-opening .joinus-location {
     font-style: italic;
     color: #7f8c8d;
 }
 
 /* Requirements List - Vertical Bullet Styling */
-.requirements h3 {
+.joinus-requirements h3 {
     font-size: 1.5rem;
     color: #6d4c41;
     text-align: left;
     margin-bottom: 10px;
 }
 
-.requirements ul {
+.joinus-requirements ul {
     list-style-type: disc;
     /* Bullet points in vertical format */
     padding-left: 20px;
@@ -122,13 +122,13 @@
     color: #7f8c8d;
 }
 
-.requirements li {
+.joinus-requirements li {
     font-size: 1rem;
     line-height: 1.5;
 }
 
 /* Apply Button Styling */
-.apply-btn {
+.joinus-apply-btn {
     background-color: #f1c40f;
     color: white;
     font-size: 1.2rem;
@@ -139,21 +139,21 @@
     margin-top: 20px;
 }
 
-.apply-btn:hover {
+.joinus-apply-btn:hover {
     background-color: #f39c12;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hiring-banner h1 {
+    .joinus-hiring-banner h1 {
         font-size: 2.5rem;
     }
 
-    .job-opening {
+    .joinus-job-opening {
         padding: 1.5rem;
     }
 
-    .apply-btn {
+    .joinus-apply-btn {
         font-size: 1rem;
     }
 }
