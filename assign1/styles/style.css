@@ -2581,6 +2581,27 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 
 /* Activities Page START */
 
+.activity-bodybody {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f4f0;
+    color: #3e2f23;
+}
+
+.activity-header {
+    background-color: #6f4e37;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    max-width: 810px;
+    border-radius: 12px;
+    margin: 20px auto;
+}
+
+  .activity-header h1 {
+    margin: 0;
+}
+
 .activities-section {
     max-width: 800px;
     margin: 40px auto;
@@ -2588,7 +2609,6 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20vh;
 }
 
 .activities-section h2 {
@@ -2938,3 +2958,166 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 }
 
 /* Current Page END */
+
+/* joinus Page START */
+/* Hiring Banner Styling */
+.joinus-hiring-banner {
+    padding: 0;
+    /* Remove padding, ensure the image covers full section */
+    background-image: url("images/Coffee/joey.jpg");
+    /* Path to your image */
+    background-size: cover;
+    /* Cover the full sectionp;
+    background-position: center; /* Ensures the image is centered */
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    color: white;
+    /* Default color for text */
+    /* Ensures the image fits well in the section */
+    position: relative;
+    width: 100%;
+    max-height: 50vh;
+    height: 50vw;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+
+/* Optional: Adding an overlay to improve text visibility if you still want */
+.joinus-hiring-banner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    /* Dark overlay to make text stand out */
+    z-index: 1;
+    /* Overlay should be behind the text */
+}
+
+/* Title Text Styling */
+.joinus-hiring-banner h1 {
+    font-size: 4.5rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    z-index: 2;
+    /* Ensures text stays above the overlay */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    /* Adds shadow for better visibility */
+    position: absolute;
+}
+
+.joinus-hiring-banner img {
+    width: 100%;
+    height: 50vw;
+    max-height: 50vh;
+    /* Full height of the viewport */
+    object-position: 50% 25%;
+    object-fit: cover;
+}
+
+.joinus-hiring-banner:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* https://cssgradient.io/ */
+    background-image: linear-gradient(0deg, rgba(var(--background-color-rgb), 1) 0%, rgba(var(--background-color-rgb), 0.6498248957786239) 15%, rgba(var(--background-color-rgb), 0.29968483975621496) 30%, rgba(var(--background-color-rgb), 0) 50%, rgba(var(--background-color-rgb), 0) 70%, rgba(var(--background-color-rgb), 0) 100%);
+
+
+}
+
+/* Job Section Styling */
+.joinus-job-opening {
+    background-color: var(--container-background-color);
+    padding: 2rem;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto 5rem auto;
+}
+
+.joinus-contact a, .joinus-contact a:visited {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.joinus-contact a:hover {
+    text-decoration: underline;
+}
+
+.joinus-job-opening h2 {
+    font-size: 2rem;
+    color: #6d4c41;
+}
+
+.joinus-job-opening .joinus-location {
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+/* Requirements List - Vertical Bullet Styling */
+.joinus-requirements h3 {
+    font-size: 1.5rem;
+    color: #6d4c41;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.joinus-requirements ul {
+    list-style-type: disc;
+    /* Bullet points in vertical format */
+    padding-left: 20px;
+    /* Indentation for the bullet points */
+    text-align: left;
+    color: #7f8c8d;
+}
+
+.joinus-requirements li {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Apply Button Styling */
+.joinus-apply-btn {
+    background-color: var(--accent-color-1);
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: bolder;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .joinus-hiring-banner h1 {
+        font-size: 2.5rem;
+    }
+
+    .joinus-job-opening {
+        padding: 1.5rem;
+    }
+
+    .joinus-apply-btn {
+        font-size: 1rem;
+    }
+}
+
+
+/* joinus Page END */
