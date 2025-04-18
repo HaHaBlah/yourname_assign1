@@ -1448,33 +1448,21 @@ With some parts edited for compatibility since they applied to whole webpage*/
 /* Credits: Patrick */
 /* https://dev.to/jackherizsmith/making-a-back-to-top-button-without-javascript-2ej6 */
 .scroll-top {
-    /* position: absolute; */
-    /* position: -webkit-sticky; */
     position: sticky;
     bottom: 2rem;
-    /* top: 120vh; */
-    /* top: calc(100vh - 100px); */
     height: 0;
-    /* right: 2rem; */
     width: 100%;
     z-index: 10;
     margin-top: -50px;
     text-align: right;
-    /* pointer-events: none; Is this necessary? */
 }
 
 .scroll-top__link {
-    /* position: -webkit-sticky; */
-    /* position: sticky; */
     position: fixed;
     bottom: 2rem;
     right: 2rem;
     pointer-events: auto;
-    /* bottom: 2rem; */
     display: inline-block;
-    /* top: 90vh; */
-    /* margin-bottom: 4rem; */
-    /* margin-right: 2rem; */
     text-decoration: none;
     border-radius: .5rem;
     background-color: var(--accent-color-1);
@@ -1484,7 +1472,6 @@ With some parts edited for compatibility since they applied to whole webpage*/
     opacity: .5;
     z-index: 10;
     transition: opacity 0.1s ease-in-out;
-    /* z-index: 1000; */
 }
 
 
@@ -2393,13 +2380,15 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom, rgba(89, 60, 38, 0.8), rgba(169, 145, 117, 0.9));
+    background: linear-gradient(135deg, rgba(89, 60, 38, 0.8), rgba(169, 145, 117, 0.9));
     padding: 2em;
+    border: 10px solid #593C26;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     margin: 2em auto;
     max-width: 800px;
     text-align: center;
+    margin-bottom: 10vh;
 }
 
 .acknowledgement h2 {
@@ -2452,4 +2441,9 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 .acknowledgement a:hover {
     color: white;
     text-decoration: underline;
+}
+
+.references {
+    display: block;
+    margin-bottom: 20vh;
 }
