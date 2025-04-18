@@ -45,7 +45,70 @@
     padding-left: 80px;
 }
 
+/*Join us form start*/
+.joinus-container {
+    background-color: var(--container-background-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    width: 1000px;
+    height: 920px;
+    padding: 5px;
+    margin: 50px 0 auto 0; 
+}
+
+.joinus-container select{
+    width: 50%;
+    padding: 10px 0;
+    padding-left: 10px;
+    margin: 8px 0;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+.joinus-container input {
+    width: 100%;
+    padding: 10px 0;
+    padding-left: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+.joinus-container input:focus {
+    outline: 2px solid var(--accent-color-1);
+    border-color: var(--accent-color-1);
+    transition: none;
+    box-sizing: border-box;
+}
+
+.joinus-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--accent-color-1);
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--container-background-color);
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+
+
+/*Join us form end*/
+
 /*Enquiry form start*/
+.enquiry-container-joinus {
+    background-color: var(--container-background-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    width: 1000px;
+    height: 700px;
+    padding: 5px;
+    margin: 50px 0 auto 0; 
+}
 .enquiry-pretext {
     margin: 50px 17.46%;
 }
@@ -73,7 +136,7 @@
     box-sizing: border-box;
     padding: 30px;
     width: 300px;
-    height: 400px;
+    
 }
 
 .enquiry-right {
