@@ -291,12 +291,12 @@
     padding: 20px;
     border-radius: var(--border-radius);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-
     position: relative;
     margin: auto;
     width: 800px;
     height: 325px;
     box-sizing: border-box;
+    margin-bottom: 20vh;
 }
 
 .login-container form {
@@ -308,6 +308,7 @@
 
 .registration-container {
     height: 475px;
+    margin-bottom: 20vh;
 }
 
 .login-container * {
@@ -738,6 +739,7 @@ https://codepen.io/ImBobby/pen/DdPRYZ
 
 .no-margin-top {
     margin-top: 0;
+    background-color: #A99175;
 }
 
 .center {
@@ -764,11 +766,9 @@ footer {
 footer {
     line-height: 1.5;
     font-family: var(--headings-font);
-
     width: 100%;
     clear: both;
     position: relative;
-    margin-top: var(--navbar-height);
 }
 
 footer * {
@@ -974,6 +974,7 @@ footer iframe {
 .profile table {
     width: 80%;
     padding: 10px;
+    margin-bottom: 20vh;
 }
 
 .profiletable {
@@ -1505,6 +1506,7 @@ With some parts edited for compatibility since they applied to whole webpage*/
     opacity: 0;
     animation: show-content 0.5s linear forwards;
     animation-delay: 1s;
+    margin-bottom: 10vh;
 }
 
 @keyframes show-content {
@@ -2383,3 +2385,71 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     margin: auto;
 }
 /* Enhancements END */
+
+
+/*acknowledgements.html*/
+.acknowledgement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, rgba(89, 60, 38, 0.8), rgba(169, 145, 117, 0.9));
+    padding: 2em;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin: 2em auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+.acknowledgement h2 {
+    font-size: 2.5em;
+    color: white;
+    margin-bottom: 1em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-family: 'Poppins', sans-serif;
+}
+
+.acknowledgement p {
+    font-size: 1.2em;
+    color: white;
+    margin: 1em 0;
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+}
+
+.acknowledgement ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1em 0;
+}
+
+.acknowledgement ul li {
+    font-size: 1em;
+    color: white;
+    margin: 0.5em 0;
+    text-align: left;
+    padding-left: 1.5em;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+
+.acknowledgement ul li::before {
+    content: '✔';
+    color: #593C26;
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+.acknowledgement a {
+    color: #593C26;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.acknowledgement a:hover {
+    color: white;
+    text-decoration: underline;
+}
