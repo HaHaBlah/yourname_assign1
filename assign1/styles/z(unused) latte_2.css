@@ -40,7 +40,7 @@ main {
 }
 
 /* Gallery of Products */
-.gallery {
+.product-gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -48,7 +48,7 @@ main {
     margin: 20px 0;
 }
 
-.product-title {
+.product-product-title {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 28px;
     color: #3e2a47;
@@ -57,7 +57,7 @@ main {
 }
 
 /* Each product box */
-.content {
+.product-content {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -67,51 +67,51 @@ main {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.content:hover {
+.product-content:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
 }
 
-.content img {
+.product-content img {
     width: 225px;
     height: 280px;
     object-fit: cover;
     margin-bottom: 15px;
 }
 
-.content h3 {
+.product-content h3 {
     font-size: 22px;
     color: #333;
 }
 
-.content p {
+.product-content p {
     font-size: 16px;
     color: #333;
     margin-top: 10px;
 }
 
-.price {
+.product-price {
     font-size: 18px;
     margin-top: 10px;
     text-align: center;
 }
 
-.mp-price {
+.product-mp-price {
     font-weight: bold;
     margin-right: 10px;
     color:#ff0000;
 }
 
-.np-price {
+.product-np-price {
     font-weight: bold;
     color: #000000;
 }
 
-.divider {
+.product-divider {
     margin: 0 5px;
 }
 
-.content .buy-1, .content .buy-2, .content .buy-3, .content .buy-4 {
+.product-content .product-buy-1, .product-content .product-buy-2, .product-content .product-buy-3, .product-content .product-buy-4 {
     background-color: #6600ff;
     color: white;
     padding: 12px 20px;
@@ -123,12 +123,12 @@ main {
     transition: background-color 0.3s ease;
 }
 
-.content .buy-1:hover, .content .buy-2:hover, .content .buy-3:hover, .content .buy-4:hover {
+.product-content .product-buy-1:hover, .product-content .product-buy-2:hover, .product-content .product-buy-3:hover, .product-content .product-buy-4:hover {
     background-color: #2c1f33;
 }
 
 /* Price Details Styling */
-.price-details {
+.product-price-details {
     font-size: 14px;
     color: #333;
     margin-top: 30px;
@@ -136,13 +136,13 @@ main {
     padding-right: 20px;
 }
 
-.price-details em {
+.product-price-details em {
     font-style: italic;
     color: #777;
 }
 
 /* Sidebar Styling for Store Locations */
-.sidebar {
+.product-sidebar {
     background-color: #fff;
     padding: 20px;
     margin-left: 20px;
@@ -153,30 +153,30 @@ main {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.sidebar h2 {
+.product-sidebar h2 {
     font-size: 22px;
     color: #3e2a47;
     margin-bottom: 15px;
 }
 
-.sidebar ul {
+.product-sidebar ul {
     list-style-type: none;
     padding: 0;
 }
 
-.sidebar ul li {
+.product-sidebar ul li {
     margin: 10px 0;
     font-size: 16px;
     color: #333;
 }
 
-.sidebar h3 {
+.product-sidebar h3 {
     font-size: 18px;
     color: #3e2a47;
     margin-top: 20px;
 }
 
-.sidebar button.order-online-btn {
+.product-sidebar button.product-order-online-btn {
     background-color: #6600ff;
     color: white;
     padding: 12px 20px;
@@ -189,36 +189,36 @@ main {
     transition: background-color 0.3s ease;
 }
 
-.sidebar button.order-online-btn:hover {
+.product-sidebar button.product-order-online-btn:hover {
     background-color: #2c1f33;
 }
 
 /* Footer */
-footer {
+/*footer {
     text-align: center;
     background-color: #F2E9DE;
     color: white;
     padding: 10px 0;
-}
+}*/
 
 /* Responsive Layout */
 @media (max-width: 1000px) {
-    .content {
+    .product-content {
         width: 45%;
     }
 
-    .sidebar {
+    .product-sidebar {
         width: 100%;
         margin-left: 0;
     }
 }
 
 @media (max-width: 700px) {
-    .content {
+    .product-content {
         width: 100%;
     }
 
-    .sidebar {
+    .product-sidebar {
         width: 100%;
         margin-left: 0;
     }
