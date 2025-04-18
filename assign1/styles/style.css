@@ -6,6 +6,7 @@
 
 /* styles/style.css */
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;700&display=swap');
 
 /* Some variables */
 :root {
@@ -54,10 +55,10 @@
     width: 1000px;
     height: 920px;
     padding: 5px;
-    margin: 50px 0 auto 0; 
+    margin: 50px 0 auto 0;
 }
 
-.joinus-container select{
+.joinus-container select {
     width: 50%;
     padding: 10px 0;
     padding-left: 10px;
@@ -107,11 +108,13 @@
     width: 1000px;
     height: 700px;
     padding: 5px;
-    margin: 50px 0 auto 0; 
+    margin: 50px 0 auto 0;
 }
+
 .enquiry-pretext {
     margin: 50px 17.46%;
 }
+
 .enquiry-container {
     background-color: var(--container-background-color);
     border-radius: var(--border-radius);
@@ -120,7 +123,7 @@
     width: 1000px;
     height: 840px;
     padding: 5px;
-    margin: 50px 0 auto 0; 
+    margin: 50px 0 auto 0;
 }
 
 .enquiry-container * {
@@ -146,7 +149,7 @@
     width: 800px;
 }
 
-.enquiry-container select{
+.enquiry-container select {
     width: 50%;
     padding: 10px 0;
     padding-left: 10px;
@@ -243,6 +246,7 @@
     font-size: 16px;
     cursor: pointer;
 }
+
 .file-upload-wrapper input[type=file] {
     font-size: 100px;
     position: absolute;
@@ -251,13 +255,13 @@
     opacity: 0;
 }
 
-#duitnow{
+#duitnow {
     border: 1px solid var(--border-color);
     border-radius: 4px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.registration-perks{
+.registration-perks {
     margin: 0 auto;
     padding: 20px;
     background-color: var(--container-background-color);
@@ -268,7 +272,7 @@
     box-sizing: border-box;
 }
 
-.responsive-hover-img {
+.registration-qr {
     display: block;
     margin: 0 auto;
     width: 25vh;
@@ -898,6 +902,8 @@ footer iframe {
     height: 610px;
     border-radius: 25px;
     background-color: white;
+    border: none;
+    overflow: hidden;
 }
 
 
@@ -1448,33 +1454,21 @@ With some parts edited for compatibility since they applied to whole webpage*/
 /* Credits: Patrick */
 /* https://dev.to/jackherizsmith/making-a-back-to-top-button-without-javascript-2ej6 */
 .scroll-top {
-    /* position: absolute; */
-    /* position: -webkit-sticky; */
     position: sticky;
     bottom: 2rem;
-    /* top: 120vh; */
-    /* top: calc(100vh - 100px); */
     height: 0;
-    /* right: 2rem; */
     width: 100%;
     z-index: 10;
     margin-top: -50px;
     text-align: right;
-    /* pointer-events: none; Is this necessary? */
 }
 
 .scroll-top__link {
-    /* position: -webkit-sticky; */
-    /* position: sticky; */
     position: fixed;
     bottom: 2rem;
     right: 2rem;
     pointer-events: auto;
-    /* bottom: 2rem; */
     display: inline-block;
-    /* top: 90vh; */
-    /* margin-bottom: 4rem; */
-    /* margin-right: 2rem; */
     text-decoration: none;
     border-radius: .5rem;
     background-color: var(--accent-color-1);
@@ -1484,7 +1478,6 @@ With some parts edited for compatibility since they applied to whole webpage*/
     opacity: .5;
     z-index: 10;
     transition: opacity 0.1s ease-in-out;
-    /* z-index: 1000; */
 }
 
 
@@ -1865,22 +1858,25 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
         height: 300px;
         margin-right: 0;
     }
-    
+
     .introduction-content {
         margin-left: 10%;
         margin-right: 10%;
     }
 
     .introduction-content h3 {
-        font-size: 1em; /* Adjust font size for smaller screens */
+        font-size: 1em;
+        /* Adjust font size for smaller screens */
     }
 
     .introduction-content h2 {
-        font-size: 1.5em; /* Reduce font size instead of hiding */
+        font-size: 1.5em;
+        /* Reduce font size instead of hiding */
     }
 
     .introduction-content p {
-        font-size: 0.9em; /* Make paragraph text smaller */
+        font-size: 0.9em;
+        /* Make paragraph text smaller */
     }
 }
 
@@ -1895,15 +1891,18 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     }
 
     .introduction-content h3 {
-        font-size: 0.8em; /* Further reduce font size for very small screens */
+        font-size: 0.8em;
+        /* Further reduce font size for very small screens */
     }
 
     .introduction-content h2 {
-        font-size: 1.2em; /* Further reduce font size */
+        font-size: 1.2em;
+        /* Further reduce font size */
     }
 
     .introduction-content p {
-        font-size: 0.8em; /* Further reduce paragraph text size */
+        font-size: 0.8em;
+        /* Further reduce paragraph text size */
     }
 }
 
@@ -2048,8 +2047,8 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     text-align: center;
     position: relative;
     min-width: none;
-    margin-top: 20vh;
-    margin-bottom: 20vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
 }
 
 .latest-promotion h2 {
@@ -2155,8 +2154,8 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     }
 
     .promotion-poster .poster {
-        height: 300px; 
-        width: 250px; 
+        height: 300px;
+        width: 250px;
     }
 
     .latest-promotion,
@@ -2384,6 +2383,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 .enhancements section {
     margin: auto;
 }
+
 /* Enhancements END */
 
 
@@ -2393,13 +2393,15 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom, rgba(89, 60, 38, 0.8), rgba(169, 145, 117, 0.9));
+    background: linear-gradient(135deg, rgba(89, 60, 38, 0.8), rgba(169, 145, 117, 0.9));
     padding: 2em;
+    border: 10px solid #593C26;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     margin: 2em auto;
     max-width: 800px;
     text-align: center;
+    margin-bottom: 10vh;
 }
 
 .acknowledgement h2 {
@@ -2453,3 +2455,378 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     color: white;
     text-decoration: underline;
 }
+
+.references {
+    display: block;
+    margin-bottom: 20vh;
+}
+
+/* Activities Page START */
+
+.activities-section {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: var(--container-background-color);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20vh;
+}
+
+.activities-section h2 {
+    border-bottom: 2px solid #6f4e37;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    color: #6f4e37;
+}
+
+.activities-activity {
+    margin-bottom: 15px;
+}
+
+.activities-activity span {
+    font-weight: bold;
+    color: #4a372e;
+}
+
+.activities-coming-soon {
+    font-style: italic;
+    color: #a67c52;
+}
+
+/* Activities Page END */
+
+/* Coming Soon Page START */
+.coming_soon-raya-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/raya-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 4rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.coming_soon-raya-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.coming_soon-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.coming_soon-notice-card {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--container-background-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.coming_soon-notice-card h2 {
+    color: #2E8B57;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+/* Remove all conflicting styles first */
+.coming_soon-ketupat-icon,
+.coming_soon-ketupat-icon * {
+    all: initial;
+}
+
+/* Then apply these fresh styles */
+.coming_soon-ketupat-icon {
+    display: inline-block;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 10px;
+
+    /* Debug border - remove after confirming */
+
+
+    width: 250px;
+    height: 250px;
+
+}
+
+.coming_soon-highlight-banner {
+    background-color: #FFD700;
+    color: #333;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+    font-size: 1.1rem;
+}
+
+.coming_soon-locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.coming_soon-location {
+    background: #F8F8F8;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.coming_soon-location:hover {
+    transform: translateY(-5px);
+}
+
+.coming_soon-location h3 {
+    color: #2E8B57;
+    margin-top: 0;
+}
+
+.coming_soon-hours {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.coming_soon-raya-promo {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #FFF8E0;
+    border-radius: 6px;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .coming_soon-raya-hero h1 {
+        font-size: 2rem;
+    }
+
+    .coming_soon-locations-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .coming_soon-notice-card h2 {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .coming_soon-ketupat-icon {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Coming Soon Page END */
+
+/* Current Page START */
+
+/* Hiring Page Styles */
+.current-hiring-banner {
+    background-color: #3e2723;
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.current-hiring-banner h1 {
+    font-size: 3rem;
+    margin: 0;
+    line-height: 1;
+}
+
+.current-job-opening {
+    background-color: white;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 800px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.current-job-opening h2 {
+    color: #5d4037;
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+.current-location {
+    color: #8d6e63;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.current-benefits {
+    background-color: #efebe9;
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin-top: 1.5rem;
+}
+
+.current-benefits h3 {
+    color: #5d4037;
+    margin-top: 0;
+    font-size: 1.3rem;
+}
+
+.current-benefits-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.current-benefits-list li {
+    padding: 0.3rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.current-benefits-list li:before {
+    content: "•";
+    color: #6d4c41;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.current-salary {
+    font-weight: bold;
+    color: #3e2723;
+    margin-top: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .current-hiring-banner h1 {
+        font-size: 2.2rem;
+    }
+
+    .current-job-opening {
+        padding: 1.5rem;
+    }
+
+    .current-job-opening h2 {
+        font-size: 1.5rem;
+    }
+}
+
+.current-cny-container {
+    max-width: 1200px;
+    margin: 5rem auto;
+    padding: 2rem;
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+.current-cny-banner {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #FF0000, #FF6B00);
+    color: #FFD700;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.current-cny-banner h1 {
+    font-size: 3rem;
+    margin: 0;
+    font-family: 'Ma Shan Zheng', cursive;
+}
+
+.current-cny-subtitle {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.current-cny-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.current-cny-promo,
+.current-cny-hours,
+.current-cny-tradition {
+    background-color: #FFF9F9;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.current-cny-container h2 {
+    color: #C10B0B;
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+.current-promo-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #FFF0F0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 5px solid #FF6B00;
+}
+
+.current-orange-icon {
+    width: 100px;
+    height: 100px;
+}
+
+.current-special-hours {
+    list-style-type: none;
+    padding: 0;
+}
+
+.current-special-hours li {
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed #E0E0E0;
+}
+
+.current-date {
+    font-weight: bold;
+    color: #C10B0B;
+    display: inline-block;
+    width: 120px;
+}
+
+.current-resume-notice {
+    background-color: #FFF0F0;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .current-cny-banner h1 {
+        font-size: 2rem;
+    }
+
+    .current-promo-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .current-date {
+        width: 90px;
+    }
+}
+
+/* Current Page END */

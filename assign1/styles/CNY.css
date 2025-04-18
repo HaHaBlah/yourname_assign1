@@ -1,5 +1,5 @@
 /* Hiring Page Styles */
-.hiring-banner {
+.current-hiring-banner {
     background-color: #3e2723;
     color: white;
     text-align: center;
@@ -7,13 +7,13 @@
     margin-bottom: 2rem;
 }
 
-.hiring-banner h1 {
+.current-hiring-banner h1 {
     font-size: 3rem;
     margin: 0;
     line-height: 1;
 }
 
-.job-opening {
+.current-job-opening {
     background-color: white;
     padding: 2rem;
     margin: 0 auto;
@@ -22,45 +22,45 @@
     border-radius: 5px;
 }
 
-.job-opening h2 {
+.current-job-opening h2 {
     color: #5d4037;
     margin-top: 0;
     font-size: 1.8rem;
 }
 
-.location {
+.current-location {
     color: #8d6e63;
     font-style: italic;
     margin-bottom: 1.5rem;
     display: block;
 }
 
-.benefits {
+.current-benefits {
     background-color: #efebe9;
     padding: 1.5rem;
     border-radius: 5px;
     margin-top: 1.5rem;
 }
 
-.benefits h3 {
+.current-benefits h3 {
     color: #5d4037;
     margin-top: 0;
     font-size: 1.3rem;
 }
 
-.benefits-list {
+.current-benefits-list {
     list-style-type: none;
     padding: 0;
     margin: 1rem 0;
 }
 
-.benefits-list li {
+.current-benefits-list li {
     padding: 0.3rem 0;
     position: relative;
     padding-left: 1.5rem;
 }
 
-.benefits-list li:before {
+.current-benefits-list li:before {
     content: "•";
     color: #6d4c41;
     position: absolute;
@@ -68,7 +68,7 @@
     font-size: 1.2rem;
 }
 
-.salary {
+.current-salary {
     font-weight: bold;
     color: #3e2723;
     margin-top: 1rem;
@@ -76,27 +76,27 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .hiring-banner h1 {
+    .current-hiring-banner h1 {
         font-size: 2.2rem;
     }
     
-    .job-opening {
+    .current-job-opening {
         padding: 1.5rem;
     }
     
-    .job-opening h2 {
+    .current-job-opening h2 {
         font-size: 1.5rem;
     }
 }
 
-.cny-container {
+.current-cny-container {
     max-width: 1200px;
     margin: 5rem auto;
     padding: 2rem;
     font-family: 'Noto Sans SC', sans-serif;
 }
 
-.cny-banner {
+.current-cny-banner {
     text-align: center;
     padding: 2rem;
     background: linear-gradient(135deg, #FF0000, #FF6B00);
@@ -106,38 +106,38 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.cny-banner h1 {
+.current-cny-banner h1 {
     font-size: 3rem;
     margin: 0;
     font-family: 'Ma Shan Zheng', cursive;
 }
 
-.cny-subtitle {
+.current-cny-subtitle {
     font-size: 1.5rem;
     margin-top: 0.5rem;
 }
 
-.cny-content {
+.current-cny-content {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
 }
 
-.cny-promo, .cny-hours, .cny-tradition {
+.current-cny-promo, .current-cny-hours, .current-cny-tradition {
     background-color: #FFF9F9;
     padding: 3rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-h2 {
+.current-cny-container h2 {
     color: #C10B0B;
     border-bottom: 2px solid #FFD700;
     padding-bottom: 0.5rem;
     margin-top: 0;
 }
 
-.promo-card {
+.current-promo-card {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -147,29 +147,29 @@ h2 {
     border-left: 5px solid #FF6B00;
 }
 
-.orange-icon {
+.current-orange-icon {
     width: 100px;
     height: 100px;
 }
 
-.special-hours {
+.current-special-hours {
     list-style-type: none;
     padding: 0;
 }
 
-.special-hours li {
+.current-special-hours li {
     padding: 0.8rem 0;
     border-bottom: 1px dashed #E0E0E0;
 }
 
-.date {
+.current-date {
     font-weight: bold;
     color: #C10B0B;
     display: inline-block;
     width: 120px;
 }
 
-.resume-notice {
+.current-resume-notice {
     background-color: #FFF0F0;
     padding: 1rem;
     border-radius: 6px;
@@ -179,16 +179,16 @@ h2 {
 }
 
 @media (max-width: 768px) {
-    .cny-banner h1 {
+    .current-cny-banner h1 {
         font-size: 2rem;
     }
     
-    .promo-card {
+    .current-promo-card {
         flex-direction: column;
         text-align: center;
     }
     
-    .date {
+    .current-date {
         width: 90px;
     }
 }
