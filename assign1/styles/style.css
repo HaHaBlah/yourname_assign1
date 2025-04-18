@@ -1113,6 +1113,8 @@ audio {
     background-size: cover;
     background-position: 50%;
     background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
 }
 
 .location-header:after {
@@ -1143,6 +1145,12 @@ audio {
     object-fit: cover;
     object-position: center;
     border-radius: var(--border-radius);
+}
+
+.location-other img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Locations styles END */
