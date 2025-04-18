@@ -2463,6 +2463,27 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 
 /* Activities Page START */
 
+.activity-bodybody {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f4f0;
+    color: #3e2f23;
+}
+
+.activity-header {
+    background-color: #6f4e37;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    max-width: 810px;
+    border-radius: 12px;
+    margin: 20px auto;
+}
+
+  .activity-header h1 {
+    margin: 0;
+}
+
 .activities-section {
     max-width: 800px;
     margin: 40px auto;
@@ -2470,7 +2491,6 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20vh;
 }
 
 .activities-section h2 {
