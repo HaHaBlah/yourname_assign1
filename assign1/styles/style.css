@@ -2388,6 +2388,10 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 
 
 /*acknowledgements.html*/
+.general-acknowledgement {
+    margin-bottom: 10vh;
+}
+
 .acknowledgement {
     display: flex;
     flex-direction: column;
@@ -2459,6 +2463,120 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 .references {
     display: block;
     margin-bottom: 20vh;
+}
+
+/* References Section Styling */
+.references {
+    padding: 2rem 5%;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    margin: 2rem 0;
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.1),
+        inset 0 0 10px rgba(255, 255, 255, 0.5);
+    transition: 
+        background 0.5s ease,
+        border-color 0.5s ease;
+}
+
+.references h2 {
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.references h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, #4a90e2 0%, #6c5ce7 100%);
+}
+
+.references h3 {
+    font-family: 'Segoe UI', sans-serif;
+    color: #34495e;
+    font-size: 1.8rem;
+    margin: 2rem 0 1.5rem;
+    padding-left: 1rem;
+    border-left: 4px solid #4a90e2;
+}
+
+.references ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 0;
+    list-style: none;
+}
+
+.references li {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    padding: 1.2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+}
+
+.references li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.references img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    padding: 8px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.references li:hover img {
+    transform: scale(1.1);
+}
+
+.references a {
+    color: #2d3436;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.references a:hover {
+    color: #4a90e2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .references ul {
+        grid-template-columns: 1fr;
+    }
+
+    .references h2 {
+        font-size: 2rem;
+    }
+
+    .references li {
+        padding: 1rem;
+    }
 }
 
 /* Activities Page START */
@@ -2536,22 +2654,16 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     font-size: 1.8rem;
 }
 
-/* Remove all conflicting styles first */
 .coming_soon-ketupat-icon,
 .coming_soon-ketupat-icon * {
     all: initial;
 }
 
-/* Then apply these fresh styles */
 .coming_soon-ketupat-icon {
     display: inline-block;
     object-fit: contain;
     vertical-align: middle;
     margin-right: 10px;
-
-    /* Debug border - remove after confirming */
-
-
     width: 250px;
     height: 250px;
 
@@ -2627,10 +2739,6 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
         height: 100px;
     }
 }
-
-/* Coming Soon Page END */
-
-/* Current Page START */
 
 /* Hiring Page Styles */
 .current-hiring-banner {
