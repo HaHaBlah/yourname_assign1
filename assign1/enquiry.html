@@ -68,9 +68,9 @@
                 <form name="form" action="mailto:104390572@students.swinburne.edu.my" method="post" enctype="text/plain">
                     <fieldset>
                         First Name:
-                        <input class="responsive-hover" type="text" placeholder="First name" name="name" maxlength="25" required="required" pattern="[A-Za-z]+" title="Alphabetical characters only; Maximum 25 characters."><br>
+                        <input class="responsive-hover" type="text" placeholder="First name" name="name" maxlength="25" required="required" pattern="[A-Za-z\s]+" title="Alphabetical characters only; Maximum 25 characters."><br>
                         Last Name:
-                        <input class="responsive-hover" type="text" placeholder="Last name" name="name" maxlength="25" required="required" pattern="[A-Za-z]+" title="Alphabetical characters only; Maximum 25 characters."><br>
+                        <input class="responsive-hover" type="text" placeholder="Last name" name="name" maxlength="25" required="required" pattern="[A-Za-z\s]+" title="Alphabetical characters only; Maximum 25 characters."><br>
                         Email:
                         <input class="responsive-hover" type="email" placeholder="Enter your e-mail address" name="email" required="required" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/">
 
@@ -113,7 +113,7 @@
                             </fieldset>
 
                         <label for="phone">Phone Number:</label>
-                        <input class="responsive-hover" type="text" placeholder="Phone Number" id="phone" name="phone" maxlength="10" required="required" pattern="\d{10}" title="Format:012-3456789.">
+                        <input class="responsive-hover" type="text" placeholder="Phone Number" id="phone" name="phone" maxlength="11" required="required" pattern="\d{10}" title="Format:0123456789.">
                         <br>
                         
                         <label for="ET">Enquiry Type:</label>
