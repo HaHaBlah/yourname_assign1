@@ -46,15 +46,8 @@
 }
 
 /*Join us form start*/
-.joinus-container {
-    background-color: var(--container-background-color);
-    border-radius: var(--border-radius);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    position: relative;
-    width: 1000px;
-    height: 920px;
-    padding: 5px;
-    margin: 50px 0 auto 0;
+#joinus-container {
+    height: 1050px;
 }
 
 .joinus-container select {
@@ -178,7 +171,7 @@
     border-radius: var(--border-radius);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     position: relative;
-    height: 545px;
+    height: 600px;
 }
 
 .registration-container * {
@@ -290,7 +283,7 @@
 }
 
 .registration-container {
-    height: 475px;
+    height: 600px;
     margin-bottom: 20vh;
 }
 
@@ -3036,6 +3029,7 @@ h2 span {
         font-size: 1rem;
     }
 }
+
 
 
 /* joinus Page END */
