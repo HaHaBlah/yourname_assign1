@@ -101,30 +101,13 @@
 /*Join us form end*/
 
 /*Enquiry form start*/
-.enquiry-container-joinus {
-    background-color: var(--container-background-color);
-    border-radius: var(--border-radius);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    position: relative;
-    width: 1000px;
-    height: 700px;
-    padding: 5px;
-    margin: 50px 0 auto 0;
-}
 
 .enquiry-pretext {
     margin: 50px 17.46%;
 }
 
-.enquiry-container {
-    background-color: var(--container-background-color);
-    border-radius: var(--border-radius);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    position: relative;
-    width: 1000px;
-    height: 840px;
-    padding: 5px;
-    margin: 50px 0 auto 0;
+#enquiry-container {
+    height: 900px;
 }
 
 .enquiry-container * {
@@ -299,7 +282,7 @@
     position: relative;
     margin: auto;
     width: 800px;
-    height: 325px;
+    height: 350px;
     box-sizing: border-box;
     margin-bottom: 20vh;
 }
@@ -667,6 +650,17 @@ nav a:hover::after {
 .nav-selector:hover img {
     filter: var(--link-color-hover-filter);
     transition: var(--transition);
+}
+
+fieldset {
+    border: 2px solid var(--accent-color-1);
+    border-radius: 8px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: var(--accent-color-1);
 }
 
 @media (max-width: 1200px) {
