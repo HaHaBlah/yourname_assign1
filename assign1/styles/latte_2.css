@@ -48,6 +48,14 @@ main {
     margin: 20px 0;
 }
 
+.product-title {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 28px;
+    color: #3e2a47;
+    text-align: center;
+    margin-top: 20px;
+}
+
 /* Each product box */
 .content {
     background-color: white;
