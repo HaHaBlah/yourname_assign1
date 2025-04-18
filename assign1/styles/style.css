@@ -166,10 +166,33 @@
     margin: 8px 0;
 }
 
+.file-upload-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.btn-upload {
+    border: 2px solid #6f4e37;
+    color: white;
+    background-color: #6f4e37;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.file-upload-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
 
 #duitnow{
-    border: 2px solid var(--border-color);
-    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .registration-perks{

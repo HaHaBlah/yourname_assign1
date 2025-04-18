@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
     <link rel="stylesheet" href="styles/style.css">
+    
+
 </head>
 
 <body>
@@ -52,7 +54,78 @@
     </nav>
 
     <main>
+        <section class="enquiry-pretext">
+            <section class="enquiry-container">               
+                <div class="enquiry-left">
+                    <img src="images/Brew&Go_logo.png" alt="Brew & Go logo">
+                    
+                    <h2>Join Us ☕</h2>
+                </div>
+                <div class="enquiry-right">
+                    <form action="mailto:104390572@students.swinburne.edu.my" method="post" enctype="text/plain">
+                        <fieldset>
+                            First Name:
+                            <input class="responsive-hover" type="text" placeholder="First name" name="name" maxlength="25" required="required" pattern="[A-Za-z\s]+" title="Alphabetical characters only; Maximum 25 characters."><br>
+                            Last Name:
+                            <input class="responsive-hover" type="text" placeholder="Last name" name="name" maxlength="25" required="required" pattern="[A-Za-z\s]+" title="Alphabetical characters only; Maximum 25 characters."><br>
+                            Email:
+                            <input class="responsive-hover" type="email" placeholder="Enter your e-mail address" name="email" required="required" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/">
+    
+                                <fieldset>
+                                    <legend>
+                                        <strong>Address</strong>
+                                    </legend>
+                                        <label for="streetaddress">Street Address:</label>
+                                        <input class="responsive-hover" type="text" placeholder="Street Address" id=“streetaddress” name="streetaddress" maxlength="40" required="required" pattern="[A-Za-z0-9\s]+" title="Alphanumeric characters only; Maximum 40 characters.">
+                                        <br>
+                                        <label for="ct">City/Town:</label>
+                                        <input class="responsive-hover" type="text" placeholder="City/Town" id=“ct” name="ct" maxlength="20" required="required" pattern="[A-Za-z\s]+" title="Alphabetical characters only; Maximum 20 characters.">
+                                        <br>
+                                        <label for="state">State:</label>
+                                            
+                                            <select id="state" name="state" required="required">
+    
+                                                <option value="">Select a state</option>
+                                                <option value="Perlis">Perlis</option>
+                                                <option value="Kedah">Kedah</option>
+                                                <option value="Penang">Penang</option>
+                                                <option value="Perak">Perak</option>
+                                                <option value="Selangor">Selangor</option>
+                                                <option value="Negeri Sembilan">Negeri Sembilan</option>
+                                                <option value="Melaka">Melaka</option>
+                                                <option value="Johor">Johor</option>
+                                                <option value="Kelantan">Kelantan</option>
+                                                <option value="Terengganu">Terengganu</option>
+                                                <option value="Pahang">Pahang</option>
+                                                <option value="Sabah">Sabah</option>
+                                                <option value="Sarawak">Sarawak</option>
+                                                <option value="Kuala Lumpur">Kuala Lumpur</option>
+                                                <option value="Putrajaya">Putrajaya</option>
+                                                <option value="Labuan">Labuan</option>
+                                            </select>
+                                            <br>
+    
+                                        <label for="postcode">Postcode:</label>
+                                        <input class="responsive-hover" type="text" placeholder="Postcode" id=“postcode” name="postcode" maxlength="5" required="required" pattern="\d{5}" title="5-digit postcode only.">
+                                </fieldset>
+    
+                            <label for="phone">Phone Number:</label>
+                            <input class="responsive-hover" type="text" placeholder="Phone Number" id="phone" name="phone" maxlength="11" required="required" pattern="\d{10}" title="Format:0123456789.">
+                            
+                            <label for="myFile">Upload your payment receipt here:</label>
+                            <br>
+                            <input type="file" id="myFile" name="filename">
 
+                            <label for="myFile">Upload your payment receipt here:</label>
+                            <br>
+                            <input type="file" id="myFile" name="filename">
+
+                            <button type="submit">Send Enquiry</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </section>
+        </
         <div class="scroll-top">
             <!--/* https://dev.to/jackherizsmith/making-a-back-to-top-button-without-javascript-2ej6 */-->
             <a class="scroll-top__link" href="#">&#11165;</a> <!--href="#" navigates to the top of the page -->
