@@ -181,8 +181,15 @@
     position: relative;
     width: 800px;
     box-sizing: border-box;
-    
 }
+
+.responsive-hover-img {
+    display: block;
+    margin: 0 auto;
+    width: 25vh;
+    height: auto;
+}
+
 /*Registration form end*/
 
 
@@ -191,6 +198,7 @@
 .login-pretext {
     width: 800px;
     margin: auto;
+    color: white;
 }
 
 .login-container {
