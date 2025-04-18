@@ -89,10 +89,10 @@
 .job-opening {
     background-color: #fff;
     padding: 2rem;
-    margin: 2rem auto;
     max-width: 800px;
     border-radius: 10px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto 20vh auto;
 }
 
 .job-opening h2 {

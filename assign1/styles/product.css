@@ -44,7 +44,8 @@
     justify-content: center;  /* Align the cards to the center */
     gap: 20px;                /* Space between the cards */
     margin-top: 30px;
-    flex-wrap: wrap;          /* Allow wrapping of cards if needed */
+    flex-wrap: wrap; 
+    margin-bottom: 20vh;         /* Allow wrapping of cards if needed */
 }
 
 /* Review Card Styling */
