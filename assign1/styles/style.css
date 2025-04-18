@@ -127,16 +127,15 @@
     box-sizing: border-box;
 }
 
-.enquiry-left img {
-    width: 6em;
-}
-
 .enquiry-left {
     position: absolute;
     box-sizing: border-box;
     padding: 30px;
     width: 300px;
-    
+}
+
+.enquiry-left img {
+    width: 6em;
 }
 
 .enquiry-right {
