@@ -17,11 +17,9 @@
     --container-background-color: #F2E9DE;
     --border-color: #ccc;
     --accent-color-1: #593C26;
-    /* formerly E74C3C */
     --accent-color-1-rgb: 89, 60, 38;
     --decorative-color: #09F1E2;
     --top-navigation-color: none;
-    /* formerly F2E9DE */
     --text-color: #0B0F14;
     --link-color: #2213F6;
     --link-color-hover: #593C26;
@@ -95,8 +93,6 @@
     font-size: 1.1em;
     font-weight: bold;
 }
-
-
 
 /*Join us form end*/
 
@@ -266,7 +262,6 @@
 /*Registration form end*/
 
 
-
 /* Login Page Prototype Start */
 .login-pretext {
     width: 800px;
@@ -430,8 +425,6 @@ body {
     color: var(--text-color);
     background-color: var(--background-color);
     margin: 0;
-
-    /*Additonal CSS for smooth scrolling*/
     overflow: auto;
     overflow-x: hidden;
     background: #A99175;
@@ -519,18 +512,13 @@ nav a {
 }
 
 nav a:not(:has(img))::after {
-    /*The not(:has(img)) part is to stop underlining the logo*/
     content: '';
     position: absolute;
     left: 0;
     bottom: 1em;
-    /* Positions the underline just right below the text instead of way below */
     width: 0;
-    /* Start with no underline */
     height: 3px;
-    /* Thickness of the underline */
     background-color: var(--link-color-hover);
-    /* Color of the underline */
     transition: width var(--transition);
 }
 
@@ -546,7 +534,6 @@ nav img:hover {
 
 nav a:hover::after {
     width: 100%;
-    /* Expand the underline to full width */
 }
 
 .Dropdown_Start {
@@ -602,14 +589,12 @@ nav a:hover::after {
 
 .Dropdown_Content ul li a:hover {
     background-color: var(--accent-color-1);
-    /* Highlight on hover */
     color: white;
 
 }
 
 .Dropdown_Content ul li a::after {
     content: none;
-    /* Disable the underline */
 }
 
 #nav-login {
@@ -640,7 +625,6 @@ nav a:hover::after {
 
 .nav-selector:hover a::after {
     width: 100%;
-    /* Expand the underline to full width */
 }
 
 .nav-selector:hover a {
@@ -750,17 +734,6 @@ https://codepen.io/ImBobby/pen/DdPRYZ
 
 /* Footer START */
 /* https://codepen.io/alvarotrigo/pen/vYRRxje */
-/*
-footer {
-    background: var(--footer-background);
-    color: var(--text-color);
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
-    clear: both;
-    position: relative;
-    margin-top: var(--navbar-height);
-}*/
 
 footer {
     line-height: 1.5;
@@ -901,8 +874,6 @@ footer iframe {
     overflow: hidden;
 }
 
-
-/*responsive*/
 @media(max-width: 768px) {
     .footer-col {
         width: 50%;
@@ -921,7 +892,6 @@ footer iframe {
 }
 
 /* Footer END */
-
 
 .responsive-hover:hover {
     transition: var(--transition);
@@ -1014,8 +984,6 @@ footer iframe {
     margin: 0 auto 10px;
 }
 
-/* Add css for the profile "Email Me" buttons later */
-
 audio {
     width: 100%;
     border-radius: 111px;
@@ -1050,7 +1018,6 @@ audio {
 
 /* Background image styles START */
 .background-image {
-    /* Just give an <img> tag the class="background-image" */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1126,11 +1093,8 @@ audio {
     left: 0;
     width: 100%;
     height: 100%;
-    /* https://cssgradient.io/ */
     background-image: linear-gradient(0deg, rgba(var(--background-color-rgb), 1) 0%, rgba(var(--background-color-rgb), 0.6498248957786239) 15%, rgba(var(--background-color-rgb), 0.29968483975621496) 30%, rgba(var(--background-color-rgb), 0) 50%, rgba(var(--background-color-rgb), 0) 70%, rgba(var(--background-color-rgb), 0) 100%);
-
-
-}
+} /* https://cssgradient.io/ */
 
 .location-header h1 {
     top: 40%;
@@ -1233,7 +1197,6 @@ With some parts edited for compatibility since they applied to whole webpage*/
 .carousel * {
     box-sizing: border-box;
     scrollbar-color: transparent transparent;
-    /* thumb and track color */
     scrollbar-width: 0px;
 }
 
@@ -1296,8 +1259,6 @@ With some parts edited for compatibility since they applied to whole webpage*/
 }
 
 .carousel__slide:before {
-    /* content: counter(item); */
-    /* Shows slide number */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1415,12 +1376,10 @@ With some parts edited for compatibility since they applied to whole webpage*/
 
 
 .carousel::before {
-    /* creates left arrows using svg */
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
 }
 
 .carousel::after {
-    /* creates right arrows using svg */
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
 }
 
@@ -1480,8 +1439,8 @@ With some parts edited for compatibility since they applied to whole webpage*/
     opacity: 1;
 }
 
-/*about.html*/
 
+/*about.html*/
 .home {
     display: flex;
     align-items: center;
@@ -1673,12 +1632,6 @@ h2 span {
     background: transparent;
 }
 
-/*
-18.54
-https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
-*/
-
-
 /*Index.html*/
 .welcome {
     padding: 2em;
@@ -1771,7 +1724,6 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     animation: scrollWheel 1.5s infinite;
 }
 
-/* Animations */
 @keyframes scrollWheel {
     0% {
         top: 5px;
@@ -1861,17 +1813,14 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 
     .introduction-content h3 {
         font-size: 1em;
-        /* Adjust font size for smaller screens */
     }
 
     .introduction-content h2 {
         font-size: 1.5em;
-        /* Reduce font size instead of hiding */
     }
 
     .introduction-content p {
         font-size: 0.9em;
-        /* Make paragraph text smaller */
     }
 }
 
@@ -1887,17 +1836,14 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 
     .introduction-content h3 {
         font-size: 0.8em;
-        /* Further reduce font size for very small screens */
     }
 
     .introduction-content h2 {
         font-size: 1.2em;
-        /* Further reduce font size */
     }
 
     .introduction-content p {
         font-size: 0.8em;
-        /* Further reduce paragraph text size */
     }
 }
 
@@ -1940,7 +1886,6 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     gap: 2rem;
     padding: 20px 0;
     flex-wrap: wrap;
-    /* Allows wrapping on smaller screens */
 }
 
 .feature-box {
@@ -2460,7 +2405,6 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     margin-bottom: 20vh;
 }
 
-/* References Section Styling */
 .references {
     padding: 2rem 5%;
     background: rgba(255, 255, 255, 0.6);
@@ -2559,7 +2503,6 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     color: #4a90e2;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .references ul {
         grid-template-columns: 1fr;
@@ -2734,7 +2677,6 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     font-style: italic;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .coming_soon-raya-hero h1 {
         font-size: 2rem;
@@ -2831,7 +2773,6 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     margin-top: 1rem;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
     .current-hiring-banner h1 {
         font-size: 2.2rem;
@@ -2958,12 +2899,8 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 /* Hiring Banner Styling */
 .joinus-hiring-banner {
     padding: 0;
-    /* Remove padding, ensure the image covers full section */
     background-image: url("images/Coffee/joey.jpg");
-    /* Path to your image */
     background-size: cover;
-    /* Cover the full sectionp;
-    background-position: center; /* Ensures the image is centered */
     background-repeat: no-repeat;
     background-attachment: scroll;
     margin: 0;
@@ -2975,8 +2912,6 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     position: relative;
     width: 100%;
     color: white;
-    /* Default color for text */
-    /* Ensures the image fits well in the section */
     position: relative;
     width: 100%;
     max-height: 50vh;
@@ -2986,8 +2921,6 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     background-repeat: no-repeat;
 }
 
-
-/* Optional: Adding an overlay to improve text visibility if you still want */
 .joinus-hiring-banner:before {
     content: '';
     position: absolute;
@@ -2996,9 +2929,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.3);
-    /* Dark overlay to make text stand out */
     z-index: 1;
-    /* Overlay should be behind the text */
 }
 
 /* Title Text Styling */
@@ -3007,9 +2938,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     letter-spacing: 5px;
     text-transform: uppercase;
     z-index: 2;
-    /* Ensures text stays above the overlay */
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-    /* Adds shadow for better visibility */
     position: absolute;
 }
 
@@ -3017,7 +2946,6 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     width: 100%;
     height: 50vw;
     max-height: 50vh;
-    /* Full height of the viewport */
     object-position: 50% 25%;
     object-fit: cover;
 }
@@ -3029,10 +2957,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     left: 0;
     width: 100%;
     height: 100%;
-    /* https://cssgradient.io/ */
     background-image: linear-gradient(0deg, rgba(var(--background-color-rgb), 1) 0%, rgba(var(--background-color-rgb), 0.6498248957786239) 15%, rgba(var(--background-color-rgb), 0.29968483975621496) 30%, rgba(var(--background-color-rgb), 0) 50%, rgba(var(--background-color-rgb), 0) 70%, rgba(var(--background-color-rgb), 0) 100%);
-
-
 }
 
 /* Job Section Styling */
@@ -3065,7 +2990,6 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     color: #7f8c8d;
 }
 
-/* Requirements List - Vertical Bullet Styling */
 .joinus-requirements h3 {
     font-size: 1.5rem;
     color: #6d4c41;
@@ -3075,9 +2999,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 
 .joinus-requirements ul {
     list-style-type: disc;
-    /* Bullet points in vertical format */
     padding-left: 20px;
-    /* Indentation for the bullet points */
     text-align: left;
     color: #7f8c8d;
 }
