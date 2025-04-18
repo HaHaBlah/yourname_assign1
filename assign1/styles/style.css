@@ -146,7 +146,7 @@
     width: 800px;
 }
 
-.enquiry-container select{
+.enquiry-container select {
     width: 50%;
     padding: 10px 0;
     padding-left: 10px;
@@ -268,7 +268,7 @@
     box-sizing: border-box;
 }
 
-.responsive-hover-img {
+.registration-qr {
     display: block;
     margin: 0 auto;
     width: 25vh;
