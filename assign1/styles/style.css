@@ -2400,7 +2400,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     justify-content: center;
     background: linear-gradient(135deg, rgba(89, 60, 38, 0.8), rgba(169, 145, 117, 0.9));
     padding: 2em;
-    border: 10px solid #593C26;
+    border: 10px solid var(--accent-color-1);
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     margin: 2em auto;
@@ -2500,7 +2500,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     transform: translateX(-50%);
     width: 120px;
     height: 3px;
-    background: linear-gradient(90deg, #4a90e2 0%, #6c5ce7 100%);
+    background: var(--accent-color-1);
 }
 
 .references h3 {
@@ -2509,7 +2509,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     font-size: 1.8rem;
     margin: 2rem 0 1.5rem;
     padding-left: 1rem;
-    border-left: 4px solid #4a90e2;
+    border-left: 4px solid var(--accent-color-1);
 }
 
 .references ul {
