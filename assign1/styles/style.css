@@ -54,10 +54,10 @@
     width: 1000px;
     height: 920px;
     padding: 5px;
-    margin: 50px 0 auto 0; 
+    margin: 50px 0 auto 0;
 }
 
-.joinus-container select{
+.joinus-container select {
     width: 50%;
     padding: 10px 0;
     padding-left: 10px;
@@ -107,11 +107,13 @@
     width: 1000px;
     height: 700px;
     padding: 5px;
-    margin: 50px 0 auto 0; 
+    margin: 50px 0 auto 0;
 }
+
 .enquiry-pretext {
     margin: 50px 17.46%;
 }
+
 .enquiry-container {
     background-color: var(--container-background-color);
     border-radius: var(--border-radius);
@@ -120,7 +122,7 @@
     width: 1000px;
     height: 840px;
     padding: 5px;
-    margin: 50px 0 auto 0; 
+    margin: 50px 0 auto 0;
 }
 
 .enquiry-container * {
@@ -243,6 +245,7 @@
     font-size: 16px;
     cursor: pointer;
 }
+
 .file-upload-wrapper input[type=file] {
     font-size: 100px;
     position: absolute;
@@ -251,13 +254,13 @@
     opacity: 0;
 }
 
-#duitnow{
+#duitnow {
     border: 1px solid var(--border-color);
     border-radius: 4px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.registration-perks{
+.registration-perks {
     margin: 0 auto;
     padding: 20px;
     background-color: var(--container-background-color);
@@ -1865,22 +1868,25 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
         height: 300px;
         margin-right: 0;
     }
-    
+
     .introduction-content {
         margin-left: 10%;
         margin-right: 10%;
     }
 
     .introduction-content h3 {
-        font-size: 1em; /* Adjust font size for smaller screens */
+        font-size: 1em;
+        /* Adjust font size for smaller screens */
     }
 
     .introduction-content h2 {
-        font-size: 1.5em; /* Reduce font size instead of hiding */
+        font-size: 1.5em;
+        /* Reduce font size instead of hiding */
     }
 
     .introduction-content p {
-        font-size: 0.9em; /* Make paragraph text smaller */
+        font-size: 0.9em;
+        /* Make paragraph text smaller */
     }
 }
 
@@ -1895,15 +1901,18 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     }
 
     .introduction-content h3 {
-        font-size: 0.8em; /* Further reduce font size for very small screens */
+        font-size: 0.8em;
+        /* Further reduce font size for very small screens */
     }
 
     .introduction-content h2 {
-        font-size: 1.2em; /* Further reduce font size */
+        font-size: 1.2em;
+        /* Further reduce font size */
     }
 
     .introduction-content p {
-        font-size: 0.8em; /* Further reduce paragraph text size */
+        font-size: 0.8em;
+        /* Further reduce paragraph text size */
     }
 }
 
@@ -2155,8 +2164,8 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     }
 
     .promotion-poster .poster {
-        height: 300px; 
-        width: 250px; 
+        height: 300px;
+        width: 250px;
     }
 
     .latest-promotion,
@@ -2384,6 +2393,7 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
 .enhancements section {
     margin: auto;
 }
+
 /* Enhancements END */
 
 
@@ -2453,3 +2463,37 @@ https://www.youtube.com/watch?v=6egO0WgqYaU&t=626s
     color: white;
     text-decoration: underline;
 }
+
+/* Activities Page START */
+
+.activities-section {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: var(--container-background-color);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.activities-section h2 {
+    border-bottom: 2px solid #6f4e37;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    color: #6f4e37;
+}
+
+.activities-activity {
+    margin-bottom: 15px;
+}
+
+.activities-activity span {
+    font-weight: bold;
+    color: #4a372e;
+}
+
+.activities-coming-soon {
+    font-style: italic;
+    color: #a67c52;
+}
+
+/* Activities Page END */
