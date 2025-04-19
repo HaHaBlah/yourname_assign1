@@ -727,7 +727,7 @@ footer * {
     box-sizing: border-box;
 }
 
-footer button {
+footer button, footer .our-video {
     margin: auto;
     display: block;
     text-align: center;
@@ -738,6 +738,7 @@ footer button {
     font-size: 18px;
     margin-bottom: 10px;
     font-weight: 900;
+    text-decoration: none;
 }
 
 footer button:hover {
