@@ -218,6 +218,14 @@
     box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+    .registration-perks, .login-pretext {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+}
+
 .registration-qr {
     display: block;
     margin: 0 auto;
@@ -382,13 +390,10 @@ button {
         text-align: center;
     }
 
-    #joinus-container{
+    #joinus-container, #enquiry-container, #registration-container {
         height: auto;
     }
 
-    #enquiry-container{
-        height: auto;
-    }
 }
 
 /* Login Page Prototype End */
