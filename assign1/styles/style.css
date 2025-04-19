@@ -48,7 +48,8 @@
 
 /*Join us form start*/
 #joinus-container {
-    height: 1060px;
+    height: 1140px;
+    width: 90%;
 }
 
 #joinus-container select {
@@ -71,7 +72,7 @@
 }
 
 #enquiry-container {
-    height: 1050px;
+    height: 1090px;
 }
 
 .enquiry-container * {
@@ -141,12 +142,8 @@
 /*Enquiry form end*/
 
 /* Registration form start */
-.registration-container {
-    background-color: var(--container-background-color);
-    border-radius: var(--border-radius);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    position: relative;
-    height: 600px;
+#registration-container {
+    height: 650px;
 }
 
 .registration-container * {
