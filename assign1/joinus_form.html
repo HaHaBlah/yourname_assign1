@@ -48,7 +48,7 @@
             <li><a href="registration.html">Membership</a></li>
             <li id="nav-login" class="nav-selector">
                 <a href="login.html">Login</a>
-                <a class="center" href="login.html"><img alt="Login icon" src="images/Icons/user-circle-svgrepo-com(black).svg"></a>
+                <a class="center" href="login.html"><img src="images/Icons/user-circle-svgrepo-com(black).svg"></a>
             </li>
         </ul>
     </nav>
@@ -90,14 +90,14 @@
                                 <legend>
                                     <strong>Address</strong>
                                 </legend>
-                                <label for="streetaddress">Street Address:</label>
-                                <input class="responsive-hover" type="text" placeholder="Street Address"
-                                    id=“streetaddress” name="streetaddress" maxlength="40" required="required"
+                                <label for="saddress">Street Address:</label>
+                                <input class="responsive-hover" type="text" id="saddress" name="streetaddress" placeholder="Street Address"
+                                     maxlength="40" required="required"
                                     pattern="[A-Za-z0-9\s]+"
                                     title="Alphanumeric characters only; Maximum 40 characters.">
                                 <br>
                                 <label for="ct">City/Town:</label>
-                                <input class="responsive-hover" type="text" placeholder="City/Town" id=“ct” name="ct"
+                                <input class="responsive-hover" type="text" placeholder="City/Town" id="ct" name="c/t"
                                     maxlength="20" required="required" pattern="[A-Za-z\s]+"
                                     title="Alphabetical characters only; Maximum 20 characters.">
                                 <br>
@@ -125,8 +125,8 @@
                                 </select>
                                 <br>
 
-                                <label for="postcode">Postcode:</label>
-                                <input class="responsive-hover" type="text" placeholder="Postcode" id=“postcode”
+                                <label for="pcode">Postcode:</label>
+                                <input class="responsive-hover" type="text" placeholder="Postcode" id="pcode"
                                     name="postcode" maxlength="5" required="required" pattern="\d{5}"
                                     title="5-digit postcode only.">
                             </fieldset>
@@ -136,16 +136,17 @@
                                 <legend>
                                     <strong>Verification</strong>
                                 </legend>
-                                <label for="myFile">CV Upload:</label>
-                                <input type="file" id="myFile" name="filename" required="required" accept=".pdf, .doc, .docx">
+                                <label for="mineFile">CV Upload:</label>
+                                <input type="file" id="mineFile" name="filename" required="required" accept=".pdf, .doc, .docx">
 
                                 <label for="myFile">Photo Upload (less than 200kb):</label>                          
                                 <input type="file" id="myFile" name="filename" required="required" accept="image/*">
 
                             
 
-                            <button class="responsive-hover-button" type="submit">Join Now!</button>
-                            <button class="responsive-hover-button" type="reset" >Clear Form</button>
+                                <button class="responsive-hover-button" type="submit">Join Now!</button>
+                                <button class="responsive-hover-button" type="reset" >Clear Form</button>
+                            </fieldset>
                         </fieldset>
                     </form>
                 </div>
@@ -191,16 +192,16 @@
                 <div class="footer-col">
                     <h4>Follow Us</h4>
                     <div class="social-links">
-                        <a class="responsive-hover-img" href="https://www.instagram.com/p/DGdDmXOPD-J/">
-                            <img class="responsive-hover" src="images/Icons/bxl-instagram.svg"  alt="Instagram">
-                        </a>
-                        <a class="responsive-hover-img" href="https://www.facebook.com/profile.php?id=61554234958482">
-                            <img class="responsive-hover" src="images/Icons/bxl-facebook-circle.svg" alt="Facebook">
-                        </a>
+                        <a class="responsive-hover-img" href="https://www.instagram.com/p/DGdDmXOPD-J/"><img
+                                class="responsive-hover" src="images/Icons/bxl-instagram.svg"></img></a>
+                        <a class="responsive-hover-img"
+                            href="https://www.facebook.com/profile.php?id=61554234958482"><img class="responsive-hover"
+                                src="images/Icons/bxl-facebook-circle.svg"></img></a>
                     </div>
                     <h4>Contact Us</h4>
                     <p>Phone: +60 11-1653 1886</p>
-                    <p>Email: <a href="mailto:brewngo.coffee@gmail.com">brewngo.coffee@gmail.com</a></p>
+                    <p>Email: <a href="mailto:brewngo.coffee@gmail.com" method="post"
+                            enctype="text/plain">brewngo.coffee@gmail.com</a></p>
                 </div>
                 <div class="footer-col">
                     <h4>Latest from us</h4>
