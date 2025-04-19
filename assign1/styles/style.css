@@ -729,7 +729,7 @@ footer * {
 
 footer button, footer .our-video {
     margin: auto;
-    display: block;
+    display: table;
     text-align: center;
     border-radius: var(--border-radius);
     color: var(--footer-background);
@@ -739,6 +739,7 @@ footer button, footer .our-video {
     margin-bottom: 10px;
     font-weight: 900;
     text-decoration: none;
+    
 }
 
 footer button:hover {
