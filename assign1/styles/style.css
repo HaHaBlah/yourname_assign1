@@ -75,6 +75,7 @@
     height: 1090px;
 }
 
+
 .enquiry-container * {
     box-sizing: border-box;
 }
@@ -215,6 +216,14 @@
     position: relative;
     width: 800px;
     box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .registration-perks, .login-pretext {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
 }
 
 .registration-qr {
@@ -380,6 +389,11 @@ button {
     .login-bottom {
         text-align: center;
     }
+
+    #joinus-container, #enquiry-container, #registration-container {
+        height: auto;
+    }
+
 }
 
 /* Login Page Prototype End */
@@ -450,7 +464,7 @@ nav img {
 
 nav ul {
     display: flex;
-    align-items: right;
+    align-items: end;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -976,7 +990,7 @@ audio {
 }
 
 ::-webkit-scrollbar-thumb:active {
-    background: #BA3B30;
+    filter: brightness(0.8);
 }
 
 /* Scrollbar styles END */
@@ -1168,7 +1182,6 @@ With some parts edited for compatibility since they applied to whole webpage*/
 .carousel * {
     box-sizing: border-box;
     scrollbar-color: transparent transparent;
-    scrollbar-width: 0px;
 }
 
 .carousel *::-webkit-scrollbar {
@@ -1617,7 +1630,6 @@ h2 span {
     justify-content: center;
     text-align: center;
     position: relative;
-    min-width: none;
     width: 100%;
     min-height: 100vh;
     object-fit: cover;
@@ -1827,7 +1839,6 @@ h2 span {
     justify-content: center;
     text-align: center;
     position: relative;
-    min-width: none;
 }
 
 .why-choose h2 {
@@ -1960,7 +1971,6 @@ h2 span {
     justify-content: center;
     text-align: center;
     position: relative;
-    min-width: none;
     margin-top: 10vh;
     margin-bottom: 10vh;
 }
@@ -1976,7 +1986,6 @@ h2 span {
     justify-content: center;
     text-align: center;
     position: relative;
-    min-width: none;
     margin-bottom: 0.2em;
 }
 
@@ -1991,7 +2000,6 @@ h2 span {
     justify-content: center;
     text-align: center;
     position: relative;
-    min-width: none;
 }
 
 .promotion-poster {
@@ -2112,7 +2120,6 @@ h2 span {
     justify-content: center;
     text-align: center;
     position: relative;
-    min-width: none;
 }
 
 .latest-news p {
@@ -2127,7 +2134,6 @@ h2 span {
     justify-content: center;
     text-align: center;
     position: relative;
-    min-width: none;
 }
 
 @media (max-width: 768px) {
@@ -2174,7 +2180,6 @@ h2 span {
     justify-content: center;
     text-align: center;
     position: relative;
-    min-width: none;
 }
 
 .location-cards {
@@ -3512,7 +3517,12 @@ h2 span {
 }
 
 .enhancements section {
-    margin-bottom: 5em;
+    margin-bottom: 20vh;
 }
 
 /* Enhancements END */
+
+.no-scroll {
+    overflow: hidden;
+    border: none;
+}

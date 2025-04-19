@@ -46,7 +46,7 @@
             <li><a href="registration.html">Membership</a></li>
             <li id="nav-login" class="nav-selector">
                 <a href="login.html">Login</a>
-                <a class="center" href="login.html"><img src="images/Icons/user-circle-svgrepo-com(black).svg"></a>
+                <a class="center" href="login.html"><img alt="Login icon" src="images/Icons/user-circle-svgrepo-com(black).svg"></a>
             </li>
         </ul>
     </nav>
@@ -60,35 +60,35 @@
             <video src="images/enhancements/Scroll_to_Top_Button.mp4" autoplay loop muted></video>
             <h2>HTML</h2>
             <div class="code">
-                &lt;div class="scroll-top"><br>
-
-                &nbsp;&nbsp;&nbsp;&lt;a class="scroll-top__link" href="#">& #11165;&lt;/a><br>
-                &lt;/div>
+                <span>
+                    &lt;div class="scroll-top"><br>
+                    &nbsp;&nbsp;&nbsp;&lt;a class="scroll-top__link" href="#">& #11165;&lt;/a><br>
+                    &lt;/div>
+                </span>
             </div>
             <h2>CSS</h2>
             <div class="code">
-                .scroll-top__link {<br>
-                &nbsp;&nbsp;&nbsp;position: fixed;<br>
-                &nbsp;&nbsp;&nbsp;bottom: 2rem;<br>
-                &nbsp;&nbsp;&nbsp;right: 2rem;<br>
-                &nbsp;&nbsp;&nbsp;text-decoration: none;<br>
-                &nbsp;&nbsp;&nbsp;border-radius: .5rem;<br>
-                &nbsp;&nbsp;&nbsp;background-color: var(--accent-color-1);<br>
-                &nbsp;&nbsp;&nbsp;padding: 0 .5rem;<br>
-                &nbsp;&nbsp;&nbsp;color: white;<br>
-                &nbsp;&nbsp;&nbsp;font-size: 2em;<br>
-                &nbsp;&nbsp;&nbsp;opacity: .5;<br>
-                &nbsp;&nbsp;&nbsp;z-index: 10;<br>
-                &nbsp;&nbsp;&nbsp;transition: opacity 0.1s ease-in-out;<br>
-                }<br>
-                <br>
+                <span>
+                    .scroll-top__link {<br>
+                    &nbsp;&nbsp;&nbsp;position: fixed;<br>
+                    &nbsp;&nbsp;&nbsp;bottom: 2rem;<br>
+                    &nbsp;&nbsp;&nbsp;right: 2rem;<br>
+                    &nbsp;&nbsp;&nbsp;text-decoration: none;<br>
+                    &nbsp;&nbsp;&nbsp;border-radius: .5rem;<br>
+                    &nbsp;&nbsp;&nbsp;background-color: var(--accent-color-1);<br>
+                    &nbsp;&nbsp;&nbsp;padding: 0 .5rem;<br>
+                    &nbsp;&nbsp;&nbsp;color: white;<br>
+                    &nbsp;&nbsp;&nbsp;font-size: 2em;<br>
+                    &nbsp;&nbsp;&nbsp;opacity: .5;<br>
+                    &nbsp;&nbsp;&nbsp;z-index: 10;<br>
+                    &nbsp;&nbsp;&nbsp;transition: opacity 0.1s ease-in-out;<br>
+                    }<br>
+                    <br>
 
-                .scroll-top__link:hover {<br>
-                &nbsp;&nbsp;&nbsp;opacity: 1;<br>
-                }</span>
-            </div>
-
-            
+                    .scroll-top__link:hover {<br>
+                    &nbsp;&nbsp;&nbsp;opacity: 1;<br>}
+                </span>
+            </div> 
         </section>
 
         <section>
@@ -153,26 +153,12 @@
             </div>
         </section>
 
-        <!--Interactive Map-->
-        <section>
-            <h2>Interactive Map</h2>
-            <p>An embedded Google Map document</p>
-            <p>Found in <a href="location1.html">location1.html</a> and <a href="location2.html">location2.html</a></p>
-            <img src="images/enhancements/Interactive Map.png">
-            <h2>HTML</h2>
-            <div class="code">
-                &lt;iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15953.675113405434!2d110.3657563!3d1.5176329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba7003da964cb%3A0xf8d14c19ed1634a4!2sBrew%20and%20Go!5e0!3m2!1sen!2smy!4v1744122746072!5m2!1sen!2smy"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">&lt;/iframe>
-            </div>
-        </section>
-
         <!--Dropdown Menu-->
         <section>
             <h2>Dropdown Menu</h2>
             <p>A Menu that reveals more options when hovered over</p>
             <p>Found in All Pages at the top navigation bar</p>
-            <img src="images/enhancements/Dropdown Menu.png">
+            <img src="images/enhancements/Dropdown_Menu.png" alt="Dropdown Menu">
             <h2>HTML</h2>
             <div class="code">
                 &lt;div class="Dropdown_Start"> &lt;a href="activities.html">Activities&lt;/a><br>
@@ -198,10 +184,12 @@
                 }
             </div>
         </section>
-            <!--Color Change when Hover--><!--Not yet done-->
+
+        <section>
+            <!--Color Change when Hover-->
             <h2>Color Change when Hover effect</h2>
             <p>When an object was hovered, it will change color</p>
-            <video src="images/enhancements/Color _Change_when_Hover.mp4" autoplay loop muted></video>
+            <video src="images/enhancements/Color_Change_when_Hover.mp4" autoplay loop muted></video>
             <h2>HTML</h2>
             <div class="code">
                 <span>
@@ -337,67 +325,12 @@
             </div>
         </section> 
 
-        <!--Flipcard-->
-        <section>
-            <h2>Flipcard</h2>
-            <p>An image that when hovered over, flips to another image</p>
-            <p>Found on <a href="locations.html">locations.html</a></p>
-            <video src="images/enhancements/Flipcard.mp4" autoplay loop muted></video>
-            <h2>HTML</h2>
-            <div class="code">
-                &ltdiv class="location-card"><br>
-                &nbsp;&nbsp;&nbsp;&ltdiv class="flip-container"><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltdiv class="location-card-inner"><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltdiv class="location-card-front"><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltimg
-                src="images/location/one_jaya.jpg" alt="Location 1 Image"><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt/div><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltdiv class="location-card-back"><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lta
-                href="https://maps.app.goo.gl/8ap6MykG7yn7rF7A6"><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltimg
-                src="images/location/Location_1.png" alt="Location 1 Back Image"><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt/a><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt/div><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt/div><br>
-                &nbsp;&nbsp;&nbsp;&lt/div><br>
-                &nbsp;&nbsp;&nbsp;&lth3>One Jaya&lt/h3><br>
-                &nbsp;&nbsp;&nbsp;&ltp>G63, Lot, Onejaya Shopping Complex&lt/p><br>
-                &nbsp;&nbsp;&nbsp;&lta href="location1.html" class="btn">Learn more&lt/a><br>
-                &lt/div>
-            </div>
-            <h2>CSS</h2>
-            <div class="code">
-                .flip-container:hover .location-card-inner {<br>
-                &nbsp;&nbsp;&nbsp;transform: rotateY(180deg);<br>
-                }<br>
-                <br>
-                .location-card-front,<br>
-                .location-card-back {<br>
-                &nbsp;&nbsp;&nbsp;position: absolute;<br>
-                &nbsp;&nbsp;&nbsp;width: 100%;<br>
-                &nbsp;&nbsp;&nbsp;height: 100%;<br>
-                &nbsp;&nbsp;&nbsp;-webkit-backface-visibility: hidden;<br>
-                &nbsp;&nbsp;&nbsp;backface-visibility: hidden;<br>
-                }<br>
-                <br>
-                .location-card-front {<br>
-                &nbsp;&nbsp;&nbsp;background-color: var(--accent-color-1);<br>
-                &nbsp;&nbsp;&nbsp;color: white;<br>
-                }<br>
-                <br>
-                .location-card-back {<br>
-                &nbsp;&nbsp;&nbsp;transform: rotateY(180deg);<br>
-                }
-            </div>
-        </section>
-
         <!--Embedded Social Media-->
         <section>
             <h2>Embedded Social Media</h2>
             <p>An embedded Facebook document</p>
             <p>Found in all pages at the footer</p>
-            <img src="images/enhancements/Embedded Social Media.png">
+            <img src="images/enhancements/Embedded_Social_Media.png" alt="Embedded Social Media">
             <h2>HTML</h2>
             <div class="code">
                 &lt;iframe class="responsive-hover-img"
@@ -409,10 +342,10 @@
 
         <!--Interactive Hover-->
         <section>
-            <h2>Hover Effects</h2>
+            <h2>Hover Effects 2</h2>
             <p>When hovered over, some elements change appearance</p>
             <p>Found on all pages</p>
-            <video src="images/enhancements/Responsive Hover.mp4" autoplay loop muted></video>
+            <video src="images/enhancements/Responsive_Hover.mp4" autoplay loop muted></video>
             <h2>CSS</h2>
             <div class="code">
                 .responsive-hover:hover {<br>
@@ -428,7 +361,7 @@
             <h2>Responsive Webpage Resizing</h2>
             <p>Pages account for different viewport sizes.</p>
             <p>Found on all pages</p>
-            <video src="images/enhancements/Responsive Resizing.mp4" autoplay loop muted></video>
+            <video src="images/enhancements/Responsive_Resizing.mp4" autoplay loop muted></video>
             <h2>CSS</h2>
             <div class="code">
                 @media (max-width: 1000px) {<br>
@@ -450,13 +383,27 @@
             <p>When an input is in the wrong format, it will show up red</p>
             <p>Found on <a href="login.html">login.html</a>, <a href="registration.html">registration.html</a>, <a
                     href="enquiry.html">enquiry.html</a> and <a href="joinus_form.html">joinus_form.html</a></p>
-            <img src="images/enhancements/Live Input Validation.png">
+            <img src="images/enhancements/Live_Input_Validation.png" alt="Live Input Validation">
             <h2>CSS</h2>
             <div class="code">
                 input:user-invalid {<br>
                 &nbsp;&nbsp;&nbsp;outline: 2px solid red;<br>
                 &nbsp;&nbsp;&nbsp;color: red;<br>
                 }
+            </div>
+        </section>
+
+        <!--Interactive Map-->
+        <section>
+            <h2>Interactive Map</h2>
+            <p>An embedded Google Map document</p>
+            <p>Found in <a href="location1.html">location1.html</a> and <a href="location2.html">location2.html</a></p>
+            <img src="images/enhancements/Interactive_Map.png" alt="Interactive Map">
+            <h2>HTML</h2>
+            <div class="code">
+                &lt;iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15953.675113405434!2d110.3657563!3d1.5176329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba7003da964cb%3A0xf8d14c19ed1634a4!2sBrew%20and%20Go!5e0!3m2!1sen!2smy!4v1744122746072!5m2!1sen!2smy"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">&lt;/iframe>
             </div>
         </section>
 
@@ -500,28 +447,30 @@
                 <div class="footer-col">
                     <h4>Follow Us</h4>
                     <div class="social-links">
-                        <a class="responsive-hover-img" href="https://www.instagram.com/p/DGdDmXOPD-J/"><img
-                                class="responsive-hover" src="images/Icons/bxl-instagram.svg"></img></a>
-                        <a class="responsive-hover-img"
-                            href="https://www.facebook.com/profile.php?id=61554234958482"><img class="responsive-hover"
-                                src="images/Icons/bxl-facebook-circle.svg"></img></a>
+                        <a class="responsive-hover-img" href="https://www.instagram.com/p/DGdDmXOPD-J/">
+                            <img class="responsive-hover" src="images/Icons/bxl-instagram.svg"  alt="Instagram">
+                        </a>
+                        <a class="responsive-hover-img" href="https://www.facebook.com/profile.php?id=61554234958482">
+                            <img class="responsive-hover" src="images/Icons/bxl-facebook-circle.svg" alt="Facebook">
+                        </a>
                     </div>
                     <h4>Contact Us</h4>
                     <p>Phone: +60 11-1653 1886</p>
-                    <p>Email: <a href="mailto:brewngo.coffee@gmail.com" method="post"
-                            enctype="text/plain">brewngo.coffee@gmail.com</a></p>
+                    <p>Email: <a href="mailto:brewngo.coffee@gmail.com">brewngo.coffee@gmail.com</a></p>
                 </div>
                 <div class="footer-col">
                     <h4>Latest from us</h4>
-                    <iframe class="responsive-hover-img"
+                    <iframe class="responsive-hover-img no-scroll"
                         src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0Ro5XUkWsugqwP6cFKBsd7MWcqumoxyF4wDd8xdPcGCLZK7udVGAtrpvjBrnVUgJSl%26id%3D61554234958482&show_text=true&width=500"
-                        scrolling="no" allowfullscreen="true"
-                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                        allowfullscreen
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                    </iframe>
                 </div>
                 <div class="footer-col">
                     <small>&copy; 2025 Brew & Go Coffee</small>
                 </div>
             </div>
+        </div>
     </footer>
 </body>
 
