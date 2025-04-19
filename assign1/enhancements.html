@@ -60,31 +60,33 @@
             <video src="images/enhancements/Scroll_to_Top_Button.mp4" autoplay loop muted></video>
             <h2>HTML</h2>
             <div class="code">
-                &lt;div class="scroll-top"><br>
-
-                &nbsp;&nbsp;&nbsp;&lt;a class="scroll-top__link" href="#">& #11165;&lt;/a><br>
-                &lt;/div>
+                <span>
+                    &lt;div class="scroll-top"><br>
+                    &nbsp;&nbsp;&nbsp;&lt;a class="scroll-top__link" href="#">& #11165;&lt;/a><br>
+                    &lt;/div>
+                </span>
             </div>
             <h2>CSS</h2>
             <div class="code">
-                .scroll-top__link {<br>
-                &nbsp;&nbsp;&nbsp;position: fixed;<br>
-                &nbsp;&nbsp;&nbsp;bottom: 2rem;<br>
-                &nbsp;&nbsp;&nbsp;right: 2rem;<br>
-                &nbsp;&nbsp;&nbsp;text-decoration: none;<br>
-                &nbsp;&nbsp;&nbsp;border-radius: .5rem;<br>
-                &nbsp;&nbsp;&nbsp;background-color: var(--accent-color-1);<br>
-                &nbsp;&nbsp;&nbsp;padding: 0 .5rem;<br>
-                &nbsp;&nbsp;&nbsp;color: white;<br>
-                &nbsp;&nbsp;&nbsp;font-size: 2em;<br>
-                &nbsp;&nbsp;&nbsp;opacity: .5;<br>
-                &nbsp;&nbsp;&nbsp;z-index: 10;<br>
-                &nbsp;&nbsp;&nbsp;transition: opacity 0.1s ease-in-out;<br>
-                }<br>
-                <br>
+                <span>
+                    .scroll-top__link {<br>
+                    &nbsp;&nbsp;&nbsp;position: fixed;<br>
+                    &nbsp;&nbsp;&nbsp;bottom: 2rem;<br>
+                    &nbsp;&nbsp;&nbsp;right: 2rem;<br>
+                    &nbsp;&nbsp;&nbsp;text-decoration: none;<br>
+                    &nbsp;&nbsp;&nbsp;border-radius: .5rem;<br>
+                    &nbsp;&nbsp;&nbsp;background-color: var(--accent-color-1);<br>
+                    &nbsp;&nbsp;&nbsp;padding: 0 .5rem;<br>
+                    &nbsp;&nbsp;&nbsp;color: white;<br>
+                    &nbsp;&nbsp;&nbsp;font-size: 2em;<br>
+                    &nbsp;&nbsp;&nbsp;opacity: .5;<br>
+                    &nbsp;&nbsp;&nbsp;z-index: 10;<br>
+                    &nbsp;&nbsp;&nbsp;transition: opacity 0.1s ease-in-out;<br>
+                    }<br>
+                    <br>
 
-                .scroll-top__link:hover {<br>
-                &nbsp;&nbsp;&nbsp;opacity: 1;<br>}
+                    .scroll-top__link:hover {<br>
+                    &nbsp;&nbsp;&nbsp;opacity: 1;<br>}
                 </span>
             </div> 
         </section>
@@ -396,7 +398,7 @@
             <h2>Interactive Map</h2>
             <p>An embedded Google Map document</p>
             <p>Found in <a href="location1.html">location1.html</a> and <a href="location2.html">location2.html</a></p>
-            <img src="images/enhancements/Interactive_Map.png">
+            <img src="images/enhancements/Interactive_Map.png" alt="Interactive Map">
             <h2>HTML</h2>
             <div class="code">
                 &lt;iframe
@@ -446,10 +448,10 @@
                     <h4>Follow Us</h4>
                     <div class="social-links">
                         <a class="responsive-hover-img" href="https://www.instagram.com/p/DGdDmXOPD-J/">
-                            <img class="responsive-hover" src="images/Icons/bxl-instagram.svg"  alt="Instagram"></img>
+                            <img class="responsive-hover" src="images/Icons/bxl-instagram.svg"  alt="Instagram">
                         </a>
                         <a class="responsive-hover-img" href="https://www.facebook.com/profile.php?id=61554234958482">
-                            <img class="responsive-hover" src="images/Icons/bxl-facebook-circle.svg" alt="Facebook"></img>
+                            <img class="responsive-hover" src="images/Icons/bxl-facebook-circle.svg" alt="Facebook">
                         </a>
                     </div>
                     <h4>Contact Us</h4>
@@ -458,15 +460,17 @@
                 </div>
                 <div class="footer-col">
                     <h4>Latest from us</h4>
-                    <iframe class="responsive-hover-img"
+                    <iframe class="responsive-hover-img no-scroll"
                         src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0Ro5XUkWsugqwP6cFKBsd7MWcqumoxyF4wDd8xdPcGCLZK7udVGAtrpvjBrnVUgJSl%26id%3D61554234958482&show_text=true&width=500"
-                        scrolling="no" allowfullscreen="true"
-                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                        allowfullscreen
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                    </iframe>
                 </div>
                 <div class="footer-col">
                     <small>&copy; 2025 Brew & Go Coffee</small>
                 </div>
             </div>
+        </div>
     </footer>
 </body>
 

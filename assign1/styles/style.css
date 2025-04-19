@@ -3530,3 +3530,8 @@ h2 span {
 }
 
 /* Enhancements END */
+
+.no-scroll {
+    overflow: hidden;
+    border: none;
+}
