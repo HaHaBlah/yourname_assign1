@@ -48,10 +48,11 @@
 
 /*Join us form start*/
 #joinus-container {
-    height: 1050px;
+    height: 1140px;
+    width: 90%;
 }
 
-.joinus-container select {
+#joinus-container select {
     width: 50%;
     padding: 10px 0;
     padding-left: 10px;
@@ -60,33 +61,7 @@
     border-radius: var(--border-radius);
 }
 
-.joinus-container input {
-    width: 100%;
-    padding: 10px 0;
-    padding-left: 10px;
-    margin: 10px 0;
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-}
 
-.joinus-container input:focus {
-    outline: 2px solid var(--accent-color-1);
-    border-color: var(--accent-color-1);
-    transition: none;
-    box-sizing: border-box;
-}
-
-.joinus-container button {
-    width: 100%;
-    padding: 10px;
-    background-color: var(--accent-color-1);
-    border: none;
-    border-radius: var(--border-radius);
-    color: var(--container-background-color);
-    margin-top: 10px;
-    font-size: 1.1em;
-    font-weight: bold;
-}
 
 /*Join us form end*/
 
@@ -97,7 +72,7 @@
 }
 
 #enquiry-container {
-    height: 900px;
+    height: 1090px;
 }
 
 .enquiry-container * {
@@ -123,8 +98,8 @@
     width: 800px;
 }
 
-.enquiry-container select {
-    width: 50%;
+#enquiry-container select {
+    width: 250px;
     padding: 10px 0;
     padding-left: 10px;
     margin: 8px 0;
@@ -167,12 +142,8 @@
 /*Enquiry form end*/
 
 /* Registration form start */
-.registration-container {
-    background-color: var(--container-background-color);
-    border-radius: var(--border-radius);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    position: relative;
-    height: 600px;
+#registration-container {
+    height: 650px;
 }
 
 .registration-container * {
@@ -1066,6 +1037,10 @@ audio {
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
+}
+
+.location2 {
+    margin-bottom: 3em;
 }
 
 .location-header {
