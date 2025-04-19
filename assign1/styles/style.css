@@ -1590,7 +1590,6 @@ h2 span {
     object-fit: cover;
 }
 
-
 .profile-container {
     display: flex;
     flex-direction: column;
@@ -1918,6 +1917,10 @@ h2 span {
     transform: scale(1.05);
     filter:
         drop-shadow(0 0 5px #A99175) drop-shadow(0 0 15px #A99175);
+}
+
+.product-showcase {
+    margin-bottom: 20vh;
 }
 
 .product-showcase h2 {
@@ -3506,6 +3509,10 @@ h2 span {
     border-radius: var(--border-radius);
     margin-bottom: 1em;
     border: 5px solid var(--container-background-color);
+}
+
+.enhancements section {
+    margin-bottom: 30vh;
 }
 
 /* Enhancements END */
