@@ -55,7 +55,7 @@
         <section>
             <h2>Scroll to Top Button</h2>
             <p>A button that when clicked, scrolls all the way back to the top of the page</p>
-            <video src="images/enhancements/Scroll to Top Button.mp4" autoplay loop muted></video>
+            <video src="images/enhancements/Scroll_to_Top_Button.mp4" autoplay loop muted></video>
             <h2>HTML</h2>
             <div class="code">
                 &lt;div class="scroll-top"><br>
@@ -97,23 +97,222 @@
                     &nbsp;&nbsp;&nbsp;opacity: 1;<br>
                     }</span>
             </div>
+
+            
         </section>
 
         <section>
-
+            <!--Flip card-->
+            <h2>Flip card effects</h2>
+            <p>When an object was hovered, it will flip</p>
+            <video src="images/enhancements/Flipping_cards.mp4" autoplay loop muted></video>
+            <h2>HTML</h2>
+            <div class="code">
+                <span>
+                    &lt;div class="location-card-inner"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="location-card-front"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="#" alt="Front Image"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="location-card-back"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="https://maps.app.goo.gl/8ap6MykG7yn7rF7A6"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="images/location/Location_1.png"
+                    alt="Location 1 Back Image"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                    &lt;/div&gt;
+                </span>
+            </div>
+            <h2>CSS</h2>
+            <div class="code">
+                <span>
+                    .location-card-inner &#123;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;height: 100%;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;transition: transform 0.6s;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;transform-style: preserve-3d;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;transform: rotateY(180deg);<br>
+                    &#125;<br><br>
+                    
+                    .location-card-front, .location-card-back &#123;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;height: 100%;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;-webkit-backface-visibility: hidden;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;backface-visibility: hidden;<br>
+                    &#125;<br><br>
+                    
+                    .location-card-front &#123;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;background-color: var(--accent-color-1);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;color: white;<br>
+                    &#125;<br><br>
+                    
+                    .location-card-back &#123;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;transform: rotateY(180deg);<br>
+                    &#125;<br><br>
+                    
+                    .location-card img &#123;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;height: 100%;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;object-fit: cover;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;display: block;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;border-radius: 50%;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;<br>
+                    &#125;
+                </span>
+            </div>
         </section>
+
+        <section>
+            <!--Color Change when Hover--><!--Not yet done-->
+            <h2>Color Change when Hover effect</h2>
+            <p>When an object was hovered, it will change color</p>
+            <video src="images/enhancements/Color _Change_when_Hover.mp4" autoplay loop muted></video>
+            <h2>HTML</h2>
+            <div class="code">
+                <span>
+                    &lt;div class="sci"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#" target="_blank"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="#" alt="Icon"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;<br>
+                    &lt;/div&gt;
+                </span>
+            </div>
+            <h2>CSS</h2>
+            <div class="code">
+                <span>
+                    .sci &#123;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;margin-left: 20px;<br>
+                    &#125;<br><br>
+                    
+                    .sci a &#123;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;display: inline-flex;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;padding: 8px;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;border: 2px solid var(--accent-color-1);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;border-radius: 50%;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;font-size: 20px;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;height: 40px;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;width: 40px;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;color: var(--accent-color-1);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;margin: 0 8px;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;transition: .25s;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;box-sizing: border-box;<br>
+                    &#125;<br><br>
+                    
+                    .sci a img &#123;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;filter: invert(22%) sepia(18%) saturate(1418%) hue-rotate(343deg) brightness(94%)
+                    contrast(86%);<br>
+                    &#125;<br><br>
+                    
+                    .sci a:hover &#123;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;background: var(--accent-color-1);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;color: #A99175;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;box-shadow: 0 0 10px var(--accent-color-1);<br>
+                    &#125;<br><br>
+                    
+                    .sci a:hover img &#123;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;filter: invert(64%) sepia(29%) saturate(331%) hue-rotate(352deg) brightness(87%)
+                    contrast(90%);<br>
+                    &#125;
+                </span>
+            </div>
+        </section>
+
+        <section>
+            <!--Animated conic gradient border--><!--Not yet done-->
+            <h2>Animated conic gradient border</h2>
+            <p>Moving Border effect around the profile photos</p>
+            <video src="images/enhancements/Animated_conic_gradient_border.mp4" autoplay loop muted></video>
+            <h2>HTML</h2>
+            <div class="code">
+                <span>
+                    &lt;div class="home-img"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="img-box"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="img-item"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="#" alt="#"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                    &lt;/div&gt;
+                </span>
+            </div>
+            <h2>CSS</h2>
+            <div class="code">
+                <span>
+                    .home-img &#123;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;flex: 0 0 auto;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;justify-content: flex-end;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;align-items: center;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;width: auto;<br>
+                    &#125;<br><br>
+                    
+                    .home-img .img-box &#123;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;width: 32vw;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;height: 32vw;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;border-radius: 50%;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;padding: 5px;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;justify-content: center;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;align-items: center;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;<br>
+                    &#125;<br><br>
+                    
+                    .home-img .img-box::before,<br>
+                    .home-img .img-box::after &#123;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;content: '';<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;width: 500px;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;height: 500px;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;background: conic-gradient(transparent, transparent, transparent, var(--accent-color-1));<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;transform: rotate(0deg);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;animation: rotate-border 16s linear infinite;<br>
+                    &#125;<br><br>
+                    
+                    .home-img .img-box::after &#123;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;animation-delay: 8s;<br>
+                    &#125;<br><br>
+                    
+                    @keyframes rotate-border &#123;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;100% &#123;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform: rotate(360deg);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&#125;<br>
+                    &#125;<br><br>
+                    
+                    .home-img .img-box .img-item &#123;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;height: 100%;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;background: var(--accent-color-1);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;border-radius: 50%;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;border: .1px solid var(--accent-color-1);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;justify-content: center;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;z-index: 1;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;<br>
+                    &#125;<br><br>
+                    
+                    .home-img .img-box .img-item img &#123;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;top: 1px;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;display: block;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;width: 99.7%;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;object-fit: cover;<br>
+                    &#125;
+                </span>
+            </div>
+        </section> 
 
 
         <div class="scroll-top">
-            <!--/* https://dev.to/jackherizsmith/making-a-back-to-top-button-without-javascript-2ej6 */-->
-            <a class="scroll-top__link" href="#">&#11165;</a> <!--href="#" navigates to the top of the page -->
+            <a class="scroll-top__link" href="#">&#11165;</a>
         </div>
     </main>
 
-    <footer> <!--https://codepen.io/alvarotrigo/pen/vYRRxje-->
+    <footer>
         <div class="footer-container">
             <div class="row">
-                <div class="footer-col"> <!--Column 1-->
+                <div class="footer-col">
                     <h4>Overview</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
@@ -142,7 +341,7 @@
                         <li><a href="enhancements.html">Enhancements</a></li>
                     </ul>
                 </div>
-                <div class="footer-col"> <!--Blank-->
+                <div class="footer-col">
                     <h4>Follow Us</h4>
                     <div class="social-links">
                         <a class="responsive-hover-img" href="https://www.instagram.com/p/DGdDmXOPD-J/"><img
@@ -163,7 +362,7 @@
                         scrolling="no" allowfullscreen="true"
                         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                 </div>
-                <div class="footer-col"> <!--Column 2-->
+                <div class="footer-col">
                     <small>&copy; 2025 Brew & Go Coffee</small>
                 </div>
             </div>
