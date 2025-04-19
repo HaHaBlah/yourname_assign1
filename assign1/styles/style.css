@@ -75,6 +75,7 @@
     height: 1090px;
 }
 
+
 .enquiry-container * {
     box-sizing: border-box;
 }
@@ -379,6 +380,14 @@ button {
     .login-left,
     .login-bottom {
         text-align: center;
+    }
+
+    #joinus-container{
+        height: auto;
+    }
+
+    #enquiry-container{
+        height: auto;
     }
 }
 
