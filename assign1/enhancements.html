@@ -91,7 +91,7 @@
 
         <!--Interactive Map-->
         <section>
-            <h2>Interactive Map</h2>   
+            <h2>Interactive Map</h2>
             <p>An embedded Google Map document</p>
             <p>Found in <a href="location1.html">location1.html</a> and <a href="location2.html">location2.html</a></p>
             <img src="images/enhancements/Interactive Map.png">
@@ -107,7 +107,7 @@
         <section>
             <h2>Dropdown Menu</h2>
             <p>A Menu that reveals more options when hovered over</p>
-            <p>Found in All Pages</p>
+            <p>Found in All Pages at the top navigation bar</p>
             <img src="images/enhancements/Dropdown Menu.png">
             <h2>HTML</h2>
             <div class="code">
@@ -144,21 +144,24 @@
             <h2>HTML</h2>
             <div class="code">
                 &ltdiv class="location-card"><br>
-                    &nbsp;&nbsp;&nbsp;&ltdiv class="flip-container"><br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltdiv class="location-card-inner"><br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltdiv class="location-card-front"><br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltimg src="images/location/one_jaya.jpg" alt="Location 1 Image"><br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt/div><br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltdiv class="location-card-back"><br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lta href="https://maps.app.goo.gl/8ap6MykG7yn7rF7A6"><br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltimg src="images/location/Location_1.png" alt="Location 1 Back Image"><br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt/a><br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt/div><br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt/div><br>
-                    &nbsp;&nbsp;&nbsp;&lt/div><br>
-                    &nbsp;&nbsp;&nbsp;&lth3>One Jaya&lt/h3><br>
-                    &nbsp;&nbsp;&nbsp;&ltp>G63, Lot, Onejaya Shopping Complex&lt/p><br>
-                    &nbsp;&nbsp;&nbsp;&lta href="location1.html" class="btn">Learn more&lt/a><br>
+                &nbsp;&nbsp;&nbsp;&ltdiv class="flip-container"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltdiv class="location-card-inner"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltdiv class="location-card-front"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltimg
+                src="images/location/one_jaya.jpg" alt="Location 1 Image"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt/div><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltdiv class="location-card-back"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lta
+                href="https://maps.app.goo.gl/8ap6MykG7yn7rF7A6"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltimg
+                src="images/location/Location_1.png" alt="Location 1 Back Image"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt/a><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt/div><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt/div><br>
+                &nbsp;&nbsp;&nbsp;&lt/div><br>
+                &nbsp;&nbsp;&nbsp;&lth3>One Jaya&lt/h3><br>
+                &nbsp;&nbsp;&nbsp;&ltp>G63, Lot, Onejaya Shopping Complex&lt/p><br>
+                &nbsp;&nbsp;&nbsp;&lta href="location1.html" class="btn">Learn more&lt/a><br>
                 &lt/div>
             </div>
             <h2>CSS</h2>
@@ -183,6 +186,74 @@
                 <br>
                 .location-card-back {<br>
                 &nbsp;&nbsp;&nbsp;transform: rotateY(180deg);<br>
+                }
+            </div>
+        </section>
+
+        <!--Embedded Social Media-->
+        <section>
+            <h2>Embedded Social Media</h2>
+            <p>An embedded Facebook document</p>
+            <p>Found in all pages at the footer</p>
+            <img src="images/enhancements/Embedded Social Media.png">
+            <h2>HTML</h2>
+            <div class="code">
+                &lt;iframe class="responsive-hover-img"
+                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0Ro5XUkWsugqwP6cFKBsd7MWcqumoxyF4wDd8xdPcGCLZK7udVGAtrpvjBrnVUgJSl%26id%3D61554234958482&show_text=true&width=500"
+                scrolling="no" allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">&lt;/iframe>
+            </div>
+        </section>
+
+        <!--Interactive Hover-->
+        <section>
+            <h2>Hover Effects</h2>
+            <p>When hovered over, some elements change appearance</p>
+            <p>Found on all pages</p>
+            <video src="images/enhancements/Responsive Hover.mp4" autoplay loop muted></video>
+            <h2>CSS</h2>
+            <div class="code">
+                .responsive-hover:hover {<br>
+                &nbsp;&nbsp;&nbsp;transition: var(--transition);<br>
+                &nbsp;&nbsp;&nbsp;box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);<br>
+                &nbsp;&nbsp;&nbsp;transform: scale(1.01);<br>
+                }
+            </div>
+        </section>
+
+        <!--Responsive webpage resizing-->
+        <section>
+            <h2>Responsive Webpage Resizing</h2>
+            <p>Pages account for different viewport sizes.</p>
+            <p>Found on all pages</p>
+            <video src="images/enhancements/Responsive Resizing.mp4" autoplay loop muted></video>
+            <h2>CSS</h2>
+            <div class="code">
+                @media (max-width: 1000px) {<br>
+                &nbsp;&nbsp;&nbsp;.product-content {<br>
+                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;width: 45%;<br>
+                &nbsp;&nbsp;&nbsp; }<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;.product-sidebar {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin-left: 0;<br>
+                &nbsp;&nbsp;&nbsp;}<br>
+                }
+            </div>
+        </section>
+
+        <!--Live Input Validation-->
+        <section>
+            <h2>Live Input Validation</h2>
+            <p>When an input is in the wrong format, it will show up red</p>
+            <p>Found on <a href="login.html">login.html</a>, <a href="registration.html">registration.html</a>, <a
+                    href="enquiry.html">enquiry.html</a> and <a href="joinus_form.html">joinus_form.html</a></p>
+            <img src="images/enhancements/Live Input Validation.png">
+            <h2>CSS</h2>
+            <div class="code">
+                input:user-invalid {<br>
+                &nbsp;&nbsp;&nbsp;outline: 2px solid red;<br>
+                &nbsp;&nbsp;&nbsp;color: red;<br>
                 }
             </div>
         </section>

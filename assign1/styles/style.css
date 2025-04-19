@@ -3478,6 +3478,7 @@ h2 span {
 .enhancements {
     margin: 2em auto;
     padding: 50px 100px;
+    word-wrap: break-word;
 }
 
 .code {
@@ -3495,6 +3496,7 @@ h2 span {
     font-size: 2.5em;
     color: var(--accent-color-1);
     margin-bottom: 1em;
+    text-transform: capitalize;
 }
 
 .enhancements video,
