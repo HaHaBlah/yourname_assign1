@@ -970,30 +970,6 @@ audio {
 /* Profile Page END */
 
 
-/* Scrollbar styles START */
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--background-color);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--accent-color-1);
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--border-color);
-}
-
-::-webkit-scrollbar-thumb:active {
-    filter: brightness(0.8);
-}
-
-/* Scrollbar styles END */
-
 /* Background image styles START */
 .background-image {
     background-size: cover;
@@ -1181,19 +1157,6 @@ With some parts edited for compatibility since they applied to whole webpage*/
 .carousel * {
     box-sizing: border-box;
     scrollbar-color: transparent transparent;
-}
-
-.carousel *::-webkit-scrollbar {
-    width: 0;
-}
-
-.carousel *::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.carousel *::-webkit-scrollbar-thumb {
-    background: transparent;
-    border: none;
 }
 
 .carousel * {
@@ -1650,7 +1613,6 @@ h2 span {
 .welcome h1 span {
     font-family: var(--headings-font);
     color: transparent;
-    -webkit-text-stroke: 1.8px white;
     font-weight: bold;
     font-style: italic;
 }
@@ -2261,7 +2223,6 @@ h2 span {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
@@ -2379,7 +2340,6 @@ h2 span {
     padding: 2rem 5%;
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     margin: 2rem 0;
