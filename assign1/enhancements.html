@@ -67,25 +67,25 @@
             </div>
             <h2>CSS</h2>
             <div class="code">
-                    .scroll-top__link {<br>
-                    &nbsp;&nbsp;&nbsp;position: fixed;<br>
-                    &nbsp;&nbsp;&nbsp;bottom: 2rem;<br>
-                    &nbsp;&nbsp;&nbsp;right: 2rem;<br>
-                    &nbsp;&nbsp;&nbsp;text-decoration: none;<br>
-                    &nbsp;&nbsp;&nbsp;border-radius: .5rem;<br>
-                    &nbsp;&nbsp;&nbsp;background-color: var(--accent-color-1);<br>
-                    &nbsp;&nbsp;&nbsp;padding: 0 .5rem;<br>
-                    &nbsp;&nbsp;&nbsp;color: white;<br>
-                    &nbsp;&nbsp;&nbsp;font-size: 2em;<br>
-                    &nbsp;&nbsp;&nbsp;opacity: .5;<br>
-                    &nbsp;&nbsp;&nbsp;z-index: 10;<br>
-                    &nbsp;&nbsp;&nbsp;transition: opacity 0.1s ease-in-out;<br>
-                    }<br>
-                    <br>
+                .scroll-top__link {<br>
+                &nbsp;&nbsp;&nbsp;position: fixed;<br>
+                &nbsp;&nbsp;&nbsp;bottom: 2rem;<br>
+                &nbsp;&nbsp;&nbsp;right: 2rem;<br>
+                &nbsp;&nbsp;&nbsp;text-decoration: none;<br>
+                &nbsp;&nbsp;&nbsp;border-radius: .5rem;<br>
+                &nbsp;&nbsp;&nbsp;background-color: var(--accent-color-1);<br>
+                &nbsp;&nbsp;&nbsp;padding: 0 .5rem;<br>
+                &nbsp;&nbsp;&nbsp;color: white;<br>
+                &nbsp;&nbsp;&nbsp;font-size: 2em;<br>
+                &nbsp;&nbsp;&nbsp;opacity: .5;<br>
+                &nbsp;&nbsp;&nbsp;z-index: 10;<br>
+                &nbsp;&nbsp;&nbsp;transition: opacity 0.1s ease-in-out;<br>
+                }<br>
+                <br>
 
-                    .scroll-top__link:hover {<br>
-                    &nbsp;&nbsp;&nbsp;opacity: 1;<br>
-                    }</span>
+                .scroll-top__link:hover {<br>
+                &nbsp;&nbsp;&nbsp;opacity: 1;<br>
+                }</span>
             </div>
         </section>
 
@@ -98,8 +98,8 @@
             <h2>HTML</h2>
             <div class="code">
                 &lt;iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15953.675113405434!2d110.3657563!3d1.5176329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba7003da964cb%3A0xf8d14c19ed1634a4!2sBrew%20and%20Go!5e0!3m2!1sen!2smy!4v1744122746072!5m2!1sen!2smy"
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">&lt;/iframe>
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15953.675113405434!2d110.3657563!3d1.5176329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba7003da964cb%3A0xf8d14c19ed1634a4!2sBrew%20and%20Go!5e0!3m2!1sen!2smy!4v1744122746072!5m2!1sen!2smy"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">&lt;/iframe>
             </div>
         </section>
 
@@ -114,9 +114,12 @@
                 &lt;div class="Dropdown_Start"> &lt;a href="activities.html">Activities&lt;/a><br>
                 &nbsp;&nbsp;&nbsp;&lt;div class="Dropdown_Content"><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>&lt;a href="Current.html">Current&lt;/a>&lt;/li><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>&lt;a href="Coming_Soon.html">Coming Soon&lt;/a>&lt;/li><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>&lt;a href="Past.html">Past&lt;/a>&lt;/li><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>&lt;a
+                href="Current.html">Current&lt;/a>&lt;/li><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>&lt;a href="Coming_Soon.html">Coming
+                Soon&lt;/a>&lt;/li><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>&lt;a
+                href="Past.html">Past&lt;/a>&lt;/li><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul><br>
                 &nbsp;&nbsp;&nbsp;&lt;/div><br>
                 &lt;/div><br>
@@ -124,14 +127,65 @@
             <h2>CSS</h2>
             <div class="code">
                 .Dropdown_Content {<br>
-                    &nbsp;&nbsp;&nbsp;display: none;<br>
+                &nbsp;&nbsp;&nbsp;display: none;<br>
                 }<br><br>
                 .Dropdown_Start:hover .Dropdown_Content {<br>
-                    &nbsp;&nbsp;&nbsp;display: inline-block;<br>
+                &nbsp;&nbsp;&nbsp;display: inline-block;<br>
                 }
             </div>
         </section>
 
+        <!--Flipcard-->
+        <section>
+            <h2>Flipcard</h2>
+            <p>An image that when hovered over, flips to another image</p>
+            <p>Found on <a href="locations.html">locations.html</a></p>
+            <video src="images/enhancements/Flipcard.mp4" autoplay loop muted></video>
+            <h2>HTML</h2>
+            <div class="code">
+                &ltdiv class="location-card"><br>
+                    &nbsp;&nbsp;&nbsp;&ltdiv class="flip-container"><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltdiv class="location-card-inner"><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltdiv class="location-card-front"><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltimg src="images/location/one_jaya.jpg" alt="Location 1 Image"><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt/div><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltdiv class="location-card-back"><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lta href="https://maps.app.goo.gl/8ap6MykG7yn7rF7A6"><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltimg src="images/location/Location_1.png" alt="Location 1 Back Image"><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt/a><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt/div><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt/div><br>
+                    &nbsp;&nbsp;&nbsp;&lt/div><br>
+                    &nbsp;&nbsp;&nbsp;&lth3>One Jaya&lt/h3><br>
+                    &nbsp;&nbsp;&nbsp;&ltp>G63, Lot, Onejaya Shopping Complex&lt/p><br>
+                    &nbsp;&nbsp;&nbsp;&lta href="location1.html" class="btn">Learn more&lt/a><br>
+                &lt/div>
+            </div>
+            <h2>CSS</h2>
+            <div class="code">
+                .flip-container:hover .location-card-inner {<br>
+                &nbsp;&nbsp;&nbsp;transform: rotateY(180deg);<br>
+                }<br>
+                <br>
+                .location-card-front,<br>
+                .location-card-back {<br>
+                &nbsp;&nbsp;&nbsp;position: absolute;<br>
+                &nbsp;&nbsp;&nbsp;width: 100%;<br>
+                &nbsp;&nbsp;&nbsp;height: 100%;<br>
+                &nbsp;&nbsp;&nbsp;-webkit-backface-visibility: hidden;<br>
+                &nbsp;&nbsp;&nbsp;backface-visibility: hidden;<br>
+                }<br>
+                <br>
+                .location-card-front {<br>
+                &nbsp;&nbsp;&nbsp;background-color: var(--accent-color-1);<br>
+                &nbsp;&nbsp;&nbsp;color: white;<br>
+                }<br>
+                <br>
+                .location-card-back {<br>
+                &nbsp;&nbsp;&nbsp;transform: rotateY(180deg);<br>
+                }
+            </div>
+        </section>
 
         <div class="scroll-top">
             <!--/* https://dev.to/jackherizsmith/making-a-back-to-top-button-without-javascript-2ej6 */-->
