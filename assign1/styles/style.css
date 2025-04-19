@@ -3512,6 +3512,8 @@ h2 span {
     color: white;
     border-radius: var(--border-radius);
     width: 75%;
+    font-family: Consolas, monaco, monospace;
+    tab-size: 4;
 }
 
 .enhancements h2 {

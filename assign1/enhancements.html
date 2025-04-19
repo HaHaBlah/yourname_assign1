@@ -54,10 +54,48 @@
     <main class="enhancements">
         <section>
             <h2>Scroll to Top Button</h2>
-            <p></p>
+            <p>A button that when clicked, scrolls all the way back to the top of the page</p>
             <video src="images/enhancements/Scroll to Top Button.mp4" autoplay loop muted></video>
+            <h2>HTML</h2>
             <div class="code">
-                <span>test</span>
+                &lt;div class="scroll-top"><br>
+
+                &nbsp;&nbsp;&nbsp;&lt;a class="scroll-top__link" href="#">& #11165;&lt;/a><br>
+                &lt;/div>
+            </div>
+            <h2>CSS</h2>
+            <div class="code">
+                <span>.scroll-top {<br>
+                    &nbsp;&nbsp;&nbsp;position: sticky;<br>
+                    &nbsp;&nbsp;&nbsp;bottom: 2rem;<br>
+                    &nbsp;&nbsp;&nbsp;height: 0;<br>
+                    &nbsp;&nbsp;&nbsp;width: 100%;<br>
+                    &nbsp;&nbsp;&nbsp;z-index: 10;<br>
+                    &nbsp;&nbsp;&nbsp;margin-top: -50px;<br>
+                    &nbsp;&nbsp;&nbsp;text-align: right;<br>
+                    }<br>
+                    <br>
+                    .scroll-top__link {<br>
+                    &nbsp;&nbsp;&nbsp;position: fixed;<br>
+                    &nbsp;&nbsp;&nbsp;bottom: 2rem;<br>
+                    &nbsp;&nbsp;&nbsp;right: 2rem;<br>
+                    &nbsp;&nbsp;&nbsp;pointer-events: auto;<br>
+                    &nbsp;&nbsp;&nbsp;display: inline-block;<br>
+                    &nbsp;&nbsp;&nbsp;text-decoration: none;<br>
+                    &nbsp;&nbsp;&nbsp;border-radius: .5rem;<br>
+                    &nbsp;&nbsp;&nbsp;background-color: var(--accent-color-1);<br>
+                    &nbsp;&nbsp;&nbsp;padding: 0 .5rem;<br>
+                    &nbsp;&nbsp;&nbsp;color: white;<br>
+                    &nbsp;&nbsp;&nbsp;font-size: 2em;<br>
+                    &nbsp;&nbsp;&nbsp;opacity: .5;<br>
+                    &nbsp;&nbsp;&nbsp;z-index: 10;<br>
+                    &nbsp;&nbsp;&nbsp;transition: opacity 0.1s ease-in-out;<br>
+                    }<br>
+                    <br>
+
+                    .scroll-top__link:hover {<br>
+                    &nbsp;&nbsp;&nbsp;opacity: 1;<br>
+                    }</span>
             </div>
         </section>
 
