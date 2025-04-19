@@ -1475,7 +1475,7 @@ With some parts edited for compatibility since they applied to whole webpage*/
 }
 
 h2 span {
-    color: #593C26;
+    color: var(--accent-color-1);
     display: flex;
 }
 
@@ -1505,10 +1505,10 @@ h2 span {
 .btn {
     display: inline-block;
     padding: 10px 30px;
-    background: #593C26;
-    border: 2px solid #593C26;
+    background: var(--accent-color-1);
+    border: 2px solid var(--accent-color-1);
     border-radius: 40px;
-    box-shadow: 0 0 10px #593C26;
+    box-shadow: 0 0 10px var(--accent-color-1);
     font-size: 16px;
     color: white;
     font-weight: 600;
@@ -1517,7 +1517,7 @@ h2 span {
 
 .btn:hover {
     background: transparent;
-    color: #593C26;
+    color: var(--accent-color-1);
     box-shadow: none;
 }
 
@@ -1528,12 +1528,12 @@ h2 span {
 .home-content .btn-sci .sci a {
     display: inline-flex;
     padding: 8px;
-    border: 2px solid #593C26;
+    border: 2px solid var(--accent-color-1);
     border-radius: 50%;
     font-size: 20px;
     height: 40px;
     width: 40px;
-    color: #593C26;
+    color: var(--accent-color-1);
     margin: 0 8px;
     transition: .25s;
     box-sizing: border-box;
@@ -1544,9 +1544,9 @@ h2 span {
 }
 
 .home-content .btn-sci .sci a:hover {
-    background: #593C26;
+    background: var(--accent-color-1);
     color: #A99175;
-    box-shadow: 0 0 10px #593C26;
+    box-shadow: 0 0 10px var(--accent-color-1);
 }
 
 .home-content .btn-sci .sci a:hover img {
@@ -1579,7 +1579,7 @@ h2 span {
     position: absolute;
     width: 500px;
     height: 500px;
-    background: conic-gradient(transparent, transparent, transparent, #593C26);
+    background: conic-gradient(transparent, transparent, transparent, var(--accent-color-1));
     transform: rotate(0deg);
     animation: rotate-border 16s linear infinite;
 }
@@ -1598,9 +1598,9 @@ h2 span {
     position: relative;
     width: 100%;
     height: 100%;
-    background: #593C26;
+    background: var(--accent-color-1);
     border-radius: 50%;
-    border: .1px solid #593C26;
+    border: .1px solid var(--accent-color-1);
     display: flex;
     justify-content: center;
     z-index: 1;
@@ -1933,7 +1933,7 @@ h2 span {
 }
 
 .feature-box:hover {
-    background-color: #593C26;
+    background-color: var(--accent-color-1);
     color: white;
 }
 
@@ -2163,10 +2163,10 @@ h2 span {
     margin: 15px;
     display: inline-block;
     padding: 10px 30px;
-    background: #593C26;
-    border: 2px solid #593C26;
+    background: var(--accent-color-1);
+    border: 2px solid var(--accent-color-1);
     border-radius: 40px;
-    box-shadow: 0 0 10px #593C26;
+    box-shadow: 0 0 10px var(--accent-color-1);
     font-size: 16px;
     color: white;
     font-weight: 600;
@@ -2175,7 +2175,7 @@ h2 span {
 
 .learn-more .btn:hover {
     background: transparent;
-    color: #593C26;
+    color: var(--accent-color-1);
     box-shadow: none;
 }
 
@@ -2284,7 +2284,7 @@ h2 span {
 }
 
 .location-card-front {
-    background-color: #593C26;
+    background-color: var(--accent-color-1);
     color: white;
 }
 
@@ -2378,14 +2378,14 @@ h2 span {
 
 .acknowledgement ul li::before {
     content: '✔';
-    color: #593C26;
+    color: var(--accent-color-1);
     position: absolute;
     left: 0;
     font-size: 1.2em;
 }
 
 .acknowledgement a {
-    color: #593C26;
+    color: var(--accent-color-1);
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -2587,6 +2587,10 @@ h2 span {
 .coming_soon-subtitle {
     font-size: 1.5rem;
     font-weight: 300;
+}
+.coming_soon-raya-content {
+    margin-top: 0;
+    margin-bottom: 5rem;
 }
 
 .coming_soon-notice-card {
@@ -2820,7 +2824,7 @@ h2 span {
 .current-cny-promo,
 .current-cny-hours,
 .current-cny-tradition {
-    background-color: #FFF9F9;
+    background-color: var(--container-background-color);
     padding: 3rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -3040,7 +3044,7 @@ h2 span {
 /* Past Page START */
 .past-gawai-container {
     max-width: 800px;
-    margin: 10vh auto;
+    margin: 5rem auto;
     padding: 2rem;
     text-align: center;
 
@@ -3111,6 +3115,10 @@ h2 span {
     font-size: 1.5rem;
     color: #ff8c34;
     font-family: 'Alice', serif;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .past-brand-tag {
