@@ -75,6 +75,7 @@
     height: 1090px;
 }
 
+
 .enquiry-container * {
     box-sizing: border-box;
 }
@@ -215,6 +216,14 @@
     position: relative;
     width: 800px;
     box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .registration-perks, .login-pretext {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
 }
 
 .registration-qr {
@@ -380,6 +389,11 @@ button {
     .login-bottom {
         text-align: center;
     }
+
+    #joinus-container, #enquiry-container, #registration-container {
+        height: auto;
+    }
+
 }
 
 /* Login Page Prototype End */
