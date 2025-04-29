@@ -1,0 +1,125 @@
+<!--Done-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Hii Wei Bao">
+    <title>Enquiry form</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <?php include("inc/top_navigation_bar.inc"); ?>
+    <header class="location-header" id="image-Coffee_Beans_Bg">
+        <img src="images/Coffee_Beans_Bg.png" alt="Coffee Beans Background">
+    </header>
+
+    <main class="no-margin-top">
+        <section class="login-container" id="enquiry-container">
+            <div class="login-left">
+                <img src="images/Brew&Go_logo.png" alt="Brew & Go logo">
+
+                <h2>Contact Us ☕</h2>
+                <p>We are here to help!</p>
+            </div>
+            <div class="login-right">
+                <form action="mailto:104390572@students.swinburne.edu.my" method="post" enctype="text/plain">
+                    <fieldset>
+                        <fieldset>
+                            <legend>
+                                <strong>Personal Information</strong>
+                            </legend>
+                            <input class="responsive-hover" type="text" placeholder="First name" name="name"
+                                maxlength="25" required="required" pattern="[A-Za-z\s]+"
+                                title="Alphabetical characters only; Maximum 25 characters."><br>
+
+                            <input class="responsive-hover" type="text" placeholder="Last name" name="name"
+                                maxlength="25" required="required" pattern="[A-Za-z\s]+"
+                                title="Alphabetical characters only; Maximum 25 characters."><br>
+
+                            <input class="responsive-hover" type="email" placeholder="Enter your e-mail address"
+                                name="email" required="required" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/">
+                            <br>
+                            <input class="responsive-hover" type="text" placeholder="Phone Number" id="phone"
+                                name="phone" maxlength="11" required="required" pattern="\d{10}"
+                                title="Format:0123456789.">
+                        </fieldset>
+                        <fieldset>
+                            <legend>
+                                <strong>Address</strong>
+                            </legend>
+                            <label for="streetaddress">Street Address:</label>
+                            <input class="responsive-hover" type="text" placeholder="Street Address" id="streetaddress"
+                                name="streetaddress" maxlength="40" required="required" pattern="[A-Za-z0-9\s]+"
+                                title="Alphanumeric characters only; Maximum 40 characters.">
+                            <br>
+                            <label for="ct">City/Town:</label>
+                            <input class="responsive-hover" type="text" placeholder="City/Town" id="ct" name="ct"
+                                maxlength="20" required="required" pattern="[A-Za-z\s]+"
+                                title="Alphabetical characters only; Maximum 20 characters.">
+                            <br>
+
+                            <label for="state">State:</label>
+                            <select id="state" name="state" required="required">
+
+                                <option value="">Select a state</option>
+                                <option value="Perlis">Perlis</option>
+                                <option value="Kedah">Kedah</option>
+                                <option value="Penang">Penang</option>
+                                <option value="Perak">Perak</option>
+                                <option value="Selangor">Selangor</option>
+                                <option value="Negeri Sembilan">Negeri Sembilan</option>
+                                <option value="Melaka">Melaka</option>
+                                <option value="Johor">Johor</option>
+                                <option value="Kelantan">Kelantan</option>
+                                <option value="Terengganu">Terengganu</option>
+                                <option value="Pahang">Pahang</option>
+                                <option value="Sabah">Sabah</option>
+                                <option value="Sarawak">Sarawak</option>
+                                <option value="Kuala Lumpur">Kuala Lumpur</option>
+                                <option value="Putrajaya">Putrajaya</option>
+                                <option value="Labuan">Labuan</option>
+                            </select>
+                            <br>
+                            <label for="postcode">Postcode:</label>
+                            <input class="responsive-hover" type="text" placeholder="Postcode" id="postcode"
+                                name="postcode" maxlength="5" required="required" pattern="\d{5}"
+                                title="5-digit postcode only.">
+                        </fieldset>
+
+                        <br>
+
+                        <fieldset>
+                            <legend>
+                                <strong>Enquiry</strong>
+                            </legend>
+                            <select id="ET" name="ET" required="required">
+                                <option value="">Select an enquiry type</option>
+                                <option value="Product">Products</option>
+                                <option value="Membership">Membership</option>
+                                <option value="Pop-up">Pop-up Market Activities</option>
+                            </select>
+                            <br>
+
+                            <label for="message">Your Message:</label>
+                            <textarea placeholder="Your Message" id="message" name="message" required="required"
+                                rows="3" cols="40"></textarea>
+                        </fieldset>
+                        <button class="responsive-hover-button" type="submit">Send Enquiry</button>
+                        <button class="responsive-hover-button" type="reset">Clear Form</button>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </main>
+    <?php include("inc/scroll_to_top_button.inc"); ?>
+
+    <?php include("inc/footer.inc"); ?>
+</body>
+
+</html>
