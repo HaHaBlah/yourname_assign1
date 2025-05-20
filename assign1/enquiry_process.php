@@ -14,15 +14,15 @@
 <body>
     <?php include("inc/top_navigation_bar.inc"); ?>
     <main>
-        <h1>Membership Registration Confirmation</h1>
-        <h2>Thank you for registering!</h2>
+        <h1>Enquiry Confirmation</h1>
+        <h2>Thank you for contacting us!</h2>
 
         <?php
         // Database connection
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "membership";
+        $dbname = "enquiry";
 
         // Create connection
         $conn = new mysqli($servername, $username, $password);
@@ -40,36 +40,44 @@
         $conn->select_db($dbname);
 
         // Create members table if it doesn't exist
-        $sql = "CREATE TABLE IF NOT EXISTS members (
+        $sql = "CREATE TABLE IF NOT EXISTS enquiries (
             id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             firstname VARCHAR(25) NOT NULL,
             lastname VARCHAR(25) NOT NULL,
             email VARCHAR(50) NOT NULL,
-            username VARCHAR(10) NOT NULL,
-            password VARCHAR(255) NOT NULL,
-            reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            phonenumber VARCHAR(15) NOT NULL,
+            streetaddress VARCHAR(40) NOT NULL,
+            citytown VARCHAR(20) NOT NULL,
+            state VARCHAR(30) NOT NULL,
+            postcode VARCHAR(5) NOT NULL,
+            enquirytype VARCHAR(30) NOT NULL,
+            message TEXT NOT NULL,
+            submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )";
         if (!$conn->query($sql)) {
             die("Table creation failed: " . $conn->error);
         }
+
         // Get POST data safely
         $firstname = isset($_POST['firstname']) ? trim($_POST['firstname']) : '';
         $lastname = isset($_POST['lastname']) ? trim($_POST['lastname']) : '';
         $email = isset($_POST['email']) ? trim($_POST['email']) : '';
-        $username = isset($_POST['username']) ? trim($_POST['username']) : '';
-        $password = isset($_POST['password']) ? $_POST['password'] : '';
+        $phonenumber = isset($_POST['phonenumber']) ? trim($_POST['phonenumber']) : '';
+        $streetaddress = isset($_POST['streetaddress']) ? trim($_POST['streetaddress']) : '';
+        $citytown = isset($_POST['citytown']) ? trim($_POST['citytown']) : '';
+        $state = isset($_POST['state']) ? trim($_POST['state']) : '';
+        $postcode = isset($_POST['postcode']) ? trim($_POST['postcode']) : '';
+        $enquirytype = isset($_POST['enquirytype']) ? trim($_POST['enquirytype']) : '';
+        $message = isset($_POST['message']) ? trim($_POST['message']) : '';
 
         // Simple validation
-        if ($firstname && $lastname && $email && $username && $password) {
-            // Hash the password
-            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
+        if ($firstname && $lastname && $email && $phonenumber && $streetaddress && $citytown && $state && $postcode && $enquirytype && $message) {
             // Use prepared statement to prevent SQL injection
-            $stmt = $conn->prepare("INSERT INTO members (firstname, lastname, email, username, password) VALUES (?, ?, ?, ?, ?)");
-            $stmt->bind_param("sssss", $firstname, $lastname, $email, $username, $hashed_password);
+            $stmt = $conn->prepare("INSERT INTO enquiries (firstname, lastname, email, phonenumber, streetaddress, citytown, state, postcode, enquirytype, message) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("ssssssssss", $firstname, $lastname, $email, $phonenumber, $streetaddress, $citytown, $state, $postcode, $enquirytype, $message);
 
             if ($stmt->execute()) {
-                echo "<p>Registration successful! Welcome, <strong>" . htmlspecialchars($firstname) . " " . htmlspecialchars($lastname) . "</strong>.</p>";
+                echo "<p>Your enquiry has been submitted successfully. We will get back to you soon, <strong>" . htmlspecialchars($firstname) . " " . htmlspecialchars($lastname) . "</strong>.</p>";
             } else {
                 echo "<p>Error: " . htmlspecialchars($stmt->error) . "</p>";
             }
@@ -79,9 +87,9 @@
             echo "<p>Error: Please fill in all required fields.</p>";
         }
 
-        mysqli_close($conn);
+        $conn->close();
         ?>
-    <?php include("inc/scroll_to_top_button.inc"); ?>
+        <?php include("inc/scroll_to_top_button.inc"); ?>
     </main>
     <?php include("inc/footer.inc"); ?>
 </body>

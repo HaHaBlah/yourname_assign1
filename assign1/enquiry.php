@@ -34,19 +34,19 @@
                             <legend>
                                 <strong>Personal Information</strong>
                             </legend>
-                            <input class="responsive-hover" type="text" placeholder="First name" name="name"
+                            <input class="responsive-hover" type="text" placeholder="First name" name="firstname"
                                 maxlength="25" required="required" pattern="[A-Za-z\s]+"
-                                title="Alphabetical characters only; Maximum 25 characters."><br>
+                                title="Alphabetical characters only; Maximum 25 characters." id="firstname"><br>
 
-                            <input class="responsive-hover" type="text" placeholder="Last name" name="name"
+                            <input class="responsive-hover" type="text" placeholder="Last name" name="lastname"
                                 maxlength="25" required="required" pattern="[A-Za-z\s]+"
-                                title="Alphabetical characters only; Maximum 25 characters."><br>
+                                title="Alphabetical characters only; Maximum 25 characters." id="lastname"><br>
 
                             <input class="responsive-hover" type="email" placeholder="Enter your e-mail address"
                                 name="email" required="required" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/">
                             <br>
-                            <input class="responsive-hover" type="text" placeholder="Phone Number" id="phone"
-                                name="phone" maxlength="11" required="required" pattern="\d{10}"
+                            <input class="responsive-hover" type="text" placeholder="Phone Number" id="phonenumber"
+                                name="phonenumber" maxlength="11" required="required" pattern="\d{10}"
                                 title="Format:0123456789.">
                         </fieldset>
                         <fieldset>
@@ -59,7 +59,7 @@
                                 title="Alphanumeric characters only; Maximum 40 characters.">
                             <br>
                             <label for="ct">City/Town:</label>
-                            <input class="responsive-hover" type="text" placeholder="City/Town" id="ct" name="ct"
+                            <input class="responsive-hover" type="text" placeholder="City/Town" id="citytown" name="citytown"
                                 maxlength="20" required="required" pattern="[A-Za-z\s]+"
                                 title="Alphabetical characters only; Maximum 20 characters.">
                             <br>
@@ -98,7 +98,7 @@
                             <legend>
                                 <strong>Enquiry</strong>
                             </legend>
-                            <select id="ET" name="ET" required="required">
+                            <select id="enquirytype" name="enquirytype" required="required">
                                 <option value="">Select an enquiry type</option>
                                 <option value="Product">Products</option>
                                 <option value="Membership">Membership</option>
