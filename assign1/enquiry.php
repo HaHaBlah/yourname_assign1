@@ -28,7 +28,7 @@
                 <p>We are here to help!</p>
             </div>
             <div class="login-right">
-                <form action="mailto:104390572@students.swinburne.edu.my" method="post" enctype="text/plain">
+                <form action="enquiry_process.php" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <fieldset>
                             <legend>
