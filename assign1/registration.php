@@ -73,7 +73,7 @@
                 <p>Become a member of Brew & Go. Coffee</p>
             </div>
             <div class="login-right">
-                <form action="membership_process.php" method="post" enctype="text/plain">
+                <form action="membership_process.php" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <fieldset>
                             <legend>Personal Details</legend>
