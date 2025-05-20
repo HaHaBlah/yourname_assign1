@@ -1361,7 +1361,6 @@ With some parts edited for compatibility since they applied to whole webpage*/
     height: 0;
     width: 100%;
     z-index: 10;
-    margin-top: -50px;
     text-align: right;
 }
 

@@ -81,8 +81,8 @@
 
         mysqli_close($conn);
         ?>
-    </main>
     <?php include("inc/scroll_to_top_button.inc"); ?>
+    </main>
     <?php include("inc/footer.inc"); ?>
 </body>
 

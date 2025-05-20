@@ -14,15 +14,16 @@
 <body>
     <?php include("inc/top_navigation_bar.inc"); ?>
     <main>
-        <h1>Booking page</h1>
+        <h1>Membership List</h1>
 
         <table border="1">
             <tr>
                 <th>No</th>
-                <th width="150px">Name</th>
-                <th width="80px">Age</th>
-                <th width="80px">Food</th>
-                <th width="80px">Size</th>
+                <th width="150px">First Name</th>
+                <th width="150px">Last Name</th>
+                <th width="200px">Email</th>
+                <th width="100px">Username</th>
+                <th width="180px">Registration Date</th>
             </tr>
 
             <?php
@@ -36,32 +37,33 @@
             if (!$conn) {
                 die("Connection failed: " . mysqli_connect_error());
             }
-            $sql = "SELECT * FROM R_Book";
+            $sql = "SELECT * FROM members";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
-                // output data of each row
+                $no = 1;
                 while ($row = mysqli_fetch_assoc($result)) {
             ?>
                     <tr>
-                        <td> <?php echo $row["id"]; ?></td>
-                        <td> <?php echo $row["firstname"] . " " . $row["lastname"]; ?></td>
-                        <td> <?php echo $row["age"]; ?></td>
-                        <td> <?php echo $row["food"]; ?></td>
-                        <td> <?php echo $row["size"]; ?></td>
+                        <td><?php echo $no++; ?></td>
+                        <td><?php echo htmlspecialchars($row["firstname"]); ?></td>
+                        <td><?php echo htmlspecialchars($row["lastname"]); ?></td>
+                        <td><?php echo htmlspecialchars($row["email"]); ?></td>
+                        <td><?php echo htmlspecialchars($row["username"]); ?></td>
+                        <td><?php echo htmlspecialchars($row["reg_date"]); ?></td>
                     </tr>
-
             <?php
                 }
             } else {
-                echo "0 results";
+                echo "<tr><td colspan='6'>0 results</td></tr>";
             }
 
             mysqli_close($conn);
             ?>
         </table>
+        <?php include("inc/scroll_to_top_button.inc"); ?>
     </main>
-    <?php include("inc/scroll_to_top_button.inc"); ?>
+    
 
     <?php include("inc/footer.inc"); ?>
 </body>
