@@ -29,7 +29,7 @@
             $servername = "localhost";
             $username = "root";
             $password = "";
-            $dbname = "Membership";
+            $dbname = "membership";
             // Create connection
             $conn = mysqli_connect($servername, $username, $password, $dbname);
             // Check connection
