@@ -77,23 +77,23 @@
                     <fieldset>
                         <fieldset>
                             <legend>Personal Details</legend>
-                            <input class="responsive-hover" type="text" placeholder="First name" name="name"
+                            <input class="responsive-hover" type="text" placeholder="First name" name="firstname"
                                 maxlength="25" required="required" pattern="[A-Za-z\s]+"
-                                title="Alphabetical characters only; Maximum 25 characters.">
-                            <input class="responsive-hover" type="text" placeholder="Last name" name="name"
+                                title="Alphabetical characters only; Maximum 25 characters." id="firstname">
+                            <input class="responsive-hover" type="text" placeholder="Last name" name="lastname"
                                 maxlength="25" required="required" pattern="[A-Za-z\s]+"
-                                title="Alphabetical characters only; Maximum 25 characters.">
+                                title="Alphabetical characters only; Maximum 25 characters." id="lastname">
                             <input class="responsive-hover" type="email" placeholder="E-mail address" name="email"
-                                required="required" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/">
+                                required="required" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" id="email">
                         </fieldset>
                         <fieldset>
                             <legend>Account Details</legend>
                             <input class="responsive-hover" type="text" name="username" placeholder="Username" required
                                 maxlength="10" pattern="[A-Za-z]+"
-                                title="Alphabetical characters only; Maximum 10 characters.">
+                                title="Alphabetical characters only; Maximum 10 characters." id="username">
                             <input class="responsive-hover" type="text" name="password" placeholder="Password" required
                                 maxlength="25" pattern="[A-Za-z0-9]+"
-                                title="Alphabetical characters only; Maximum 25 characters.">
+                                title="Alphabetical characters only; Maximum 25 characters." id="password">
                         </fieldset>
                         <button class="responsive-hover-button" type="submit">Become a Member</button>
                         <button class="responsive-hover-button" type="reset">Clear Form</button>
