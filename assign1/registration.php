@@ -55,11 +55,11 @@
             <label for="myFile">Upload your payment receipt here:</label>
             <br>
             <div class="file-upload-wrapper">
-                <button class="btn-upload responsive-hover-button">Choose File</button>
-                <input type="file" name="myFile" id="myFile" required="required">
+                <input type="file" name="myFile" id="myFile" hidden required>
+                <label for="myFile" class="btn-upload responsive-hover-button">Choose File</label>
             </div>
             <br>
-            <input class="btn-upload responsive-hover-button" type="submit" value="Upload File"> <!--This is misleading, it should be a button to submit the form-->
+            <input class="btn-upload responsive-hover-button" type="submit" value="Send"> <!--This is misleading, it should be a button to submit the form-->
         </section>
 
         <br>
