@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,6 +60,14 @@
         $email = isset($_POST['email']) ? trim($_POST['email']) : '';
         $username = isset($_POST['username']) ? trim($_POST['username']) : '';
         $password = isset($_POST['password']) ? $_POST['password'] : '';
+
+        // Store entered values (except password) in session to repopulate form later
+        $_SESSION['form_data'] = [
+            'firstname' => $firstname,
+            'lastname' => $lastname,
+            'email' => $email,
+            'username' => $username
+        ];
 
         // Simple validation
 
@@ -147,6 +156,7 @@
                 echo "<main>";
                 echo "<h1>Membership Registration Confirmation</h1>";
                 echo "<h2>Thank you for registering!</h2>";
+                unset($_SESSION['form_data']); // Clear saved inputs
                 echo "</main>";
             } else {
                 // Insert failed (e.g. duplicate username)
