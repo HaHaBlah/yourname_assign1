@@ -24,7 +24,7 @@
         $password = "";
         $dbname = "JoinUs";
 
-        // Create connection
+        // Create connection -> For SQL
         $conn = new mysqli($servername, $username, $password);
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -57,21 +57,21 @@
         if (!$conn->query($sql)) {
             die("Table creation failed: " . $conn->error);
         }
-        // Get POST data safely
-        $firstname = isset($_POST['firstname']) ? trim($_POST['firstname']) : '';
-        $lastname = isset($_POST['lastname']) ? trim($_POST['lastname']) : '';
-        $email = isset($_POST['email']) ? trim($_POST['email']) : '';
-        $phonenumber = isset($_POST['phonenumber']) ? trim($_POST['phonenumber']) : '';
-        $streetaddress = isset($_POST['streetaddress']) ? trim($_POST['streetaddress']) : '';
-        $citytown = isset($_POST['citytown']) ? trim($_POST['citytown']) : '';
-        $state = isset($_POST['state']) ? trim($_POST['state']) : '';
-        $postcode = isset($_POST['postcode']) ? trim($_POST['postcode']) : '';
+        // Get POST data safely //Review this later
+        $firstname      = isset($_POST['firstname'])    ? trim($_POST['firstname']) : '';
+        $lastname       = isset($_POST['lastname'])     ? trim($_POST['lastname']) : '';
+        $email          = isset($_POST['email'])        ? trim($_POST['email']) : '';
+        $phonenumber    = isset($_POST['phonenumber'])  ? trim($_POST['phonenumber']) : '';
+        $streetaddress  = isset($_POST['streetaddress'])? trim($_POST['streetaddress']) : '';
+        $citytown       = isset($_POST['citytown'])     ? trim($_POST['citytown']) : '';
+        $state          = isset($_POST['state'])        ? trim($_POST['state']) : '';
+        $postcode       = isset($_POST['postcode'])     ? trim($_POST['postcode']) : '';
 
         // Handle file uploads
-        $cvfile = '';
-        $photofile = '';
-        $uploadOk = true;
-        $uploadDir = "uploads/";
+        $cvfile         = '';
+        $photofile      = '';
+        $uploadOk       = true;
+        $uploadDir      = "uploads/";
 
         if (!file_exists($uploadDir)) {
             mkdir($uploadDir, 0777, true);
@@ -109,22 +109,113 @@
         }
 
         // Simple validation
-        if ($firstname && $lastname && $email && $phonenumber && $streetaddress && $citytown && $state && $postcode && $cvfile && $photofile && $uploadOk) {
-            // Use prepared statement to prevent SQL injection
+
+        // if ($firstname && $lastname && $email && $phonenumber && $streetaddress && $citytown && $state && $postcode && $cvfile && $photofile && $uploadOk) {
+        //     // Use prepared statement to prevent SQL injection
+        //     $stmt = $conn->prepare("INSERT INTO members (firstname, lastname, email, phonenumber, streetaddress, citytown, state, postcode, cvfile, photofile) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        //     $stmt->bind_param("ssssssssss", $firstname, $lastname, $email, $phonenumber, $streetaddress, $citytown, $state, $postcode, $cvfile, $photofile);
+
+        //     if ($stmt->execute()) {
+        //         echo "<p>Registration successful! Welcome, <strong>" . htmlspecialchars($firstname) . " " . htmlspecialchars($lastname) . "</strong>.</p>";
+        //     } else {
+        //         echo "<p>Error: " . htmlspecialchars($stmt->error) . "</p>";
+        //     }
+
+        //     $stmt->close();
+        // } else {
+        //     echo "<p>Error: Please fill in all required fields and upload valid files.</p>";
+        // }
+
+        $errors = [];
+        $valid = [];
+
+        if ($firstname) {
+            $valid['firstname'] = "First name looks good.";
+        } else {
+            $errors['firstname'] = "First name is required.";
+        }
+
+        if ($lastname) {
+            $valid['lastname'] = "Last name looks good.";
+        } else {
+            $errors['lastname'] = "Last name is required.";
+        }
+
+        if ($email && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $valid['email'] = "Email is valid.";
+        } else {
+            $errors['email'] = "A valid email is required.";
+        }
+
+        if ($phonenumber) {
+            $valid['phonenumber'] = "Phone number is provided.";
+        } else {
+            $errors['phonenumber'] = "Phone number is required.";
+        }
+
+        if ($streetaddress) {
+            $valid['streetaddress'] = "Street address looks good.";
+        } else {
+            $errors['streetaddress'] = "Street address is required.";
+        }
+
+        if ($citytown) {
+            $valid['citytown'] = "City/Town is provided.";
+        } else {
+            $errors['citytown'] = "City/Town is required.";
+        }
+
+        if ($state) {
+            $valid['state'] = "State is provided.";
+        } else {
+            $errors['state'] = "State is required.";
+        }
+
+        if ($postcode && preg_match('/^\d{4,5}$/', $postcode)) {
+            $valid['postcode'] = "Postcode is valid.";
+        } else {
+            $errors['postcode'] = "A valid postcode is required.";
+        }
+
+        if ($cvfile) {
+            $valid['cvfile'] = "CV file uploaded successfully.";
+        } else {
+            $errors['cvfile'] = "CV file is required and must be uploaded correctly.";
+        }
+
+        if ($photofile) {
+            $valid['photofile'] = "Photo file uploaded successfully.";
+        } else {
+            $errors['photofile'] = "Photo file is required and must be less than 200kb.";
+        }
+
+        if (!empty($errors)) {
+            echo '<div class="notification error">';
+            echo '<h3>Please correct the following issues:</h3>';
+            echo '<ul>';
+            foreach ($errors as $field => $message) {
+                echo "<li><strong>" . htmlspecialchars($field) . ":</strong> " . htmlspecialchars($message) . "</li>";
+            }
+            echo '</ul>';
+            echo '</div>';
+        } else {
             $stmt = $conn->prepare("INSERT INTO members (firstname, lastname, email, phonenumber, streetaddress, citytown, state, postcode, cvfile, photofile) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             $stmt->bind_param("ssssssssss", $firstname, $lastname, $email, $phonenumber, $streetaddress, $citytown, $state, $postcode, $cvfile, $photofile);
 
             if ($stmt->execute()) {
-                echo "<p>Registration successful! Welcome, <strong>" . htmlspecialchars($firstname) . " " . htmlspecialchars($lastname) . "</strong>.</p>";
+                echo '<div class="notification success">';
+                echo "<p>Registration successful! Data has been saved to the database.</p>";
+                echo '</div>';
             } else {
-                echo "<p>Error: " . htmlspecialchars($stmt->error) . "</p>";
+                echo '<div class="notification error">';
+                echo "<p>Error saving data: " . htmlspecialchars($stmt->error) . "</p>";
+                echo '</div>';
             }
 
             $stmt->close();
-        } else {
-            echo "<p>Error: Please fill in all required fields and upload valid files.</p>";
         }
 
+        // Close the database connection
         mysqli_close($conn);
         ?>
         <?php include("inc/scroll_to_top_button.inc"); ?>

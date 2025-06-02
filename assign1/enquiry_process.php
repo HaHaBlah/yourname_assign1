@@ -71,25 +71,91 @@
         $message = isset($_POST['message']) ? trim($_POST['message']) : '';
 
         // Simple validation
-        if ($firstname && $lastname && $email && $phonenumber && $streetaddress && $citytown && $state && $postcode && $enquirytype && $message) {
-            // Use prepared statement to prevent SQL injection
-            $stmt = $conn->prepare("INSERT INTO enquiries (firstname, lastname, email, phonenumber, streetaddress, citytown, state, postcode, enquirytype, message) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("ssssssssss", $firstname, $lastname, $email, $phonenumber, $streetaddress, $citytown, $state, $postcode, $enquirytype, $message);
 
-            if ($stmt->execute()) {
-                echo "<p>Your enquiry has been submitted successfully. We will get back to you soon, <strong>" . htmlspecialchars($firstname) . " " . htmlspecialchars($lastname) . "</strong>.</p>";
-            } else {
-                echo "<p>Error: " . htmlspecialchars($stmt->error) . "</p>";
-            }
+        // if ($firstname && $lastname && $email && $phonenumber && $streetaddress && $citytown && $state && $postcode && $enquirytype && $message) {
+        //     // Use prepared statement to prevent SQL injection
+        //     $stmt = $conn->prepare("INSERT INTO enquiries (firstname, lastname, email, phonenumber, streetaddress, citytown, state, postcode, enquirytype, message) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        //     $stmt->bind_param("ssssssssss", $firstname, $lastname, $email, $phonenumber, $streetaddress, $citytown, $state, $postcode, $enquirytype, $message);
 
-            $stmt->close();
+        //     if ($stmt->execute()) {
+        //         echo "<p>Your enquiry has been submitted successfully. We will get back to you soon, <strong>" . htmlspecialchars($firstname) . " " . htmlspecialchars($lastname) . "</strong>.</p>";
+        //     } else {
+        //         echo "<p>Error: " . htmlspecialchars($stmt->error) . "</p>";
+        //     }
+
+        //     $stmt->close();
+        // } else {
+        //     echo "<p>Error: Please fill in all required fields.</p>";
+        // }
+
+        $errors = [];
+        $valid = [];
+
+        // Validate each field
+        if ($firstname) {
+            $valid['firstname'] = "First name looks good.";
         } else {
-            echo "<p>Error: Please fill in all required fields.</p>";
+            $errors['firstname'] = "First name is required.";
         }
 
+        if ($lastname) {
+            $valid['lastname'] = "Last name looks good.";
+        } else {
+            $errors['lastname'] = "Last name is required.";
+        }
+
+        if ($email && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $valid['email'] = "Email is valid.";
+        } else {
+            $errors['email'] = "A valid email is required.";
+        }
+
+        if ($phonenumber) {
+            $valid['phonenumber'] = "Phone number is provided.";
+        } else {
+            $errors['phonenumber'] = "Phone number is required.";
+        }
+
+        if ($streetaddress) {
+            $valid['streetaddress'] = "Street address looks good.";
+        } else {
+            $errors['streetaddress'] = "Street address is required.";
+        }
+
+        if ($citytown) {
+            $valid['citytown'] = "City/Town is provided.";
+        } else {
+            $errors['citytown'] = "City/Town is required.";
+        }
+
+        if ($state) {
+            $valid['state'] = "State is provided.";
+        } else {
+            $errors['state'] = "State is required.";
+        }
+
+        if ($postcode) {
+            $valid['postcode'] = "Postcode is provided.";
+        } else {
+            $errors['postcode'] = "Postcode is required.";
+        }
+
+        if ($enquirytype) {
+            $valid['enquirytype'] = "Enquiry type is provided.";
+        } else {
+            $errors['enquirytype'] = "Enquiry type is required.";
+        }
+
+        if ($message) {
+            $valid['message'] = "Message is provided.";
+        } else {
+            $errors['message'] = "Message is required.";
+        }
+
+        // Close the database connection
         $conn->close();
         ?>
-        <?php include("inc/scroll_to_top_button.inc"); ?>
+    <?php include("inc/scroll_to_top_button.inc"); ?>
     </main>
     <?php include("inc/footer.inc"); ?>
 </body>

@@ -60,23 +60,54 @@
         $password = isset($_POST['password']) ? $_POST['password'] : '';
 
         // Simple validation
-        if ($firstname && $lastname && $email && $username && $password) {
-            // Hash the password
-            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-            // Use prepared statement to prevent SQL injection
-            $stmt = $conn->prepare("INSERT INTO members (firstname, lastname, email, username, password) VALUES (?, ?, ?, ?, ?)");
-            $stmt->bind_param("sssss", $firstname, $lastname, $email, $username, $hashed_password);
+        // if ($firstname && $lastname && $email && $username && $password) {
+        //     // Hash the password
+        //     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-            if ($stmt->execute()) {
-                echo "<p>Registration successful! Welcome, <strong>" . htmlspecialchars($firstname) . " " . htmlspecialchars($lastname) . "</strong>.</p>";
-            } else {
-                echo "<p>Error: " . htmlspecialchars($stmt->error) . "</p>";
-            }
+        //     // Use prepared statement to prevent SQL injection
+        //     $stmt = $conn->prepare("INSERT INTO members (firstname, lastname, email, username, password) VALUES (?, ?, ?, ?, ?)");
+        //     $stmt->bind_param("sssss", $firstname, $lastname, $email, $username, $hashed_password);
 
-            $stmt->close();
+        //     if ($stmt->execute()) {
+        //         echo "<p>Registration successful! Welcome, <strong>" . htmlspecialchars($firstname) . " " . htmlspecialchars($lastname) . "</strong>.</p>";
+        //     } else {
+        //         echo "<p>Error: " . htmlspecialchars($stmt->error) . "</p>";
+        //     }
+
+        //     $stmt->close();
+        // } else {
+        //     echo "<p>Error: Please fill in all required fields.</p>";
+        // }
+
+        if ($firstname) {
+            $valid['firstname'] = "First name looks good.";
         } else {
-            echo "<p>Error: Please fill in all required fields.</p>";
+            $errors['firstname'] = "First name is required.";
+        }
+
+        if ($lastname) {
+            $valid['lastname'] = "Last name looks good.";
+        } else {
+            $errors['lastname'] = "Last name is required.";
+        }
+
+        if ($email && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $valid['email'] = "Email is valid.";
+        } else {
+            $errors['email'] = "A valid email is required.";
+        }
+
+        if ($username && preg_match('/^[a-zA-Z0-9]{1,10}$/', $username)) {
+            $valid['username'] = "Username is valid.";
+        } else {
+            $errors['username'] = "Username must be alphanumeric and up to 10 characters long."; //I need to check with this
+        }
+
+        if ($password && strlen($password) >= 6) {
+            $valid['password'] = "Password is valid.";
+        } else {
+            $errors['password'] = "Password must be at least 6 characters long."; //I need to check with this
         }
 
         mysqli_close($conn);
