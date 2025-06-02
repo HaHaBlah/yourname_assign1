@@ -59,7 +59,7 @@
                 <input type="file" name="myFile" id="myFile" required="required">
             </div>
             <br>
-            <input class="btn-upload responsive-hover-button" type="submit" value="Upload File">
+            <input class="btn-upload responsive-hover-button" type="submit" value="Upload File"> <!--This is misleading, it should be a button to submit the form-->
         </section>
 
         <br>

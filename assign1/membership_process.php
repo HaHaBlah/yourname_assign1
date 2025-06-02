@@ -12,12 +12,13 @@
 </head>
 
 <body>
-    <?php include("inc/top_navigation_bar.inc"); ?>
-    <main>
-        <h1>Membership Registration Confirmation</h1>
-        <h2>Thank you for registering!</h2>
+    <?php
+        // Redirect anyone who tries to open this page directly
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            header('Location: registration.php');
+            exit;
+        }
 
-        <?php
         // Database connection
         $servername = "localhost";
         $username = "root";
@@ -80,6 +81,8 @@
         //     echo "<p>Error: Please fill in all required fields.</p>";
         // }
 
+        $errors = []; $valid = [];
+
         if ($firstname) {
             $valid['firstname'] = "First name looks good.";
         } else {
@@ -98,10 +101,10 @@
             $errors['email'] = "A valid email is required.";
         }
 
-        if ($username && preg_match('/^[a-zA-Z0-9]{1,10}$/', $username)) {
+        if ($username && preg_match('/^[a-zA-Z0-9]{3,10}$/', $username)) {
             $valid['username'] = "Username is valid.";
         } else {
-            $errors['username'] = "Username must be alphanumeric and up to 10 characters long."; //I need to check with this
+            $errors['username'] = "Username must be alphanumeric and between 3 and 10 characters long."; //I need to check with this
         }
 
         if ($password && strlen($password) >= 6) {
@@ -109,12 +112,69 @@
         } else {
             $errors['password'] = "Password must be at least 6 characters long."; //I need to check with this
         }
+    ?>
 
+    <?php include("inc/top_navigation_bar.inc"); ?>
+
+    <!-- <main>
+        <h1>Membership Registration Confirmation</h1>
+        <h2>Thank you for registering!</h2>
+    </main> -->
+
+    <?php 
+        if (count($errors) === 0) {
+            // ✅ Hash the password before saving
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+            // ✅ Prepare the INSERT query
+            $stmt = $conn->prepare(
+                "INSERT INTO members (firstname, lastname, email, username, password)
+                VALUES (?, ?, ?, ?, ?)"
+            );
+
+            // ✅ Bind the variables to the query
+            $stmt->bind_param("sssss", 
+                $firstname, 
+                $lastname, 
+                $email, 
+                $username, 
+                $hashed_password
+            );
+
+            // ✅ Execute the query and check if it worked
+            if ($stmt->execute()) {
+                // Save to DB, then show confirmation
+                echo "<main>";
+                echo "<h1>Membership Registration Confirmation</h1>";
+                echo "<h2>Thank you for registering!</h2>";
+                echo "</main>";
+            } else {
+                // Insert failed (e.g. duplicate username)
+                echo "<main>";
+                echo "<h1>Registration Failed</h1>";
+                echo "<p>Error: " . htmlspecialchars($stmt->error) . "</p>";
+                echo "<p><a href='registration.php'>Return to registration</a></p>";
+                echo "</main>";
+            }
+
+            $stmt->close(); // Always close the statement
+
+        } else {
+            // Show error messages
+            echo "<main>";
+            echo "<h1>Registration Failed</h1>";
+            foreach ($errors as $error) {
+                echo "<p>Error: $error</p>";
+            }
+            echo "<p><a href='registration.php'>Return to registration</a></p>";
+            echo "</main>";
+        }
         mysqli_close($conn);
-        ?>
+    ?>
+
     <?php include("inc/scroll_to_top_button.inc"); ?>
-    </main>
     <?php include("inc/footer.inc"); ?>
+    <?php $conn->close(); ?>
 </body>
 
 </html>
