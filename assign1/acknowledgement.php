@@ -15,8 +15,6 @@
     <?php include("inc/top_navigation_bar.inc"); ?>
 
     <main>
-        <!-- Acknowledgements Section -->
-        <!--Appreciations-->
         <section class="general-acknowledgement">
             <div class="acknowledgement">
                 <h2>Acknowledgment</h2>
