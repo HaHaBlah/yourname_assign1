@@ -4425,5 +4425,19 @@
         }
     ],
     "dev": true,
-    "dev-package-names": []
+    "dev-package-names": [
+        "codeception/lib-innerbrowser",
+        "codeception/lib-web",
+        "codeception/module-phpbrowser",
+        "guzzlehttp/guzzle",
+        "guzzlehttp/promises",
+        "guzzlehttp/psr7",
+        "masterminds/html5",
+        "psr/http-client",
+        "psr/http-factory",
+        "psr/http-message",
+        "ralouphie/getallheaders",
+        "symfony/browser-kit",
+        "symfony/dom-crawler"
+    ]
 }

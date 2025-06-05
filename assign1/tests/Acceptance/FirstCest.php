@@ -2,20 +2,23 @@
 
 declare(strict_types=1);
 
+
 namespace Tests\Acceptance;
 
 use Tests\Support\AcceptanceTester;
 
-final class HomePageCest
+
+final class FirstCest
 {
     public function _before(AcceptanceTester $I): void
     {
-        // Typically, keep this empty or use it for setup that doesn't need $I actions like amOnPage
+        $I->amOnPage('/');
+        $I->see('Home');
     }
 
     public function tryToTest(AcceptanceTester $I): void
     {
         $I->amOnPage('/');
-        $I->see('Welcome');
+        $I->see('Home');
     }
 }

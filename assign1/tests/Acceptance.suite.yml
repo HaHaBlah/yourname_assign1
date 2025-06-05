@@ -3,4 +3,4 @@ modules:
     enabled:
         - PhpBrowser:
             url: http://localhost/yourname_assign1/assign1
-        - Tests\Support\Helper\Acceptance
+        - \Tests\Support\Helper\Acceptance
