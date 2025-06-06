@@ -3487,3 +3487,17 @@ h2 span {
     overflow: hidden;
     border: none;
 }
+
+/* Admin Style Logo */
+.admin-label {
+    color: white !important;
+    background-color: red !important;
+    display: inline-block !important;
+    padding: 5px 10px !important;
+    font-size: 20px !important;
+    line-height: 1 !important;
+    border-radius: 4px !important;
+    font-weight: bold !important;
+    position: relative !important;
+    z-index: 9999 !important;
+}

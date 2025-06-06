@@ -30,7 +30,7 @@ if(isset($_GET['logout'])){
     <?php include("inc/top_navigation_bar.inc"); ?>
 
     <main>
-        <h2>Welcome, Admin</h2>
+        <h2>Welcome, Admin!</h2>
         <p><a href="admin_dashboard.php?logout=1">Logout</a></p>
         <!-- ...existing admin functionalities... -->
     </main>
