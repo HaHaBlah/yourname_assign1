@@ -20,7 +20,16 @@
     </header>
 
     <main class="no-margin-top">
-
+        
+        <?php
+        if (isset($_GET['error'])) {
+            if ($_GET['error'] === 'invalid_credentials') {
+                echo '<p style="color:red;">Invalid username or password.</p>';
+            } elseif ($_GET['error'] === 'empty_fields') {
+                echo '<p style="color:red;">Please fill in all fields.</p>';
+            }
+        }
+        ?>
         <section class="login-container">
             <div class="login-left">
                 <img src="images/Brew&Go_logo.png" alt="Brew & Go logo">
@@ -33,15 +42,14 @@
                         <input class="responsive-hover" type="text" name="username" placeholder="Username" required
                             maxlength="10" pattern="[A-Za-z]+"
                             title="Alphabetical characters only; Maximum 10 characters.">
-                        <input class="responsive-hover" type="text" name="password" placeholder="Password" required
-                            maxlength="25" pattern="[A-Za-z]+"
-                            title="Alphabetical characters only; Maximum 25 characters.">
+                        <input class="responsive-hover" type="password" name="password" placeholder="Password" required
+                            maxlength="25" title="Maximum 25 characters.">
                         <button class="responsive-hover-button" type="submit">Login</button>
                     </fieldset>
                 </form>
 
                 <div class="login-bottom">
-                    <a href="registration.html">Don't have an account?</a>
+                    <a href="registration.php">Don't have an account?</a>
                 </div>
             </div>
         </section>

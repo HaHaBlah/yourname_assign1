@@ -1,0 +1,21 @@
+2025-06-06 19:16:29 | Error [2] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 23: Undefined variable $passwor
+2025-06-06 19:16:29 | Error [8192] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 23: password_verify(): Passing null to parameter #1 ($password) of type string is deprecated
+2025-06-06 19:16:50 | Error [2] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 23: Undefined variable $passwor
+2025-06-06 19:16:50 | Error [8192] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 23: password_verify(): Passing null to parameter #1 ($password) of type string is deprecated
+2025-06-06 19:16:55 | Error [2] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 23: Undefined variable $passwor
+2025-06-06 19:16:55 | Error [8192] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 23: password_verify(): Passing null to parameter #1 ($password) of type string is deprecated
+2025-06-06 19:17:01 | Error [2] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 23: Undefined variable $passwor
+2025-06-06 19:17:01 | Error [8192] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 23: password_verify(): Passing null to parameter #1 ($password) of type string is deprecated
+2025-06-06 19:17:18 | Error [2] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 23: Undefined variable $passwor
+2025-06-06 19:17:18 | Error [8192] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 23: password_verify(): Passing null to parameter #1 ($password) of type string is deprecated
+2025-06-06 19:20:36 | Error [2] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 23: Undefined variable $passwor
+2025-06-06 19:20:36 | Error [8192] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 23: password_verify(): Passing null to parameter #1 ($password) of type string is deprecated
+2025-06-06 19:20:36 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 37: Login failed for user 'admin': invalid password
+2025-06-06 19:21:18 | Error [2] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 23: Undefined variable $passwor
+2025-06-06 19:21:18 | Error [8192] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 23: password_verify(): Passing null to parameter #1 ($password) of type string is deprecated
+2025-06-06 19:21:18 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 37: Login failed for user 'admin': invalid password
+2025-06-06 19:21:34 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 43: Login failed: username 'timmy' not found
+2025-06-06 19:24:51 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 37: Login failed for user 'admin': invalid password
+2025-06-06 19:24:58 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 37: Login failed for user 'admin': invalid password
+2025-06-06 19:25:06 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 37: Login failed for user 'wb': invalid password
+2025-06-06 19:33:06 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 37: Login failed for user 'wb': invalid password

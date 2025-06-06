@@ -1,19 +1,14 @@
 <?php
 session_start();
 
-// Check if admin is logged in
-if(!isset($_SESSION['admin_logged_in'])){
-    header("Location: admin_login.php");
-    exit;
-}
-
-// Process admin actions here...
-if(isset($_GET['logout'])){
-    session_destroy();
-    header("Location: admin_login.php");
+if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
+    header("Location: login.php");
     exit;
 }
 ?>
+
+<!-- Your existing HTML -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,9 +26,16 @@ if(isset($_GET['logout'])){
 
     <main>
         <h2>Welcome, Admin</h2>
-        <p><a href="admin_dashboard.php?logout=1">Logout</a></p>
-        <!-- ...existing admin functionalities... -->
-    </main>
+        
+    <section>
+        <h3>Admin Tools</h3>
+        <ul>
+            <li><a href="view_enquiry.php">View Enquiries</a></li>
+            <li><a href="view_job.php">View Job Applications</a></li>
+            <li><a href="view_membership.php">View Memberships</a></li>
+        </ul>
+    </section>
+</main>
     <?php include("inc/scroll_to_top_button.inc"); ?>
 
     <?php include("inc/footer.inc"); ?>
