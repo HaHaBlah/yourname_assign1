@@ -1,4 +1,8 @@
 <!--Done-->
+<?php
+    session_start();
+    $data = $_SESSION['form_data'] ?? []
+?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,9 +15,6 @@
 <body>
     <?php include("inc/top_navigation_bar.inc"); ?>
     <main>
-        <h1>Membership Registration Confirmation</h1>
-        <h2>Thank you for registering!</h2>
-
         <?php
         // Database connection
         $servername = "localhost";
@@ -35,188 +33,144 @@
         if (!$conn->query($sql)) {
             die("Database creation failed: " . $conn->error);
         }
-
-        // Select the database
         $conn->select_db($dbname);
+        $errors = [];
 
-        // Create members table if it doesn't exist
-        $sql = "CREATE TABLE IF NOT EXISTS members (
-            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-            firstname VARCHAR(25) NOT NULL,
-            lastname VARCHAR(25) NOT NULL,
-            email VARCHAR(50) NOT NULL,
-            phonenumber VARCHAR(15) NOT NULL,
-            streetaddress VARCHAR(40) NOT NULL,
-            citytown VARCHAR(20) NOT NULL,
-            state VARCHAR(20) NOT NULL,
-            postcode VARCHAR(5) NOT NULL,
-            cvfile VARCHAR(255) NOT NULL,
-            photofile VARCHAR(255) NOT NULL,
-            reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )";
-        if (!$conn->query($sql)) {
-            die("Table creation failed: " . $conn->error);
-        }
-        // Get POST data safely //Review this later
-        $firstname      = isset($_POST['firstname'])    ? trim($_POST['firstname']) : '';
-        $lastname       = isset($_POST['lastname'])     ? trim($_POST['lastname']) : '';
-        $email          = isset($_POST['email'])        ? trim($_POST['email']) : '';
-        $phonenumber    = isset($_POST['phonenumber'])  ? trim($_POST['phonenumber']) : '';
-        $streetaddress  = isset($_POST['streetaddress'])? trim($_POST['streetaddress']) : '';
-        $citytown       = isset($_POST['citytown'])     ? trim($_POST['citytown']) : '';
-        $state          = isset($_POST['state'])        ? trim($_POST['state']) : '';
-        $postcode       = isset($_POST['postcode'])     ? trim($_POST['postcode']) : '';
+    //     if (!$firstname) $errors['firstname'] = "First name is required.";
+    //     if (!$lastname) $errors['lastname'] = "Last name is required.";
+    //     if (!$email || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors['email'] = "A valid email is required.";
+    //     if (!$phonenumber) $errors['phonenumber'] = "Phone number is required.";
+    //     if (!$streetaddress) $errors['streetaddress'] = "Street address is required.";
+    //     if (!$citytown) $errors['citytown'] = "City/Town is required.";
+    //     if (!$state) $errors['state'] = "State is required.";
+    //     if (!$postcode || !preg_match('/^\d{4,5}$/', $postcode)) $errors['postcode'] = "Valid postcode is required.";
+    //     if (!$cvfile) $errors['cvfile'] = "CV file upload failed.";
+    //     if (!$photofile) $errors['photofile'] = "Photo file upload failed or too large.";
 
-        // Handle file uploads
-        $cvfile         = '';
-        $photofile      = '';
-        $uploadOk       = true;
-        $uploadDir      = "uploads/";
+    //     if (!empty($errors)) {
+    //         echo '<div class="notification error">';
+    //         echo '<h3>Please correct the following issues:</h3><ul>';
+    //         foreach ($errors as $field => $message) {
+    //             echo "<li><strong>$field:</strong> $message</li>";
+    //         }
+    //         echo '</ul><p><a href="joinus_form.php">Return to form</a></p></div>';
+    //     } elseif ($uploadOk) {
+    //         $stmt = $conn->prepare("INSERT INTO members (firstname, lastname, email, phonenumber, streetaddress, citytown, state, postcode, cvfile, photofile) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    //         $stmt->bind_param("ssssssssss", $firstname, $lastname, $email, $phonenumber, $streetaddress, $citytown, $state, $postcode, $cvfile, $photofile);
 
-        if (!file_exists($uploadDir)) {
-            mkdir($uploadDir, 0777, true);
-        }
+    //         if ($stmt->execute()) {
+    //             echo '<div class="notification success">';
+    //             echo "<p>Registration successful! Data has been saved to the database.</p></div>";
+    //             unset($_SESSION['form_data']);
+    //         } else {
+    //             echo '<div class="notification error">';
+    //             echo "<p>Error saving data: " . htmlspecialchars($stmt->error) . "</p></div>";
+    //         }
 
-        // CV upload
-        if (isset($_FILES['CVFile']) && $_FILES['CVFile']['error'] == 0) {
-            $cvTarget = $uploadDir . basename($_FILES['CVFile']['name']);
-            if (move_uploaded_file($_FILES['CVFile']['tmp_name'], $cvTarget)) {
-                $cvfile = $cvTarget;
-            } else {
-                echo "<p>Error uploading CV file.</p>";
-                $uploadOk = false;
+    //         $stmt->close();
+    //     }
+
+    //     $conn->close();
+
+
+       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $firstname      = trim($_POST['firstname'] ?? '');
+            $lastname       = trim($_POST['lastname'] ?? '');
+            $email          = trim($_POST['email'] ?? '');
+            $phonenumber    = trim($_POST['phonenumber'] ?? '');
+            $streetaddress  = trim($_POST['streetaddress'] ?? '');
+            $citytown       = trim($_POST['citytown'] ?? '');
+            $state          = trim($_POST['state'] ?? '');
+            $postcode       = trim($_POST['postcode'] ?? '');
+
+            $_SESSION['form_data'] = [
+                'firstname' => $firstname,
+                'lastname' => $lastname,
+                'email' => $email,
+                'phonenumber' => $phonenumber,
+                'streetaddress' => $streetaddress,
+                'citytown' => $citytown,
+                'state' => $state,
+                'postcode' => $postcode,
+            ];
+
+            $cvfile = '';
+            $photofile = '';
+            $uploadOk = true;
+            $uploadDir = "uploads/";
+
+            if (!file_exists($uploadDir)) {
+                mkdir($uploadDir, 0777, true);
             }
-        } else {
-            $uploadOk = false;
-        }
 
-        // Photo upload (check size < 200kb)
-        if (isset($_FILES['FilePhoto']) && $_FILES['FilePhoto']['error'] == 0) {
-            if ($_FILES['FilePhoto']['size'] <= 200 * 1024) {
-                $photoTarget = $uploadDir . basename($_FILES['FilePhoto']['name']);
-                if (move_uploaded_file($_FILES['FilePhoto']['tmp_name'], $photoTarget)) {
-                    $photofile = $photoTarget;
+            if (isset($_FILES['CVFile']) && $_FILES['CVFile']['error'] == 0) {
+                $cvTarget = $uploadDir . basename($_FILES['CVFile']['name']);
+                if (move_uploaded_file($_FILES['CVFile']['tmp_name'], $cvTarget)) {
+                    $cvfile = $cvTarget;
                 } else {
-                    echo "<p>Error uploading photo file.</p>";
                     $uploadOk = false;
                 }
             } else {
-                echo "<p>Photo file must be less than 200kb.</p>";
                 $uploadOk = false;
             }
-        } else {
-            $uploadOk = false;
-        }
 
-        // Simple validation
-
-        // if ($firstname && $lastname && $email && $phonenumber && $streetaddress && $citytown && $state && $postcode && $cvfile && $photofile && $uploadOk) {
-        //     // Use prepared statement to prevent SQL injection
-        //     $stmt = $conn->prepare("INSERT INTO members (firstname, lastname, email, phonenumber, streetaddress, citytown, state, postcode, cvfile, photofile) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        //     $stmt->bind_param("ssssssssss", $firstname, $lastname, $email, $phonenumber, $streetaddress, $citytown, $state, $postcode, $cvfile, $photofile);
-
-        //     if ($stmt->execute()) {
-        //         echo "<p>Registration successful! Welcome, <strong>" . htmlspecialchars($firstname) . " " . htmlspecialchars($lastname) . "</strong>.</p>";
-        //     } else {
-        //         echo "<p>Error: " . htmlspecialchars($stmt->error) . "</p>";
-        //     }
-
-        //     $stmt->close();
-        // } else {
-        //     echo "<p>Error: Please fill in all required fields and upload valid files.</p>";
-        // }
-
-        $errors = [];
-        $valid = [];
-
-        if ($firstname) {
-            $valid['firstname'] = "First name looks good.";
-        } else {
-            $errors['firstname'] = "First name is required.";
-        }
-
-        if ($lastname) {
-            $valid['lastname'] = "Last name looks good.";
-        } else {
-            $errors['lastname'] = "Last name is required.";
-        }
-
-        if ($email && filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $valid['email'] = "Email is valid.";
-        } else {
-            $errors['email'] = "A valid email is required.";
-        }
-
-        if ($phonenumber) {
-            $valid['phonenumber'] = "Phone number is provided.";
-        } else {
-            $errors['phonenumber'] = "Phone number is required.";
-        }
-
-        if ($streetaddress) {
-            $valid['streetaddress'] = "Street address looks good.";
-        } else {
-            $errors['streetaddress'] = "Street address is required.";
-        }
-
-        if ($citytown) {
-            $valid['citytown'] = "City/Town is provided.";
-        } else {
-            $errors['citytown'] = "City/Town is required.";
-        }
-
-        if ($state) {
-            $valid['state'] = "State is provided.";
-        } else {
-            $errors['state'] = "State is required.";
-        }
-
-        if ($postcode && preg_match('/^\d{4,5}$/', $postcode)) {
-            $valid['postcode'] = "Postcode is valid.";
-        } else {
-            $errors['postcode'] = "A valid postcode is required.";
-        }
-
-        if ($cvfile) {
-            $valid['cvfile'] = "CV file uploaded successfully.";
-        } else {
-            $errors['cvfile'] = "CV file is required and must be uploaded correctly.";
-        }
-
-        if ($photofile) {
-            $valid['photofile'] = "Photo file uploaded successfully.";
-        } else {
-            $errors['photofile'] = "Photo file is required and must be less than 200kb.";
-        }
-
-        if (!empty($errors)) {
-            echo '<div class="notification error">';
-            echo '<h3>Please correct the following issues:</h3>';
-            echo '<ul>';
-            foreach ($errors as $field => $message) {
-                echo "<li><strong>" . htmlspecialchars($field) . ":</strong> " . htmlspecialchars($message) . "</li>";
-            }
-            echo '</ul>';
-            echo '</div>';
-        } else {
-            $stmt = $conn->prepare("INSERT INTO members (firstname, lastname, email, phonenumber, streetaddress, citytown, state, postcode, cvfile, photofile) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("ssssssssss", $firstname, $lastname, $email, $phonenumber, $streetaddress, $citytown, $state, $postcode, $cvfile, $photofile);
-
-            if ($stmt->execute()) {
-                echo '<div class="notification success">';
-                echo "<p>Registration successful! Data has been saved to the database.</p>";
-                echo '</div>';
+            if (isset($_FILES['FilePhoto']) && $_FILES['FilePhoto']['error'] == 0) {
+                if ($_FILES['FilePhoto']['size'] <= 200 * 1024) {
+                    $photoTarget = $uploadDir . basename($_FILES['FilePhoto']['name']);
+                    if (move_uploaded_file($_FILES['FilePhoto']['tmp_name'], $photoTarget)) {
+                        $photofile = $photoTarget;
+                    } else {
+                        $uploadOk = false;
+                    }
+                } else {
+                    $uploadOk = false;
+                }
             } else {
-                echo '<div class="notification error">';
-                echo "<p>Error saving data: " . htmlspecialchars($stmt->error) . "</p>";
-                echo '</div>';
+                $uploadOk = false;
             }
 
-            $stmt->close();
+            $errors = [];
+
+            if (!$firstname) $errors['firstname'] = "First name is required.";
+            if (!$lastname) $errors['lastname'] = "Last name is required.";
+            if (!$email || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors['email'] = "A valid email is required.";
+            if (!$phonenumber) $errors['phonenumber'] = "Phone number is required.";
+            if (!$streetaddress) $errors['streetaddress'] = "Street address is required.";
+            if (!$citytown) $errors['citytown'] = "City/Town is required.";
+            if (!$state) $errors['state'] = "State is required.";
+            if (!$postcode || !preg_match('/^\d{4,5}$/', $postcode)) $errors['postcode'] = "Valid postcode is required.";
+            if (!$cvfile) $errors['cvfile'] = "CV file upload failed.";
+            if (!$photofile) $errors['photofile'] = "Photo file upload failed or too large.";
+
+            if (!empty($errors)) {
+                echo '<div class="notification error">';
+                echo '<h3>Please correct the following issues:</h3><ul>';
+                foreach ($errors as $field => $message) {
+                    echo "<li><strong>$field:</strong> $message</li>";
+                }
+                echo '</ul><p><a href="joinus_form.php">Return to form</a></p></div>';
+            } elseif ($uploadOk) {
+                $stmt = $conn->prepare("INSERT INTO members (firstname, lastname, email, phonenumber, streetaddress, citytown, state, postcode, cvfile, photofile) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                $stmt->bind_param("ssssssssss", $firstname, $lastname, $email, $phonenumber, $streetaddress, $citytown, $state, $postcode, $cvfile, $photofile);
+
+                if ($stmt->execute()) {
+                    echo '<div class="notification success">';
+                    echo '<h1>Membership Registration Confirmation</h1>';
+                    echo '<h2>Thank you for registering!</h2>';
+                    echo "<p>Your data has been saved to the database.</p></div>";
+                    unset($_SESSION['form_data']);
+                } else {
+                    echo '<div class="notification error">';
+                    echo "<p>Error saving data: " . htmlspecialchars($stmt->error) . "</p></div>";
+                }
+
+                $stmt->close();
+            }
+        } else {
+            echo '<p>Invalid request method.</p>';
         }
 
-        // Close the database connection
-        mysqli_close($conn);
+        $conn->close();
         ?>
         <?php include("inc/scroll_to_top_button.inc"); ?>
     </main>
