@@ -23,9 +23,7 @@
             <h1>☕ Coffee Club Activities</h1>
             <p>Explore what's brewing at our coffee community</p>
         </section>
-        <!--Introduction to activities-->
-
-
+        
         <section class="activities-section">
             <h2>🔥 Current Activities</h2>
             <div class="activities-activity">

@@ -23,6 +23,7 @@
                 <th width="150px">Last Name</th>
                 <th width="200px">Email</th>
                 <th width="100px">Username</th>
+                <th width="100px">Password</th>
                 <th width="180px">Registration Date</th>
             </tr>
 
@@ -50,6 +51,7 @@
                         <td><?php echo htmlspecialchars($row["lastname"]); ?></td>
                         <td><?php echo htmlspecialchars($row["email"]); ?></td>
                         <td><?php echo htmlspecialchars($row["username"]); ?></td>
+                        <td><?php echo htmlspecialchars($row["password"]); ?></td>
                         <td><?php echo htmlspecialchars($row["reg_date"]); ?></td>
                     </tr>
             <?php

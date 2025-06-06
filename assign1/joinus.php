@@ -53,7 +53,7 @@
                     href="https://api.whatsapp.com/send?phone=601116531886">+601116531886</a></strong></p>
 
         <div class="joinus-apply-now">
-            <a href="joinus_form.html" target="_blank" class="joinus-apply-btn responsive-hover-button">JOIN OUR TEAM
+            <a href="joinus_form.php" target="_blank" class="joinus-apply-btn responsive-hover-button">JOIN OUR TEAM
                 NOW!</a>
         </div>
     </section>

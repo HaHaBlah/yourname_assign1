@@ -1,4 +1,8 @@
 <!--Done-->
+<?php
+    session_start(); 
+    $data = $_SESSION['form_data'] ?? [];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,11 +59,11 @@
             <label for="myFile">Upload your payment receipt here:</label>
             <br>
             <div class="file-upload-wrapper">
-                <button class="btn-upload responsive-hover-button">Choose File</button>
-                <input type="file" name="myFile" id="myFile" required="required">
+                <input type="file" name="myFile" id="myFile" hidden required>
+                <label for="myFile" class="btn-upload responsive-hover-button">Choose File</label>
             </div>
             <br>
-            <input class="btn-upload responsive-hover-button" type="submit" value="Upload File">
+            <input class="btn-upload responsive-hover-button" type="submit" value="Send"> <!--This is misleading, it should be a button to submit the form-->
         </section>
 
         <br>
@@ -79,18 +83,18 @@
                             <legend>Personal Details</legend>
                             <input class="responsive-hover" type="text" placeholder="First name" name="firstname"
                                 maxlength="25" required="required" pattern="[A-Za-z\s]+"
-                                title="Alphabetical characters only; Maximum 25 characters." id="firstname">
+                                title="Alphabetical characters only; Maximum 25 characters." id="firstname" value="<?php echo htmlspecialchars($data['firstname'] ?? ''); ?>">
                             <input class="responsive-hover" type="text" placeholder="Last name" name="lastname"
                                 maxlength="25" required="required" pattern="[A-Za-z\s]+"
-                                title="Alphabetical characters only; Maximum 25 characters." id="lastname">
+                                title="Alphabetical characters only; Maximum 25 characters." id="lastname" value="<?php echo htmlspecialchars($data['lastname'] ?? ''); ?>">
                             <input class="responsive-hover" type="email" placeholder="E-mail address" name="email"
-                                required="required" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" id="email">
+                                required="required" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" id="email" value="<?php echo htmlspecialchars($data['email'] ?? ''); ?>">
                         </fieldset>
                         <fieldset>
                             <legend>Account Details</legend>
                             <input class="responsive-hover" type="text" name="username" placeholder="Username" required
-                                maxlength="10" pattern="[A-Za-z]+"
-                                title="Alphabetical characters only; Maximum 10 characters." id="username">
+                                maxlength="10" pattern="[A-Za-z]+" id="username" value="<?php echo htmlspecialchars($data['username'] ?? ''); ?>"
+                                title="Alphabetical characters only; Maximum 10 characters.">
                             <input class="responsive-hover" type="text" name="password" placeholder="Password" required
                                 maxlength="25" pattern="[A-Za-z0-9]+"
                                 title="Alphabetical characters only; Maximum 25 characters." id="password">
@@ -170,6 +174,7 @@
             </div>
         </div>
     </footer>-->
+    <?php unset($_SESSION['form_data']); ?>
 </body>
 
 </html>

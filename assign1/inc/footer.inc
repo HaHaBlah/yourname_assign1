@@ -7,30 +7,30 @@ echo
                 <div class="footer-col">
                     <h4>Overview</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="Activities.html">Activities</a></li>
-                        <li><a href="joinus.html">Work for us</a></li>
-                        <li><a href="locations.html">Visit Us</a></li>
-                        <li><a href="enquiry.html">FAQ</a></li>
-                        <li><a href="registration.html">Register</a></li>
-                        <li><a href="login.html">Login</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="products.php">Products</a></li>
+                        <li><a href="Activities.php">Activities</a></li>
+                        <li><a href="joinus.php">Work for us</a></li>
+                        <li><a href="locations.php">Visit Us</a></li>
+                        <li><a href="enquiry.php">FAQ</a></li>
+                        <li><a href="registration.php">Register</a></li>
+                        <li><a href="login.php">Login</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4><a href="about.html">The Team</a></h4>
+                    <h4><a href="about.php">The Team</a></h4>
                     <ul>
-                        <li><a href="aboutme1.html">Kelvin</a></li>
-                        <li><a href="aboutme2.html">Patrick</a></li>
-                        <li><a href="aboutme3.html">Ricardo</a></li>
-                        <li><a href="aboutme4.html">Wei Bao</a></li>
+                        <li><a href="aboutme1.php">Kelvin</a></li>
+                        <li><a href="aboutme2.php">Patrick</a></li>
+                        <li><a href="aboutme3.php">Ricardo</a></li>
+                        <li><a href="aboutme4.php">Wei Bao</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Extra</h4>
                     <ul>
-                        <li><a href="acknowledgement.html">Acknowledgements</a></li>
-                        <li><a href="enhancements.html">Enhancements</a></li>
+                        <li><a href="acknowledgement.php">Acknowledgements</a></li>
+                        <li><a href="enhancements.php">Enhancements</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

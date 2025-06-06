@@ -15,7 +15,6 @@
     <?php include("inc/top_navigation_bar.inc"); ?>
 
     <main class="enhancements">
-        <!--Scroll to top-->
         <section>
             <h2>Scroll to Top Button</h2>
             <p>A button that when clicked, scrolls all the way back to the top of the page</p>
