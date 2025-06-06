@@ -25,7 +25,7 @@
                 </h2>
                 <p>Shadow of Obscurity, sannjyo!</p>
                 <div class="btn-sci">
-                    <a href="aboutme1.html" class="btn">Learn More</a>
+                    <a href="aboutme1.php" class="btn">Learn More</a>
                     <div class="sci">
                         <a href="https://github.com/Geekfam-relyonmm" target="_blank">
                             <img alt="Github Icon" src="images/Icons/bxl-github.svg">
@@ -62,7 +62,7 @@
                 </h2>
                 <p>The world has many obstacles. The key is to figure out how to work with them—and around them.</p>
                 <div class="btn-sci">
-                    <a href="aboutme2.html" class="btn">Learn More</a>
+                    <a href="aboutme2.php" class="btn">Learn More</a>
                     <div class="sci">
                         <a href="https://github.com/HaHaBlah">
                             <img alt="Github Icon" src="images/Icons/bxl-github.svg">
@@ -100,7 +100,7 @@
                 <p>Web developer passionate about learning and building meaningful digital experiences. I enjoy turning
                     ideas into simple, functional websites and growing with every project.</p>
                 <div class="btn-sci">
-                    <a href="aboutme3.html" class="btn">Learn More</a>
+                    <a href="aboutme3.php" class="btn">Learn More</a>
                     <div class="sci">
                         <a href="https://github.com/Ric0701" target="_blank">
                             <img alt="Github Icon" src="images/Icons/bxl-github.svg">
@@ -137,7 +137,7 @@
                 </h2>
                 <p>Passion is key in life.</p>
                 <div class="btn-sci">
-                    <a href="aboutme4.html" class="btn">Learn More</a>
+                    <a href="aboutme4.php" class="btn">Learn More</a>
                     <div class="sci">
                         <a href="https://github.com/timmyhii">
                             <img alt="Github Icon" src="images/Icons/bxl-github.svg">

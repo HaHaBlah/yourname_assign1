@@ -7,7 +7,7 @@ echo
         </div>
         <ul>
             <li>
-                <div class="Dropdown_Start"><a href="products.php">Products</a>
+                <div class="Dropdown_Start"><a href="product.php">Products</a>
                     <div class="Dropdown_Content">
                         <ul>
                             <li><a href="product1.php">Basic Brew</a></li>
