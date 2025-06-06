@@ -37,7 +37,7 @@
                 <p>Login to Brew & Go. Coffee</p>
             </div>
             <div class="login-right">
-                <form action="user_login.php" method="post">
+                <form action="admin_login.php" method="post">
                     <fieldset>
                         <input class="responsive-hover" type="text" name="username" placeholder="Username" required
                             maxlength="10" pattern="[A-Za-z]+"

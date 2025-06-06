@@ -26,16 +26,9 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
 
     <main>
         <h2>Welcome, Admin</h2>
-        
-    <section>
-        <h3>Admin Tools</h3>
-        <ul>
-            <li><a href="view_enquiry.php">View Enquiries</a></li>
-            <li><a href="view_job.php">View Job Applications</a></li>
-            <li><a href="view_membership.php">View Memberships</a></li>
-        </ul>
-    </section>
-</main>
+        <p><a href="admin_dashboard.php?logout=1">Logout</a></p>
+        <!-- ...existing admin functionalities... -->
+    </main>
     <?php include("inc/scroll_to_top_button.inc"); ?>
 
     <?php include("inc/footer.inc"); ?>
