@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Check members database
-    $conn->select_db('membership');
+    $conn->select_db('brew&go_db');
     $stmt = $conn->prepare("SELECT * FROM members WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();

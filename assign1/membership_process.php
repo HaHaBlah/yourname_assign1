@@ -52,7 +52,8 @@
             reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             email_verified TINYINT(1) DEFAULT 0,
             verification_token VARCHAR(64),
-            verification_expires DATETIME
+            verification_expires DATETIME,
+            role VARCHAR(20) NOT NULL DEFAULT 'member'
         )";
         if (!$conn->query($sql)) {
             die("Table creation failed: " . $conn->error);
