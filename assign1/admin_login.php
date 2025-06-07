@@ -1,49 +1,66 @@
 <?php
+file_put_contents("testlog.txt", "admin_login.php was hit!\n", FILE_APPEND); // Debug
+
+//Temporary debug log
+session_unset();
+session_destroy();
+
 session_start();
 require_once("inc/database_connection.inc");
 
-// Check if the admin is already logged in
+// Redirect if already logged in
 if (isset($_SESSION['admin_logged_in'])) {
     header("Location: admin_dashboard.php");
     exit;
+} elseif (isset($_SESSION['user_logged_in'])) {
+    header("Location: user_dashboard.php");
+    exit;
 }
 
-// Handle the login form submission
+// Handle login submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Hard-coded admin credentials
-    $adminUser = 'admin';
-    $adminPass = 'admin';
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    file_put_contents("testlog.txt", "POST block reached\n", FILE_APPEND); // DEBUG
 
-    // Check the credentials
-    if ($username === $adminUser && $password === $adminPass) {
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
+
+    // Hardcoded admin
+    if ($username === 'admin' && $password === 'admin') {
         $_SESSION['admin_logged_in'] = true;
+        $_SESSION['username'] = 'admin';
+        file_put_contents("testlog.txt", "Logged in as hardcoded admin\n", FILE_APPEND);
         header("Location: admin_dashboard.php");
         exit;
-    } else {
-        // Redirect with error
-        header("Location: admin_login.php?error=invalid");
-        exit;
     }
+
+    // Check members database
+    $conn->select_db('membership');
+    $stmt = $conn->prepare("SELECT * FROM members WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result && $result->num_rows === 1) {
+        $row = $result->fetch_assoc();
+
+        if (password_verify($password, $row['password'])) {
+            $_SESSION['user_logged_in'] = true;
+            $_SESSION['username'] = $username;
+            $_SESSION['role'] = $row['role'] ?? 'user';
+
+            file_put_contents("testlog.txt", "Login success for: $username\n", FILE_APPEND);
+            header("Location: user_dashboard.php");
+            exit;
+        } else {
+            file_put_contents("testlog.txt", "Password mismatch for: $username\n", FILE_APPEND);
+        }
+    } else {
+        file_put_contents("testlog.txt", "No user found with username: $username\n", FILE_APPEND);
+    }
+
+    // Login failed
+    file_put_contents("testlog.txt", "Login failed for: $username\n", FILE_APPEND);
+    header("Location: login.php?error=invalid_credentials");
+    exit;
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Admin Login</title>
-</head>
-<body>
-    <h2>Admin Login</h2>
-
-    <?php
-    // Show error if present in URL
-    if (isset($_GET['error']) && $_GET['error'] === 'invalid') {
-        echo '<p style="color: red;">Invalid username or password.</p>';
-    }
-    ?>
-
-
-</body>
-</html>
