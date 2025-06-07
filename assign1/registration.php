@@ -105,7 +105,7 @@
                 </form>
 
                 <div class="login-bottom">
-                    <a href="login.html">Already a Member?</a>
+                    <a href="login.php">Already a Member?</a>
                 </div>
             </div>
         </section>

@@ -65,7 +65,7 @@ if (isset($_GET['q'])) {
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Locations</title>
+  <title>Product</title>
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="images/Brew&Go_logo.png" type="image/png" />
