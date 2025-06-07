@@ -19,3 +19,4 @@
 2025-06-06 19:24:58 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 37: Login failed for user 'admin': invalid password
 2025-06-06 19:25:06 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 37: Login failed for user 'wb': invalid password
 2025-06-06 19:33:06 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\user_login.php on line 37: Login failed for user 'wb': invalid password
+2025-06-07 10:23:08 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'tim' not found

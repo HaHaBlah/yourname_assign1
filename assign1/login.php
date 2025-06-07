@@ -20,7 +20,7 @@
     </header>
 
     <main class="no-margin-top">
-        
+
         <?php
         if (isset($_GET['error'])) {
             if ($_GET['error'] === 'invalid_credentials') {
@@ -37,7 +37,7 @@
                 <p>Login to Brew & Go. Coffee</p>
             </div>
             <div class="login-right">
-                <form action="admin_login.php" method="post">
+                <form action="login_process.php" method="post">
                     <fieldset>
                         <input class="responsive-hover" type="text" name="username" placeholder="Username" required
                             maxlength="10" pattern="[A-Za-z]+"
