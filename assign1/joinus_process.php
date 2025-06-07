@@ -20,7 +20,7 @@
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "JoinUs";
+        $dbname = "brew&go_db";
 
         // Create connection -> For SQL
         $conn = new mysqli($servername, $username, $password);
