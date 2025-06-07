@@ -24,7 +24,7 @@
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "membership";
+        $dbname = "brew&go_db";
 
         // Create connection
         $conn = new mysqli($servername, $username, $password);
@@ -69,27 +69,7 @@
             'username' => $username
         ];
 
-        // Simple validation
-
-        // if ($firstname && $lastname && $email && $username && $password) {
-        //     // Hash the password
-        //     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-        //     // Use prepared statement to prevent SQL injection
-        //     $stmt = $conn->prepare("INSERT INTO members (firstname, lastname, email, username, password) VALUES (?, ?, ?, ?, ?)");
-        //     $stmt->bind_param("sssss", $firstname, $lastname, $email, $username, $hashed_password);
-
-        //     if ($stmt->execute()) {
-        //         echo "<p>Registration successful! Welcome, <strong>" . htmlspecialchars($firstname) . " " . htmlspecialchars($lastname) . "</strong>.</p>";
-        //     } else {
-        //         echo "<p>Error: " . htmlspecialchars($stmt->error) . "</p>";
-        //     }
-
-        //     $stmt->close();
-        // } else {
-        //     echo "<p>Error: Please fill in all required fields.</p>";
-        // }
-
+        // Validate inputs
         $errors = []; $valid = [];
 
         if ($firstname) {
@@ -124,12 +104,7 @@
     ?>
 
     <?php include("inc/top_navigation_bar.inc"); ?>
-
-    <!-- <main>
-        <h1>Membership Registration Confirmation</h1>
-        <h2>Thank you for registering!</h2>
-    </main> -->
-
+    
     <?php 
         if (count($errors) === 0) {
             // ✅ Hash the password before saving

@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username   = "root";
 $password   = "";
-$dbname     = "product";
+$dbname     = "brew&go_db";
 
 $conn = new mysqli($servername, $username, $password);
 if ($conn->connect_error) {

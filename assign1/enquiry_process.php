@@ -28,7 +28,7 @@ require_once $antiSpamPath;
         $servername = "localhost";
         $username   = "root";
         $password   = "";
-        $dbname     = "enquiry";
+        $dbname     = "brew&go_db";
 
         $conn = new mysqli($servername, $username, $password);
         if ($conn->connect_error) {

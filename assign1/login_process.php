@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once("inc/database_connection.inc");    // DB connection file
-require_once("error_handler.php");          // Error handler file
+require_once("error_handler.php");              // Error handler file
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
