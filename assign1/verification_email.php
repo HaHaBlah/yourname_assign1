@@ -1,5 +1,6 @@
 <?php
 function get_verification_email($firstname, $verify_link) {
+    $logo_url = "http://{$_SERVER['HTTP_HOST']}/yourname_assign1/assign1/images/Brew&Go_logo.png";
     return <<<HTML
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +16,7 @@ function get_verification_email($firstname, $verify_link) {
                 <table width="100%" style="max-width:600px;margin:40px auto;background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
                     <tr>
                         <td align="center" style="padding:40px 20px 20px 20px;">
-                            <img src="https://i.imgur.com/n70wcbN.png" height="74" alt="Brew & Go Coffee" style="margin-bottom:16px;">
+                            <a href="http://{$_SERVER['HTTP_HOST']}/yourname_assign1/assign1/index.php"><img src="https://i.imgur.com/n70wcbN.png" height="74" alt="Brew & Go Coffee" style="margin-bottom:16px;"></a>
                             <h1 style="font-family:'Poppins',Arial,sans-serif;font-size:24px;color:#593C26;margin:0 0 16px 0;">Verify Your Email</h1>
                             <p style="font-family:'Arial',sans-serif;font-size:16px;color:#333;margin:0 0 24px 0;">
                                 Hi <strong>$firstname</strong>,<br><br>
