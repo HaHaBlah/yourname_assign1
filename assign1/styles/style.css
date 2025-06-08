@@ -580,6 +580,9 @@ nav a:hover::after {
     transition: var(--transition);
     justify-content: center;
     align-items: center;
+    gap: 8px;
+    padding: 0 10px;
+    min-width: 120px;
 }
 
 
@@ -591,6 +594,9 @@ nav a:hover::after {
 
 .nav-selector a {
     height: 100%;
+    display: inline-block;
+    align-items: center;
+    text-decoration: none;
 }
 
 .nav-selector {
@@ -3465,7 +3471,6 @@ h2 span {
     font-size: 2.5em;
     color: var(--accent-color-1);
     margin-bottom: 1em;
-    text-transform: capitalize;
 }
 
 .enhancements video,

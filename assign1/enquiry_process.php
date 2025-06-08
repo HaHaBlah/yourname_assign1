@@ -3,8 +3,9 @@ $antiSpamPath = __DIR__ . '/anti_spam_check.php';
 if (! file_exists($antiSpamPath)) {
     die("DEBUG ERROR: Cannot find anti_spam_check.php at path: " . htmlspecialchars($antiSpamPath));
 }
-require_once $antiSpamPath;
+require_once __DIR__ . '/anti_spam_check.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +15,7 @@ require_once $antiSpamPath;
     <title>Members</title>
     <meta name="description" content="Career opportunities at Brew &amp; Go Coffee">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="images/Brew&amp;Go_l ogo.png" type="image/png">
+    <link rel="icon" href="images/Brew&amp;Go_logo.png" type="image/png">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
@@ -35,7 +36,7 @@ require_once $antiSpamPath;
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
+        $sql = "CREATE DATABASE IF NOT EXISTS `$dbname`";
         if (!$conn->query($sql)) {
             die("Database creation failed: " . $conn->error);
         }

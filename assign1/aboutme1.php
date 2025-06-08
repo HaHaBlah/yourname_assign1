@@ -2,6 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Check if user/ admin has logged in -->
+<!-- If admin, then show admin logo -->
+<?php include("inc/login_status.inc"); ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

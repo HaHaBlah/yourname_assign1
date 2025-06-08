@@ -2,6 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Check if user/ admin has logged in -->
+<!-- If admin, then show admin logo -->
+<?php include("inc/login_status.inc"); ?>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

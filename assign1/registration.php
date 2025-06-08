@@ -1,8 +1,8 @@
 <!--Done-->
-<?php
-    session_start(); 
-    $data = $_SESSION['form_data'] ?? [];
-?>
+<!-- Check if user/ admin has logged in -->
+<!-- If admin, then show admin logo -->
+<?php include("inc/login_status.inc"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,7 +63,7 @@
                 <label for="myFile" class="btn-upload responsive-hover-button">Choose File</label>
             </div>
             <br>
-            <input class="btn-upload responsive-hover-button" type="submit" value="Send"> <!--This is misleading, it should be a button to submit the form-->
+            <input class="btn-upload responsive-hover-button" type="submit" value="Send">
         </section>
 
         <br>
@@ -105,7 +105,7 @@
                 </form>
 
                 <div class="login-bottom">
-                    <a href="login.html">Already a Member?</a>
+                    <a href="login.php">Already a Member?</a>
                 </div>
             </div>
         </section>

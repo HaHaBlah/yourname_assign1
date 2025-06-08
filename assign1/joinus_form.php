@@ -1,8 +1,8 @@
 <!--Done-->
-<?php
-    session_start();
-    $data = $_SESSION['form_data'] ?? []
-?>
+<!-- Check if user/ admin has logged in -->
+<!-- If admin, then show admin logo -->
+<?php include("inc/login_status.inc"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

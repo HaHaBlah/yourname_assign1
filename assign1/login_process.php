@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!empty($username) && !empty($password)) {
         // Prepare and execute query
-        $stmt = $conn->prepare("SELECT password, role FROM users WHERE username = ?");
+        $stmt = $conn->prepare("SELECT password, role FROM members WHERE username = ? AND email_verified=1");
         $stmt->bind_param("s", $username);
         $stmt->execute();
         $stmt->store_result();
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->fetch();
 
             // For now, assume passwords stored in plain text
-            if ($password === $db_password) {
+            if (password_verify($password, $db_password)) {
                 // Set session variables
                 $_SESSION['username'] = $username;
                 $_SESSION['role'] = $role;

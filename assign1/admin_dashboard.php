@@ -1,13 +1,15 @@
 <?php
-session_start();
+// session_start();
 
-if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
-    header("Location: login.php");
-    exit;
-}
+// if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
+//     header("Location: login.php");
+//     exit;
+// }
 ?>
 
-<!-- Your existing HTML -->
+<!-- Check if user/ admin has logged in -->
+<!-- If admin, then show admin logo -->
+<?php include("inc/login_status.inc"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
