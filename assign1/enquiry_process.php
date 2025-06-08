@@ -5,6 +5,7 @@ if (! file_exists($antiSpamPath)) {
 }
 require_once $antiSpamPath;
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +15,7 @@ require_once $antiSpamPath;
     <title>Members</title>
     <meta name="description" content="Career opportunities at Brew &amp; Go Coffee">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="images/Brew&amp;Go_l ogo.png" type="image/png">
+    <link rel="icon" href="images/Brew&amp;Go_logo.png" type="image/png">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 

@@ -1,3 +1,7 @@
+<!-- Check if user/ admin has logged in -->
+<!-- If admin, then show admin logo -->
+<?php include("inc/login_status.inc"); ?>
+
 <?php
 $servername = "localhost";
 $username   = "root";
