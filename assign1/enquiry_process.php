@@ -3,7 +3,7 @@ $antiSpamPath = __DIR__ . '/anti_spam_check.php';
 if (! file_exists($antiSpamPath)) {
     die("DEBUG ERROR: Cannot find anti_spam_check.php at path: " . htmlspecialchars($antiSpamPath));
 }
-require_once $antiSpamPath;
+require_once __DIR__ . '/anti_spam_check.php';
 ?>
 
 <!DOCTYPE html>
@@ -29,14 +29,14 @@ require_once $antiSpamPath;
         $servername = "localhost";
         $username   = "root";
         $password   = "";
-        $dbname     = "enquiry";
+        $dbname     = "brew&go_db";
 
         $conn = new mysqli($servername, $username, $password);
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
+        $sql = "CREATE DATABASE IF NOT EXISTS `$dbname`";
         if (!$conn->query($sql)) {
             die("Database creation failed: " . $conn->error);
         }

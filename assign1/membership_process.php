@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start(); 
+require_once("verification_email.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +26,7 @@
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "membership";
+        $dbname = "brew&go_db";
 
         // Create connection
         $conn = new mysqli($servername, $username, $password);
@@ -33,7 +35,7 @@
         }
 
         // Create database if it doesn't exist
-        $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
+        $sql = "CREATE DATABASE IF NOT EXISTS `$dbname`";
         if (!$conn->query($sql)) {
             die("Database creation failed: " . $conn->error);
         }
@@ -49,7 +51,11 @@
             email VARCHAR(50) NOT NULL,
             username VARCHAR(10) NOT NULL,
             password VARCHAR(255) NOT NULL,
-            reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            email_verified TINYINT(1) DEFAULT 0,
+            verification_token VARCHAR(64),
+            verification_expires DATETIME,
+            role VARCHAR(20) NOT NULL DEFAULT 'member'
         )";
         if (!$conn->query($sql)) {
             die("Table creation failed: " . $conn->error);
@@ -105,32 +111,49 @@
 
     <?php include("inc/top_navigation_bar.inc"); ?>
     
+    
     <?php 
         if (count($errors) === 0) {
             // ✅ Hash the password before saving
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
+            // Generate verification token and expiry
+            $token = bin2hex(random_bytes(32));
+            $expires = date('Y-m-d H:i:s', time() + 300); // 5 minutes from now
+
             // ✅ Prepare the INSERT query
             $stmt = $conn->prepare(
-                "INSERT INTO members (firstname, lastname, email, username, password)
-                VALUES (?, ?, ?, ?, ?)"
+                "INSERT INTO members (firstname, lastname, email, username, password, verification_token, verification_expires)
+                VALUES (?, ?, ?, ?, ?, ?, ?)"
             );
 
             // ✅ Bind the variables to the query
-            $stmt->bind_param("sssss", 
+            $stmt->bind_param("sssssss", 
                 $firstname, 
                 $lastname, 
                 $email, 
                 $username, 
-                $hashed_password
+                $hashed_password,
+                $token,
+                $expires
             );
 
             // ✅ Execute the query and check if it worked
             if ($stmt->execute()) {
-                // Save to DB, then show confirmation
+                // Send verification email
+                $verify_link = "http://{$_SERVER['HTTP_HOST']}/yourname_assign1/assign1/verify_email.php?token=$token";
+                $subject = "Verify your Brew & Go Coffee Membership";
+                $message = get_verification_email($firstname, $verify_link);
+                $headers = "MIME-Version: 1.0" . "\r\n";
+                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                $headers .= "From: brewngo.coffee@gmail.com" . "\r\n";
+
+                mail($email, $subject, $message, $headers);
+
                 echo "<main>";
                 echo "<h1>Membership Registration Confirmation</h1>";
                 echo "<h2>Thank you for registering!</h2>";
+                echo "<p>Please check your email to verify your account. You must verify within 5 minutes.</p>";
                 unset($_SESSION['form_data']); // Clear saved inputs
                 echo "</main>";
             } else {
@@ -142,7 +165,7 @@
                 echo "</main>";
             }
 
-            $stmt->close(); // Always close the statement
+            $stmt->close();//end
 
         } else {
             // Show error messages
@@ -154,7 +177,6 @@
             echo "<p><a href='registration.php'>Return to registration</a></p>";
             echo "</main>";
         }
-        mysqli_close($conn);
     ?>
 
     <?php include("inc/scroll_to_top_button.inc"); ?>

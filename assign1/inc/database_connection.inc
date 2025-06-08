@@ -27,14 +27,7 @@ if (!$conn->query($sql)) {
 // Select the default database
 $conn->select_db($database);
 
-// Create membership database and members table
-$membership_db = 'membership';
-$sql = "CREATE DATABASE IF NOT EXISTS `$membership_db`";
-if (!$conn->query($sql)) {
-    die("Membership database creation failed: " . $conn->error);
-}
-$conn->select_db($membership_db);
-
+// Create members table in brew&go_db
 $sql = "CREATE TABLE IF NOT EXISTS members (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     firstname VARCHAR(25) NOT NULL,
@@ -42,7 +35,11 @@ $sql = "CREATE TABLE IF NOT EXISTS members (
     email VARCHAR(50) NOT NULL,
     username VARCHAR(10) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    email_verified TINYINT(1) DEFAULT 0,
+    verification_token VARCHAR(64),
+    verification_expires DATETIME,
+    role VARCHAR(20) NOT NULL DEFAULT 'member'
 )";
 if (!$conn->query($sql)) {
     die("Members table creation failed: " . $conn->error);
