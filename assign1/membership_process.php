@@ -175,7 +175,6 @@
             echo "<p><a href='registration.php'>Return to registration</a></p>";
             echo "</main>";
         }
-        mysqli_close($conn);
     ?>
 
     <?php include("inc/scroll_to_top_button.inc"); ?>
