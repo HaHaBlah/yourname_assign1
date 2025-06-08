@@ -9,10 +9,27 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
 
 $token = $_GET['token'] ?? '';
-if (!$token) {
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Verification | Brew & Go Coffee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <?php include("inc/top_navigation_bar.inc"); ?>
+
+    <main>
+
+    <?php
+    if (!$token) {
     echo "<h1>Invalid verification link.</h1>";
-    exit;
-}
+} else {
+    
 
 $stmt = $conn->prepare("SELECT id, verification_expires, email_verified FROM members WHERE verification_token=?");
 $stmt->bind_param("s", $token);
@@ -37,5 +54,12 @@ if ($stmt->num_rows === 1) {
     echo "<h1>Invalid verification link.</h1>";
 }
 $stmt->close();
+}
 $conn->close();
 ?>
+</main>
+
+    <?php include("inc/scroll_to_top_button.inc"); ?>
+    <?php include("inc/footer.inc"); ?>
+</body>
+</html>
