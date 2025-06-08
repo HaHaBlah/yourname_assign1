@@ -141,7 +141,7 @@
                 $verify_link = "http://{$_SERVER['HTTP_HOST']}/yourname_assign1/assign1/verify_email.php?token=$token";
                 $subject = "Verify your Brew & Go Coffee Membership";
                 $message = "Hi $firstname,<br><br>Please verify your email by clicking the link below within 5 minutes:<br>
-                <a href='$verify_link'>$verify_link</a><br><br>If you did not register, please ignore this email.";
+                <a style='display:inline-block;padding:10px;background-color:#593C26;color:#fff;text-decoration:none;border-radius:8px;font-weight:bold;cursor: pointer;font-size: 1.2rem;margin-top: 10px;' href='$verify_link'>Click Here to Verify</a><br><br>If you did not register, please ignore this email.";
                 $headers = "MIME-Version: 1.0" . "\r\n";
                 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                 $headers .= "From: brewngo.coffee@gmail.com" . "\r\n";
