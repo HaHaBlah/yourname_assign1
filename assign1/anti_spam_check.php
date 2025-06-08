@@ -6,7 +6,7 @@ $BLOCK_DURATION  = 300;
 $ip  = $_SERVER['REMOTE_ADDR'];
 $now = time();
 
-$mysqli = new mysqli('localhost', 'root', '', 'enquiry'); 
+$mysqli = new mysqli('localhost', 'root', '', 'enquiry', 'membership', 'joinus', 'login'); 
 if ($mysqli->connect_errno) {
     die("Database connection failed (anti-spam): " . $mysqli->connect_error);
 }
