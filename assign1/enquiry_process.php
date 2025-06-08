@@ -3,7 +3,7 @@ $antiSpamPath = __DIR__ . '/anti_spam_check.php';
 if (! file_exists($antiSpamPath)) {
     die("DEBUG ERROR: Cannot find anti_spam_check.php at path: " . htmlspecialchars($antiSpamPath));
 }
-require_once $antiSpamPath;
+require_once __DIR__ . '/anti_spam_check.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +35,7 @@ require_once $antiSpamPath;
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
+        $sql = "CREATE DATABASE IF NOT EXISTS `$dbname`";
         if (!$conn->query($sql)) {
             die("Database creation failed: " . $conn->error);
         }
