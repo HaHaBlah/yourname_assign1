@@ -3506,3 +3506,26 @@ h2 span {
     position: relative !important;
     z-index: 9999 !important;
 }
+
+/* New footer design for promotions pop up */
+.footer-updates {
+  list-style: none;
+  padding: 0;
+  margin: 0.5em 0 0;
+}
+.footer-updates .update-item {
+  margin-bottom: 0.5em;
+  font-size: 0.9em;
+}
+.footer-updates .update-label {
+  text-transform: uppercase;
+  font-size: 0.75em;
+  margin-right: 0.4em;
+  color: #aaa;
+}
+.footer-updates .update-item.promotion a {
+  color: #d15f02;
+}
+.footer-updates .update-item.news a {
+  color: #0057a8;
+}

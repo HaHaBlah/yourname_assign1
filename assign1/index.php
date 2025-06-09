@@ -62,7 +62,7 @@
 
         <div class="feature-container">
             <div class="feature-box">
-                <img src="images/Fast&Convenient.png" alt="Fast & Convenient"> <!--Image might not be relevant-->
+                <img src="images/Fast&Convenient.png" alt="Fast & Convenient"> 
                 <h3>Fast & Convenient</h3>
             </div>
             <div class="feature-box">
@@ -81,7 +81,7 @@
         <h2>Product Showcase</h2>
         <p>Discover our wide range of handcrafted coffee beverages and non-coffee beverages.</p>
         <div class="explore">
-            <a href="products.html" class="btn">Explore</a>
+            <a href="product.php" class="btn">Explore</a>
         </div>
     </div>
 
@@ -125,7 +125,7 @@
         <h2>Latest News</h2>
         <p>Stay tuned for our upcoming events and news updates!</p>
         <div class="learn-more">
-            <a href="activities.html" class="btn">Learn More</a>
+            <a href="activities.php" class="btn">Learn More</a>
         </div>
     </div>
 
@@ -149,7 +149,7 @@
                 </div>
                 <h3>One Jaya</h3>
                 <p>G63, Lot, Onejaya Shopping Complex</p>
-                <a href="location1.html" class="btn">Learn more</a>
+                <a href="location1.php" class="btn">Learn more</a>
             </div>
 
             <div class="location-card">
@@ -167,7 +167,7 @@
                 </div>
                 <h3>Plaza Merdeka</h3>
                 <p>Jalan Tun Abang Haji Openg</p>
-                <a href="location2.html" class="btn">Learn more</a>
+                <a href="location2.php" class="btn">Learn more</a>
             </div>
         </div>
     </div>
