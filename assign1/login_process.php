@@ -1,4 +1,12 @@
 <?php
+$antiSpamPath = __DIR__ . '/anti_spam_check.php';
+if (! file_exists($antiSpamPath)) {
+    die("DEBUG ERROR: Cannot find anti_spam_check.php at path: " . htmlspecialchars($antiSpamPath));
+}
+require_once __DIR__ . '/anti_spam_check.php';
+?>
+
+<?php
 include("inc/login_status.inc");
 require_once("inc/database_connection.inc");    // DB connection file
 require_once("error_handler.php");              // Error handler file

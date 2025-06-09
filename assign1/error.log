@@ -35,3 +35,7 @@
 =======
 2025-06-08 16:19:41 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'admin' not found
 >>>>>>> 663f48f4f6e1fa78eb3bc469cd93bd1dc683ef06
+2025-06-09 10:39:17 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'Yummer' not found
+2025-06-09 10:39:20 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'qwf' not found
+2025-06-09 10:39:25 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'qwewf' not found
+2025-06-09 10:39:28 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password

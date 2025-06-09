@@ -1,3 +1,11 @@
+<?php
+$antiSpamPath = __DIR__ . '/anti_spam_check.php';
+if (! file_exists($antiSpamPath)) {
+    die("DEBUG ERROR: Cannot find anti_spam_check.php at path: " . htmlspecialchars($antiSpamPath));
+}
+require_once __DIR__ . '/anti_spam_check.php';
+?>
+
 <?php session_start(); 
 require_once("verification_email.php");
 ?>
