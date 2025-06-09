@@ -39,3 +39,7 @@
 2025-06-09 10:39:20 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'qwf' not found
 2025-06-09 10:39:25 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'qwewf' not found
 2025-06-09 10:39:28 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-09 12:54:05 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-09 12:54:08 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-09 12:54:10 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-09 12:54:12 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
