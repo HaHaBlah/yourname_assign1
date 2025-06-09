@@ -3,17 +3,13 @@ $WINDOW_SECONDS  = 60;
 $MAX_IN_WINDOW   = 5;     
 $BLOCK_DURATION  = 300;   
 
-$ip  = $_SERVER['REMOTE_ADDR'];
-$now = time();
-
-$mysqli = new mysqli('localhost', 'root', '', 'brew&go_db');
-if ($mysqli->connect_errno) {
-    echo '
+function show_antispam_page($title, $message) {
+    ?>
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Anti-Spam Error</title>
+        <title><?php echo htmlspecialchars($title); ?></title>
         <link rel="stylesheet" href="styles/style.css">
     </head>
     <body>
@@ -25,17 +21,29 @@ if ($mysqli->connect_errno) {
                     <h2>Anti-Spam Protection</h2>
                 </div>
                 <div class="login-right">
-                    <h3 style="color:#b71c1c;">Database connection failed (anti-spam)</h3>
-                    <p>' . htmlspecialchars($mysqli->connect_error) . '</p>
-                    <a href="enquiry.php" class="responsive-hover-button">Back</a>
+                    <h3><?php echo htmlspecialchars($title); ?></h3>
+                    <p><?php echo $message; ?></p>
+                    <a href="index.php" class="responsive-hover-button button center">Back</a>
                 </div>
             </section>
         </main>
         <?php include("inc/scroll_to_top_button.inc"); ?>
         <?php include("inc/footer.inc"); ?>
     </body>
-    </html>';
+    </html>
+    <?php
     exit;
+}
+
+$ip  = $_SERVER['REMOTE_ADDR'];
+$now = time();
+
+$mysqli = new mysqli('localhost', 'root', '', 'brew&go_db');
+if ($mysqli->connect_errno) {
+    show_antispam_page(
+        "Database connection failed (anti-spam)",
+        htmlspecialchars($mysqli->connect_error)
+    );
 }
 
 $createTableSql = "
@@ -48,34 +56,10 @@ $createTableSql = "
 ";
 
 if (!$mysqli->query($createTableSql)) {
-    echo '
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Anti-Spam Error</title>
-        <link rel="stylesheet" href="styles/style.css">
-    </head>
-    <body>
-        <?php include("inc/top_navigation_bar.inc"); ?>
-        <main>
-            <section class="login-container">
-                <div class="login-left">
-                    <img src="images/Brew&Go_logo.png" alt="Brew & Go logo">
-                    <h2>Anti-Spam Protection</h2>
-                </div>
-                <div class="login-right">
-                    <h3 style="color:#b71c1c;">Anti-spam table error</h3>
-                    <p>' . htmlspecialchars($mysqli->error) . '</p>
-                    <a href="enquiry.php" class="responsive-hover-button">Back</a>
-                </div>
-            </section>
-        </main>
-        <?php include("inc/scroll_to_top_button.inc"); ?>
-        <?php include("inc/footer.inc"); ?>
-    </body>
-    </html>';
-    exit;
+    show_antispam_page(
+        "Anti-spam table error",
+        htmlspecialchars($mysqli->error)
+    );
 }
 
 $stmt = $mysqli->prepare("
@@ -106,36 +90,11 @@ if (! $found) {
 
 if ($now < $blockedUntil) {
     $secsLeft = $blockedUntil - $now;
-    echo '
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Submission Blocked</title>
-        <link rel="stylesheet" href="styles/style.css">
-    </head>
-    <body>
-        <?php include("inc/top_navigation_bar.inc"); ?>
-        <main>
-            <section class="login-container">
-                <div class="login-left">
-                    <img src="images/Brew&Go_logo.png" alt="Brew & Go logo">
-                    <h2>Anti-Spam Protection</h2>
-                </div>
-                <div class="login-right">
-                    <h3 style="color:#b71c1c;">Submission Blocked</h3>
-                    <p>You are temporarily blocked from submitting.<br>
-                    Please try again in <strong>' . intval($secsLeft) . ' seconds</strong>.</p>
-                    <a href="enquiry.php" class="responsive-hover-button">Back</a>
-                </div>
-            </section>
-        </main>
-        <?php include("inc/scroll_to_top_button.inc"); ?>
-        <?php include("inc/footer.inc"); ?>
-    </body>
-    </html>';
-    $mysqli->close();
-    exit;
+    show_antispam_page(
+        "Submission Blocked",
+        "You are temporarily blocked from submitting.<br>
+        Please try again in <strong>" . intval($secsLeft) . " seconds</strong>."
+    );
 }
 
 if ($attemptCount > $MAX_IN_WINDOW) {
@@ -152,35 +111,11 @@ if ($attemptCount > $MAX_IN_WINDOW) {
     $update->execute();
     $update->close();
 
-    echo '
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Too Many Submissions</title>
-        <link rel="stylesheet" href="styles/style.css">
-    </head>
-    <body>
-        <?php include("inc/top_navigation_bar.inc"); ?>
-        <main>
-            <section class="login-container">
-                <div class="login-left">
-                    <img src="images/Brew&Go_logo.png" alt="Brew & Go logo">
-                    <h2>Anti-Spam Protection</h2>
-                </div>
-                <div class="login-right">
-                    <h3 style="color:#b71c1c;">Too Many Submissions</h3>
-                    <p>Too many submissions in a short period.<br>
-                    You are blocked for <strong>' . ($BLOCK_DURATION / 60) . ' minutes</strong>.</p>
-                    <a href="enquiry.php" class="responsive-hover-button">Back</a>
-                </div>
-            </section>
-        </main>
-        <?php include("inc/scroll_to_top_button.inc"); ?>
-        <?php include("inc/footer.inc"); ?>
-    </body>
-    </html>';
-    exit;
+    show_antispam_page(
+        "Too Many Submissions",
+        "Too many submissions in a short period.<br>
+        You are blocked for <strong>" . ($BLOCK_DURATION / 60) . " minutes</strong>."
+    );
 } else {
     $update = $mysqli->prepare("
       UPDATE spam_control

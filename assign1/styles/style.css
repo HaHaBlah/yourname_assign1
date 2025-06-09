@@ -123,7 +123,7 @@
     box-sizing: border-box;
 }
 
-.enquiry-container button {
+.enquiry-container button, .button {
     width: 100%;
     padding: 10px;
     background-color: var(--accent-color-1);
@@ -135,7 +135,7 @@
     font-weight: bold;
 }
 
-.enquiry-container button:hover {
+.enquiry-container button:hover, .button:hover {
     background-color: var(--accent-color-1);
 }
 
@@ -301,8 +301,12 @@ input:user-invalid {
     color: red;
 }
 
-button {
+button, .button {
     cursor: pointer;
+}
+
+.button {
+    text-decoration: none;
 }
 
 .login-container button {
