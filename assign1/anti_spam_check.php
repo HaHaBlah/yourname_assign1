@@ -8,11 +8,7 @@ $now = time();
 
 $mysqli = new mysqli('localhost', 'root', '', 'brew&go_db');
 if ($mysqli->connect_errno) {
-    echo '<div style="max-width:500px;margin:2em auto;padding:1.5em;background:#ffeaea;border:1px solid #e57373;color:#b71c1c;font-family:sans-serif;border-radius:8px;text-align:center;">
-            <h2>Anti-Spam Error</h2>
-            <p>Database connection failed (anti-spam): ' . htmlspecialchars($mysqli->connect_error) . '</p>
-          </div>';
-    exit;
+    die("Database connection failed (anti-spam): " . $mysqli->connect_error);
 }
 
 $createTableSql = "
@@ -24,11 +20,7 @@ $createTableSql = "
     ) ENGINE=InnoDB;
 ";
 if (!$mysqli->query($createTableSql)) {
-    echo '<div style="max-width:500px;margin:2em auto;padding:1.5em;background:#ffeaea;border:1px solid #e57373;color:#b71c1c;font-family:sans-serif;border-radius:8px;text-align:center;">
-            <h2>Anti-Spam Error</h2>
-            <p>Failed to create or verify spam_control table: ' . htmlspecialchars($mysqli->error) . '</p>
-          </div>';
-    exit;
+    die("Failed to create or verify spam_control table: " . $mysqli->error);
 }
 
 $stmt = $mysqli->prepare("
@@ -59,13 +51,7 @@ if (! $found) {
 
 if ($now < $blockedUntil) {
     $secsLeft = $blockedUntil - $now;
-    echo '<div style="max-width:500px;margin:2em auto;padding:1.5em;background:#fff3cd;border:1px solid #ffe082;color:#795548;font-family:sans-serif;border-radius:8px;text-align:center;">
-            <h2>Submission Blocked</h2>
-            <p>You are temporarily blocked from submitting.<br>
-            Please try again in <strong>' . intval($secsLeft) . ' seconds</strong>.</p>
-          </div>';
-    $mysqli->close();
-    exit;
+    die("You are temporarily blocked from submitting. Please try again in {$secsLeft} seconds.");
 }
 
 if ($now - $firstAttempt > $WINDOW_SECONDS) {
@@ -89,13 +75,7 @@ if ($attemptCount > $MAX_IN_WINDOW) {
     $update->execute();
     $update->close();
 
-    echo '<div style="max-width:500px;margin:2em auto;padding:1.5em;background:#ffeaea;border:1px solid #e57373;color:#b71c1c;font-family:sans-serif;border-radius:8px;text-align:center;">
-            <h2>Too Many Submissions</h2>
-            <p>Too many submissions in a short period.<br>
-            You are blocked for <strong>' . ($BLOCK_DURATION / 60) . ' minutes</strong>.</p>
-          </div>';
-    $mysqli->close();
-    exit;
+    die("Too many submissions in a short period. You are blocked for " . ($BLOCK_DURATION / 60) . " minutes.");
 } else {
     $update = $mysqli->prepare("
       UPDATE spam_control
