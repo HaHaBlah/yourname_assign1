@@ -3,6 +3,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Automatically initialise database -->
+<?php include("inc/database_connection.inc"); ?>
+
 <!-- Check if user/ admin has logged in -->
 <!-- If admin, then show admin logo -->
 <?php include("inc/login_status.inc"); ?>

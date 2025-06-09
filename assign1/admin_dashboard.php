@@ -2,6 +2,9 @@
 <!-- If admin, then show admin logo -->
 <?php include("inc/login_status.inc"); ?>
 
+<!-- Automatically initialise database -->
+<?php include("inc/database_connection.inc"); ?>
+
 <?php // Enable this later
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     header('Location: login.php?error=not_authorized');
