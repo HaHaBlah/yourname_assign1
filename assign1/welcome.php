@@ -1,16 +1,14 @@
-<?php
-session_start();
+<!-- Check if user/ admin has logged in -->
+<!-- If admin, then show admin logo -->
+<?php include("inc/login_status.inc"); ?>
 
+<?php
 // Redirect to login if not logged in or not a user
 if (!isset($_SESSION['username']) || !isset($_SESSION['role']) || $_SESSION['role'] !== 'user') {
     header('Location: login.php');
     exit;
 }
 ?>
-
-<!-- Check if user/ admin has logged in -->
-<!-- If admin, then show admin logo -->
-<?php include("inc/login_status.inc"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
