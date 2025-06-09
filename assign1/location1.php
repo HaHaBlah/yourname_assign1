@@ -97,7 +97,7 @@
             <h2 class="center">Check Out Our Other Store at<br>
                 Plaza Merdeka</h2>
             <div class="center">
-                <a href="location2.html"><img class="location-other responsive-hover-img"
+                <a href="location2.php"><img class="location-other responsive-hover-img"
                         src="images/location/plaza_merdeka.jpg" alt=""></a>
             </div>
         </section>

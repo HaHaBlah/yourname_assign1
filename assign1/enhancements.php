@@ -127,15 +127,15 @@
             <img src="images/enhancements/Dropdown_Menu.png" alt="Dropdown Menu">
             <h2>HTML</h2>
             <div class="code">
-                &lt;div class="Dropdown_Start"> &lt;a href="activities.html">Activities&lt;/a><br>
+                &lt;div class="Dropdown_Start"> &lt;a href="activities.php">Activities&lt;/a><br>
                 &nbsp;&nbsp;&nbsp;&lt;div class="Dropdown_Content"><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>&lt;a
-                href="Current.html">Current&lt;/a>&lt;/li><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>&lt;a href="Coming_Soon.html">Coming
+                href="Current.php">Current&lt;/a>&lt;/li><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>&lt;a href="Coming_Soon.php">Coming
                 Soon&lt;/a>&lt;/li><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>&lt;a
-                href="Past.html">Past&lt;/a>&lt;/li><br>
+                href="Past.php">Past&lt;/a>&lt;/li><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul><br>
                 &nbsp;&nbsp;&nbsp;&lt;/div><br>
                 &lt;/div><br>
@@ -347,8 +347,8 @@
         <section>
             <h2>Live Input Validation</h2>
             <p>When an input is in the wrong format, it will show up red</p>
-            <p>Found on <a href="login.html">login.html</a>, <a href="registration.html">registration.html</a>, <a
-                    href="enquiry.html">enquiry.html</a> and <a href="joinus_form.html">joinus_form.html</a></p>
+            <p>Found on <a href="login.php">login.php</a>, <a href="registration.php">registration.php</a>, <a
+                    href="enquiry.php">enquiry.php</a> and <a href="joinus_form.php">joinus_form.php</a></p>
             <img src="images/enhancements/Live_Input_Validation.png" alt="Live Input Validation">
             <h2>CSS</h2>
             <div class="code">
@@ -363,7 +363,7 @@
         <section>
             <h2>Interactive Map</h2>
             <p>An embedded Google Map document</p>
-            <p>Found in <a href="location1.html">location1.html</a> and <a href="location2.html">location2.html</a></p>
+            <p>Found in <a href="location1.php">location1.php</a> and <a href="location2.php">location2.php</a></p>
             <img src="images/enhancements/Interactive_Map.png" alt="Interactive Map">
             <h2>HTML</h2>
             <div class="code">

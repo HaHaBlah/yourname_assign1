@@ -1393,7 +1393,7 @@ With some parts edited for compatibility since they applied to whole webpage*/
 }
 
 
-/*about.html*/
+/*about.php*/
 .home {
     display: flex;
     align-items: center;
@@ -1584,7 +1584,7 @@ h2 span {
     background: transparent;
 }
 
-/*Index.html*/
+/*Index.php*/
 .welcome {
     padding: 2em;
     text-align: center;
@@ -2266,7 +2266,7 @@ h2 span {
     line-height: 1.5;
 }
 
-/*acknowledgements.html*/
+/*acknowledgements.php*/
 .general-acknowledgement {
     margin-bottom: 10vh;
 }

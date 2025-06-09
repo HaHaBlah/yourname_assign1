@@ -95,7 +95,7 @@
             <h2 class="center">Check Out Our Other Store at<br>
                 One Jaya</h2>
             <div class="center">
-                <a href="location1.html"><img class="location-other responsive-hover-img"
+                <a href="location1.php"><img class="location-other responsive-hover-img"
                         src="images/location/one_jaya.jpg" alt=""></a>
             </div>
         </section>
