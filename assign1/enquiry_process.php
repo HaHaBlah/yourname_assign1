@@ -43,22 +43,22 @@ require_once __DIR__ . '/anti_spam_check.php';
 
         $conn->select_db($dbname);
 
-        $sql = "
-          CREATE TABLE IF NOT EXISTS enquiries (
-            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-            firstname VARCHAR(25) NOT NULL,
-            lastname VARCHAR(25) NOT NULL,
-            email VARCHAR(50) NOT NULL,
-            phonenumber VARCHAR(15) NOT NULL,
-            streetaddress VARCHAR(40) NOT NULL,
-            citytown VARCHAR(20) NOT NULL,
-            state VARCHAR(30) NOT NULL,
-            postcode VARCHAR(5) NOT NULL,
-            enquirytype VARCHAR(30) NOT NULL,
-            message TEXT NOT NULL,
-            submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-          )
-        ";
+        // $sql = "
+        //   CREATE TABLE IF NOT EXISTS enquiries (
+        //     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        //     firstname VARCHAR(25) NOT NULL,
+        //     lastname VARCHAR(25) NOT NULL,
+        //     email VARCHAR(50) NOT NULL,
+        //     phonenumber VARCHAR(15) NOT NULL,
+        //     streetaddress VARCHAR(40) NOT NULL,
+        //     citytown VARCHAR(20) NOT NULL,
+        //     state VARCHAR(30) NOT NULL,
+        //     postcode VARCHAR(5) NOT NULL,
+        //     enquirytype VARCHAR(30) NOT NULL,
+        //     message TEXT NOT NULL,
+        //     submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        //   )
+        // ";
         if (!$conn->query($sql)) {
             die("Table creation failed: " . $conn->error);
         }
