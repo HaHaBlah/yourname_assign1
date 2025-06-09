@@ -1393,7 +1393,7 @@ With some parts edited for compatibility since they applied to whole webpage*/
 }
 
 
-/*about.html*/
+/*about.php*/
 .home {
     display: flex;
     align-items: center;
@@ -1584,7 +1584,7 @@ h2 span {
     background: transparent;
 }
 
-/*Index.html*/
+/*Index.php*/
 .welcome {
     padding: 2em;
     text-align: center;
@@ -2266,7 +2266,7 @@ h2 span {
     line-height: 1.5;
 }
 
-/*acknowledgements.html*/
+/*acknowledgements.php*/
 .general-acknowledgement {
     margin-bottom: 10vh;
 }
@@ -3496,9 +3496,9 @@ h2 span {
 /* Admin Style Logo */
 .admin-label {
     color: white !important;
-    background-color: red !important;
+    background-color: var(--accent-color-1) !important;
     display: inline-block !important;
-    padding: 5px 10px !important;
+    padding: 6px 10px !important;
     font-size: 20px !important;
     line-height: 1 !important;
     border-radius: 4px !important;

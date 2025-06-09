@@ -7,8 +7,8 @@
         {
             "type": "msedge",
             "request": "launch",
-            "name": "Open aboutme2.html",
-            "file": "e:\\yourname_assign1\\assign1\\aboutme2.html"
+            "name": "Open aboutme2.php",
+            "file": "e:\\yourname_assign1\\assign1\\aboutme2.php"
         }
     ]
 }{

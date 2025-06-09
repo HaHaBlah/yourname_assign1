@@ -1,4 +1,10 @@
 <?php
+// Prevent direct access to this file
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header("Location: joinus_form.php");
+    exit;
+}
+
 $antiSpamPath = __DIR__ . '/anti_spam_check.php';
 if (! file_exists($antiSpamPath)) {
     die("DEBUG ERROR: Cannot find anti_spam_check.php at path: " . htmlspecialchars($antiSpamPath));
@@ -37,49 +43,12 @@ require_once __DIR__ . '/anti_spam_check.php';
         }
 
         // Create database if it doesn't exist
-        $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
+        $sql = "CREATE DATABASE IF NOT EXISTS `$dbname`";
         if (!$conn->query($sql)) {
             die("Database creation failed: " . $conn->error);
         }
         $conn->select_db($dbname);
         $errors = [];
-
-    //     if (!$firstname) $errors['firstname'] = "First name is required.";
-    //     if (!$lastname) $errors['lastname'] = "Last name is required.";
-    //     if (!$email || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors['email'] = "A valid email is required.";
-    //     if (!$phonenumber) $errors['phonenumber'] = "Phone number is required.";
-    //     if (!$streetaddress) $errors['streetaddress'] = "Street address is required.";
-    //     if (!$citytown) $errors['citytown'] = "City/Town is required.";
-    //     if (!$state) $errors['state'] = "State is required.";
-    //     if (!$postcode || !preg_match('/^\d{4,5}$/', $postcode)) $errors['postcode'] = "Valid postcode is required.";
-    //     if (!$cvfile) $errors['cvfile'] = "CV file upload failed.";
-    //     if (!$photofile) $errors['photofile'] = "Photo file upload failed or too large.";
-
-    //     if (!empty($errors)) {
-    //         echo '<div class="notification error">';
-    //         echo '<h3>Please correct the following issues:</h3><ul>';
-    //         foreach ($errors as $field => $message) {
-    //             echo "<li><strong>$field:</strong> $message</li>";
-    //         }
-    //         echo '</ul><p><a href="joinus_form.php">Return to form</a></p></div>';
-    //     } elseif ($uploadOk) {
-    //         $stmt = $conn->prepare("INSERT INTO members (firstname, lastname, email, phonenumber, streetaddress, citytown, state, postcode, cvfile, photofile) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    //         $stmt->bind_param("ssssssssss", $firstname, $lastname, $email, $phonenumber, $streetaddress, $citytown, $state, $postcode, $cvfile, $photofile);
-
-    //         if ($stmt->execute()) {
-    //             echo '<div class="notification success">';
-    //             echo "<p>Registration successful! Data has been saved to the database.</p></div>";
-    //             unset($_SESSION['form_data']);
-    //         } else {
-    //             echo '<div class="notification error">';
-    //             echo "<p>Error saving data: " . htmlspecialchars($stmt->error) . "</p></div>";
-    //         }
-
-    //         $stmt->close();
-    //     }
-
-    //     $conn->close();
-
 
        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $firstname      = trim($_POST['firstname'] ?? '');
@@ -163,9 +132,9 @@ require_once __DIR__ . '/anti_spam_check.php';
 
                 if ($stmt->execute()) {
                     echo '<div class="notification success">';
-                    echo '<h1>Membership Registration Confirmation</h1>';
-                    echo '<h2>Thank you for registering!</h2>';
-                    echo "<p>Your data has been saved to the database.</p></div>";
+                    echo '<h1>Thanks for joining us!</h1>';
+                    echo '<p>We appreciate your interest in becoming a member of Brew & Go Coffee. Your application will soon be reviewed by our team.</p>';
+                    echo '</div>';
                     unset($_SESSION['form_data']);
                 } else {
                     echo '<div class="notification error">';

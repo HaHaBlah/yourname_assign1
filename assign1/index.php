@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Automatically initialise database -->
+<?php include("inc/database_connection.inc"); ?>
+
 <!-- Check if user/ admin has logged in -->
 <!-- If admin, then show admin logo -->
 <?php include("inc/login_status.inc"); ?>
@@ -81,7 +84,7 @@
         <h2>Product Showcase</h2>
         <p>Discover our wide range of handcrafted coffee beverages and non-coffee beverages.</p>
         <div class="explore">
-            <a href="product.php" class="btn">Explore</a>
+            <a href="products.php" class="btn">Explore</a>
         </div>
     </div>
 
