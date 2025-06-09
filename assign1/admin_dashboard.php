@@ -1,15 +1,15 @@
-<?php
-// session_start();
-
-// if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
-//     header("Location: login.php");
-//     exit;
-// }
-?>
-
 <!-- Check if user/ admin has logged in -->
 <!-- If admin, then show admin logo -->
 <?php include("inc/login_status.inc"); ?>
+
+<?php // Enable this later
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    header('Location: login.php?error=not_authorized');
+    exit;
+}
+
+$adminName = htmlspecialchars($_SESSION['username'], ENT_QUOTES, 'UTF-8');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
