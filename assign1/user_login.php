@@ -1,25 +1,16 @@
 <?php
-include("inc/login_status.inc");
+session_start();
 require_once("inc/database_connection.inc");    // DB connection file
-require_once("error_handler.php");              // Error handler file
+require_once("error_handler.php");          // Error handler file
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Hardcoded admin
-    if ($username === 'admin' && $password === 'admin') {
-        $_SESSION['admin_logged_in'] = true;
-        $_SESSION['username']       = 'admin';
-        $_SESSION['role']           = 'admin';      // <-- add this
-        file_put_contents("testlog.txt", "Logged in as hardcoded admin\n", FILE_APPEND);
-        header("Location: admin_dashboard.php");
-        exit;
-    }
-
     if (!empty($username) && !empty($password)) {
         // Prepare and execute query
-        $stmt = $conn->prepare("SELECT password, role FROM members WHERE username = ? AND email_verified=1");
+        $stmt = $conn->prepare("SELECT password, role FROM users WHERE username = ?");
         $stmt->bind_param("s", $username);
         $stmt->execute();
         $stmt->store_result();
@@ -29,17 +20,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->fetch();
 
             // For now, assume passwords stored in plain text
-            if (password_verify($password, $db_password)) {
+            if ($password === $db_password) {
                 // Set session variables
                 $_SESSION['username'] = $username;
                 $_SESSION['role'] = $role;
-                $_SESSION['admin_logged_in'] = false; // Not an admin login
-                $_SESSION['username']       = 'user'; // Default user role
-                $_SESSION['role']           = 'user'; 
 
-                header('Location: welcome.php');
+                // Redirect based on role
+                if ($role === 'admin') {
+                    header('Location: admin_dashboard.php');
+                } else {
+                    header('Location: welcome.php');
+                }
                 exit;
-                
             } else {
                 // Password mismatch
                 trigger_error("Login failed for user '{$username}': invalid password", E_USER_WARNING);

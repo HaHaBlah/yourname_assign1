@@ -23,3 +23,6 @@ Logged in as hardcoded admin
 admin_login.php was hit!
 POST block reached
 Logged in as hardcoded admin
+Logged in as hardcoded admin
+Logged in as hardcoded admin
+Logged in as hardcoded admin
