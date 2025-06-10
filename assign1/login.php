@@ -78,7 +78,7 @@ $action = $_GET['action'] ?? '';
 <body>
   <?php include "inc/top_navigation_bar.inc"; ?>
 
-  <main class="no-margin-top">
+  <main>
 
     <?php if ($action === 'forgot'): ?>
       <!-- ========================= -->

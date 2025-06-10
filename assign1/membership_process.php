@@ -33,12 +33,12 @@ require_once("verification_email.php");
 
     // Database connection
     $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $db_username = "root";
+    $db_password = "";
     $dbname = "brew&go_db";
 
     // Create connection
-    $conn = new mysqli($servername, $username, $password);
+    $conn = new mysqli($servername, $db_username, $db_password);
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
@@ -71,15 +71,10 @@ require_once("verification_email.php");
     }
     // Get POST data safely
     $firstname = isset($_POST['firstname']) ? trim($_POST['firstname']) : '';
-    $lastname = isset($_POST['lastname']) ? trim($_POST['lastname']) : '';
-    $email = isset($_POST['email']) ? trim($_POST['email']) : '';
-    $username = isset($_POST['username']) ? trim($_POST['username']) : '';
-    $password = isset($_POST['password']) ? $_POST['password'] : '';
-
-    echo "<pre>";
-    var_dump($_POST);
-    echo "</pre>";
-    echo "Plain text password: " . htmlspecialchars($password);
+    $lastname  = isset($_POST['lastname']) ? trim($_POST['lastname']) : '';
+    $email     = isset($_POST['email']) ? trim($_POST['email']) : '';
+    $username  = isset($_POST['username']) ? trim($_POST['username']) : '';
+    $password  = isset($_POST['password']) ? $_POST['password'] : '';
 
     // Store entered values (except password) in session to repopulate form later
     $_SESSION['form_data'] = [
