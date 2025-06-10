@@ -2,12 +2,11 @@
 <!-- Code here -->
 <?php
 // Start session and include necessary files
-session_start();
 include("inc/database_connection.inc");
 include("inc/login_status.inc");
 
 // Check if user is logged in
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['admin_logged_in'])) {
     header("Location: login.php");
     exit();
 }
@@ -20,8 +19,8 @@ $successMsg = '';
 $errorMsg = '';
 
 // Fetch user information
-$user_id = $_SESSION['user_id'];
-$query = "SELECT * FROM users WHERE user_id = ?";
+$user_id = $_SESSION['admin_logged_in'] ? $_SESSION['user_id'] : 0; // Assuming user_id is stored in session
+$query = "SELECT * FROM members WHERE id = ?";
 $stmt = $conn->prepare($query);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
@@ -31,9 +30,9 @@ if ($result->num_rows > 0) {
 }
 
 // Fetch address information
-$query = "SELECT * FROM addresses WHERE user_id = ?";
+$query = "SELECT * FROM members WHERE streetaddress = ?";
 $stmt = $conn->prepare($query);
-$stmt->bind_param("i", $user_id);
+$stmt->bind_param("s", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
 if ($result->num_rows > 0) {
@@ -41,14 +40,14 @@ if ($result->num_rows > 0) {
 }
 
 // Fetch credit balance
-$query = "SELECT credit_balance FROM credits WHERE user_id = ?";
+$query = "SELECT balance FROM topup WHERE login_id = ?";
 $stmt = $conn->prepare($query);
-$stmt->bind_param("i", $user_id);
+$stmt->bind_param("s", $user_id); // Use "s" if login_id is stored as string
 $stmt->execute();
 $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     $creditData = $result->fetch_assoc();
-    $creditBalance = $creditData['credit_balance'];
+    $creditBalance = $creditData['balance'];
 }
 
 // Handle form submissions
@@ -134,6 +133,7 @@ $conn->close();
     <title>User Dashboard - Brew & Go</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <?php include("inc/top_navigation_bar.inc"); ?>

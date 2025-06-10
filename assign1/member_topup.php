@@ -16,11 +16,6 @@ if ($conn->connect_error) {
 $conn->query("CREATE DATABASE IF NOT EXISTS `$dbname`");
 $conn->select_db($dbname);
 
-// === Create Table if Not Exists ===
-if (!$conn->query($table_sql)) {
-    die("Table creation failed: " . $conn->error);
-}
-
 // === Handle Form Submission ===
 $message = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
