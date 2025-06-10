@@ -89,3 +89,5 @@
 2025-06-10 11:46:32 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
 2025-06-10 11:46:35 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
 2025-06-10 11:46:37 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-10 12:23:53 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 60: Login failed: username 'admin' not found
+2025-06-10 12:23:59 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 60: Login failed: username 'admin' not found
