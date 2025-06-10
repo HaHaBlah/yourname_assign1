@@ -3830,6 +3830,7 @@ h2 span {
     color: white;
     padding: 30px 20px;
     border-radius: 10px;
+    margin-top: 10vh;
     margin-bottom: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -3892,6 +3893,7 @@ h2 span {
     width: 100%;
     text-align: center;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 .topup-btn:hover {
@@ -3961,6 +3963,7 @@ h2 span {
 .form-control {
     width: 100%;
     padding: 12px 15px;
+    box-sizing: border-box;
     border: 1px solid #ced4da;
     border-radius: 6px;
     font-size: 1rem;

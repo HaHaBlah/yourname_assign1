@@ -1,126 +1,101 @@
-<!-- User Dashboard -->
-<!-- Code here -->
 <?php
-// Start session and include necessary files
+ob_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 include("inc/database_connection.inc");
 include("inc/login_status.inc");
 
-// Check if user is logged in
-if (!isset($_SESSION['admin_logged_in'])) {
+if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit();
 }
 
-// Initialize variables
-$userInfo = [];
+$username = $_SESSION['username'];
+
+// Fetch user information
+$stmt = $conn->prepare("SELECT id, firstname, lastname, email, username, role, phonenumber FROM members WHERE username = ? AND email_verified = 1");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
+if ($result->num_rows === 1) {
+    $userInfo = $result->fetch_assoc();
+    $_SESSION['user_id'] = $userInfo['id'];
+} else {
+    header("Location: login.php");
+    exit();
+}
+$stmt->close();
+
+$user_id = $_SESSION['user_id'];
 $addressInfo = [];
 $creditBalance = 0;
 $successMsg = '';
 $errorMsg = '';
 
-// Fetch user information
-$user_id = $_SESSION['admin_logged_in'] ? $_SESSION['user_id'] : 0; // Assuming user_id is stored in session
-$query = "SELECT * FROM members WHERE id = ?";
-$stmt = $conn->prepare($query);
+// Fetch address info from new addresses table
+$stmt = $conn->prepare("SELECT * FROM members WHERE id = ?");
 $stmt->bind_param("i", $user_id);
-$stmt->execute();
-$result = $stmt->get_result();
-if ($result->num_rows > 0) {
-    $userInfo = $result->fetch_assoc();
-}
-
-// Fetch address information
-$query = "SELECT * FROM members WHERE streetaddress = ?";
-$stmt = $conn->prepare($query);
-$stmt->bind_param("s", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     $addressInfo = $result->fetch_assoc();
 }
+$stmt->close();
 
 // Fetch credit balance
-$query = "SELECT balance FROM topup WHERE login_id = ?";
-$stmt = $conn->prepare($query);
-$stmt->bind_param("s", $user_id); // Use "s" if login_id is stored as string
+$stmt = $conn->prepare("SELECT balance FROM topup WHERE login_id = ?");
+$stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     $creditData = $result->fetch_assoc();
     $creditBalance = $creditData['balance'];
 }
+$stmt->close();
 
-// Handle form submissions
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Update personal information
     if (isset($_POST['update_personal'])) {
         $firstname = htmlspecialchars(trim($_POST['firstname']));
         $lastname = htmlspecialchars(trim($_POST['lastname']));
         $email = htmlspecialchars(trim($_POST['email']));
         $phonenumber = htmlspecialchars(trim($_POST['phonenumber']));
-        
-        // Validation would go here in a real application
-        
-        $query = "UPDATE users SET firstname = ?, lastname = ?, email = ?, phonenumber = ? WHERE user_id = ?";
-        $stmt = $conn->prepare($query);
+
+        $stmt = $conn->prepare("UPDATE members SET firstname = ?, lastname = ?, email = ?, phonenumber = ? WHERE id = ?");
         $stmt->bind_param("ssssi", $firstname, $lastname, $email, $phonenumber, $user_id);
         if ($stmt->execute()) {
             $successMsg = "Personal information updated successfully!";
-            // Refresh user data
-            $query = "SELECT * FROM users WHERE user_id = ?";
-            $stmt = $conn->prepare($query);
-            $stmt->bind_param("i", $user_id);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            if ($result->num_rows > 0) {
-                $userInfo = $result->fetch_assoc();
-            }
         } else {
             $errorMsg = "Error updating personal information: " . $stmt->error;
         }
+        $stmt->close();
     }
-    
-    // Update address
+
     if (isset($_POST['update_address'])) {
         $streetaddress = htmlspecialchars(trim($_POST['streetaddress']));
         $citytown = htmlspecialchars(trim($_POST['citytown']));
         $state = htmlspecialchars(trim($_POST['state']));
         $postcode = htmlspecialchars(trim($_POST['postcode']));
-        
-        // Validation would go here in a real application
-        
+
         if (!empty($addressInfo)) {
-            // Update existing address
-            $query = "UPDATE addresses SET streetaddress = ?, citytown = ?, state = ?, postcode = ? WHERE address_id = ?";
-            $stmt = $conn->prepare($query);
-            $stmt->bind_param("ssssi", $streetaddress, $citytown, $state, $postcode, $addressInfo['address_id']);
-            if ($stmt->execute()) {
-                $successMsg = "Address updated successfully!";
-            } else {
-                $errorMsg = "Error updating address: " . $stmt->error;
-            }
+            $stmt = $conn->prepare("UPDATE members SET streetaddress = ?, citytown = ?, state = ?, postcode = ? WHERE id = ?");
+            $stmt->bind_param("ssssi", $streetaddress, $citytown, $state, $postcode, $user_id);
         } else {
-            // Insert new address
-            $query = "INSERT INTO addresses (user_id, streetaddress, citytown, state, postcode) VALUES (?, ?, ?, ?, ?)";
-            $stmt = $conn->prepare($query);
+            $stmt = $conn->prepare("INSERT INTO members (id, streetaddress, citytown, state, postcode) VALUES (?, ?, ?, ?, ?)");
             $stmt->bind_param("issss", $user_id, $streetaddress, $citytown, $state, $postcode);
-            if ($stmt->execute()) {
-                $successMsg = "Address added successfully!";
-                // Refresh address data
-                $query = "SELECT * FROM addresses WHERE user_id = ?";
-                $stmt = $conn->prepare($query);
-                $stmt->bind_param("i", $user_id);
-                $stmt->execute();
-                $result = $stmt->get_result();
-                if ($result->num_rows > 0) {
-                    $addressInfo = $result->fetch_assoc();
-                }
-            } else {
-                $errorMsg = "Error adding address: " . $stmt->error;
-            }
         }
+
+        if ($stmt->execute()) {
+            $successMsg = empty($addressInfo) ? "Address added successfully!" : "Address updated successfully!";
+        } else {
+            $errorMsg = "Error saving address: " . $stmt->error;
+        }
+        $stmt->close();
     }
 }
+
+$conn->close();
+?>
 
 // Close database connection
 $conn->close();
@@ -142,7 +117,7 @@ $conn->close();
         <div class="dashboard-header">
             <div class="welcome-section">
                 <div class="user-greeting">
-                    <h1>Welcome, <?php echo htmlspecialchars($userInfo['firstname'] ?? 'User'); ?>!</h1>
+                    <h1>Welcome, <?php echo htmlspecialchars($userInfo['username'] ?? 'User'); ?>!</h1>
                     <p>Manage your account details and preferences</p>
                 </div>
                 <div class="credit-section">
