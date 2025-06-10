@@ -6,14 +6,11 @@ if (basename(__FILE__) == basename($_SERVER['PHP_SELF'])) {
 
 // === Database connection settings ===
 $host     = 'localhost';
-$user     = 'root';
-$password = ''; // Default XAMPP password
+$db_username = 'root';
+$db_password = ''; // Default XAMPP password
 $database = 'brew&go_db';
 
-// === Connect to MySQL ===
-$conn = new mysqli($host, $user, $password);
-
-// === Check connection to MySQL server ===
+$conn = new mysqli($host, $db_username, $db_password);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }

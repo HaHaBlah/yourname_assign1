@@ -45,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->bind_result($db_password, $role);
             $stmt->fetch();
 
+
             if (password_verify($password, $db_password)) {
                 $_SESSION['username'] = $username;
                 $_SESSION['role'] = $role;
@@ -69,4 +70,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header('Location: login.php');
     exit;
 }
-?>
