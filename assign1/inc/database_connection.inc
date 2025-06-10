@@ -77,7 +77,7 @@ if (!$conn->query($sql)) {
 
 $sql = "CREATE TABLE IF NOT EXISTS updates (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    update_message VARCHAR(25) NOT NULL,
+    update_message TEXT NOT NULL,
     photofile VARCHAR(255)
 )";
 

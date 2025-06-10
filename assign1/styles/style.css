@@ -811,6 +811,18 @@ footer {
     margin-bottom: 25px;
 }
 
+.footer-col p {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.footer-col img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+}
+
 .footer-col h4,
 .footer-col h4 a {
     font-size: 18px;

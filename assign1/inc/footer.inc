@@ -87,7 +87,7 @@ $res = $conn->query($sql);
               <p><?= htmlspecialchars($u['update_message'], ENT_QUOTES) ?></p>
             <?php endif; ?>
             <?php if (!empty($u['photofile'])): ?>
-              <img src="<?= htmlspecialchars($u['photofile'], ENT_QUOTES) ?>" alt="Update Image" style="max-width:80px;max-height:80px;vertical-align:middle;">
+              <img src="<?= htmlspecialchars($u['photofile'], ENT_QUOTES) ?>" alt="Update Image">
             <?php endif; ?>
           </div>
         <?php else: ?>
