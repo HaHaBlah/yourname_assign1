@@ -75,6 +75,17 @@ if (!$conn->query($sql)) {
     die("Jobapp table creation failed: " . $conn->error);
 }
 
+$sql = "CREATE TABLE IF NOT EXISTS updates (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    update_message VARCHAR(25) NOT NULL,
+    photofile VARCHAR(255)
+)";
+
+if (!$conn->query($sql)) {
+    die("updates table creation failed: " . $conn->error);
+}
+
+
 $sql = "CREATE TABLE IF NOT EXISTS enquiries (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     firstname VARCHAR(25) NOT NULL,
@@ -97,6 +108,18 @@ if (!$conn->query($sql)) {
     die("Enquiries table creation failed: " . $conn->error);
 }
 
+$sql = "CREATE TABLE IF NOT EXISTS topup (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    login_id VARCHAR(10) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(255),
+    balance DECIMAL(10,2) DEFAULT 0.00
+)";
+
+if (!$conn->query($sql)) {
+    die("Topup table creation failed: " . $conn->error);
+}
+
 $sql = "CREATE TABLE IF NOT EXISTS admin (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
@@ -106,6 +129,18 @@ $sql = "CREATE TABLE IF NOT EXISTS admin (
 if (!$conn->query($sql)) {
     die("Admin table creation failed: " . $conn->error);
 }
+
+$sql = "CREATE TABLE IF NOT EXISTS `password_resets` (
+    `email`      VARCHAR(255) NOT NULL,
+    `token`      CHAR(100)    NOT NULL,
+    `expires_at` DATETIME     NOT NULL,
+    PRIMARY KEY (`email`)
+    )"; 
+
+if (!$conn->query($sql)) {
+    die("Password resets table creation failed: " . $conn->error);
+}
+
 
 // Insert default admin if not exists
 $default_admin_username = 'admin';

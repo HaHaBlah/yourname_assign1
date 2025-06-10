@@ -94,7 +94,7 @@
             <form action="mailto:104391559@students.swinburne.edu.my" method="post" enctype="text/plain">
                 <button type="submit">Email Me</button>
             </form>
-            <?php include("inc/footerbare.inc"); ?>
+            <?php include("inc/footer.inc"); ?>
         </div>
     </footer>
 </body>
