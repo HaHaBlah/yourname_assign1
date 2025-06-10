@@ -1,3 +1,4 @@
+<?php include("database_connection.inc"); ?>
 <nav>
     <div class="nav-selector">
         <a href="index.php">

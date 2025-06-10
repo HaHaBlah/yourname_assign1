@@ -127,7 +127,7 @@ require_once __DIR__ . '/anti_spam_check.php';
                 }
                 echo '</ul><p><a href="joinus_form.php">Return to form</a></p></div>';
             } elseif ($uploadOk) {
-                $stmt = $conn->prepare("INSERT INTO members (firstname, lastname, email, phonenumber, streetaddress, citytown, state, postcode, cvfile, photofile) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                $stmt = $conn->prepare("INSERT INTO jobapp (firstname, lastname, email, phonenumber, streetaddress, citytown, state, postcode, cvfile, photofile) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
                 $stmt->bind_param("ssssssssss", $firstname, $lastname, $email, $phonenumber, $streetaddress, $citytown, $state, $postcode, $cvfile, $photofile);
 
                 if ($stmt->execute()) {

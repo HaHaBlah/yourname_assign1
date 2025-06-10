@@ -5,6 +5,13 @@
 <!-- If admin, then show admin logo -->
 <?php include("inc/login_status.inc"); ?>
 
+<?php // Enable this later
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    header('Location: login.php?error=not_authorized');
+    exit;
+}
+?>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,18 +24,18 @@
 
 <body>
     <?php include("inc/top_navigation_bar.inc"); ?>
-    <main>
-        <h1>Membership List</h1>
+    <main class="view_enquiry_main">
+        <h1 class="view_enquiry_title">Membership List</h1>
 
-        <table border="1">
+        <table class="enquiry-table">
             <tr>
                 <th>No</th>
-                <th width="150px">First Name</th>
-                <th width="150px">Last Name</th>
-                <th width="200px">Email</th>
-                <th width="100px">Username</th>
-                <th width="100px">Password</th>
-                <th width="180px">Registration Date</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Registration Date</th>
             </tr>
 
             <?php
@@ -57,9 +64,17 @@
                         <td><?php echo htmlspecialchars($row["username"]); ?></td>
                         <td><?php echo htmlspecialchars($row["password"]); ?></td>
                         <td><?php echo htmlspecialchars($row["reg_date"]); ?></td>
-                    </tr>
+                        <td>
+                            <a href="member_form.php?id=<?php echo $row['id']; ?>">Edit</a> |
+                            <a href="member_delete.php?id=<?php echo $row['id']; ?>"
+                                onclick="return confirm('Are you sure to delete this member?');">Delete</a>
+                        </td>
+                    </tr>   
             <?php
                 }
+            ?>
+                <p><a href="member_form.php" class="add-member-button">+ Add New Member</a></p>
+            <?php
             } else {
                 echo "<tr><td colspan='6'>0 results</td></tr>";
             }
@@ -70,7 +85,6 @@
         <?php include("inc/scroll_to_top_button.inc"); ?>
     </main>
     
-
     <?php include("inc/footer.inc"); ?>
 </body>
 

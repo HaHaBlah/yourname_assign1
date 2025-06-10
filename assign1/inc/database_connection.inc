@@ -56,6 +56,25 @@ if (!$conn->query($sql)) {
     die("Members table creation failed: " . $conn->error);
 }
 
+$sql = "CREATE TABLE IF NOT EXISTS jobapp (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(25) NOT NULL,
+    lastname VARCHAR(25) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    phonenumber VARCHAR(15),
+    streetaddress VARCHAR(40),
+    citytown VARCHAR(20),
+    state VARCHAR(30),
+    postcode VARCHAR(5),
+    cvfile VARCHAR(255),
+    photofile VARCHAR(255),
+    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)";
+
+if (!$conn->query($sql)) {
+    die("Jobapp table creation failed: " . $conn->error);
+}
+
 $sql = "CREATE TABLE IF NOT EXISTS updates (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     update_message VARCHAR(25) NOT NULL,
@@ -89,6 +108,18 @@ if (!$conn->query($sql)) {
     die("Enquiries table creation failed: " . $conn->error);
 }
 
+$sql = "CREATE TABLE IF NOT EXISTS topup (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    login_id VARCHAR(10) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(255),
+    balance DECIMAL(10,2) DEFAULT 0.00
+)";
+
+if (!$conn->query($sql)) {
+    die("Topup table creation failed: " . $conn->error);
+}
+
 $sql = "CREATE TABLE IF NOT EXISTS admin (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
@@ -120,3 +151,23 @@ $stmt->close();
 
 // Switch back to the default database
 $conn->select_db($database);
+?>
+
+<?php //replaces php.ini file in XAMPP
+// Source and destination paths
+$source = __DIR__ . '/php.ini';  
+$destination = 'C:/xampp/php/php.ini';
+
+// Copy and overwrite
+if (!copy($source, $destination)) {
+    die("Failed to replace php.ini");
+} 
+
+$source = __DIR__ . '/sendmail.ini';  
+$destination = 'C:/xampp/sendmail/sendmail.ini';
+
+// Copy and overwrite
+if (!copy($source, $destination)) {
+    die("Failed to replace sendmail.ini");
+} 
+?>

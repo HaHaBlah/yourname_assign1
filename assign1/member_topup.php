@@ -17,14 +17,6 @@ $conn->query("CREATE DATABASE IF NOT EXISTS `$dbname`");
 $conn->select_db($dbname);
 
 // === Create Table if Not Exists ===
-$table_sql = "
-CREATE TABLE IF NOT EXISTS topup (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    login_id VARCHAR(10) NOT NULL UNIQUE,
-    email VARCHAR(100) NOT NULL,
-    password VARCHAR(255),
-    balance DECIMAL(10,2) DEFAULT 0.00
-)";
 if (!$conn->query($table_sql)) {
     die("Table creation failed: " . $conn->error);
 }

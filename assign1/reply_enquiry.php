@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ini_set('sendmail_path',
                 '"C:\\xampp\\sendmail\\sendmail.exe" '
               . '-au taphahablah@gmail.com '
-              . '-ap YOUR_TAPHA_APP_PASSWORD '
+              . '-ap jold yfwi jbhv vnra '
               . '-t'
             );
 

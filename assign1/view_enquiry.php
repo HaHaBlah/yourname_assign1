@@ -2,8 +2,14 @@
 <html lang="en">
 
 <!-- Check if user/ admin has logged in -->
-<!-- If admin, then show admin logo -->
 <?php include("inc/login_status.inc"); ?>
+
+<?php // Enable this later
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    header('Location: login.php?error=not_authorized');
+    exit;
+}
+?>
 
 <head>
     <meta charset="utf-8">
@@ -17,10 +23,10 @@
 
 <body>
     <?php include("inc/top_navigation_bar.inc"); ?>
-    <main>
-        <h1>Enquiry List</h1>
+    <main class="view_enquiry_main">
+        <h1 class="view_enquiry_title">Enquiry List</h1>
 
-        <table border="1">
+        <table class="enquiry-table">
             <tr>
                 <th>No</th>
                 <th>First Name</th>
@@ -34,6 +40,7 @@
                 <th>Enquiry Type</th>
                 <th>Message</th>
                 <th>Submitted At</th>
+                <th>Actions</th>
             </tr>
 
             <?php
@@ -41,12 +48,14 @@
             $username = "root";
             $password = "";
             $dbname = "brew&go_db";
+
             // Create connection
             $conn = mysqli_connect($servername, $username, $password, $dbname);
-            // Check connection
+
             if (!$conn) {
                 die("Connection failed: " . mysqli_connect_error());
             }
+
             $sql = "SELECT * FROM enquiries ORDER BY submitted_at DESC";
             $result = mysqli_query($conn, $sql);
 
@@ -67,16 +76,20 @@
                         <td><?php echo htmlspecialchars($row["enquirytype"]); ?></td>
                         <td><?php echo nl2br(htmlspecialchars($row["message"])); ?></td>
                         <td><?php echo htmlspecialchars($row["submitted_at"]); ?></td>
+                        <td>
+                            <a href="reply_enquiry.php?id=<?php echo $row['id']; ?>" class="reply-btn">Reply</a>
+                        </td>
                     </tr>
             <?php
                 }
             } else {
-                echo "<tr><td colspan='12'>No enquiries found.</td></tr>";
+                echo "<tr><td colspan='13'>No enquiries found.</td></tr>";
             }
 
             mysqli_close($conn);
             ?>
         </table>
+
         <?php include("inc/scroll_to_top_button.inc"); ?>
     </main>
     <?php include("inc/footer.inc"); ?>
