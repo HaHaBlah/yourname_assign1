@@ -150,12 +150,12 @@ require_once __DIR__ . '/anti_spam_check.php';
         }
 
         $stmt->close();
-        $conn->close();
+        
         ?>
 
     <?php include("inc/scroll_to_top_button.inc"); ?>
     </main>
-    <?php include("inc/footer.inc"); ?>
+    <?php include("inc/footer.inc"); $conn->close();?>
 </body>
 
 </html>
