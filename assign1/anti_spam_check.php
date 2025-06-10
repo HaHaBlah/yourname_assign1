@@ -9,7 +9,11 @@ function show_antispam_page($title, $message) {
     <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title><?php echo htmlspecialchars($title); ?></title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Anti-Spam Protection</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
         <link rel="stylesheet" href="styles/style.css">
     </head>
     <body>

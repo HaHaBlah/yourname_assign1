@@ -71,8 +71,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Member Top-Up</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Top-Up</title>
+    <meta name="description" content="Top-Up your Brew & Go Coffee account">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
