@@ -128,3 +128,23 @@ $stmt->close();
 
 // Switch back to the default database
 $conn->select_db($database);
+?>
+
+<?php //replaces php.ini file in XAMPP
+// Source and destination paths
+$source = __DIR__ . '/php.ini';  
+$destination = 'C:/xampp/php/php.ini';
+
+// Copy and overwrite
+if (!copy($source, $destination)) {
+    die("Failed to replace php.ini");
+} 
+
+$source = __DIR__ . '/sendmail.ini';  
+$destination = 'C:/xampp/sendmail/sendmail.ini';
+
+// Copy and overwrite
+if (!copy($source, $destination)) {
+    die("Failed to replace sendmail.ini");
+} 
+?>
