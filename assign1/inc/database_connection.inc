@@ -77,7 +77,7 @@ if (!$conn->query($sql)) {
 
 $sql = "CREATE TABLE IF NOT EXISTS updates (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    update_message VARCHAR(25) NOT NULL,
+    update_message TEXT NOT NULL,
     photofile VARCHAR(255)
 )";
 
@@ -141,6 +141,19 @@ if (!$conn->query($sql)) {
     die("Password resets table creation failed: " . $conn->error);
 }
 
+$sql = "
+  CREATE TABLE IF NOT EXISTS `products` (
+    `id`        INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `name`      VARCHAR(100)        NOT NULL,
+    `np`        DECIMAL(8,2)        NOT NULL COMMENT 'normal price',
+    `mp`        DECIMAL(8,2)        NOT NULL COMMENT 'member price',
+    `image_url` VARCHAR(255) DEFAULT NULL,
+    PRIMARY KEY (`id`)
+    )";
+
+if (!$conn->query($sql)) {
+    die("Products table creation failed: " . $conn->error);
+}
 
 // Insert default admin if not exists
 $default_admin_username = 'admin';

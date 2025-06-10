@@ -26,7 +26,7 @@
         <!-- User Management Module -->
         <section>
             <h2>User Management Module</h2>
-            <p></p>
+            <p>Allows admins to view and manage public enquiry. As well as Create, View, Edit and Delete user from the website.</p>
             <p>Uses: </p>
             <h2>.php</h2>
             <div class="code">
@@ -38,9 +38,9 @@
         <!-- Promotion and News Update Module -->
         <section>
             <h2>Promotion and News Update Module</h2>
-            <p></p>
-            <p>Uses: </p>
-            <h2>.php</h2>
+            <p>This feature allows admins to create, edit/update, and delete the promotion and news from the database.</p>
+            <p>Uses: <a href="inc/footer.inc">footer.inc</a></p>
+            <h2>footer.inc</h2>
             <div class="code">
                 <span>
                 </span>
@@ -86,9 +86,9 @@
         <!-- Member Top-up Module -->
         <section>
             <h2>Member Top-up Module</h2>
-            <p></p>
-            <p>Uses: </p>
-            <h2>.php</h2>
+            <p>This feature allows members to do top up into their accounts.</p>
+            <p>Uses: <a href="member_topup.php">member_topup.php</a></p>
+            <h2>member_topup.php</h2>
             <div class="code">
                 <span>
                 </span>

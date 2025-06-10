@@ -161,7 +161,10 @@ if (isset($_GET['q'])) {
                 <span class="product-np-price">NP: RM<?php echo number_format($product['np'], 2); ?></span>
               </p>
               <a>
-                <button class="product-buy-4">Buy Now</button>
+                <form action="buy_product.php" method="post" style="display:inline;">
+                  <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
+                  <button type="submit" class="product-buy-4">Buy Now</button>
+                </form>
               </a>
             </section>
           <?php endforeach; ?>
