@@ -5,9 +5,12 @@ function get_verification_email($firstname, $verify_link) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Verify Your Brew & Go Coffee Membership</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Verify your Brew & Go Coffee membership">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="https://i.imgur.com/n70wcbN.png" type="image/png">
+    <title>Verify Your Brew & Go Coffee Membership</title>
 </head>
 <body style="margin:0;padding:0;background:#f4f4f4;">
     <table width="100%" bgcolor="#f4f4f4" cellpadding="0" cellspacing="0" style="min-width:348px;">

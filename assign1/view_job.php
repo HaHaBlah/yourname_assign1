@@ -20,7 +20,7 @@
     <main>
         <h1>Job Apps</h1>
 
-        <table border="1">
+        <table class="jobapp-table">
             <tr>
                 <th>No</th>
                 <th width="120px">First Name</th>
@@ -47,7 +47,7 @@
             if (!$conn) {
                 die("Connection failed: " . mysqli_connect_error());
             }
-            $sql = "SELECT * FROM members";
+            $sql = "SELECT * FROM jobapp";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
@@ -66,7 +66,7 @@
                         <td><?php echo htmlspecialchars($row["postcode"]); ?></td>
                         <td>
                             <?php if (!empty($row["cvfile"])): ?>
-                                <a href="<?php echo htmlspecialchars($row["cvfile"]); ?>" target="_blank">Download</a>
+                                <a href="<?php echo htmlspecialchars($row["cvfile"]); ?>" target="_blank">View</a>
                             <?php else: ?>
                                 N/A
                             <?php endif; ?>

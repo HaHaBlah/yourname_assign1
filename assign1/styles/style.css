@@ -124,7 +124,6 @@
 }
 
 .enquiry-container button, .button {
-    width: 100%;
     padding: 10px;
     background-color: var(--accent-color-1);
     border: none;
@@ -133,6 +132,10 @@
     margin-top: 10px;
     font-size: 1.1em;
     font-weight: bold;
+}
+
+.enquiry-container button {
+    width: 100%;
 }
 
 .enquiry-container button:hover, .button:hover {
@@ -255,6 +258,14 @@
     margin-bottom: 20vh;
 }
 
+#antispam-container {
+    height: 250px;
+}
+
+#member-topup-container {
+    height: 450px;
+}
+
 .login-container form {
     background-color: #fff;
     padding: 25px;
@@ -321,6 +332,8 @@ button, .button {
     font-weight: bold;
 }
 
+
+
 .login-container button:hover {
     background-color: var(--accent-color-1);
 }
@@ -370,7 +383,7 @@ button, .button {
 }
 
 @media (max-width: 768px) {
-    .login-container {
+    .login-container, #antispam-container, #member-topup-container {
         width: 90%;
         height: auto;
         padding: 20px;
@@ -594,6 +607,20 @@ nav a:hover::after {
     height: 30px;
     width: 30px;
     margin-right: 5px;
+}
+
+#nav-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#nav-login .login-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .nav-selector a {
@@ -3513,49 +3540,194 @@ h2 span {
 
 /* Admin Dashboard Icon Style */
 .admin-tools {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-  gap: 17%;
-  justify-content: center;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    gap: 17%;
+    justify-content: center;
 }
 
 .admin-tools li a {
-  display: flex;           
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
 }
 
 .admin-tools img {
-  width: 80px;
-  height: auto;
-  margin-top: 8vh;
-  margin-bottom: 5vh;
+    width: 80px;
+    height: auto;
+    margin-top: 8vh;
+    margin-bottom: 5vh;
+}
+
+/* Admin Dashboard Styles: Enquiries */
+.enquiries-title {
+    margin-top: 10vh;
+}
+
+.enquiries-preview {
+    list-style: none;
+    margin: 10px 0 20px;
+    padding: 0;
+}
+
+.enquiries-preview li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    align-items: center;
+    font-size: 1rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 4px;
+    padding: 6px 0;
+}
+
+.enquiries-preview .preview-text {
+  flex: 1;
+  margin-right: 10px;
+  font-size: .95rem;
+}
+
+.enquiries-preview strong {
+    color: #333;
+}
+
+.enquiries-preview em {
+    color: #6d4c41;
+}
+
+.reply-btn {
+  background-color: #6d4c41;
+  color: #FFF;
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: .85rem;
+  white-space: nowrap;
+}
+
+.reply-btn:hover {
+  opacity: 0.9;
 }
 
 
 /* New footer design for promotions pop up */
 .footer-updates {
-  list-style: none;
-  padding: 0;
-  margin: 0.5em 0 0;
+    list-style: none;
+    padding: 0;
+    margin: 0.5em 0 0;
 }
+
 .footer-updates .update-item {
-  margin-bottom: 0.5em;
-  font-size: 0.9em;
+    margin-bottom: 0.5em;
+    font-size: 0.9em;
 }
+
 .footer-updates .update-label {
-  text-transform: uppercase;
-  font-size: 0.75em;
-  margin-right: 0.4em;
-  color: #aaa;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    margin-right: 0.4em;
+    color: #aaa;
 }
+
 .footer-updates .update-item.promotion a {
-  color: #d15f02;
+    color: #d15f02;
 }
+
 .footer-updates .update-item.news a {
-  color: #0057a8;
+    color: #0057a8;
+}
+
+.search-form input {
+    font-size: 1.7em;
+    height: 100%;
+    border-radius: 5px;
+    flex-grow: 0.2;
+    margin-top: 10px;
+}
+
+
+/* forgot password */
+/* make the link sit flush‐right under the button */
+.login-right fieldset {
+  position: relative;
+}
+
+.forgot-link {
+  display: block;
+  margin-top: .5em;
+  text-align: right;
+  font-size: .9rem;
+  color: #6B4423;            /* match your button’s brown */
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* optional: style your “don’t have an account” link */
+.login-bottom {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.login-bottom a {
+  color: #6B4423;
+  text-decoration: none;
+  font-size: .9rem;
+}
+
+.login-bottom a:hover {
+  text-decoration: underline;
+}
+
+
+.jobapp-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-size: 1em;
+    background: #fff;
+    box-shadow: 0 2px 15px rgba(89, 60, 38, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.jobapp-table th, .jobapp-table td {
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.jobapp-table th {
+    background-color: #593C26;
+    color: #fff;
+    font-weight: 600;
+    border-bottom: 2px solid #A99175;
+}
+
+.jobapp-table tr:nth-child(even) {
+    background-color: #f2e9de;
+}
+
+.jobapp-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.jobapp-table tr:hover {
+    background-color: #ffe6c7;
+    transition: background 0.2s;
+}
+
+.jobapp-table a {
+    color: #593C26;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.jobapp-table a:hover {
+    color: #2213F6;
 }
