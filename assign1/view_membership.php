@@ -27,7 +27,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     <main class="view_enquiry_main">
         <h1 class="view_enquiry_title">Membership List</h1>
 
-        <table class="enquiry-table">
+        <table class="jobapp-table enquiry-table">
             <tr>
                 <th>No</th>
                 <th>First Name</th>
@@ -36,6 +36,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
                 <th>Username</th>
                 <th>Password</th>
                 <th>Registration Date</th>
+                <th>Option</th>
             </tr>
 
             <?php
@@ -76,14 +77,17 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
                 echo "<tr><td colspan='6'>0 results</td></tr>";
             }
 
-            mysqli_close($conn);
+            
             ?>
         </table>
-        <p><a href="member_form.php" class="add-member-button">+ Add New Member</a></p>
+        <p><a href="member_form.php" class="add-member-button responsive-hover-button">+ Add New Member</a></p>
         <?php include("inc/scroll_to_top_button.inc"); ?>
     </main>
     
-    <?php include("inc/footer.inc"); ?>
+    <?php include("inc/footer.inc"); 
+    mysqli_close($conn);
+    ?>
+    
 </body>
 
 </html>
