@@ -30,7 +30,7 @@
                 <p class="price"><span class="product-mp-price">MP: RM13.90</span> <span class="divider">|</span> <span
                         class="product-np-price">NP: RM15.90</span></p>
                 <button class="product-buy-4"
-                    onclick="window.open('https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?', '_blank')">Buy
+                    onclick="window.open()">Buy
                     Now</button>
 
             </section>
@@ -42,7 +42,7 @@
                 <p class="price"><span class="product-mp-price">MP: RM10.90</span> <span class="divider">|</span> <span
                         class="product-np-price">NP: RM12.90</span></p>
                 <button class="product-buy-4"
-                    onclick="window.open('https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?', '_blank')">Buy
+                    onclick="window.open">Buy
                     Now</button>
             </section>
 
@@ -53,7 +53,7 @@
                 <p class="price"><span class="product-mp-price">MP: RM12.90</span> <span class="divider">|</span> <span
                         class="product-np-price">NP: RM14.90</span></p>
                 <button class="product-buy-4"
-                    onclick="window.open('https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?', '_blank')">Buy
+                    onclick="window.open">Buy
                     Now</button>
             </section>
 

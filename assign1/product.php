@@ -158,7 +158,7 @@ if (isset($_GET['q'])) {
                 <span class="product-divider">|</span>
                 <span class="product-np-price">NP: RM<?php echo number_format($product['np'], 2); ?></span>
               </p>
-              <a href="https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?"
+              <a href=""
                  target="_blank">
                 <button class="product-buy-4">Buy Now</button>
               </a>

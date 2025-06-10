@@ -31,7 +31,7 @@
                 <h3>Hot Butterscotch Latte</h3>
                 <p class="product-price"><span class="product-mp-price">MP: RM12.90</span> <span class="product-divider">|</span> <span
                         class="product-np-price">NP: RM14.90</span></p>
-                <a href="https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?"
+                <a href=""
                     target="_blank"><button class="product-buy-4">Buy Now</button></a>
             </section>
 
@@ -41,7 +41,7 @@
                 <h3>Hot Cappuccino</h3>
                 <p class="product-price"><span class="product-mp-price">MP: RM12.90</span> <span class="product-divider">|</span> <span
                         class="product-np-price">NP: RM14.90</span></p>
-                <a href="https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?"
+                <a href=""
                     target="_blank"><button class="product-buy-4">Buy Now</button></a>
             </section>
 
@@ -51,7 +51,7 @@
                 <h3>Hot Hojicha</h3>
                 <p class="product-price"><span class="product-mp-price">MP: RM14.90</span> <span class="product-divider">|</span> <span
                         class="product-np-price">NP: RM16.90</span></p>
-                <a href="https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?"
+                <a href=""
                     target="_blank"><button class="product-buy-4">Buy Now</button></a>
             </section>
 
