@@ -90,8 +90,8 @@ if (empty($_POST) && empty($error)) {
 <body>
   <?php include "inc/top_navigation_bar.inc"; ?>
 
-  <main class="no-margin-top">
-    <section class="login-container">
+  <main>
+    <section class="login-container" id="reset-password">
       <h2>Reset Password</h2>
 
       <?php if ($error): ?>

@@ -26,30 +26,42 @@
         <h1 class="product-product-title">Hot Beverages</h1>
         <div class="product-gallery">
             <!-- Mint Latte -->
+            <!-- Hot Butterscotch Latte (id=18) -->
             <section class="product-content">
                 <img src="images/Coffee/Butterscotch_latte_1.jpeg" alt="Hot Butterscotch Latte">
                 <h3>Hot Butterscotch Latte</h3>
                 <p class="product-price"><span class="product-mp-price">MP: RM12.90</span> <span class="product-divider">|</span> <span
                         class="product-np-price">NP: RM14.90</span></p>
-                <a><button class="product-buy-4">Buy Now</button></a>
+                <form action="buy_product.php" method="post" style="display:inline;">
+                    <input type="hidden" name="product_id" value="18">
+                    <button type="submit" class="product-buy-4">Buy Now</button>
+                </form>
             </section>
 
             <!-- Matcha Latte -->
+            <!-- Hot Cappuccino (id=19) -->
             <section class="product-content">
                 <img src="images/Coffee/Cappuccino_Cold_foam.jpeg" alt="Hot Cappuccino">
                 <h3>Hot Cappuccino</h3>
                 <p class="product-price"><span class="product-mp-price">MP: RM12.90</span> <span class="product-divider">|</span> <span
                         class="product-np-price">NP: RM14.90</span></p>
-                <a><button class="product-buy-4">Buy Now</button></a>
+                <form action="buy_product.php" method="post" style="display:inline;">
+                    <input type="hidden" name="product_id" value="19">
+                    <button type="submit" class="product-buy-4">Buy Now</button>
+                </form>
             </section>
 
             <!-- Postachio Latte -->
+            <!-- Hot Hojicha (id=20) -->
             <section class="product-content">
                 <img src="images/Coffee/Hot_Hojicha.jpg" alt="Hot Hojicha">
                 <h3>Hot Hojicha</h3>
                 <p class="product-price"><span class="product-mp-price">MP: RM14.90</span> <span class="product-divider">|</span> <span
                         class="product-np-price">NP: RM16.90</span></p>
-                <a><button class="product-buy-4">Buy Now</button></a>
+                <form action="buy_product.php" method="post" style="display:inline;">
+                    <input type="hidden" name="product_id" value="20">
+                    <button type="submit" class="product-buy-4">Buy Now</button>
+                </form>
             </section>
 
             <aside class="product-sidebar">
