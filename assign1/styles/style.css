@@ -124,7 +124,6 @@
 }
 
 .enquiry-container button, .button {
-    width: 100%;
     padding: 10px;
     background-color: var(--accent-color-1);
     border: none;
@@ -133,6 +132,10 @@
     margin-top: 10px;
     font-size: 1.1em;
     font-weight: bold;
+}
+
+.enquiry-container button {
+    width: 100%;
 }
 
 .enquiry-container button:hover, .button:hover {
@@ -3582,4 +3585,12 @@ h2 span {
 }
 .footer-updates .update-item.news a {
   color: #0057a8;
+}
+
+.search-form input {
+    font-size: 1.7em;
+    height: 100%;
+    border-radius: 5px;
+    flex-grow: 0.2;
+    margin-top: 10px;
 }
