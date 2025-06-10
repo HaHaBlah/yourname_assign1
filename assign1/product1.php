@@ -29,9 +29,11 @@
                 <h3>Iced Cappuccino</h3>
                 <p class="price"><span class="product-mp-price">MP: RM13.90</span> <span class="divider">|</span> <span
                         class="product-np-price">NP: RM15.90</span></p>
-                <button class="product-buy-4"
-                    >Buy
-                    Now</button>
+                <!-- Iced Cappuccino -->
+                <form action="buy_product.php" method="post" style="display:inline;">
+                    <input type="hidden" name="product_id" value="1">
+                    <button type="submit" class="product-buy-4">Buy Now</button>
+                </form>
 
             </section>
 
@@ -41,9 +43,11 @@
                 <h3>Iced Americano</h3>
                 <p class="price"><span class="product-mp-price">MP: RM10.90</span> <span class="divider">|</span> <span
                         class="product-np-price">NP: RM12.90</span></p>
-                <button class="product-buy-4"
-                    >Buy
-                    Now</button>
+                <!-- Iced Americano -->
+                <form action="buy_product.php" method="post" style="display:inline;">
+                    <input type="hidden" name="product_id" value="2">
+                    <button type="submit" class="product-buy-4">Buy Now</button>
+                </form>
             </section>
 
             <!-- Butterscotch Creme Latte -->
@@ -52,9 +56,11 @@
                 <h3>Iced Latte</h3>
                 <p class="price"><span class="product-mp-price">MP: RM12.90</span> <span class="divider">|</span> <span
                         class="product-np-price">NP: RM14.90</span></p>
-                <button class="product-buy-4"
-                    >Buy
-                    Now</button>
+                <!-- Iced Latte -->
+                <form action="buy_product.php" method="post" style="display:inline;">
+                    <input type="hidden" name="product_id" value="3">
+                    <button type="submit" class="product-buy-4">Buy Now</button>
+                </form>
             </section>
 
             <!-- Sidebar for Store Locations -->
