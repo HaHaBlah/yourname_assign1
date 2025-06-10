@@ -48,3 +48,18 @@
 2025-06-08 16:24:17 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'admin' not found
 2025-06-08 16:24:44 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'wb' not found
 2025-06-08 16:24:49 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'admin' not found
+2025-06-10 09:23:37 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-10 09:23:41 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-10 09:23:44 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-10 09:23:47 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-10 09:23:48 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-10 09:23:50 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-10 09:23:53 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'Usernameas' not found
+2025-06-10 09:23:56 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-10 09:23:58 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-10 09:24:00 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-10 09:24:45 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-10 09:24:47 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-10 09:24:49 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-10 09:24:51 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-10 09:24:53 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password

@@ -48,9 +48,11 @@
                         </a>
                     </div>
                 <?php else: ?>
-                    <a class="center" href="#">
-                        <img alt="User icon" src="images/Icons/user-circle-svgrepo-com(black).svg">
-                    </a>
+                    <div class="login-wrapper">
+                        <a class="center" href="#">
+                            <img alt="User icon" src="images/Icons/user-circle-svgrepo-com(black).svg">
+                        </a>
+                    </div>
                     <div class="Dropdown_Content">
                         <ul>
                             <?php if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true): ?>

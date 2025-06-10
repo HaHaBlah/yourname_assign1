@@ -255,6 +255,10 @@
     margin-bottom: 20vh;
 }
 
+#antispam-container {
+    height: 250px;
+}
+
 .login-container form {
     background-color: #fff;
     padding: 25px;
@@ -370,7 +374,7 @@ button, .button {
 }
 
 @media (max-width: 768px) {
-    .login-container {
+    .login-container, #antispam-container {
         width: 90%;
         height: auto;
         padding: 20px;
@@ -596,11 +600,18 @@ nav a:hover::after {
     margin-right: 5px;
 }
 
+#nav-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
 #nav-login .login-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    height: 100%;
 }
 
 .nav-selector a {
