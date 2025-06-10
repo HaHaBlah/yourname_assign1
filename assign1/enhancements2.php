@@ -22,9 +22,70 @@
     <?php include("inc/top_navigation_bar.inc"); ?>
 
     <main class="enhancements">
+
+        <!-- User Management Module -->
+        <section>
+            <h2>User Management Module</h2>
+            <p></p>
+            <p>Uses: </p>
+            <h2>.php</h2>
+            <div class="code">
+                <span>
+                </span>
+            </div>
+        </section>
+
+        <!-- Promotion and News Update Module -->
+        <section>
+            <h2>Promotion and News Update Module</h2>
+            <p></p>
+            <p>Uses: </p>
+            <h2>.php</h2>
+            <div class="code">
+                <span>
+                </span>
+            </div>
+        </section>
+
         <!-- Job Application Module -->
         <section>
             <h2>Job Application Module</h2>
+            <p></p>
+            <p>Uses: </p>
+            <h2>.php</h2>
+            <div class="code">
+                <span>
+                </span>
+            </div>
+        </section>
+
+        <!-- Member Top-up Module -->
+        <section>
+            <h2>Member Top-up Module</h2>
+            <p></p>
+            <p>Uses: </p>
+            <h2>.php</h2>
+            <div class="code">
+                <span>
+                </span>
+            </div>
+        </section>
+
+        <!-- Product Search Feature -->
+        <section>
+            <h2>Product Search Feature</h2>
+            <p></p>
+            <p>Uses: </p>
+            <h2>.php</h2>
+            <div class="code">
+                <span>
+                </span>
+            </div>
+        </section>
+
+        <!-- Anti-Spam Feature -->
+        <section>
+            <h2>Anti-Spam Feature</h2>
             <p></p>
             <p>Uses: </p>
             <h2>.php</h2>
