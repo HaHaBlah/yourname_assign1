@@ -43,6 +43,27 @@
 2025-06-09 12:54:08 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
 2025-06-09 12:54:10 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
 2025-06-09 12:54:12 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-10 10:10:49 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'Kelvin' not found
+2025-06-10 10:18:44 | Error [2] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 15: Undefined array key "username"
+2025-06-10 10:18:44 | Error [2] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 16: Undefined array key "password"
+2025-06-10 10:21:25 | Error [2] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 15: Undefined array key "username"
+2025-06-10 10:21:25 | Error [2] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 16: Undefined array key "password"
+2025-06-10 10:22:57 | Error [2] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 15: Undefined array key "username"
+2025-06-10 10:22:57 | Error [2] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 16: Undefined array key "password"
+2025-06-10 10:26:41 | Error [2] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 15: Undefined array key "username"
+2025-06-10 10:26:41 | Error [2] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 16: Undefined array key "password"
+2025-06-10 10:32:19 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'kelvinlau2228@gmail.com' not found
+2025-06-10 10:37:12 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'kelvinlau2228@gmail.com' not found
+2025-06-10 10:37:42 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'e' not found
+2025-06-10 10:37:52 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'kelvin' not found
+2025-06-10 10:38:01 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'kelvinlau2228@gmail.com' not found
+2025-06-10 10:38:06 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'rer' not found
+2025-06-10 10:38:09 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'r' not found
+2025-06-10 10:38:13 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'r' not found
+2025-06-10 10:38:15 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'r' not found
+2025-06-10 11:46:08 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'admin' not found
+2025-06-10 11:47:20 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'admin' not found
+2025-06-10 11:51:09 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'Kelvin' not found
 2025-06-08 16:22:42 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'admin' not found
 2025-06-08 16:24:04 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'admin' not found
 2025-06-08 16:24:17 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'admin' not found
@@ -63,7 +84,3 @@
 2025-06-10 09:24:49 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
 2025-06-10 09:24:51 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
 2025-06-10 09:24:53 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
-2025-06-10 12:20:44 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'username' not found
-2025-06-10 12:20:49 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'username' not found
-2025-06-10 12:21:38 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
-2025-06-10 12:21:43 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password

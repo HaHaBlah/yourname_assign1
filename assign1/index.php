@@ -183,7 +183,7 @@
             <div>
                 <a class="our-video responsive-hover-button" href="https://youtu.be/2sI68nrl5yE">Our Video</a>
             </div>
-            <?php include("inc/footerbare.inc"); ?>
+            <?php include("inc/footer.inc"); ?>
         </div>
     </footer>
 </body>

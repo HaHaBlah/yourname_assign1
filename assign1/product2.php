@@ -30,8 +30,7 @@
                 <h3>Strawberry Latte</h3>
                 <p class="product-price"><span class="product-mp-price">MP: RM14.90</span> <span class="product-divider">|</span> <span
                         class="product-np-price">NP: RM16.90</span></p>
-                <a href="https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?"
-                    target="_blank"><button class="product-buy-4">Buy Now</button></a>
+                <a><button class="product-buy-4">Buy Now</button></a>
             </section>
 
             <!-- Cheese Americano -->
@@ -40,8 +39,7 @@
                 <h3>Cheese Americano</h3>
                 <p class="product-price"><span class="product-mp-price">MP: RM13.90</span> <span class="product-divider">|</span> <span
                         class="product-np-price">NP: RM15.90</span></p>
-                <a href="https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?"
-                    target="_blank"><button class="product-buy-4">Buy Now</button></a>
+                <a><button class="product-buy-4">Buy Now</button></a>
             </section>
 
             <!-- Butterscotch Creme Latte -->
@@ -50,8 +48,7 @@
                 <h3>Butterscotch Creme Latte</h3>
                 <p class="product-price"><span class="product-mp-price">MP: RM11.90</span> <span class="product-divider">|</span> <span
                         class="product-np-price">NP: RM13.90</span></p>
-                <a href="https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?"
-                    target="_blank"><button class="product-buy-4">Buy Now</button></a>
+                <a><button class="product-buy-4">Buy Now</button></a>
             </section>
 
             <!-- Vienna Latte -->
@@ -60,8 +57,7 @@
                 <h3>Vienna Latte</h3>
                 <p class="product-price"><span class="product-mp-price">MP: RM14.90</span> <span class="product-divider">|</span> <span
                         class="product-np-price">NP: RM16.90</span></p>
-                <a href="https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?"
-                    target="_blank"><button class="product-buy-4">Buy Now</button></a>
+                <a><button class="product-buy-4">Buy Now</button></a>
             </section>
 
             <!-- Yuzu Americano -->
@@ -70,8 +66,7 @@
                 <h3>Yuzu Americano</h3>
                 <p class="product-price"><span class="product-mp-price">MP: RM13.90</span> <span class="product-divider">|</span> <span
                         class="product-np-price">NP: RM15.90</span></p>
-                <a href="https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?"
-                    target="_blank"><button class="product-buy-4">Buy Now</button></a>
+                <a><button class="product-buy-4">Buy Now</button></a>
             </section>
 
             <!-- Mocha -->
@@ -80,8 +75,7 @@
                 <h3>Mocha</h3>
                 <p class="product-price"><span class="product-mp-price">MP: RM11.90</span> <span class="product-divider">|</span> <span
                         class="product-np-price">NP: RM13.90</span></p>
-                <a href="https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?"
-                    target="_blank"><button class="product-buy-4">Buy Now</button></a>
+                <a><button class="product-buy-4">Buy Now</button></a>
             </section>
 
             <!-- Orange Mocha -->
@@ -90,8 +84,7 @@
                 <h3>Orange Mocha</h3>
                 <p class="product-price"><span class="product-mp-price">MP: RM12.90</span> <span class="product-divider">|</span> <span
                         class="product-np-price">NP: RM14.90</span></p>
-                <a href="https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?"
-                    target="_blank"><button class="product-buy-4">Buy Now</button></a>
+                <a><button class="product-buy-4">Buy Now</button></a>
             </section>
 
             <!-- Mint Latte -->
@@ -100,8 +93,7 @@
                 <h3>Mint Latte</h3>
                 <p class="product-price"><span class="product-mp-price">MP: RM11.90</span> <span class="product-divider">|</span> <span
                         class="product-np-price">NP: RM13.90</span></p>
-                <a href="https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?"
-                    target="_blank"><button class="product-buy-4">Buy Now</button></a>
+                <a><button class="product-buy-4">Buy Now</button></a>
             </section>
 
             <!-- Pistachio Latte -->
@@ -110,8 +102,7 @@
                 <h3>Pistachio Latte</h3>
                 <p class="product-price"><span class="product-mp-price">MP: RM17.90</span> <span class="product-divider">|</span> <span
                         class="product-np-price">NP: RM19.90</span></p>
-                <a href="https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?"
-                    target="_blank"><button class="product-buy-4">Buy Now</button></a>
+                <a><button class="product-buy-4">Buy Now</button></a>
             </section>
 
             <!-- Orange Americano -->
@@ -120,8 +111,7 @@
                 <h3>Orange Americano</h3>
                 <p class="product-price"><span class="product-mp-price">MP: RM13.90</span> <span class="product-divider">|</span> <span
                         class="product-np-price">NP: RM15.90</span></p>
-                <a href="https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?"
-                    target="_blank"><button class="product-buy-4">Buy Now</button></a>
+                <a ><button class="product-buy-4">Buy Now</button></a>
             </section>
         </div>
 

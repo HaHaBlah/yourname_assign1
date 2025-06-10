@@ -50,11 +50,35 @@
         <!-- Job Application Module -->
         <section>
             <h2>Job Application Module</h2>
-            <p></p>
-            <p>Uses: </p>
-            <h2>.php</h2>
+            <p>This feature allows users to submit their resume and photo by uploading the photo into the website.</p>
+            <p>Uses: joinus_process.php and view_job.php</p>
+            <video src="images/enhancements/Job_Application.mp4" autoplay loop muted></video>
+            <h2>joinus_process.php</h2>
             <div class="code">
                 <span>
+                    $uploadDir = "uploads/";<br>
+                    <br>
+                    if (!file_exists($uploadDir)) {<br>
+                        &nbsp;&nbsp;&nbsp;mkdir($uploadDir, 0777, true);<br>
+                    }<br>
+                    <br>
+                    if (isset($_FILES['CVFile']) && $_FILES['CVFile']['error'] == 0) {<br>
+                        &nbsp;&nbsp;&nbsp;$cvTarget = $uploadDir . basename($_FILES['CVFile']['name']);<br>
+                        &nbsp;&nbsp;&nbsp;if (move_uploaded_file($_FILES['CVFile']['tmp_name'], $cvTarget)) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$cvfile = $cvTarget;<br>
+                        &nbsp;&nbsp;&nbsp;} else {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$uploadOk = false;<br>
+                        &nbsp;&nbsp;&nbsp;}<br>
+                    }<br>
+                    <br>
+                    $stmt = $conn->prepare("INSERT INTO jobapp (firstname, lastname, email, phonenumber, streetaddress, citytown, state, postcode, cvfile, photofile) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");<br>
+                    $stmt->bind_param("ssssssssss", $firstname, $lastname, $email, $phonenumber, $streetaddress, $citytown, $state, $postcode, $cvfile, $photofile);
+                </span>
+            </div>
+            <h2>view_job.php</h2>
+            <div class="code">
+                <span>
+                    &lt;a href="<?php echo htmlspecialchars($row["cvfile"]); ?>" target="_blank">View&lt;/a>
                 </span>
             </div>
         </section>
@@ -74,11 +98,19 @@
         <!-- Product Search Feature -->
         <section>
             <h2>Product Search Feature</h2>
-            <p></p>
-            <p>Uses: </p>
-            <h2>.php</h2>
+            <p>This feature allows Website users to search products or services offered based on their preference(s), filters or keyword(s) given by user.</p>
+            <p>Uses: <a href="product.php">product.php</a></p>
+            <img src="images/enhancements/Product_Search.png" alt="Product Search">
+            <h2>product.php</h2>
             <div class="code">
                 <span>
+                    &lt;?php foreach ($results as $product): ?><br>
+                        &nbsp;&nbsp;&nbsp;&lt;?php if (!empty($product['image_url'])): ?><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="&lt;?php echo htmlspecialchars($product['image_url']); ?>" alt="&lt;?php echo htmlspecialchars($product['name']); ?>"><br>
+                        &nbsp;&nbsp;&nbsp;&lt;?php else: ?><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p>No image available&lt;/p><br>
+                        &nbsp;&nbsp;&nbsp;&lt;?php endif; ?><br>
+                    &lt;?php endforeach; ?><br>
                 </span>
             </div>
         </section>
@@ -86,11 +118,27 @@
         <!-- Anti-Spam Feature -->
         <section>
             <h2>Anti-Spam Feature</h2>
-            <p></p>
-            <p>Uses: </p>
-            <h2>.php</h2>
+            <p>If someone tries to submit a form too many times in a short period, they will be temporarily blocked.</p>
+            <p>Uses: <a href="anti_spam_check.php">anti_spam_check.php</a></p>
+            <img src="images/enhancements/Anti_Spam.png" alt="Anti-Spam">
+            <h2>anti_spam_check.php</h2>
             <div class="code">
                 <span>
+                    if ($now - $firstAttempt > $WINDOW_SECONDS) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp$attemptCount = 1;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp$firstAttempt = $now;<br>
+                    } else {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp$attemptCount++;<br>
+                    }<br>
+                    <br>    
+                    if ($attemptCount > $MAX_IN_WINDOW) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp$blockedUntil = $now + $BLOCK_DURATION;<br>
+                    }
+                    <br>
+                    if ($now < $blockedUntil) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp$secsLeft = $blockedUntil - $now;<br>
+                        &nbsp;&nbsp;&nbsp;&nbspshow_antispam_page();<br>
+                    }
                 </span>
             </div>
         </section>
