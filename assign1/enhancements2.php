@@ -76,6 +76,7 @@
             <h2>Product Search Feature</h2>
             <p></p>
             <p>Uses: </p>
+            <img src="images/enhancements/Product_Search.png" alt="Product Search">
             <h2>.php</h2>
             <div class="code">
                 <span>
@@ -86,12 +87,27 @@
         <!-- Anti-Spam Feature -->
         <section>
             <h2>Anti-Spam Feature</h2>
-            <p></p>
-            <p>Uses: </p>
+            <p>If someone tries to submit a form too many times in a short period, they will be temporarily blocked.</p>
+            <p>Uses: <a href="anti_spam_check.php">anti_spam_check.php</a></p>
             <img src="images/enhancements/Anti_Spam.png" alt="Anti-Spam">
             <h2>anti_spam_check.php</h2>
             <div class="code">
                 <span>
+                    if ($now - $firstAttempt > $WINDOW_SECONDS) {<br>
+                        &nbsp;&nbsp;&nbsp$attemptCount = 1;<br>
+                        &nbsp;&nbsp;&nbsp$firstAttempt = $now;<br>
+                    } else {<br>
+                        &nbsp;&nbsp;&nbsp$attemptCount++;<br>
+                    }<br>
+                    <br>    
+                    if ($attemptCount > $MAX_IN_WINDOW) {<br>
+                        &nbsp;&nbsp;&nbsp$blockedUntil = $now + $BLOCK_DURATION;<br>
+                    }
+                    <br>
+                    if ($now < $blockedUntil) {<br>
+                        &nbsp;&nbsp;&nbsp$secsLeft = $blockedUntil - $now;<br>
+                        &nbsp;&nbsp;&nbspshow_antispam_page();<br>
+                    }
                 </span>
             </div>
         </section>
