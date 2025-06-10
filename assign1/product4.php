@@ -31,8 +31,7 @@
                 <h3>Hot Butterscotch Latte</h3>
                 <p class="product-price"><span class="product-mp-price">MP: RM12.90</span> <span class="product-divider">|</span> <span
                         class="product-np-price">NP: RM14.90</span></p>
-                <a href=""
-                    target="_blank"><button class="product-buy-4">Buy Now</button></a>
+                <a><button class="product-buy-4">Buy Now</button></a>
             </section>
 
             <!-- Matcha Latte -->
@@ -41,8 +40,7 @@
                 <h3>Hot Cappuccino</h3>
                 <p class="product-price"><span class="product-mp-price">MP: RM12.90</span> <span class="product-divider">|</span> <span
                         class="product-np-price">NP: RM14.90</span></p>
-                <a href=""
-                    target="_blank"><button class="product-buy-4">Buy Now</button></a>
+                <a><button class="product-buy-4">Buy Now</button></a>
             </section>
 
             <!-- Postachio Latte -->
@@ -51,8 +49,7 @@
                 <h3>Hot Hojicha</h3>
                 <p class="product-price"><span class="product-mp-price">MP: RM14.90</span> <span class="product-divider">|</span> <span
                         class="product-np-price">NP: RM16.90</span></p>
-                <a href=""
-                    target="_blank"><button class="product-buy-4">Buy Now</button></a>
+                <a><button class="product-buy-4">Buy Now</button></a>
             </section>
 
             <aside class="product-sidebar">
