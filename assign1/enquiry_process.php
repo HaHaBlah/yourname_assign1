@@ -1,3 +1,7 @@
+<!-- Check if user/ admin has logged in -->
+<!-- If admin, then show admin logo -->
+<?php include("inc/login_status.inc"); ?>
+
 <?php
 $antiSpamPath = __DIR__ . '/anti_spam_check.php';
 if (! file_exists($antiSpamPath)) {
