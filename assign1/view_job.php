@@ -5,6 +5,13 @@
 <!-- If admin, then show admin logo -->
 <?php include("inc/login_status.inc"); ?>
 
+<?php // Enable this later
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    header('Location: login.php?error=not_authorized');
+    exit;
+}
+?>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,10 +24,10 @@
 
 <body>
     <?php include("inc/top_navigation_bar.inc"); ?>
-    <main>
-        <h1>Job Apps</h1>
+    <main class="view_enquiry_main">
+        <h1 class="view_enquiry_title">Job Apps</h1>
 
-        <table border="1">
+        <table class="enquiry-table">
             <tr>
                 <th>No</th>
                 <th width="120px">First Name</th>
