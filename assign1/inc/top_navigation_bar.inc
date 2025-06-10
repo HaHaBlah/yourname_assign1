@@ -56,12 +56,14 @@
                     </div>
                     <div class="Dropdown_Content">
                         <ul>
+                            <?php if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === false): ?>
+                                <li><a href="user_dashboard.php">Dashboard</a></li>
+                            <?php endif; ?>
                             <?php if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true): ?>
                                 <li><a href="admin_dashboard.php">Dashboard</a></li>
                             <?php endif; ?>
                             <li><a href="logout.php">Log Out</a></li>
                         </ul>
-
                     </div>
                 <?php endif; ?>
             </div>
