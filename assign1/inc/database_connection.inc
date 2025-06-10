@@ -119,6 +119,18 @@ if (!$conn->query($sql)) {
     die("Admin table creation failed: " . $conn->error);
 }
 
+$sql = "CREATE TABLE IF NOT EXISTS `password_resets` (
+    `email`      VARCHAR(255) NOT NULL,
+    `token`      CHAR(100)    NOT NULL,
+    `expires_at` DATETIME     NOT NULL,
+    PRIMARY KEY (`email`)
+    )"; 
+
+if (!$conn->query($sql)) {
+    die("Password resets table creation failed: " . $conn->error);
+}
+
+
 // Insert default admin if not exists
 $default_admin_username = 'admin';
 $default_admin_password = password_hash('admin', PASSWORD_DEFAULT);
