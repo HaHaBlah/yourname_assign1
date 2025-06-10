@@ -94,17 +94,19 @@ $res = $conn->query($sql);
           <p>No updates at the moment.</p>
         <?php endif; ?>
         <?php if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true): ?>
-          <form action="edit_update.php" method="post" enctype="multipart/form-data">
-            <fieldset>
-              <label for="update_message">New Update:</label>
-              <textarea placeholder="Your Message" id="update_message" name="update_message" required="required"
-                rows="3" cols="40"><?php echo htmlspecialchars($data['update_message'] ?? ''); ?></textarea>
-              <label for="FilePhoto">Image:</label>
-              <input type="file" id="FilePhoto" name="FilePhoto" accept="image/*">
-              <button class="responsive-hover-button" type="submit">Update Message</button>
-              <button class="responsive-hover-button" type="reset">Clear Form</button>
-            </fieldset>
-          </form>
+          <div class="update-form">
+            <form action="edit_update.php" method="post" enctype="multipart/form-data">
+              <fieldset>
+                <h3>Update Latest News</h3>
+                <textarea placeholder="New Update" id="update_message" name="update_message" required="required"
+                  rows="3" cols="40"><?php echo htmlspecialchars($data['update_message'] ?? ''); ?></textarea><br>
+                <label for="FilePhoto">Image:</label>
+                <input type="file" id="FilePhoto" name="FilePhoto" accept="image/*">
+                <button class="responsive-hover-button" type="submit">Update Message</button>
+                <button class="responsive-hover-button" type="reset">Clear Form</button>
+              </fieldset>
+            </form>
+          </div>
         <?php endif; ?>
       </div>
 
