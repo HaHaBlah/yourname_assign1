@@ -70,7 +70,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -84,44 +83,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <?php include("inc/top_navigation_bar.inc"); ?>
 
-
     <main>
-        <header>
-            <h1>Member Top-Up</h1>
-        </header>
-        <form method="post" action="member_topup.php">
-            <fieldset>
-                <legend>Top-Up Form</legend>
-
-                <label for="login_id">Username:</label>
-                <input type="text" name="login_id" id="login_id" required pattern="[A-Za-z]+" maxlength="10"><br><br>
-
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email" required><br><br>
-
-                <label for="amount">Top-Up Amount (RM):</label>
-                <input type="number" name="amount" id="amount" required min="1" max="1000" step="1"><br><br>
-
-                <label for="method">Payment Method:</label>
-                <select name="method" id="method" required>
-                    <option value="">-- Select --</option>
-                    <option value="credit_card">Credit Card</option>
-                    <option value="touch_n_go">Touch 'n Go</option>
-                    <option value="grab_pay">Grab Pay</option>
-                    <option value="srwk_pay">Sarawak Pay</option>
-                </select><br><br>
-
-                <button type="submit">Submit Top-Up</button>
-            </fieldset>
-        </form>
-
-        <?php if ($message): ?>
-            <p style="color: green; font-weight: bold;"><?= htmlspecialchars($message) ?></p>
-        <?php endif; ?>
+        <section class="login-container" id="member-topup-container">
+            <div class="login-left">
+                <img src="images/Brew&Go_logo.png" alt="Brew & Go logo">
+                <h2>Member Top-Up</h2>
+                <p>Top-up a member's Brew & Go Coffee account</p>
+            </div>
+            <div class="login-right">
+                <form method="post" action="member_topup.php">
+                    <fieldset>
+                        <input class="responsive-hover" type="text" name="login_id" id="login_id" placeholder="Username" required pattern="[A-Za-z]+" maxlength="10" title="Alphabetical characters only; Maximum 10 characters.">
+                        <input class="responsive-hover" type="email" name="email" id="email" placeholder="Email" required>
+                        <input class="responsive-hover" type="number" name="amount" id="amount" placeholder="Top-Up Amount (RM)" required min="1" max="1000" step="1">
+                        <select class="responsive-hover" name="method" id="method" required>
+                            <option value="">-- Select Payment Method --</option>
+                            <option value="credit_card">Credit Card</option>
+                            <option value="touch_n_go">Touch 'n Go</option>
+                            <option value="grab_pay">Grab Pay</option>
+                            <option value="srwk_pay">Sarawak Pay</option>
+                        </select>
+                        <button class="responsive-hover-button" type="submit">Submit Top-Up</button>
+                    </fieldset>
+                </form>
+                <?php if ($message): ?>
+                    <div class="login-bottom">
+                        <p style="color: green; font-weight: bold;"><?= htmlspecialchars($message) ?></p>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </section>
     </main>
 
     <?php include("inc/scroll_to_top_button.inc"); ?>
     <?php include("inc/footer.inc"); ?>
 </body>
-
 </html>

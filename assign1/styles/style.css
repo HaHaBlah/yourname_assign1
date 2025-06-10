@@ -259,6 +259,10 @@
     height: 250px;
 }
 
+#member-topup-container {
+    height: 450px;
+}
+
 .login-container form {
     background-color: #fff;
     padding: 25px;
@@ -325,6 +329,8 @@ button, .button {
     font-weight: bold;
 }
 
+
+
 .login-container button:hover {
     background-color: var(--accent-color-1);
 }
@@ -374,7 +380,7 @@ button, .button {
 }
 
 @media (max-width: 768px) {
-    .login-container, #antispam-container {
+    .login-container, #antispam-container, #member-topup-container {
         width: 90%;
         height: auto;
         padding: 20px;
