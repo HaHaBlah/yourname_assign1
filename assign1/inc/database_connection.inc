@@ -97,6 +97,18 @@ if (!$conn->query($sql)) {
     die("Enquiries table creation failed: " . $conn->error);
 }
 
+$sql = "CREATE TABLE IF NOT EXISTS topup (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    login_id VARCHAR(10) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(255),
+    balance DECIMAL(10,2) DEFAULT 0.00
+)";
+
+if (!$conn->query($sql)) {
+    die("Topup table creation failed: " . $conn->error);
+}
+
 $sql = "CREATE TABLE IF NOT EXISTS admin (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
