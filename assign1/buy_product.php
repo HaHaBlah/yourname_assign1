@@ -1,5 +1,4 @@
 <?php
-<?php
 session_start();
 include("inc/login_status.inc");
 include("inc/database_connection.inc");
