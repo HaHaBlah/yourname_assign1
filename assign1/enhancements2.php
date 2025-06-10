@@ -50,11 +50,35 @@
         <!-- Job Application Module -->
         <section>
             <h2>Job Application Module</h2>
-            <p></p>
-            <p>Uses: </p>
-            <h2>.php</h2>
+            <p>This feature allows users to submit their resume and photo by uploading the photo into the website.</p>
+            <p>Uses: joinus_process.php and view_job.php</p>
+            <video src="images/enhancements/Job_Application.mp4" autoplay loop muted></video>
+            <h2>joinus_process.php</h2>
             <div class="code">
                 <span>
+                    $uploadDir = "uploads/";<br>
+                    <br>
+                    if (!file_exists($uploadDir)) {<br>
+                        &nbsp;&nbsp;&nbsp;mkdir($uploadDir, 0777, true);<br>
+                    }<br>
+                    <br>
+                    if (isset($_FILES['CVFile']) && $_FILES['CVFile']['error'] == 0) {<br>
+                        &nbsp;&nbsp;&nbsp;$cvTarget = $uploadDir . basename($_FILES['CVFile']['name']);<br>
+                        &nbsp;&nbsp;&nbsp;if (move_uploaded_file($_FILES['CVFile']['tmp_name'], $cvTarget)) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$cvfile = $cvTarget;<br>
+                        &nbsp;&nbsp;&nbsp;} else {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$uploadOk = false;<br>
+                        &nbsp;&nbsp;&nbsp;}<br>
+                    }<br>
+                    <br>
+                    $stmt = $conn->prepare("INSERT INTO jobapp (firstname, lastname, email, phonenumber, streetaddress, citytown, state, postcode, cvfile, photofile) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");<br>
+                    $stmt->bind_param("ssssssssss", $firstname, $lastname, $email, $phonenumber, $streetaddress, $citytown, $state, $postcode, $cvfile, $photofile);
+                </span>
+            </div>
+            <h2>view_job.php</h2>
+            <div class="code">
+                <span>
+                    &lt;a href="<?php echo htmlspecialchars($row["cvfile"]); ?>" target="_blank">View&lt;/a>
                 </span>
             </div>
         </section>

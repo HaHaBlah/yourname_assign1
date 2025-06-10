@@ -56,6 +56,25 @@ if (!$conn->query($sql)) {
     die("Members table creation failed: " . $conn->error);
 }
 
+$sql = "CREATE TABLE IF NOT EXISTS jobapp (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(25) NOT NULL,
+    lastname VARCHAR(25) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    phonenumber VARCHAR(15),
+    streetaddress VARCHAR(40),
+    citytown VARCHAR(20),
+    state VARCHAR(30),
+    postcode VARCHAR(5),
+    cvfile VARCHAR(255),
+    photofile VARCHAR(255),
+    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)";
+
+if (!$conn->query($sql)) {
+    die("Jobapp table creation failed: " . $conn->error);
+}
+
 $sql = "CREATE TABLE IF NOT EXISTS enquiries (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     firstname VARCHAR(25) NOT NULL,

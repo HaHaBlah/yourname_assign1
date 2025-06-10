@@ -3684,3 +3684,50 @@ h2 span {
 .login-bottom a:hover {
   text-decoration: underline;
 }
+
+
+.jobapp-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-size: 1em;
+    background: #fff;
+    box-shadow: 0 2px 15px rgba(89, 60, 38, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.jobapp-table th, .jobapp-table td {
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.jobapp-table th {
+    background-color: #593C26;
+    color: #fff;
+    font-weight: 600;
+    border-bottom: 2px solid #A99175;
+}
+
+.jobapp-table tr:nth-child(even) {
+    background-color: #f2e9de;
+}
+
+.jobapp-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.jobapp-table tr:hover {
+    background-color: #ffe6c7;
+    transition: background 0.2s;
+}
+
+.jobapp-table a {
+    color: #593C26;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.jobapp-table a:hover {
+    color: #2213F6;
+}
