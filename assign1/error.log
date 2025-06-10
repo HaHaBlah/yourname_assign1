@@ -191,3 +191,6 @@
 2025-06-10 16:37:27 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 52: Hashed User Input Password: '$2y$10$G33vlawa6nskCLO68KzRIO/YpXksc6yp6.6gWh/Q4KOmJaJQ1S54u'
 2025-06-10 16:37:27 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Stored Hash Length: '60'
 2025-06-10 16:37:27 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 54: Stored Hash (raw): '$2y$10$44s8cWzzGG9yMSEjg/gdF.zncy2PmCa.prO7f7KPxmwL3pZ7wfL6G'
+2025-06-10 16:44:39 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 56: Login failed for user 'Username': invalid password
+2025-06-10 16:44:55 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 61: Login failed: username 'Username' not found
+2025-06-10 17:10:02 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 61: Login failed: username 'Username' not found
