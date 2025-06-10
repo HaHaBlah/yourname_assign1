@@ -10,7 +10,7 @@ $dbname     = "brew&go_db";
 // 1. Connect to MySQL (no DB selected yet)
 $conn = new mysqli($servername, $username, $password);
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+  die("Connection failed: " . $conn->connect_error);
 }
 
 // 2. Create the database if it doesn't exist
@@ -18,7 +18,7 @@ $sql = "CREATE DATABASE IF NOT EXISTS `$dbname`
          DEFAULT CHARACTER SET utf8mb4
          COLLATE utf8mb4_general_ci";
 if (! $conn->query($sql)) {
-    die("Database creation failed: " . $conn->error);
+  die("Database creation failed: " . $conn->error);
 }
 
 // 3. Select the database
@@ -38,14 +38,14 @@ $sql = "
     COLLATE=utf8mb4_general_ci
 ";
 if (! $conn->query($sql)) {
-    die("Table creation failed: " . $conn->error);
+  die("Table creation failed: " . $conn->error);
 }
 
 // 5. Populate table if it's empty
 $result = $conn->query("SELECT COUNT(*) AS cnt FROM `products`");
 $row    = $result->fetch_assoc();
 if ((int)$row['cnt'] === 0) {
-    $insert_sql = "
+  $insert_sql = "
         INSERT INTO `products` (`name`, `np`, `mp`, `image_url`)
         VALUES
           ('Iced Cappuccino',         15.90, 13.90, 'images/Coffee/Cappuccino_Cold_foam.jpeg'),
@@ -69,9 +69,9 @@ if ((int)$row['cnt'] === 0) {
           ('Hot Cappuccino',          14.90, 12.90, 'images/Coffee/Cappuccino_Cold_foam.jpeg'),
           ('Hot Hojicha',             16.90, 14.90, 'images/Coffee/Hot_Hojicha.jpg')
     ";
-    if (! $conn->query($insert_sql)) {
-        die("Data insertion failed: " . $conn->error);
-    }
+  if (! $conn->query($insert_sql)) {
+    die("Data insertion failed: " . $conn->error);
+  }
 }
 
 // 6. Handle search
@@ -79,28 +79,29 @@ $keyword = '';
 $results = [];
 
 if (isset($_GET['q'])) {
-    $keyword = trim($_GET['q']);
-    if ($keyword !== '') {
-        $sql = "
+  $keyword = trim($_GET['q']);
+  if ($keyword !== '') {
+    $sql = "
           SELECT `id`, `name`, `np`, `mp`, `image_url`
           FROM `products`
           WHERE `name` LIKE ?
           ORDER BY `name` ASC
         ";
-        $stmt = $conn->prepare($sql);
-        $likeParam = '%' . $keyword . '%';
-        $stmt->bind_param("s", $likeParam);
-        $stmt->execute();
-        $resultSet = $stmt->get_result();
-        while ($row = $resultSet->fetch_assoc()) {
-            $results[] = $row;
-        }
-        $stmt->close();
+    $stmt = $conn->prepare($sql);
+    $likeParam = '%' . $keyword . '%';
+    $stmt->bind_param("s", $likeParam);
+    $stmt->execute();
+    $resultSet = $stmt->get_result();
+    while ($row = $resultSet->fetch_assoc()) {
+      $results[] = $row;
     }
+    $stmt->close();
+  }
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -109,6 +110,7 @@ if (isset($_GET['q'])) {
   <link rel="icon" href="images/Brew&Go_logo.png" type="image/png" />
   <link rel="stylesheet" href="styles/style.css" />
 </head>
+
 <body>
   <?php include("inc/top_navigation_bar.inc"); ?>
 
@@ -124,17 +126,18 @@ if (isset($_GET['q'])) {
     </div>
   </div>
 
-  <form action="product.php" method="get" class="search-form">
-    <input
-      type="text"
-      name="q"
-      placeholder="Search products..."
-      value="<?php echo htmlspecialchars($keyword); ?>"
-    >
-    <button type="submit">Search</button>
-  </form>
+
 
   <main>
+    <form action="product.php" method="get" class="search-form center">
+      <input
+        type="text"
+        name="q"
+        placeholder="Search products..."
+        value="<?php echo htmlspecialchars($keyword); ?>">
+      <button type="submit" class="button responsive-hover-button">Search</button>
+    </form>
+
     <?php if ($keyword !== ''): ?>
       <h2>Search Results for “<?php echo htmlspecialchars($keyword); ?>”</h2>
 
@@ -147,8 +150,7 @@ if (isset($_GET['q'])) {
               <?php if (!empty($product['image_url'])): ?>
                 <img
                   src="<?php echo htmlspecialchars($product['image_url']); ?>"
-                  alt="<?php echo htmlspecialchars($product['name']); ?>"
-                >
+                  alt="<?php echo htmlspecialchars($product['name']); ?>">
               <?php else: ?>
                 <div class="no-image">No image available</div>
               <?php endif; ?>
@@ -159,7 +161,7 @@ if (isset($_GET['q'])) {
                 <span class="product-np-price">NP: RM<?php echo number_format($product['np'], 2); ?></span>
               </p>
               <a href="https://food.grab.com/my/en/restaurant/brew-go-coffee-plaza-merdeka-delivery/1-C7AKV63CAU6TV6?"
-                 target="_blank">
+                target="_blank">
                 <button class="product-buy-4">Buy Now</button>
               </a>
             </section>
@@ -203,6 +205,7 @@ if (isset($_GET['q'])) {
             <?php include("inc/footer.inc"); ?>
 
 </body>
+
 </html>
 <?php
 $conn->close();

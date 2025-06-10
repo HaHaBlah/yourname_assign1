@@ -5,6 +5,13 @@
 <!-- Automatically initialise database -->
 <?php include("inc/database_connection.inc"); ?>
 
+<!-- Error Log -->
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
+
 <?php // Enable this later
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     header('Location: login.php?error=not_authorized');
@@ -52,10 +59,48 @@ $adminName = htmlspecialchars($_SESSION['username'], ENT_QUOTES, 'UTF-8');
                 </a>
                 </li>
             </ul>
-        </section>
-</main>
-    <?php include("inc/scroll_to_top_button.inc"); ?>
 
+            <h2 class="enquiries-title">Quick Enquiry Overview</h2>
+            <?php
+                // --- sneak-peek of latest 5 enquiries ---
+                $previewSql  = "
+                SELECT id,
+                        firstname,
+                        enquirytype,
+                        message
+                    FROM enquiries
+                ORDER BY submitted_at DESC
+                LIMIT 5
+                ";
+                if ($previewResult = mysqli_query($conn, $previewSql)):
+                ?>
+                <ul class="enquiries-preview">
+                    <?php while ($row = mysqli_fetch_assoc($previewResult)): 
+                        $msg     = $row['message'];
+                        $preview = mb_strlen($msg) > 30 
+                                ? mb_substr($msg, 0, 30) . '…' 
+                                : $msg;
+                    ?>
+                    <li>
+                        <div class="preview-text">
+                        <strong><?= htmlspecialchars($row['firstname']) ?></strong>
+                        (<em><?= htmlspecialchars($row['enquirytype']) ?></em>):
+                        <?= htmlspecialchars($preview) ?>
+                        </div>
+                        <a href="reply_enquiry.php?id=<?= $row['id'] ?>" class="reply-btn">Reply</a>
+                    </li>
+                    <?php endwhile; ?>
+                </ul>
+                <?php
+                mysqli_free_result($previewResult);
+                endif;
+                ?>
+
+
+        </section>
+    </main>
+
+    <?php include("inc/scroll_to_top_button.inc"); ?>
     <?php include("inc/footer.inc"); ?>
 </body>
 

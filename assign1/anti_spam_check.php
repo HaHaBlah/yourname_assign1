@@ -9,13 +9,17 @@ function show_antispam_page($title, $message) {
     <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title><?php echo htmlspecialchars($title); ?></title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Anti-Spam Protection</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
         <link rel="stylesheet" href="styles/style.css">
     </head>
     <body>
         <?php include("inc/top_navigation_bar.inc"); ?>
         <main>
-            <section class="login-container">
+            <section class="login-container" id="antispam-container">
                 <div class="login-left">
                     <img src="images/Brew&Go_logo.png" alt="Brew & Go logo">
                     <h2>Anti-Spam Protection</h2>
@@ -74,18 +78,27 @@ $found = $stmt->fetch();
 $stmt->close();
 
 if (! $found) {
-    $attemptCount = 0;
+    // First time for this IP: insert and treat as first attempt
+    $attemptCount = 1;
     $firstAttempt = $now;
     $blockedUntil = 0;
 
     $ins = $mysqli->prepare("
       INSERT INTO spam_control
         (ip_address, attempt_count, first_attempt, blocked_until)
-      VALUES (?, 0, ?, 0)
+      VALUES (?, 1, ?, 0)
     ");
     $ins->bind_param('si', $ip, $firstAttempt);
     $ins->execute();
     $ins->close();
+} else {
+    // If window expired, reset count and window
+    if ($now - $firstAttempt > $WINDOW_SECONDS) {
+        $attemptCount = 1;
+        $firstAttempt = $now;
+    } else {
+        $attemptCount++;
+    }
 }
 
 if ($now < $blockedUntil) {
