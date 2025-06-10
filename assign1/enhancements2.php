@@ -74,12 +74,19 @@
         <!-- Product Search Feature -->
         <section>
             <h2>Product Search Feature</h2>
-            <p></p>
-            <p>Uses: </p>
+            <p>This feature allows Website users to search products or services offered based on their preference(s), filters or keyword(s) given by user.</p>
+            <p>Uses: <a href="product.php">product.php</a></p>
             <img src="images/enhancements/Product_Search.png" alt="Product Search">
-            <h2>.php</h2>
+            <h2>product.php</h2>
             <div class="code">
                 <span>
+                    &lt;?php foreach ($results as $product): ?><br>
+                        &nbsp;&nbsp;&nbsp;&lt;?php if (!empty($product['image_url'])): ?><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="&lt;?php echo htmlspecialchars($product['image_url']); ?>" alt="&lt;?php echo htmlspecialchars($product['name']); ?>"><br>
+                        &nbsp;&nbsp;&nbsp;&lt;?php else: ?><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p>No image available&lt;/p><br>
+                        &nbsp;&nbsp;&nbsp;&lt;?php endif; ?><br>
+                    &lt;?php endforeach; ?><br>
                 </span>
             </div>
         </section>
@@ -94,19 +101,19 @@
             <div class="code">
                 <span>
                     if ($now - $firstAttempt > $WINDOW_SECONDS) {<br>
-                        &nbsp;&nbsp;&nbsp$attemptCount = 1;<br>
-                        &nbsp;&nbsp;&nbsp$firstAttempt = $now;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp$attemptCount = 1;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp$firstAttempt = $now;<br>
                     } else {<br>
-                        &nbsp;&nbsp;&nbsp$attemptCount++;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp$attemptCount++;<br>
                     }<br>
                     <br>    
                     if ($attemptCount > $MAX_IN_WINDOW) {<br>
-                        &nbsp;&nbsp;&nbsp$blockedUntil = $now + $BLOCK_DURATION;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp$blockedUntil = $now + $BLOCK_DURATION;<br>
                     }
                     <br>
                     if ($now < $blockedUntil) {<br>
-                        &nbsp;&nbsp;&nbsp$secsLeft = $blockedUntil - $now;<br>
-                        &nbsp;&nbsp;&nbspshow_antispam_page();<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp$secsLeft = $blockedUntil - $now;<br>
+                        &nbsp;&nbsp;&nbsp;&nbspshow_antispam_page();<br>
                     }
                 </span>
             </div>
