@@ -596,6 +596,13 @@ nav a:hover::after {
     margin-right: 5px;
 }
 
+#nav-login .login-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
 .nav-selector a {
     height: 100%;
     display: inline-block;
