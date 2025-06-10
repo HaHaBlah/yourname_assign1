@@ -3511,6 +3511,32 @@ h2 span {
     z-index: 9999 !important;
 }
 
+/* Admin Dashboard Icon Style */
+.admin-tools {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  gap: 17%;
+  justify-content: center;
+}
+
+.admin-tools li a {
+  display: flex;           
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.admin-tools img {
+  width: 80px;
+  height: auto;
+  margin-top: 8vh;
+  margin-bottom: 5vh;
+}
+
+
 /* New footer design for promotions pop up */
 .footer-updates {
   list-style: none;

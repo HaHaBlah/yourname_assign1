@@ -30,16 +30,29 @@ $adminName = htmlspecialchars($_SESSION['username'], ENT_QUOTES, 'UTF-8');
     <?php include("inc/top_navigation_bar.inc"); ?>
 
     <main>
-        <h2>Welcome, Admin</h2>
-        
-    <section>
-        <h3>Admin Tools</h3>
-        <ul>
-            <li><a href="view_enquiry.php">View Enquiries</a></li>
-            <li><a href="view_job.php">View Job Applications</a></li>
-            <li><a href="view_membership.php">View Memberships</a></li>
-        </ul>
-    </section>
+        <h1>Welcome, Admin</h1>
+        <section>
+            <ul class="admin-tools">
+                <li>
+                <a href="view_enquiry.php">
+                    <img src="images/Icons/enquiries.svg" alt="Enquiries">
+                    <span>View Enquiries</span>
+                </a>
+                </li>
+                <li>
+                <a href="view_job.php">
+                    <img src="images/Icons/job.svg" alt="Jobs">
+                    <span>View Job Applications</span>
+                </a>
+                </li>
+                <li>
+                <a href="view_membership.php">
+                    <img src="images/Icons/membership.svg" alt="Memberships">
+                    <span>View Memberships</span>
+                </a>
+                </li>
+            </ul>
+        </section>
 </main>
     <?php include("inc/scroll_to_top_button.inc"); ?>
 
