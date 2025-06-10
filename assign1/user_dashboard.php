@@ -45,7 +45,7 @@ $stmt->close();
 
 // Fetch credit balance
 $stmt = $conn->prepare("SELECT balance FROM topup WHERE login_id = ?");
-$stmt->bind_param("i", $user_id);
+$stmt->bind_param("s", $username);
 $stmt->execute();
 $result = $stmt->get_result();
 if ($result->num_rows > 0) {
