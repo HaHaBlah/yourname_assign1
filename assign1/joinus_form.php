@@ -1,4 +1,8 @@
 <!--Done-->
+
+<!-- Automatically initialise database -->
+<?php include("inc/database_connection.inc"); ?>
+
 <!-- Check if user/ admin has logged in -->
 <!-- If admin, then show admin logo -->
 <?php include("inc/login_status.inc"); ?>
@@ -39,19 +43,18 @@
                                     <strong>Personal Details</strong>
                                 </legend>
                                 <input class="responsive-hover" type="text" placeholder="First name" name="firstname"
-                                    maxlength="25" required="required" pattern="[A-Za-z\s]+"
+                                    maxlength="25" required="required" pattern="[A-Za-z\s]+" value="<?php echo htmlspecialchars($data['firstname'] ?? ''); ?>"
                                     title="Alphabetical characters only; Maximum 25 characters." id="firstname"><br>
 
                                 <input class="responsive-hover" type="text" placeholder="Last name" name="lastname"
-                                    maxlength="25" required="required" pattern="[A-Za-z\s]+"
+                                    maxlength="25" required="required" pattern="[A-Za-z\s]+" value="<?php echo htmlspecialchars($data['lastname'] ?? ''); ?>"
                                     title="Alphabetical characters only; Maximum 25 characters." id="lastname"><br>
 
                                 <input class="responsive-hover" type="email" placeholder="Enter your e-mail address"
-                                    name="email" required="required"
-                                    pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" id="email"><br>
+                                    name="email" required="required" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" id="email" value="<?php echo htmlspecialchars($data['email'] ?? ''); ?>"><br>
                                 <input class="responsive-hover" type="text" placeholder="Phone Number" id="phonenumber"
                                     name="phonenumber" maxlength="11" required="required" pattern="\d{10}"
-                                    title="Format:0123456789.">
+                                    title="Format:0123456789." value="<?php echo htmlspecialchars($data['phonenumber'] ?? ''); ?>">
                             </fieldset>
                             <fieldset>
                                 <legend>
@@ -61,12 +64,12 @@
                                 <input class="responsive-hover" type="text" id="streetaddress" name="streetaddress" placeholder="Street Address"
                                     maxlength="40" required="required"
                                     pattern="[A-Za-z0-9\s]+"
-                                    title="Alphanumeric characters only; Maximum 40 characters.">
+                                    title="Alphanumeric characters only; Maximum 40 characters." value="<?php echo htmlspecialchars($data['streetaddress'] ?? ''); ?>">
                                 <br>
                                 <label for="citytown">City/Town:</label>
                                 <input class="responsive-hover" type="text" placeholder="City/Town" id="citytown" name="citytown"
                                     maxlength="20" required="required" pattern="[A-Za-z\s]+"
-                                    title="Alphabetical characters only; Maximum 20 characters.">
+                                    title="Alphabetical characters only; Maximum 20 characters." value="<?php echo htmlspecialchars($data['citytown'] ?? ''); ?>">
                                 <br>
                                 <label for="state">State:</label>
 
@@ -95,7 +98,7 @@
                                 <label for="postcode">Postcode:</label>
                                 <input class="responsive-hover" type="text" placeholder="Postcode" id="postcode"
                                     name="postcode" maxlength="5" required="required" pattern="\d{5}"
-                                    title="5-digit postcode only.">
+                                    title="5-digit postcode only." value="<?php echo htmlspecialchars($data['postcode'] ?? ''); ?>">
                             </fieldset>
 
                             <br>
@@ -120,9 +123,10 @@
             </div>
         </section>
     </main>
+    
     <?php include("inc/scroll_to_top_button.inc"); ?>
-
     <?php include("inc/footer.inc"); ?>
+    <?php unset($_SESSION['form_data']); ?>
 </body>
 
 </html>

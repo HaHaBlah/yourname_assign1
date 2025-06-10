@@ -3,12 +3,47 @@ $WINDOW_SECONDS  = 60;
 $MAX_IN_WINDOW   = 5;     
 $BLOCK_DURATION  = 300;   
 
+function show_antispam_page($title, $message) {
+    ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title><?php echo htmlspecialchars($title); ?></title>
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body>
+        <?php include("inc/top_navigation_bar.inc"); ?>
+        <main>
+            <section class="login-container">
+                <div class="login-left">
+                    <img src="images/Brew&Go_logo.png" alt="Brew & Go logo">
+                    <h2>Anti-Spam Protection</h2>
+                </div>
+                <div class="login-right">
+                    <h3><?php echo htmlspecialchars($title); ?></h3>
+                    <p><?php echo $message; ?></p>
+                    <a href="index.php" class="responsive-hover-button button center">Back</a>
+                </div>
+            </section>
+        </main>
+        <?php include("inc/scroll_to_top_button.inc"); ?>
+        <?php include("inc/footer.inc"); ?>
+    </body>
+    </html>
+    <?php
+    exit;
+}
+
 $ip  = $_SERVER['REMOTE_ADDR'];
 $now = time();
 
-$mysqli = new mysqli('localhost', 'root', '', 'enquiry', 'membership', 'joinus', 'login'); 
+$mysqli = new mysqli('localhost', 'root', '', 'brew&go_db');
 if ($mysqli->connect_errno) {
-    die("Database connection failed (anti-spam): " . $mysqli->connect_error);
+    show_antispam_page(
+        "Database connection failed (anti-spam)",
+        htmlspecialchars($mysqli->connect_error)
+    );
 }
 
 $createTableSql = "
@@ -19,8 +54,12 @@ $createTableSql = "
       blocked_until  INT            NOT NULL DEFAULT 0
     ) ENGINE=InnoDB;
 ";
+
 if (!$mysqli->query($createTableSql)) {
-    die("Failed to create or verify spam_control table: " . $mysqli->error);
+    show_antispam_page(
+        "Anti-spam table error",
+        htmlspecialchars($mysqli->error)
+    );
 }
 
 $stmt = $mysqli->prepare("
@@ -51,15 +90,12 @@ if (! $found) {
 
 if ($now < $blockedUntil) {
     $secsLeft = $blockedUntil - $now;
-    die("You are temporarily blocked from submitting. Please try again in {$secsLeft} seconds.");
+    show_antispam_page(
+        "Submission Blocked",
+        "You are temporarily blocked from submitting.<br>
+        Please try again in <strong>" . intval($secsLeft) . " seconds</strong>."
+    );
 }
-
-if ($now - $firstAttempt > $WINDOW_SECONDS) {
-    $attemptCount = 0;
-    $firstAttempt = $now;
-}
-
-$attemptCount++;
 
 if ($attemptCount > $MAX_IN_WINDOW) {
     $blockedUntil = $now + $BLOCK_DURATION;
@@ -75,7 +111,11 @@ if ($attemptCount > $MAX_IN_WINDOW) {
     $update->execute();
     $update->close();
 
-    die("Too many submissions in a short period. You are blocked for " . ($BLOCK_DURATION / 60) . " minutes.");
+    show_antispam_page(
+        "Too Many Submissions",
+        "Too many submissions in a short period.<br>
+        You are blocked for <strong>" . ($BLOCK_DURATION / 60) . " minutes</strong>."
+    );
 } else {
     $update = $mysqli->prepare("
       UPDATE spam_control

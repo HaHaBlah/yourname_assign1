@@ -25,6 +25,24 @@
 2025-06-07 19:27:41 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'admin' not found
 2025-06-08 07:28:45 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'Username' not found
 2025-06-08 07:28:58 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'Username' not found
+<<<<<<< HEAD
+2025-06-09 06:04:19 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'admin' not found
+2025-06-09 08:58:53 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'awd' not found
+2025-06-09 09:07:11 | Error [8] in C:\xampp\htdocs\yourname_assign1\assign1\inc\login_status.inc on line 4: session_start(): Ignoring session_start() because a session is already active
+2025-06-09 09:07:17 | Error [8] in C:\xampp\htdocs\yourname_assign1\assign1\inc\login_status.inc on line 4: session_start(): Ignoring session_start() because a session is already active
+2025-06-09 09:17:36 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 42: Login failed: username 'admin' not found
+2025-06-09 09:39:59 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 45: Login failed for user 'Username': invalid password
+=======
+2025-06-08 16:19:41 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'admin' not found
+>>>>>>> 663f48f4f6e1fa78eb3bc469cd93bd1dc683ef06
+2025-06-09 10:39:17 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'Yummer' not found
+2025-06-09 10:39:20 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'qwf' not found
+2025-06-09 10:39:25 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'qwewf' not found
+2025-06-09 10:39:28 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-09 12:54:05 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-09 12:54:08 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-09 12:54:10 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-09 12:54:12 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
 2025-06-08 16:22:42 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'admin' not found
 2025-06-08 16:24:04 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'admin' not found
 2025-06-08 16:24:17 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'admin' not found

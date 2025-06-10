@@ -1,18 +1,19 @@
-<!-- Check if user/ admin has logged in -->
-<!-- If admin, then show admin logo -->
-<?php include("inc/login_status.inc"); ?>
-
 <?php
+// Check login status
+include("inc/login_status.inc");
+
 $servername = "localhost";
 $username   = "root";
 $password   = "";
 $dbname     = "brew&go_db";
 
+// 1. Connect to MySQL (no DB selected yet)
 $conn = new mysqli($servername, $username, $password);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// 2. Create the database if it doesn't exist
 $sql = "CREATE DATABASE IF NOT EXISTS `$dbname`
          DEFAULT CHARACTER SET utf8mb4
          COLLATE utf8mb4_general_ci";
@@ -20,11 +21,13 @@ if (! $conn->query($sql)) {
     die("Database creation failed: " . $conn->error);
 }
 
+// 3. Select the database
 $conn->select_db($dbname);
 
+// 4. Create the products table if it doesn't exist
 $sql = "
   CREATE TABLE IF NOT EXISTS `products` (
-    `id`        INT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `id`        INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `name`      VARCHAR(100)        NOT NULL,
     `np`        DECIMAL(8,2)        NOT NULL COMMENT 'normal price',
     `mp`        DECIMAL(8,2)        NOT NULL COMMENT 'member price',
@@ -38,6 +41,40 @@ if (! $conn->query($sql)) {
     die("Table creation failed: " . $conn->error);
 }
 
+// 5. Populate table if it's empty
+$result = $conn->query("SELECT COUNT(*) AS cnt FROM `products`");
+$row    = $result->fetch_assoc();
+if ((int)$row['cnt'] === 0) {
+    $insert_sql = "
+        INSERT INTO `products` (`name`, `np`, `mp`, `image_url`)
+        VALUES
+          ('Iced Cappuccino',         15.90, 13.90, 'images/Coffee/Cappuccino_Cold_foam.jpeg'),
+          ('Iced Americano',          12.90, 10.90, 'images/Coffee/Iced_Americano.png'),
+          ('Iced Latte',              14.90, 12.90, 'images/Coffee/Iced_Latte.png'),
+          ('Strawberry Latte',        16.90, 14.90, 'images/Coffee/strawberry_latte.jpeg'),
+          ('Cheese Americano',        15.90, 13.90, 'images/Coffee/Cheese_Americano.jpeg'),
+          ('Butterscotch Creme Latte',13.90, 11.90, 'images/Coffee/Butterscotch_latte_1.jpeg'),
+          ('Vienna Latte',            16.90, 14.90, 'images/Coffee/Vienna_latte.jpeg'),
+          ('Yuzu Americano',          15.90, 13.90, 'images/Coffee/Yuzu_Americano.jpeg'),
+          ('Mocha',                   13.90, 11.90, 'images/Coffee/mocha.jpeg'),
+          ('Orange Mocha',            14.90, 12.90, 'images/Coffee/Orange_mocha.jpeg'),
+          ('Mint Latte',              13.90, 11.90, 'images/Coffee/Mint_Latte.jpg'),
+          ('Pistachio Latte',         19.90, 17.90, 'images/Coffee/Pistachio_Latte.jpeg'),
+          ('Orange Americano',        15.90, 13.90, 'images/Coffee/Orange_Americano.jpg'),
+          ('Iced Strawberry Matcha',  18.90, 16.90, 'images/Coffee/Iced_Strawberry Matcha.jpg'),
+          ('Iced Strawberry Soda',    17.90, 15.90, 'images/Coffee/Iced_Strawberry_Soda.jpg'),
+          ('Iced Cheese Yuzu',        17.90, 15.90, 'images/Coffee/Iced_Cheese_Yuzu.jpg'),
+          ('Iced Yuzu Matcha',        18.90, 16.90, 'images/Coffee/Iced_Yuzu_Matcha.jpg'),
+          ('Hot Butterscotch Latte',  14.90, 12.90, 'images/Coffee/Butterscotch_latte_1.jpeg'),
+          ('Hot Cappuccino',          14.90, 12.90, 'images/Coffee/Cappuccino_Cold_foam.jpeg'),
+          ('Hot Hojicha',             16.90, 14.90, 'images/Coffee/Hot_Hojicha.jpg')
+    ";
+    if (! $conn->query($insert_sql)) {
+        die("Data insertion failed: " . $conn->error);
+    }
+}
+
+// 6. Handle search
 $keyword = '';
 $results = [];
 
@@ -61,21 +98,17 @@ if (isset($_GET['q'])) {
         $stmt->close();
     }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Product</title>
-  <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="images/Brew&Go_logo.png" type="image/png" />
   <link rel="stylesheet" href="styles/style.css" />
 </head>
-
 <body>
   <?php include("inc/top_navigation_bar.inc"); ?>
 
@@ -167,11 +200,8 @@ if (isset($_GET['q'])) {
 
   <?php include("inc/scroll_to_top_button.inc"); ?>
   <?php include("inc/footer.inc"); ?>
-
 </body>
-
 </html>
 <?php
-
 $conn->close();
 ?>

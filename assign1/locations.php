@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Automatically initialise database -->
+<?php include("inc/database_connection.inc"); ?>
+
 <!-- Check if user/ admin has logged in -->
 <!-- If admin, then show admin logo -->
 <?php include("inc/login_status.inc"); ?>
@@ -39,7 +42,7 @@
                     </div>
                     <h3>One Jaya</h3>
                     <p>G63, Lot, Onejaya Shopping Complex</p>
-                    <a href="location1.html" class="btn">Learn more</a>
+                    <a href="location1.php" class="btn">Learn more</a>
                 </div>
 
                 <div class="location-card">
@@ -57,7 +60,7 @@
                     </div>
                     <h3>Plaza Merdeka</h3>
                     <p>Jalan Tun Abang Haji Openg</p>
-                    <a href="location2.html" class="btn">Learn more</a>
+                    <a href="location2.php" class="btn">Learn more</a>
                 </div>
             </div>
         </div>

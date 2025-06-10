@@ -1,25 +1,2 @@
-admin_login.php was hit!
-admin_login.php was hit!
-admin_login.php was hit!
-admin_login.php was hit!
-admin_login.php was hit!
-admin_login.php was hit!
-admin_login.php was hit!
-admin_login.php was hit!
-admin_login.php was hit!
-POST block reached
 Logged in as hardcoded admin
-admin_login.php was hit!
-admin_login.php was hit!
-POST block reached
-No user found with username: Ricardo
-Login failed for: Ricardo
-admin_login.php was hit!
-POST block reached
-Logged in as hardcoded admin
-admin_login.php was hit!
-POST block reached
-Logged in as hardcoded admin
-admin_login.php was hit!
-POST block reached
 Logged in as hardcoded admin

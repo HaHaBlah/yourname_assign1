@@ -21,7 +21,7 @@ function get_verification_email($firstname, $verify_link) {
                             <p style="font-family:'Arial',sans-serif;font-size:16px;color:#333;margin:0 0 24px 0;">
                                 Hi <strong>$firstname</strong>,<br><br>
                                 Thank you for registering with Brew & Go Coffee!<br>
-                                Please verify your email by clicking the button below within 5 minutes.
+                                Please verify your email by clicking the button below.
                             </p>
                             <a href="$verify_link" style="display:inline-block;padding:16px 32px;background-color:#593C26;color:#fff;text-decoration:none;border-radius:8px;font-weight:bold;font-size:18px;margin:24px 0 16px 0;transition:background 0.3s;">Verify Email</a>
                             <p style="font-family:'Arial',sans-serif;font-size:14px;color:#888;margin:24px 0 0 0;">
