@@ -83,7 +83,13 @@
 2025-06-10 16:44:39 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 56: Login failed for user 'Username': invalid password
 2025-06-10 16:44:55 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 61: Login failed: username 'Username' not found
 2025-06-10 17:10:02 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 61: Login failed: username 'Username' not found
+<<<<<<< HEAD
 2025-06-10 19:00:39 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 69: Login failed: username 'Alfred' not found or email not verified
 2025-06-10 19:00:47 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 69: Login failed: username 'Alfred' not found or email not verified
 2025-06-10 19:23:05 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 69: Login failed: username 'Alfred' not found or email not verified
 2025-06-10 19:23:10 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 69: Login failed: username 'Alfred' not found or email not verified
+=======
+2025-06-10 19:25:17 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 69: Login failed: username 'timmy' not found or email not verified
+2025-06-10 19:25:28 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 69: Login failed: username 'timmy' not found or email not verified
+2025-06-10 19:25:41 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 69: Login failed: username 'Wei Bao' not found or email not verified
+>>>>>>> 57bf2dce86f26f01b046d2f716e6f1d6fe43bb3b

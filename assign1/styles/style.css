@@ -4071,3 +4071,7 @@ h2 span {
 #reset-password {
     height: 400px;
 }
+
+#reply-enquiry {
+    height: auto;
+}
