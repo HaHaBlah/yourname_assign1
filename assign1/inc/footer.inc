@@ -31,6 +31,7 @@ echo
                     <ul>
                         <li><a href="acknowledgement.php">Acknowledgements</a></li>
                         <li><a href="enhancements.php">Enhancements</a></li>
+                        <li><a href="enhancements2.php">Enhancements2</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

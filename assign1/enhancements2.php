@@ -88,7 +88,8 @@
             <h2>Anti-Spam Feature</h2>
             <p></p>
             <p>Uses: </p>
-            <h2>.php</h2>
+            <img src="images/enhancements/Anti_Spam.png" alt="Anti-Spam">
+            <h2>anti_spam_check.php</h2>
             <div class="code">
                 <span>
                 </span>
