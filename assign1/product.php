@@ -199,7 +199,9 @@ if (isset($_GET['q'])) {
   </main>
 
   <?php include("inc/scroll_to_top_button.inc"); ?>
-  <?php include("inc/footer.inc"); ?>
+
+            <?php include("inc/footer.inc"); ?>
+
 </body>
 </html>
 <?php

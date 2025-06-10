@@ -3559,3 +3559,39 @@ h2 span {
 .footer-updates .update-item.news a {
   color: #0057a8;
 }
+
+
+/* forgot password */
+/* make the link sit flush‐right under the button */
+.login-right fieldset {
+  position: relative;
+}
+
+.forgot-link {
+  display: block;
+  margin-top: .5em;
+  text-align: right;
+  font-size: .9rem;
+  color: #6B4423;            /* match your button’s brown */
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* optional: style your “don’t have an account” link */
+.login-bottom {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.login-bottom a {
+  color: #6B4423;
+  text-decoration: none;
+  font-size: .9rem;
+}
+
+.login-bottom a:hover {
+  text-decoration: underline;
+}

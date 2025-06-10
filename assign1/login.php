@@ -1,70 +1,172 @@
-<!-- Done -->
+<?php
+// ----------------------------------------------------------------
+// login.php
+// ----------------------------------------------------------------
+
+include "inc/database_connection.inc";
+session_start();
+
+// 1) Ensure password_resets table exists
+$sql = <<<SQL
+CREATE TABLE IF NOT EXISTS `password_resets` (
+  `email`      VARCHAR(255) NOT NULL,
+  `token`      CHAR(100)    NOT NULL,
+  `expires_at` DATETIME     NOT NULL,
+  PRIMARY KEY (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+SQL;
+if (! $conn->query($sql)) {
+    die("Failed to create password_resets table: " . $conn->error);
+}
+
+// 2) Handle “Forgot password” form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['forgot_email'])) {
+    $email = trim($_POST['forgot_email']);
+
+    // a) Check user exists
+    $stmt = $conn->prepare("SELECT id FROM members WHERE email = ?");
+    $stmt->bind_param('s', $email);
+    $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows === 1) {
+        // b) Generate token + expiry
+        $token   = bin2hex(random_bytes(50));
+        $expires = date('Y-m-d H:i:s', time() + 3600);
+
+        // c) Upsert into password_resets
+        $up = $conn->prepare("
+          INSERT INTO password_resets (email, token, expires_at)
+          VALUES (?, ?, ?)
+          ON DUPLICATE KEY UPDATE
+            token       = VALUES(token),
+            expires_at  = VALUES(expires_at)
+        ");
+        $up->bind_param('sss', $email, $token, $expires);
+        $up->execute();
+
+        // d) Send the reset email
+        $link = "https://{$_SERVER['HTTP_HOST']}"
+              . dirname($_SERVER['REQUEST_URI'])
+              . "/reset_password.php?email=" . urlencode($email)
+              . "&token={$token}";
+        $subject = "Reset your Brew & Go password";
+        $body    = "Click here to reset your password:\n\n{$link}\n\nThis link expires in 1 hour.";
+
+        @mail($email, $subject, $body,
+          "From: no-reply@yourdomain.com\r\n"
+         ."Content-Type: text/plain; charset=UTF-8\r\n"
+        );
+
+        $info = "A reset link has been sent to your email.";
+    }
+    else {
+        $error = "No account with that email.";
+    }
+}
+
+// 3) Decide which view to show
+$action = $_GET['action'] ?? '';
+?>
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Automatically initialise database -->
-<?php include("inc/database_connection.inc"); ?>
-
-<!-- Check if user/ admin has logged in -->
-<!-- If admin, then show admin logo -->
-<?php include("inc/login_status.inc"); ?>
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login to Brew & Go. Coffee</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
-    <link rel="stylesheet" href="styles/style.css">
+  <meta charset="UTF-8">
+  <title>Login – Brew &amp; Go Coffee</title>
+  <link rel="stylesheet" href="styles/style.css">
 </head>
-
 <body>
-    <?php include("inc/top_navigation_bar.inc"); ?>
+  <?php include "inc/top_navigation_bar.inc"; ?>
 
-    <header class="location-header" id="image-Coffee_Beans_Bg">
-        <img src="images/Coffee_Beans_Bg.png" alt="Coffee Beans Background">
-    </header>
+  <main class="no-margin-top">
 
-    <main class="no-margin-top">
+    <?php if ($action === 'forgot'): ?>
+      <!-- ========================= -->
+      <!-- FORGOT PASSWORD FORM -->
+      <!-- ========================= -->
+      <section class="login-container">
+        <h2>Forgot Password</h2>
 
-        <?php
-        if (isset($_GET['error'])) {
-            if ($_GET['error'] === 'invalid_credentials') {
-                echo '<p style="color:red;">Invalid username or password.</p>';
-            } elseif ($_GET['error'] === 'empty_fields') {
-                echo '<p style="color:red;">Please fill in all fields.</p>';
-            }
-        }
-        ?>
-        <section class="login-container">
-            <div class="login-left">
-                <img src="images/Brew&Go_logo.png" alt="Brew & Go logo">
-                <h2>Login</h2>
-                <p>Login to Brew & Go. Coffee</p>
+        <?php if (!empty($info)): ?>
+          <div class="info-msg"><?= htmlspecialchars($info) ?></div>
+        <?php elseif (!empty($error)): ?>
+          <div class="error-msg"><?= htmlspecialchars($error) ?></div>
+        <?php endif; ?>
+
+        <form method="post" action="login.php?action=forgot">
+          <fieldset>
+            <input
+              type="email"
+              name="forgot_email"
+              placeholder="Enter your email"
+              required
+            >
+            <button type="submit">Send reset link</button>
+          </fieldset>
+        </form>
+
+        <p><a href="login.php">← Back to Login</a></p>
+      </section>
+
+    <?php else: ?>
+      <!-- ========================= -->
+      <!-- NORMAL LOGIN FORM -->
+      <!-- ========================= -->
+      <section class="login-container">
+        <div class="login-panel">
+          <div class="login-left">
+            <img src="images/Brew&Go_logo.png" alt="Brew & Go logo">
+            <h2>Login</h2>
+          </div>
+
+          <div class="login-right">
+            <?php
+              // Show errors from login_process.php via GET
+              if (isset($_GET['error'])) {
+                if ($_GET['error'] === 'invalid_credentials') {
+                  $errorText = 'Invalid username or password.';
+                } elseif ($_GET['error'] === 'empty_fields') {
+                  $errorText = 'Please fill in all fields.';
+                }
+              }
+            ?>
+            <form action="login_process.php" method="post">
+              <fieldset>
+                <input
+                  type="text"
+                  name="username"
+                  placeholder="Username"
+                  required
+                >
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  required
+                >
+                <button type="submit">Login</button>
+
+                <p class="forgot-link">
+                  <a href="login.php?action=forgot">Forgot your password?</a>
+                </p>
+              </fieldset>
+            </form>
+
+            <!-- bottom-centered info/error -->
+            <?php if (!empty($errorText)): ?>
+              <div class="error-msg"><?= htmlspecialchars($errorText) ?></div>
+            <?php endif; ?>
+
+            <div class="login-bottom">
+              <a href="registration.php">Don’t have an account?</a>
             </div>
-            <div class="login-right">
-                <form action="login_process.php" method="post">
-                    <fieldset>
-                        <input class="responsive-hover" type="text" name="username" placeholder="Username" required
-                            maxlength="10" pattern="[A-Za-z]+"
-                            title="Alphabetical characters only; Maximum 10 characters.">
-                        <input class="responsive-hover" type="password" name="password" placeholder="Password" required
-                            maxlength="25" title="Maximum 25 characters.">
-                        <button class="responsive-hover-button" type="submit">Login</button>
-                    </fieldset>
-                </form>
+          </div> <!-- /.login-right -->
+        </div> <!-- /.login-panel -->
+      </section>
+    <?php endif; ?>
 
-                <div class="login-bottom">
-                    <a href="registration.php">Don't have an account?</a>
-                </div>
-            </div>
-        </section>
-    </main>
+  </main>
 
-    <?php include("inc/scroll_to_top_button.inc"); ?>
-
-    <?php include("inc/footer.inc"); ?>
+  <?php include "inc/footer.inc"; ?>
 </body>
-
 </html>
