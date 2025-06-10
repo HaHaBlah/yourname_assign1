@@ -27,7 +27,11 @@
         <section>
             <h2>User Management Module</h2>
             <p>Allows admins to view and manage public enquiry. As well as Create, View, Edit and Delete user from the website.</p>
-            <p>Uses: </p>
+            <p>Uses: <a href="admin_dashboard.php">admin_dashboard.php</a>, <a href="view_enquiry.php">, view_enquiry.php</a>, <a href="reply_enquiry.php">reply_enquiry.php</a>, <a href="view_membership.php">view_membership.php</a>, <a href="member_form.php">member_form.php</a> and <a href="email_templates.php">email_templates.php</a></p>
+            <img src="images/enhancements/User_Management.png" alt="User Management">
+            <img src="images/enhancements/User_Management2.png" alt="User Management2">
+            <img src="images/enhancements/User_Management3.png" alt="User Management3">
+            <img src="images/enhancements/User_Management4.png" alt="User Management4">
             <h2>.php</h2>
             <div class="code">
                 <span>

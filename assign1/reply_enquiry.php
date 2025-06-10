@@ -10,6 +10,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
 
 // 2) Database connection
 include("inc/database_connection.inc"); // defines $conn = mysqli_connect(...)
+require_once "email_templates.php";
 
 // 3) Show PHP errors while debugging
 ini_set('display_errors', 1);
@@ -57,13 +58,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       // 5c) Build and send the mail
       $subject = "Re: Your enquiry at Brew & Go Coffee";
-      $body    = "Hi {$to_name},\n\n"
-        . wordwrap($reply_msg, 70)
-        . "\n\nThanks,\nBrew & Go Team";
+      $body    = get_enquiry_reply_email($to_name, $reply_msg);
       $headers  = "From: Brew & Go <taphahablah@gmail.com>\r\n";
       $headers .= "Reply-To: taphahablah@gmail.com\r\n";
       $headers .= "MIME-Version: 1.0\r\n";
-      $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+      $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
       if (mail($to_email, $subject, $body, $headers)) {
         // 5d) Record the reply in your DB
