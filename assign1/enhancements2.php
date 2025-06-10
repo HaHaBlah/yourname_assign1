@@ -27,14 +27,42 @@
         <section>
             <h2>User Management Module</h2>
             <p>Allows admins to view and manage public enquiry. As well as Create, View, Edit and Delete user from the website.</p>
-            <p>Uses: <a href="admin_dashboard.php">admin_dashboard.php</a>, <a href="view_enquiry.php">, view_enquiry.php</a>, <a href="reply_enquiry.php">reply_enquiry.php</a>, <a href="view_membership.php">view_membership.php</a>, <a href="member_form.php">member_form.php</a> and <a href="email_templates.php">email_templates.php</a></p>
-            <img src="images/enhancements/User_Management.png" alt="User Management">
+            <p>Uses: <a href="admin_dashboard.php">admin_dashboard.php</a>, <a href="view_enquiry.php">, view_enquiry.php</a>, <a href="reply_enquiry.php">reply_enquiry.php</a>, <a href="view_membership.php">view_membership.php</a>, <a href="member_form.php">member_form.php</a>, <a href="member_save.php">member_save.php</a>, <a href="member_delete.php">member_delete.php</a> and <a href="email_templates.php">email_templates.php</a></p>
             <img src="images/enhancements/User_Management2.png" alt="User Management2">
+            <img src="images/enhancements/User_Management.png" alt="User Management">
+            <img src="images/enhancements/User_Management5.png" alt="User Management5">  
+            <img src="images/enhancements/User_Management6.png" alt="User Management6">          
             <img src="images/enhancements/User_Management3.png" alt="User Management3">
             <img src="images/enhancements/User_Management4.png" alt="User Management4">
-            <h2>.php</h2>
+            <h2>reply_enquiry.php</h2>
             <div class="code">
                 <span>
+                    $subject = "Re: Your enquiry at Brew & Go Coffee";<br>
+                    $body = get_enquiry_reply_email($to_name, $reply_msg);<br>
+                    $headers = "From: Brew & Go <taphahablah@gmail.com>\r\n";<br>
+                        $headers .= "Reply-To: taphahablah@gmail.com\r\n";<br>
+                        $headers .= "MIME-Version: 1.0\r\n";<br>
+                        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";<br>
+                        <br>
+                        mail($to_email, $subject, $body, $headers)<br>
+                </span>
+            </div>
+            <h2>member_save.php</h2>
+            <div class="code">
+                <span>
+                    $id   = (int)$_POST['id'];<br>
+                    $sql  = "UPDATE members<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SET firstname=?, lastname=?, email=?, username=?, password=?<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WHERE id=?";<br>
+                    $stmt = $conn->prepare($sql);<br>
+                    $stmt->bind_param("sssssi",<br>
+                        &nbsp;&nbsp;&nbsp;$firstname,<br>
+                        &nbsp;&nbsp;&nbsp;$lastname,<br>
+                        &nbsp;&nbsp;&nbsp;$email,<br>
+                        &nbsp;&nbsp;&nbsp;$username,<br>
+                        &nbsp;&nbsp;&nbsp;$hashed,<br>
+                        &nbsp;&nbsp;&nbsp;$id<br>
+                    );
                 </span>
             </div>
         </section>
@@ -51,32 +79,32 @@
                 <span>
                     &lt;h4&gt;Latest Update&lt;/h4&gt;<br>
                     &lt;?php if ($res && $res->num_rows): ?&gt;<br>
-                        &nbsp;&nbsp;&nbsp;&lt;?php $u = $res->fetch_assoc(); ?&gt;<br>
-                        &nbsp;&nbsp;&nbsp;&lt;div&gt;<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;?php if (!empty($u['update_message'])): ?&gt;<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&lt;?= htmlspecialchars($u['update_message'], ENT_QUOTES) ?&gt;&lt;/p&gt;<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;?php endif; ?&gt;<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;?php if (!empty($u['photofile'])): ?&gt;<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="&lt;?= htmlspecialchars($u['photofile'], ENT_QUOTES) ?&gt;" alt="Update Image"&gt;<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;?php endif; ?&gt;<br>
-                        &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;?php $u = $res->fetch_assoc(); ?&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;div&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;?php if (!empty($u['update_message'])): ?&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&lt;?= htmlspecialchars($u['update_message'], ENT_QUOTES) ?&gt;&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;?php endif; ?&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;?php if (!empty($u['photofile'])): ?&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="&lt;?= htmlspecialchars($u['photofile'], ENT_QUOTES) ?&gt;" alt="Update Image"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;?php endif; ?&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
                     &lt;?php else: ?&gt;<br>
-                        &nbsp;&nbsp;&nbsp;&lt;p&gt;No updates at the moment.&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;p&gt;No updates at the moment.&lt;/p&gt;<br>
                     &lt;?php endif; ?&gt;<br>
                     &lt;?php if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true): ?&gt;<br>
-                        &nbsp;&nbsp;&nbsp;&lt;div class="update-form"&gt;<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form action="edit_update.php" method="post" enctype="multipart/form-data"&gt;<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fieldset&gt;<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Update Latest News&lt;/h3&gt;<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea placeholder="New Update" id="update_message" name="update_message" required="required"<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;rows="3" cols="40"&gt;&lt;?php echo htmlspecialchars($data['update_message'] ?? ''); ?&gt;&lt;/textarea&gt;&lt;br&gt;<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="FilePhoto"&gt;Image:&lt;/label&gt;<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="file" id="FilePhoto" name="FilePhoto" accept="image/*"&gt;<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="responsive-hover-button" type="submit"&gt;Update Message&lt;/button&gt;<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="responsive-hover-button" type="reset"&gt;Clear Form&lt;/button&gt;<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/fieldset&gt;<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;<br>
-                        &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;div class="update-form"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form action="edit_update.php" method="post" enctype="multipart/form-data"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fieldset&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Update Latest News&lt;/h3&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea placeholder="New Update" id="update_message" name="update_message" required="required"<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;rows="3" cols="40"&gt;&lt;?php echo htmlspecialchars($data['update_message'] ?? ''); ?&gt;&lt;/textarea&gt;&lt;br&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="FilePhoto"&gt;Image:&lt;/label&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="file" id="FilePhoto" name="FilePhoto" accept="image/*"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="responsive-hover-button" type="submit"&gt;Update Message&lt;/button&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="responsive-hover-button" type="reset"&gt;Clear Form&lt;/button&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/fieldset&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
                     &lt;?php endif; ?&gt;<br>
                 </span>
             </div>
