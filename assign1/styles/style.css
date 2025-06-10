@@ -4064,3 +4064,7 @@ h2 span {
 .update-form button {
     width: 100%;
 }
+
+#reset-password {
+    height: 400px;
+}

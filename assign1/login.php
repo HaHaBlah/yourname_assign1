@@ -16,53 +16,66 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 SQL;
 if (! $conn->query($sql)) {
-    die("Failed to create password_resets table: " . $conn->error);
+  die("Failed to create password_resets table: " . $conn->error);
 }
 
 // 2) Handle “Forgot password” form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['forgot_email'])) {
-    $email = trim($_POST['forgot_email']);
+  $email = trim($_POST['forgot_email']);
 
-    // a) Check user exists
-    $stmt = $conn->prepare("SELECT id FROM members WHERE email = ?");
-    $stmt->bind_param('s', $email);
-    $stmt->execute();
-    $stmt->store_result();
+  // a) Check user exists
+  $stmt = $conn->prepare("SELECT id FROM members WHERE email = ?");
+  $stmt->bind_param('s', $email);
+  $stmt->execute();
+  $stmt->store_result();
 
-    if ($stmt->num_rows === 1) {
-        // b) Generate token + expiry
-        $token   = bin2hex(random_bytes(50));
-        $expires = date('Y-m-d H:i:s', time() + 3600);
+  if ($stmt->num_rows === 1) {
+    // b) Generate token + expiry
+    $token   = bin2hex(random_bytes(50));
+    $expires = date('Y-m-d H:i:s', time() + 3600);
 
-        // c) Upsert into password_resets
-        $up = $conn->prepare("
+    // c) Upsert into password_resets
+    $up = $conn->prepare("
           INSERT INTO password_resets (email, token, expires_at)
           VALUES (?, ?, ?)
           ON DUPLICATE KEY UPDATE
             token       = VALUES(token),
             expires_at  = VALUES(expires_at)
         ");
-        $up->bind_param('sss', $email, $token, $expires);
-        $up->execute();
+    $up->bind_param('sss', $email, $token, $expires);
+    $up->execute();
 
-        // d) Send the reset email
-        $link = "https://{$_SERVER['HTTP_HOST']}"
-              . dirname($_SERVER['REQUEST_URI'])
-              . "/reset_password.php?email=" . urlencode($email)
-              . "&token={$token}";
-        $subject = "Reset your Brew & Go password";
-        $body    = "Click here to reset your password:\n\n{$link}\n\nThis link expires in 1 hour.";
+    // d) Send the reset email
+    $link = "https://{$_SERVER['HTTP_HOST']}"
+      . dirname($_SERVER['REQUEST_URI'])
+      . "/reset_password.php?email=" . urlencode($email)
+      . "&token={$token}";
+    $subject = "Reset your Brew & Go password";
 
-        @mail($email, $subject, $body,
-          "From: no-reply@yourdomain.com\r\n"
-         ."Content-Type: text/plain; charset=UTF-8\r\n"
-        );
+    // Fetch user's first name for personalization
+    $name_stmt = $conn->prepare("SELECT firstname FROM members WHERE email = ?");
+    $name_stmt->bind_param('s', $email);
+    $name_stmt->execute();
+    $name_stmt->bind_result($firstname);
+    $name_stmt->fetch();
+    $name_stmt->close();
 
-        $info = "A reset link has been sent to your email.";
-    }
-    else {
-        $error = "No account with that email.";
-    }
+    // Use the new HTML template
+    require_once "email_templates.php"; // or email_templates.php if you put it there
+    $body = get_password_reset_email($firstname ?: 'Member', $link);
+
+    @mail(
+      $email,
+      $subject,
+      $body,
+      "From: no-reply@yourdomain.com\r\n"
+        . "Content-Type: text/html; charset=UTF-8\r\n"
+    );
+
+    $info = "A reset link has been sent to your email.";
+  } else {
+    $error = "No account with that email.";
+  }
 }
 
 // 3) Decide which view to show
@@ -70,11 +83,13 @@ $action = $_GET['action'] ?? '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Login – Brew &amp; Go Coffee</title>
   <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
   <?php include "inc/top_navigation_bar.inc"; ?>
 
@@ -99,8 +114,7 @@ $action = $_GET['action'] ?? '';
               type="email"
               name="forgot_email"
               placeholder="Enter your email"
-              required
-            >
+              required>
             <button type="submit">Send reset link</button>
           </fieldset>
         </form>
@@ -121,14 +135,14 @@ $action = $_GET['action'] ?? '';
 
           <div class="login-right">
             <?php
-              // Show errors from login_process.php via GET
-              if (isset($_GET['error'])) {
-                if ($_GET['error'] === 'invalid_credentials') {
-                  $errorText = 'Invalid username or password.';
-                } elseif ($_GET['error'] === 'empty_fields') {
-                  $errorText = 'Please fill in all fields.';
-                }
+            // Show errors from login_process.php via GET
+            if (isset($_GET['error'])) {
+              if ($_GET['error'] === 'invalid_credentials') {
+                $errorText = 'Invalid username or password.';
+              } elseif ($_GET['error'] === 'empty_fields') {
+                $errorText = 'Please fill in all fields.';
               }
+            }
             ?>
             <form action="login_process.php" method="post">
               <fieldset>
@@ -136,14 +150,12 @@ $action = $_GET['action'] ?? '';
                   type="text"
                   name="username"
                   placeholder="Username"
-                  required
-                >
+                  required>
                 <input
                   type="password"
                   name="password"
                   placeholder="Password"
-                  required
-                >
+                  required>
                 <button type="submit">Login</button>
 
                 <p class="forgot-link">
@@ -169,4 +181,5 @@ $action = $_GET['action'] ?? '';
 
   <?php include "inc/footer.inc"; ?>
 </body>
+
 </html>
