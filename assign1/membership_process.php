@@ -127,9 +127,6 @@ require_once("verification_email.php");
         // ✅ Hash the password before saving
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-        trigger_error("Plain text password: '" . $password . "'", E_USER_NOTICE);
-        trigger_error("Hashed password: '" . $hashed_password . "'", E_USER_NOTICE);
-
         // Generate verification token and expiry
         $token = bin2hex(random_bytes(32));
         $expires = date('Y-m-d H:i:s', time() + 300); // 5 minutes from now
