@@ -70,6 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,12 +80,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
-    <header>
-        <h1>Member Top-Up</h1>
-    </header>
+    <?php include("inc/top_navigation_bar.inc"); ?>
+
 
     <main>
+        <header>
+            <h1>Member Top-Up</h1>
+        </header>
         <form method="post" action="member_topup.php">
             <fieldset>
                 <legend>Top-Up Form</legend>
@@ -116,8 +120,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php endif; ?>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Brew & Go Coffee</p>
-    </footer>
+    <?php include("inc/scroll_to_top_button.inc"); ?>
+    <?php include("inc/footer.inc"); ?>
 </body>
+
 </html>
