@@ -26,7 +26,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     <main class="view_enquiry_main">
         <h1 class="view_enquiry_title">Enquiry List</h1>
 
-        <table class="enquiry-table">
+        <table class="jobapp-table enquiry-table">
             <tr>
                 <th>No</th>
                 <th>First Name</th>
@@ -86,13 +86,14 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
                 echo "<tr><td colspan='13'>No enquiries found.</td></tr>";
             }
 
-            mysqli_close($conn);
+            
             ?>
         </table>
 
         <?php include("inc/scroll_to_top_button.inc"); ?>
     </main>
     <?php include("inc/footer.inc"); ?>
+    mysqli_close($conn);
 </body>
 
 </html>

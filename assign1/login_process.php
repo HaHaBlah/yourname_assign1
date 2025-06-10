@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['admin_logged_in'] = true;
                 $_SESSION['username'] = $username;
                 $_SESSION['role'] = 'admin';
-                header("Location: /admin_dashboard.php");
+                header("Location: admin_dashboard.php");
                 exit;
             }
         }
