@@ -45,6 +45,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->bind_result($db_password, $role);
             $stmt->fetch();
 
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+            trigger_error("User Input Password Length: '" . strlen($password) . "'", E_USER_NOTICE);
+            trigger_error("Hashed User Input Password Length: '" . strlen($hashed_password) . "'", E_USER_NOTICE);
+            trigger_error("Hashed User Input Password: '" . $hashed_password . "'", E_USER_NOTICE);
+            trigger_error("Stored Hash Length: '" . strlen($db_password) . "'", E_USER_NOTICE);
+            trigger_error("Stored Hash (raw): '" . $db_password . "'", E_USER_NOTICE);
+
             if (password_verify($password, $db_password)) {
                 $_SESSION['username'] = $username;
                 $_SESSION['role'] = $role;
@@ -69,4 +77,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header('Location: login.php');
     exit;
 }
-?>

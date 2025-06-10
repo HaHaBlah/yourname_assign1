@@ -72,9 +72,6 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
                     </tr>   
             <?php
                 }
-            ?>
-                <p><a href="member_form.php" class="add-member-button">+ Add New Member</a></p>
-            <?php
             } else {
                 echo "<tr><td colspan='6'>0 results</td></tr>";
             }
@@ -82,6 +79,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
             mysqli_close($conn);
             ?>
         </table>
+        <p><a href="member_form.php" class="add-member-button">+ Add New Member</a></p>
         <?php include("inc/scroll_to_top_button.inc"); ?>
     </main>
     

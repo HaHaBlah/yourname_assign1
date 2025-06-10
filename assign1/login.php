@@ -158,7 +158,7 @@ $action = $_GET['action'] ?? '';
             <?php endif; ?>
 
             <div class="login-bottom">
-              <a href="registration.php">Don’t have an account?</a>
+              <a href="registration.php">Don't have an account?</a>
             </div>
           </div> <!-- /.login-right -->
         </div> <!-- /.login-panel -->

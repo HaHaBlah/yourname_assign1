@@ -25,16 +25,12 @@
 2025-06-07 19:27:41 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'admin' not found
 2025-06-08 07:28:45 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'Username' not found
 2025-06-08 07:28:58 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'Username' not found
-<<<<<<< HEAD
 2025-06-09 06:04:19 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'admin' not found
 2025-06-09 08:58:53 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'awd' not found
 2025-06-09 09:07:11 | Error [8] in C:\xampp\htdocs\yourname_assign1\assign1\inc\login_status.inc on line 4: session_start(): Ignoring session_start() because a session is already active
 2025-06-09 09:07:17 | Error [8] in C:\xampp\htdocs\yourname_assign1\assign1\inc\login_status.inc on line 4: session_start(): Ignoring session_start() because a session is already active
 2025-06-09 09:17:36 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 42: Login failed: username 'admin' not found
 2025-06-09 09:39:59 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 45: Login failed for user 'Username': invalid password
-=======
-2025-06-08 16:19:41 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 43: Login failed: username 'admin' not found
->>>>>>> 663f48f4f6e1fa78eb3bc469cd93bd1dc683ef06
 2025-06-09 10:39:17 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'Yummer' not found
 2025-06-09 10:39:20 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'qwf' not found
 2025-06-09 10:39:25 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed: username 'qwewf' not found
@@ -84,3 +80,50 @@
 2025-06-10 09:24:49 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
 2025-06-10 09:24:51 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
 2025-06-10 09:24:53 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Login failed for user 'Username': invalid password
+2025-06-10 14:49:29 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 60: Login failed: username 'Username' not found
+2025-06-10 14:49:35 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 60: Login failed: username 'Username' not found
+2025-06-10 14:49:39 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 60: Login failed: username 'Username' not found
+2025-06-10 15:00:17 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 60: Login failed: username 'Username' not found
+2025-06-10 15:00:23 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 60: Login failed: username 'alfred' not found
+2025-06-10 15:01:22 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 60: Login failed: username 'Username' not found
+2025-06-10 15:01:27 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 60: Login failed: username 'Username' not found
+2025-06-10 15:02:35 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 60: Login failed: username 'Username' not found
+2025-06-10 15:02:43 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 60: Login failed: username 'Username' not found
+2025-06-10 15:08:27 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 60: Login failed: username 'Username' not found
+2025-06-10 15:08:30 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 60: Login failed: username 'Username' not found
+2025-06-10 15:09:04 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 60: Login failed: username 'Username' not found
+2025-06-10 15:10:15 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 55: Login failed for user 'Username': invalid password
+2025-06-10 15:10:18 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 55: Login failed for user 'Username': invalid password
+2025-06-10 15:10:22 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 55: Login failed for user 'Username': invalid password
+2025-06-10 15:11:27 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 55: Login failed for user 'Username': invalid password
+2025-06-10 15:11:32 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 55: Login failed for user 'Username': invalid password
+2025-06-10 15:14:52 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 55: Login failed for user 'Username': invalid password
+2025-06-10 15:17:44 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 55: Login failed for user 'Username': invalid password
+2025-06-10 15:17:49 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 55: Login failed for user 'Username': invalid password
+2025-06-10 15:18:16 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 55: Login failed for user 'Username': invalid password
+2025-06-10 15:25:31 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 55: Login failed for user 'Username': invalid password
+2025-06-10 15:27:03 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 58: Login failed for user 'Username': invalid password
+2025-06-10 15:27:39 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 58: Login failed for user 'Username': invalid password
+2025-06-10 15:27:44 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 58: Login failed for user 'Username': invalid password
+2025-06-10 15:34:22 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 48: User Input Password Length: '8'
+2025-06-10 15:34:22 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 49: Stored Hash Length: '60'
+2025-06-10 15:34:22 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 50: Stored Hash (raw): '$2y$10$7dr4vpP9i7mwpdjF7bdV.O0KXmRrcvb0nO6obNt0N0PSjDgIxf4gO'
+2025-06-10 15:34:22 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 59: Login failed for user 'Username': invalid password
+2025-06-10 15:37:12 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 50: User Input Password Length: '8'
+2025-06-10 15:37:12 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 51: Hashed User Input Password Length: '60'
+2025-06-10 15:37:12 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 52: Hashed User Input Password: '$2y$10$vshSL6fo4sZeKFVNLk1ukeVxarNeOjPRDP6FRjYbbQcLjbPPhoRNy'
+2025-06-10 15:37:12 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Stored Hash Length: '60'
+2025-06-10 15:37:12 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 54: Stored Hash (raw): '$2y$10$7dr4vpP9i7mwpdjF7bdV.O0KXmRrcvb0nO6obNt0N0PSjDgIxf4gO'
+2025-06-10 15:37:12 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 63: Login failed for user 'Username': invalid password
+2025-06-10 15:38:36 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 50: User Input Password Length: '8'
+2025-06-10 15:38:36 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 51: Hashed User Input Password Length: '60'
+2025-06-10 15:38:36 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 52: Hashed User Input Password: '$2y$10$OysNTstamIN8MmiQ.4b3K.SDmguXpq9oGdR6hhaLZRKudESdg7o/y'
+2025-06-10 15:38:36 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Stored Hash Length: '60'
+2025-06-10 15:38:36 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 54: Stored Hash (raw): '$2y$10$w6nujZKvmHJnHgRn6l3sU.t171KZhRbAiD/Sunb7DSPakhZ0vQGCK'
+2025-06-10 15:38:36 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 63: Login failed for user 'Username': invalid password
+2025-06-10 15:42:51 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 50: User Input Password Length: '8'
+2025-06-10 15:42:51 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 51: Hashed User Input Password Length: '60'
+2025-06-10 15:42:51 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 52: Hashed User Input Password: '$2y$10$VpsuJk.I8/dvXuRTU9.od.DXJeDGgZqc28FaTK8tn3.KnM8X3hTkW'
+2025-06-10 15:42:51 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 53: Stored Hash Length: '60'
+2025-06-10 15:42:51 | Error [1024] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 54: Stored Hash (raw): '$2y$10$2duyUZlt0o5f89dZRnnIaevl2xsEfW5Xg1WXldopuRNrwvQomv13a'
+2025-06-10 15:42:51 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 63: Login failed for user 'Username': invalid password

@@ -94,7 +94,7 @@ $res = $conn->query($sql);
           <p>No updates at the moment.</p>
         <?php endif; ?>
         <?php if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true): ?>
-          <form action="edit_update.php" method="post" enctype="multipart/form-data">
+          <form action="edit_update.php" method="post" enctype="multipart/form-data" class="update-form">
             <fieldset>
               <label for="update_message">New Update:</label>
               <textarea placeholder="Your Message" id="update_message" name="update_message" required="required"
