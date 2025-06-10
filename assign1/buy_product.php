@@ -80,7 +80,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo '<a href="product.php">Back to products</a>';
             exit;
         } else {
-            echo "<p>Purchase successful! (Non-member, no balance deduction)</p>";
+            // Non-member: show thank you message only
+            echo "<p>Thank you for your purchase.</p>";
             echo '<a href="product.php">Back to products</a>';
             exit;
         }
