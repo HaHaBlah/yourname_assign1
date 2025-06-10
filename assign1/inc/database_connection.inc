@@ -68,6 +68,8 @@ $sql = "CREATE TABLE IF NOT EXISTS enquiries (
     postcode VARCHAR(5) NOT NULL,
     enquirytype VARCHAR(30) NOT NULL,
     message TEXT NOT NULL,
+    reply_message   TEXT        NULL,
+    reply_sent_at   DATETIME    NULL,
     submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
 ";
