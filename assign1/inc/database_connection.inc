@@ -56,6 +56,17 @@ if (!$conn->query($sql)) {
     die("Members table creation failed: " . $conn->error);
 }
 
+$sql = "CREATE TABLE IF NOT EXISTS updates (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    update_message VARCHAR(25) NOT NULL,
+    photofile VARCHAR(255)
+)";
+
+if (!$conn->query($sql)) {
+    die("updates table creation failed: " . $conn->error);
+}
+
+
 $sql = "CREATE TABLE IF NOT EXISTS enquiries (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     firstname VARCHAR(25) NOT NULL,
