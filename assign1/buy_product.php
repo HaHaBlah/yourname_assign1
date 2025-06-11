@@ -52,10 +52,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // === STEP 1: Add-on selection ===
     if ($step === 'select_addon') {
-        ?>
+?>
         <!DOCTYPE html>
         <html>
-        <head><title>Confirm Purchase</title><link rel="stylesheet" href="styles/buy.css" /></head>
+
+        <head>
+            <title>Confirm Purchase</title>
+            <link rel="stylesheet" href="styles/buy.css">
+
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="description" content="Confirm Purchase">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
+            <link rel="stylesheet" href="styles/style.css">
+        </head>
+
+
         <body>
         <div class="purchase-container">
           <h2>Confirm Purchase</h2>
@@ -86,17 +99,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           </form>
         </div>
         </body>
+
         </html>
-        <?php
+    <?php
         exit;
     }
 
     // === STEP 2: Final confirmation ===
     if ($step === 'show_final') {
-        ?>
+    ?>
         <!DOCTYPE html>
         <html>
-        <head><title>Final Confirmation</title><link rel="stylesheet" href="styles/buy.css" /></head>
+        <head>
+            <title>Final Confirmation</title>
+            <link rel="stylesheet" href="styles/buy.css" />
+        </head>
         <body class="theme-final">
         <div class="purchase-container">
           <h2>Final Confirmation</h2>
@@ -125,6 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           </form>
         </div>
         </body>
+
         </html>
         <?php
         exit;
@@ -156,7 +174,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmt->bind_param("ds", $new_balance, $username);
                 $stmt->execute();
                 $stmt->close();
-                ?>
+            ?>
                 <!DOCTYPE html>
                 <html>
                 <head><title>Purchase Successful</title><link rel="stylesheet" href="styles/buy.css" /></head>
@@ -167,6 +185,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                   <a href="product.php"><button type="button">Back to products</button></a>
                 </div>
                 </body>
+
                 </html>
                 <?php
             } elseif (!$user) {
@@ -174,29 +193,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ?>
                 <!DOCTYPE html>
                 <html>
-                <head><title>No Top-up</title><link rel="stylesheet" href="styles/buy.css" /></head>
+                <head>
+                    <title>No Top-up</title>
+                    <link rel="stylesheet" href="styles/buy.css" />
+                </head>
                 <body>
                 <div class="purchase-container">
                   <p class="purchase-error">No top-up record found. Please top up first.</p>
                   <a href="product.php"><button type="button">Back to products</button></a>
                 </div>
                 </body>
+
                 </html>
-                <?php
+            <?php
             } else {
-                // Insufficient
+                // Normal member: insufficient balance
                 ?>
                 <!DOCTYPE html>
                 <html>
-                <head><title>Insufficient Balance</title><link rel="stylesheet" href="styles/buy.css" /></head>
+                <head>
+                    <title>Insufficient Balance</title>
+                    <link rel="stylesheet" href="styles/buy.css" />
+                </head>
                 <body>
                 <div class="purchase-container">
                   <p class="purchase-error">Insufficient balance. Please top up.</p>
                   <a href="product.php"><button type="button">Back to products</button></a>
                 </div>
                 </body>
+
                 </html>
-                <?php
+            <?php
             }
             exit;
         }
@@ -221,4 +248,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Location: product.php");
     exit;
 }
+
+// For debugging only, remove after testing!
+echo '<pre>'; print_r($_SESSION); echo '</pre>';
 ?>
