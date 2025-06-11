@@ -49,127 +49,269 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $price += $addon_price;
         }
 
-        // STEP 1: Show add-on selection and final price for confirmation
-        if ($step === 'select_addon') {
-            $title = 'Confirm Purchase';
-            ob_start(); ?>
-            <div class="buyproduct-container">
-                <h2 class="buyproduct-title">Confirm Purchase</h2>
-                <p class="buyproduct-info">Product: <?php echo htmlspecialchars($product['name']); ?></p>
-                <?php if ($is_member): ?>
-                    <p class="buyproduct-p">Member Price (MP): RM<?php echo number_format($mp, 2); ?></p>
-                    <?php if ($is_admin): ?>
-                        <p class="buyproduct-p"><strong class="buyproduct-strong">Admin: Infinite credit</strong></p>
-                    <?php elseif ($user): ?>
-                        <p class="buyproduct-p">Your balance: RM<?php echo number_format($user['balance'], 2); ?></p>
+    // STEP 1: Show add-on selection and final price for confirmation
+    if ($step === 'select_addon') {
+?>
+        <!DOCTYPE html>
+        <html>
+
+        <head>
+            <title>Confirm Purchase</title>
+            <link rel="stylesheet" href="styles/buy.css">
+
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="description" content="Confirm Purchase">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
+            <link rel="stylesheet" href="styles/style.css">
+        </head>
+
+
+        <body>
+            <?php include("inc/top_navigation_bar.inc"); ?>
+            <main>
+                <div class="purchase-container">
+                    <h2>Confirm Purchase</h2>
+                    <p class="purchase-info">Product: <?php echo htmlspecialchars($product['name']); ?></p>
+                    <?php if ($is_member): ?>
+                        <p>Member Price (MP): RM<?php echo number_format($mp, 2); ?></p>
+                        <?php if ($is_admin): ?>
+                            <p><strong>Admin: Infinite credit</strong></p>
+                        <?php elseif ($user): ?>
+                            <p>Your balance: RM<?php echo number_format($user['balance'], 2); ?></p>
+                        <?php endif; ?>
+                    <?php else: ?>
+                        <p>Normal Price (NP): RM<?php echo number_format($np, 2); ?></p>
+                        <p><em>Login to enjoy member price and balance deduction.</em></p>
                     <?php endif; ?>
-                <?php else: ?>
-                    <p class="buyproduct-p">Normal Price (NP): RM<?php echo number_format($np, 2); ?></p>
-                    <p class="buyproduct-p"><em>Login to enjoy member price and balance deduction.</em></p>
-                <?php endif; ?>
-                <form method="post" action="buy_product.php">
-                    <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
-                    <input type="hidden" name="step" value="show_final">
-                    <label class="buyproduct-label">
-                        <input type="checkbox" class="buyproduct-checkbox" name="addon" value="yes" <?php if($addon_selected) echo 'checked'; ?>>
-                        Add Oat Milk (+RM2.00)
-                    </label>
-                    <br><br>
-                    <strong class="buyproduct-strong">Final Price: RM<?php echo number_format($price, 2); ?></strong>
-                    <br><br>
-                    <button type="submit" class="buyproduct-btn">Confirm</button>
-                    <a href="product.php" class="buyproduct-link"><button type="button" class="buyproduct-btn-alt">Back to products</button></a>
-                </form>
-                <p class="buyproduct-p"><em>Check add-on and click Confirm to see the final price. Click Confirm again to purchase.</em></p>
-            </div>
-            <?php
-            $content = ob_get_clean();
-        }
-        // STEP 2: Show final price and ask for second confirmation
-        else if ($step === 'show_final') {
-            $title = 'Final Confirmation';
-            ob_start(); ?>
-            <div class="buyproduct-container">
-                <h2 class="buyproduct-title">Final Confirmation</h2>
-                <p class="buyproduct-info">Product: <?php echo htmlspecialchars($product['name']); ?></p>
-                <?php if ($is_member): ?>
-                    <p class="buyproduct-p">Member Price (MP): RM<?php echo number_format($mp, 2); ?></p>
-                    <?php if ($is_admin): ?>
-                        <p class="buyproduct-p"><strong class="buyproduct-strong">Admin: Infinite credit</strong></p>
-                    <?php elseif ($user): ?>
-                        <p class="buyproduct-p">Your balance: RM<?php echo number_format($user['balance'], 2); ?></p>
+                    <form method="post" action="buy_product.php">
+                        <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
+                        <input type="hidden" name="step" value="show_final">
+                        <label>
+                            <input type="checkbox" name="addon" value="yes" <?php if ($addon_selected) echo 'checked'; ?>>
+                            Add Oat Milk (+RM2.00)
+                        </label>
+                        <br><br>
+                        <strong>Final Price: RM<?php echo number_format($price, 2); ?></strong>
+                        <br><br>
+                        <button type="submit">Confirm</button>
+                        <a href="product.php"><button type="button">Back to products</button></a>
+                    </form>
+                    <p><em>Check add-on and click Confirm to see the final price. Click Confirm again to purchase.</em></p>
+                </div>
+            </main>
+            <?php include("inc/scroll_to_top_button.inc"); ?>
+
+            <?php include("inc/footer.inc"); ?>
+        </body>
+
+        </html>
+    <?php
+        exit;
+    }
+
+    // STEP 2: Show final price and ask for second confirmation
+    if ($step === 'show_final') {
+    ?>
+        <!DOCTYPE html>
+        <html>
+
+        <head>
+            <title>Final Confirmation</title>
+            <link rel="stylesheet" href="styles/buy.css">
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="description" content="Final Confirmation">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
+            <link rel="stylesheet" href="styles/style.css">
+        </head>
+
+        <body class="theme-final">
+            <?php include("inc/top_navigation_bar.inc"); ?>
+            <main>
+                <div class="purchase-container">
+                    <h2>Final Confirmation</h2>
+                    <p class="purchase-info">Product: <?php echo htmlspecialchars($product['name']); ?></p>
+                    <?php if ($is_member): ?>
+                        <p>Member Price (MP): RM<?php echo number_format($mp, 2); ?></p>
+                        <?php if ($is_admin): ?>
+                            <p><strong>Admin: Infinite credit</strong></p>
+                        <?php elseif ($user): ?>
+                            <p>Your balance: RM<?php echo number_format($user['balance'], 2); ?></p>
+                        <?php endif; ?>
+                    <?php else: ?>
+                        <p>Normal Price (NP): RM<?php echo number_format($np, 2); ?></p>
                     <?php endif; ?>
-                <?php else: ?>
-                    <p class="buyproduct-p">Normal Price (NP): RM<?php echo number_format($np, 2); ?></p>
-                <?php endif; ?>
-                <?php if ($addon_selected): ?>
-                    <p><strong>Oat Milk added (+RM2.00)</strong></p>
-                <?php endif; ?>
-                <strong class="buyproduct-strong">Final Price: RM<?php echo number_format($price, 2); ?></strong>
-                <form method="post" action="buy_product.php">
-                    <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
-                    <input type="hidden" name="step" value="confirm_purchase">
-                    <input type="hidden" name="addon" value="<?php echo $addon_selected ? 'yes' : ''; ?>">
-                    <br><br>
-                    <button type="submit" class="buyproduct-btn">Confirm Purchase</button>
-                    <a href="product.php" class="buyproduct-link">
-                        <button type="button" class="buyproduct-btn-alt">Back to products</button>
-                    </a>
-                </form>
-                <p class="buyproduct-p"><em>Click Confirm Purchase to complete your order.</em></p>
-            </div>
+                    <?php if ($addon_selected): ?>
+                        <p><strong>Oat Milk added (+RM2.00)</strong></p>
+                    <?php endif; ?>
+                    <strong>Final Price: RM<?php echo number_format($price, 2); ?></strong>
+                    <form method="post" action="buy_product.php">
+                        <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
+                        <input type="hidden" name="step" value="confirm_purchase">
+                        <input type="hidden" name="addon" value="<?php echo $addon_selected ? 'yes' : ''; ?>">
+                        <br><br>
+                        <button type="submit">Confirm Purchase</button>
+                        <a href="product.php"><button type="button">Back to products</button></a>
+                    </form>
+                    <p><em>Click Confirm Purchase to complete your order.</em></p>
+                </div>
+            </main>
+            <?php include("inc/scroll_to_top_button.inc"); ?>
+
+            <?php include("inc/footer.inc"); ?>
+        </body>
+
+        </html>
+        <?php
+        exit;
+    }
+
+    // STEP 3: Actually process the purchase after second confirm
+    if ($step === 'confirm_purchase') {
+        if ($is_member) {
+            if ($is_admin) {
+                // Admin: always successful, no balance check or top up needed
+        ?>
+                <!DOCTYPE html>
+                <html>
+
+                <head>
+                    <title>Purchase Successful</title>
+                    <link rel="stylesheet" href="styles/buy.css">
+                    <meta charset="utf-8">
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                    <meta name="description" content="Purchase Successful">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
+                    <link rel="stylesheet" href="styles/style.css">
+                </head>
+
+                <body>
+                    <main>
+                        <?php include("inc/top_navigation_bar.inc"); ?>
+                        <div class="purchase-container">
+                            <h2>Purchase Successful</h2>
+                            <p class="purchase-success">Purchase successful! (Admin: infinite credit, no deduction)</p>
+                            <a href="product.php"><button type="button">Back to products</button></a>
+                        </div>
+                    </main>
+                    <?php include("inc/scroll_to_top_button.inc"); ?>
+
+                    <?php include("inc/footer.inc"); ?>
+                </body>
+
+                </html>
             <?php
-            $content = ob_get_clean();
-        }
-        // STEP 3: Actually process the purchase after second confirm
-        else if ($step === 'confirm_purchase') {
-            if ($is_member) {
-                if ($is_admin) {
-                    $title = 'Purchase Successful';
-                    $content = '
-                    <div class="buyproduct-container">
-                        <h2 class="buyproduct-title">Purchase Successful</h2>
-                        <p class="buyproduct-success">Purchase successful! (Admin: infinite credit, no deduction)</p>
-                        <a href="product.php"><button type="button" class="buyproduct-btn-alt">Back to products</button></a>
-                    </div>';
-                } else if ($user && $user['balance'] >= $price) {
-                    // Normal member: check balance and deduct
-                    $new_balance = $user['balance'] - $price;
-                    $stmt = $conn->prepare("UPDATE topup SET balance = ? WHERE login_id = ?");
-                    $stmt->bind_param("ds", $new_balance, $username);
-                    $stmt->execute();
-                    $stmt->close();
-                    $title = 'Purchase Successful';
-                    $content = '
-                    <div class="buyproduct-container">
-                        <h2 class="buyproduct-title">Purchase Successful</h2>
-                        <p class="buyproduct-success">Purchase successful! Your new balance is RM' . number_format($new_balance, 2) . '.</p>
-                        <a href="product.php"><button type="button" class="buyproduct-btn-alt">Back to products</button></a>
-                    </div>';
-                } else if (!$user) {
-                    $title = 'No Top-up';
-                    $content = '
-                    <div class="buyproduct-container">
-                        <p class="buyproduct-error">No top-up record found. Please top up first.</p>
-                        <a href="product.php"><button type="button" class="buyproduct-btn-alt">Back to products</button></a>
-                    </div>';
-                } else {
-                    $title = 'Insufficient Balance';
-                    $content = '
-                    <div class="buyproduct-container">
-                        <p class="buyproduct-error">Insufficient balance. Please top up.</p>
-                        <a href="product.php"><button type="button" class="buyproduct-btn-alt">Back to products</button></a>
-                    </div>';
-                }
+            } else if ($user && $user['balance'] >= $price) {
+                // Normal member: check balance and deduct
+                $new_balance = $user['balance'] - $price;
+                $stmt = $conn->prepare("UPDATE topup SET balance = ? WHERE login_id = ?");
+                $stmt->bind_param("ds", $new_balance, $username);
+                $stmt->execute();
+                $stmt->close();
+            ?>
+                <!DOCTYPE html>
+                <html>
+
+                <head>
+                    <title>Purchase Successful</title>
+                    <link rel="stylesheet" href="styles/buy.css">
+                    <meta charset="utf-8">
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                    <meta name="description" content="Purchase Successful">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
+                    <link rel="stylesheet" href="styles/style.css">
+                </head>
+
+                <body>
+                    <?php include("inc/top_navigation_bar.inc"); ?>
+                    <main>
+                        <div class="purchase-container">
+                            <h2>Purchase Successful</h2>
+                            <p class="purchase-success">Purchase successful! Your new balance is RM<?php echo number_format($new_balance, 2); ?>.</p>
+                            <a href="product.php"><button type="button">Back to products</button></a>
+                        </div>
+                    </main>
+                    <?php include("inc/scroll_to_top_button.inc"); ?>
+
+                    <?php include("inc/footer.inc"); ?>
+                </body>
+
+                </html>
+            <?php
+            } else if (!$user) {
+                // Normal member: no top-up record
+            ?>
+                <!DOCTYPE html>
+                <html>
+
+                <head>
+                    <title>No Top-up</title>
+                    <link rel="stylesheet" href="styles/buy.css">
+                    <meta charset="utf-8">
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                    <meta name="description" content="No Top-up">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
+                    <link rel="stylesheet" href="styles/style.css">
+                </head>
+
+                <body>
+                    <?php include("inc/top_navigation_bar.inc"); ?><main>
+                        <div class="purchase-container">
+                            <p class="purchase-error">No top-up record found. Please top up first.</p>
+                            <a href="product.php"><button type="button">Back to products</button></a>
+                        </div>
+                    </main>
+                    <?php include("inc/scroll_to_top_button.inc"); ?>
+
+                    <?php include("inc/footer.inc"); ?>
+                </body>
+
+                </html>
+            <?php
             } else {
-                $title = 'Thank You';
-                $content = '
-                <div class="buyproduct-container">
-                    <h2 class="buyproduct-title">Thank You</h2>
-                    <p class="buyproduct-success">Thank you for your purchase.</p>
-                    <a href="product.php"><button type="button" class="buyproduct-btn-alt">Back to products</button></a>
-                </div>';
+                // Normal member: insufficient balance
+                ?>
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Insufficient Balance</title>
+                    <link rel="stylesheet" href="styles/buy.css" />
+                </head>
+                <body>
+                    <div class="purchase-container">
+                        <p class="purchase-error">Insufficient balance. Please top up.</p>
+                        <a href="product.php"><button type="button">Back to products</button></a>
+                    </div>
+                </body>
+                </html>
+                <?php
             }
+            exit;
+        } else {
+            // Not a member
+            ?>
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Thank You</title>
+                <link rel="stylesheet" href="styles/buy.css" />
+            </head>
+            <body>
+                <div class="purchase-container">
+                    <h2>Thank You</h2>
+                    <p class="purchase-success">Thank you for your purchase.</p>
+                    <a href="product.php"><button type="button">Back to products</button></a>
+                </div>
+            </body>
+            </html>
+            <?php
+            exit;
         }
     }
 } else {
@@ -189,7 +331,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 echo $content;
 
 // For debugging only, remove after testing!
-echo '<pre>'; print_r($_SESSION); echo '</pre>';
+echo '<pre>';
+print_r($_SESSION);
+echo '</pre>';
 ?>
-</body>
-</html>
