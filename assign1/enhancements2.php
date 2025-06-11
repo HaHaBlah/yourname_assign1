@@ -546,6 +546,20 @@
             </div>
         </details>
 
+        <!-- Final Product Price Calculation -->
+        <details id="final-product-price-calculation">
+            <summary>
+                <h2>Final Product Price Calculation</h2>
+            </summary>
+            <p>This feature calculates the final price of a product after applying any discounts or promotions.</p>
+            <p>Uses: <a href="buy_product.php">buy_product.php</a></p>
+            <img src="images/enhancements/Final_Product_Price.png" alt="Final Product Price">
+            <h2>buy_product.php</h2>
+            <div class="code">
+                <!-- Code here -->
+            </div>
+        </details>
+
         <!-- Password Reset Feature -->
         <details id="password-reset-feature">
             <summary>

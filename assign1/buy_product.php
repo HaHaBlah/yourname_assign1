@@ -5,6 +5,10 @@ include("inc/database_connection.inc");
 
 $username = $_SESSION['username'] ?? null;
 
+// Uncomment the following lines to enable admin login for testing
+// $_SESSION['admin_logged_in'] = true;
+// $_SESSION['username'] = 'admin'; // or whatever admin username you use
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $product_id = intval($_POST['product_id'] ?? 0);
     $step = $_POST['step'] ?? 'select_addon';
@@ -50,11 +54,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <html>
         <head>
             <title>Confirm Purchase</title>
-            <link rel="stylesheet" href="styles/style.css" />
+            <link rel="stylesheet" href="styles/buy.css" />
         </head>
         <body>
+            <div class="purchase-container">
             <h2>Confirm Purchase</h2>
-            <p>Product: <?php echo htmlspecialchars($product['name']); ?></p>
+            <p class="purchase-info">Product: <?php echo htmlspecialchars($product['name']); ?></p>
             <?php if ($is_member): ?>
                 <p>Member Price (MP): RM<?php echo number_format($mp, 2); ?></p>
                 <?php if ($is_admin): ?>
@@ -77,9 +82,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <strong>Final Price: RM<?php echo number_format($price, 2); ?></strong>
                 <br><br>
                 <button type="submit">Confirm</button>
-                <a href="product.php"><button type="button">Cancel</button></a>
+                <a href="product.php"><button type="button">Back to products</button></a>
             </form>
             <p><em>Check add-on and click Confirm to see the final price. Click Confirm again to purchase.</em></p>
+        </div>
         </body>
         </html>
         <?php
@@ -93,34 +99,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <html>
         <head>
             <title>Final Confirmation</title>
-            <link rel="stylesheet" href="styles/style.css" />
+            <link rel="stylesheet" href="styles/buy.css" />
         </head>
-        <body>
-            <h2>Final Confirmation</h2>
-            <p>Product: <?php echo htmlspecialchars($product['name']); ?></p>
-            <?php if ($is_member): ?>
-                <p>Member Price (MP): RM<?php echo number_format($mp, 2); ?></p>
-                <?php if ($is_admin): ?>
-                    <p><strong>Admin: Infinite credit</strong></p>
-                <?php elseif ($user): ?>
-                    <p>Your balance: RM<?php echo number_format($user['balance'], 2); ?></p>
+        <body class="theme-final">
+            <div class="purchase-container">
+                <h2>Final Confirmation</h2>
+                <p class="purchase-info">Product: <?php echo htmlspecialchars($product['name']); ?></p>
+                <?php if ($is_member): ?>
+                    <p>Member Price (MP): RM<?php echo number_format($mp, 2); ?></p>
+                    <?php if ($is_admin): ?>
+                        <p><strong>Admin: Infinite credit</strong></p>
+                    <?php elseif ($user): ?>
+                        <p>Your balance: RM<?php echo number_format($user['balance'], 2); ?></p>
+                    <?php endif; ?>
+                <?php else: ?>
+                    <p>Normal Price (NP): RM<?php echo number_format($np, 2); ?></p>
                 <?php endif; ?>
-            <?php else: ?>
-                <p>Normal Price (NP): RM<?php echo number_format($np, 2); ?></p>
-            <?php endif; ?>
-            <?php if ($addon_selected): ?>
-                <p><strong>Oat Milk added (+RM2.00)</strong></p>
-            <?php endif; ?>
-            <strong>Final Price: RM<?php echo number_format($price, 2); ?></strong>
-            <form method="post" action="buy_product.php">
-                <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
-                <input type="hidden" name="step" value="confirm_purchase">
-                <input type="hidden" name="addon" value="<?php echo $addon_selected ? 'yes' : ''; ?>">
-                <br><br>
-                <button type="submit">Confirm Purchase</button>
-                <a href="product.php"><button type="button">Cancel</button></a>
-            </form>
-            <p><em>Click Confirm Purchase to complete your order.</em></p>
+                <?php if ($addon_selected): ?>
+                    <p><strong>Oat Milk added (+RM2.00)</strong></p>
+                <?php endif; ?>
+                <strong>Final Price: RM<?php echo number_format($price, 2); ?></strong>
+                <form method="post" action="buy_product.php">
+                    <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
+                    <input type="hidden" name="step" value="confirm_purchase">
+                    <input type="hidden" name="addon" value="<?php echo $addon_selected ? 'yes' : ''; ?>">
+                    <br><br>
+                    <button type="submit">Confirm Purchase</button>
+                    <a href="product.php"><button type="button">Back to products</button></a>
+                </form>
+                <p><em>Click Confirm Purchase to complete your order.</em></p>
+            </div>
         </body>
         </html>
         <?php
@@ -131,24 +139,100 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($step === 'confirm_purchase') {
         if ($is_member) {
             if ($is_admin) {
-                echo "<p>Purchase successful! (Admin: infinite credit, no deduction)</p>";
+                // Admin: always successful, no balance check or top up needed
+                ?>
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Purchase Successful</title>
+                    <link rel="stylesheet" href="styles/buy.css" />
+                </head>
+                <body>
+                    <div class="purchase-container">
+                        <h2>Purchase Successful</h2>
+                        <p class="purchase-success">Purchase successful! (Admin: infinite credit, no deduction)</p>
+                        <a href="product.php"><button type="button">Back to products</button></a>
+                    </div>
+                </body>
+                </html>
+                <?php
             } else if ($user && $user['balance'] >= $price) {
+                // Normal member: check balance and deduct
                 $new_balance = $user['balance'] - $price;
                 $stmt = $conn->prepare("UPDATE topup SET balance = ? WHERE login_id = ?");
                 $stmt->bind_param("ds", $new_balance, $username);
                 $stmt->execute();
                 $stmt->close();
-                echo "<p>Purchase successful! Your new balance is RM" . number_format($new_balance, 2) . ".</p>";
+                ?>
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Purchase Successful</title>
+                    <link rel="stylesheet" href="styles/buy.css" />
+                </head>
+                <body>
+                    <div class="purchase-container">
+                        <h2>Purchase Successful</h2>
+                        <p class="purchase-success">Purchase successful! Your new balance is RM<?php echo number_format($new_balance, 2); ?>.</p>
+                        <a href="product.php"><button type="button">Back to products</button></a>
+                    </div>
+                </body>
+                </html>
+                <?php
             } else if (!$user) {
-                echo "<p>No top-up record found. Please top up first.</p>";
+                // Normal member: no top-up record
+                ?>
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>No Top-up</title>
+                    <link rel="stylesheet" href="styles/buy.css" />
+                </head>
+                <body>
+                    <div class="purchase-container">
+                        <p class="purchase-error">No top-up record found. Please top up first.</p>
+                        <a href="product.php"><button type="button">Back to products</button></a>
+                    </div>
+                </body>
+                </html>
+                <?php
             } else {
-                echo "<p>Insufficient balance. Please top up.</p>";
+                // Normal member: insufficient balance
+                ?>
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Insufficient Balance</title>
+                    <link rel="stylesheet" href="styles/buy.css" />
+                </head>
+                <body>
+                    <div class="purchase-container">
+                        <p class="purchase-error">Insufficient balance. Please top up.</p>
+                        <a href="product.php"><button type="button">Back to products</button></a>
+                    </div>
+                </body>
+                </html>
+                <?php
             }
-            echo '<a href="product.php">Back to products</a>';
             exit;
         } else {
-            echo "<p>Thank you for your purchase.</p>";
-            echo '<a href="product.php">Back to products</a>';
+            // Not a member
+            ?>
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Thank You</title>
+                <link rel="stylesheet" href="styles/buy.css" />
+            </head>
+            <body>
+                <div class="purchase-container">
+                    <h2>Thank You</h2>
+                    <p class="purchase-success">Thank you for your purchase.</p>
+                    <a href="product.php"><button type="button">Back to products</button></a>
+                </div>
+            </body>
+            </html>
+            <?php
             exit;
         }
     }
@@ -156,4 +240,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Location: product.php");
     exit;
 }
+
+// For debugging only, remove after testing!
+echo '<pre>'; print_r($_SESSION); echo '</pre>';
 ?>
