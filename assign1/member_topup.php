@@ -114,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <div class="login-left">
         <img src="images/Brew&Go_logo.png" alt="Brew & Go logo">
         <h2>Member Top-Up</h2>
-        <p>Automatically synced from members &rsaquo; topup</p>
+        <p>Your account details are automatically synced to ensure your top-up balance is current</p>
       </div>
       <div class="login-right">
         <form method="post" action="member_topup.php">
