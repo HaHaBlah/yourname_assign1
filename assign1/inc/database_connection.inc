@@ -106,11 +106,15 @@ if (!$conn->query($sql)) {
 }
 
 $sql = "CREATE TABLE IF NOT EXISTS topup (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    login_id VARCHAR(10) NOT NULL UNIQUE,
-    email VARCHAR(100) NOT NULL,
-    password VARCHAR(255),
-    balance DECIMAL(10,2) DEFAULT 0.00
+    id                 INT AUTO_INCREMENT PRIMARY KEY,
+    login_id           VARCHAR(50)  NOT NULL UNIQUE,
+    email              VARCHAR(100) NOT NULL,
+    balance            DECIMAL(10,2) NOT NULL DEFAULT 0,
+    last_topup_method  VARCHAR(50),
+    last_topup_amount  DECIMAL(10,2),
+    last_topup_time    DATETIME,
+    INDEX(login_id),
+    INDEX(email)
 )";
 
 if (!$conn->query($sql)) {

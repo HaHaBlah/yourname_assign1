@@ -26,7 +26,7 @@ if (isset($_POST['id']) && ctype_digit($_POST['id'])) {
     // --- UPDATE ---
     $id   = (int)$_POST['id'];
     $sql  = "UPDATE members
-             SET firstname=?, lastname=?, email=?, username=?, password=?
+             SET firstname=?, lastname=?, email=?, username=?, password=?, email_verified=1
              WHERE id=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sssssi",
@@ -37,19 +37,14 @@ if (isset($_POST['id']) && ctype_digit($_POST['id'])) {
         $hashed,
         $id
     );
+
 } else {
     // --- INSERT ---
     $sql  = "INSERT INTO members
-             (firstname, lastname, email, username, password, reg_date)
-             VALUES (?, ?, ?, ?, ?, NOW())";
+             (firstname, lastname, email, username, password, reg_date, email_verified)
+             VALUES (?, ?, ?, ?, ?, NOW(), 1)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssss",
-        $firstname,
-        $lastname,
-        $email,
-        $username,
-        $hashed
-    );
+    $stmt->bind_param("sssss", $firstname, $lastname, $email, $username, $hashed);
 }
 
 if ($stmt->execute()) {

@@ -3,8 +3,19 @@
 // login.php
 // ----------------------------------------------------------------
 
-include "inc/database_connection.inc";
 session_start();
+if (!empty($_SESSION['logged_in'])) {
+  // If admin, go to admin panel; otherwise go to member welcome
+  $dest = ($_SESSION['role'] === 'admin')
+        ? 'admin_dashboard.php'
+        : 'user_dashboard.php';
+  header("Location: $dest");
+  exit;
+}
+
+include "inc/database_connection.inc";
+// include("inc/login_status.inc");
+// session_start();
 
 // 1) Ensure password_resets table exists
 $sql = <<<SQL

@@ -7,10 +7,10 @@
 
 <?php
 // Redirect to login if not logged in or not a user
-if (!isset($_SESSION['username']) || !isset($_SESSION['role']) || $_SESSION['role'] !== 'user') {
-    header('Location: login.php');
-    exit;
-}
+// if (!isset($_SESSION['username']) || !isset($_SESSION['role']) || $_SESSION['role'] !== 'user') {
+//     header('Location: login.php');
+//     exit;
+// }
 ?>
 
 <!DOCTYPE html>

@@ -45,7 +45,7 @@ $stmt->close();
 
 // Fetch credit balance
 $stmt = $conn->prepare("SELECT balance FROM topup WHERE login_id = ?");
-$stmt->bind_param("i", $user_id);
+$stmt->bind_param("s", $username);
 $stmt->execute();
 $result = $stmt->get_result();
 if ($result->num_rows > 0) {
@@ -97,9 +97,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $conn->close();
 ?>
 
-// Close database connection
-$conn->close();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -109,10 +106,9 @@ $conn->close();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
     <link rel="stylesheet" href="styles/style.css">
+    <?php include("inc/top_navigation_bar.inc"); ?>
 </head>
 <body>
-    <?php include("inc/top_navigation_bar.inc"); ?>
-    
     <div class="container">
         <div class="dashboard-header">
             <div class="welcome-section">

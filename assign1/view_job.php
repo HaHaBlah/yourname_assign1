@@ -93,14 +93,14 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
                 echo "<tr><td colspan='12'>0 results</td></tr>";
             }
 
-            mysqli_close($conn);
+            
             ?>
         </table>
         <?php include("inc/scroll_to_top_button.inc"); ?>
     </main>
 
 
-    <?php include("inc/footer.inc"); ?>
+    <?php include("inc/footer.inc"); mysqli_close($conn);?>
 </body>
 
 </html>
