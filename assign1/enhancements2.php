@@ -399,6 +399,22 @@
                 </span>
             </div>
         </details>
+
+        <!-- Current Date Feature -->
+        <details id="current-date-feature">
+            <summary>
+                <h2>Current Date Feature</h2>
+            </summary>
+            <p>This feature displays the current date on the website.</p>
+            <p>Uses: <a href="footer.inc">footer.inc</a></p>
+            <img src="images/enhancements/Current_Date.png" alt="Current Date">
+            <h2>footer.inc</h2>
+            <div class="code">
+                <span>
+                    &lt;?php echo date("Y"); ?>
+                </span>
+            </div>
+        </details>
     </main>
     <?php include("inc/scroll_to_top_button.inc"); ?>
 
