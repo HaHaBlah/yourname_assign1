@@ -553,10 +553,17 @@
             </summary>
             <p>This feature calculates the final price of a product after applying any discounts or promotions.</p>
             <p>Uses: <a href="buy_product.php">buy_product.php</a></p>
-            <img src="images/enhancements/Final_Product_Price.png" alt="Final Product Price">
+            <img src="images/enhancements/Final_Price.png" alt="Final Product Price">
+            <img src="images/enhancements/Final_Price2.png" alt="Final Product Price">
             <h2>buy_product.php</h2>
             <div class="code">
-                <!-- Code here -->
+                $mp = $product['mp'];<br>
+                $np = $product['np'];<br>
+                $price = $is_member ? $mp : $np;<br>
+                $addon_price = 2.00;<br>
+                if ($addon_selected) {<br>
+                    &nbsp;&nbsp;&nbsp;$price += $addon_price;<br>
+                }
             </div>
         </details>
 
