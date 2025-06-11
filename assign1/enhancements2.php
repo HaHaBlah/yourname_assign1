@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Enhancements</title>
+    <title>Enhancements2</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
@@ -150,10 +150,40 @@
         <section>
             <h2>Member Top-up Module</h2>
             <p>This feature allows members to do top up into their accounts.</p>
-            <p>Uses: <a href="member_topup.php">member_topup.php</a></p>
+            <p>Uses: <a href="member_topup.php">member_topup.php</a> and <a href="user_dashboard.php">user_dashboard.php</a></p>
+            <img src="images/enhancements/Topup.png" alt="Top Up">
+            <img src="images/enhancements/Topup2.png" alt="Top Up2">
             <h2>member_topup.php</h2>
             <div class="code">
                 <span>
+                    $syncSql = &lt;&lt;&lt;SQL<br>
+                    INSERT INTO topup (login_id, email, balance)<br>
+                    SELECT username, email, 0<br>
+                        &nbsp;&nbsp;&nbsp;FROM members<br>
+                    ON DUPLICATE KEY UPDATE<br>
+                        &nbsp;&nbsp;&nbsp;email   = VALUES(email)<br>
+                    SQL;<br>
+                    if (! $conn->query($syncSql)) {<br>
+                        &nbsp;&nbsp;&nbsp;die("Error syncing members: " . $conn->error);<br>
+                    }<br>
+<br>
+                    $newBalance = $currentBalance + $amount;<br>
+<br>
+                    $update = $conn->prepare(<br>
+                    "UPDATE topup<br>
+                        &nbsp;&nbsp;&nbsp;SET balance           = ?,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;last_topup_method = ?,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;last_topup_amount = ?,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;last_topup_time   = NOW()<br>
+                        &nbsp;&nbsp;&nbsp;WHERE login_id = ? AND email = ?"<br>
+                    );<br>
+                    $update->bind_param("dsdss",<br>
+                        &nbsp;&nbsp;&nbsp;$newBalance,<br>
+                        &nbsp;&nbsp;&nbsp;$method,<br>
+                        &nbsp;&nbsp;&nbsp;$amount,<br>
+                        &nbsp;&nbsp;&nbsp;$login_id,<br>
+                        &nbsp;&nbsp;&nbsp;$email<br>
+                    );
                 </span>
             </div>
         </section>
@@ -234,6 +264,107 @@
                     &nbsp;&nbsp;&nbsp;$headers .= "From: brewngo.coffee@gmail.com" . "\r\n";<br>
                     <br>
                     &nbsp;&nbsp;&nbsp;mail($email, $subject, $message, $headers);<br>
+                </span>
+            </div>
+            <h2>verification_email.php</h2>
+            <div class="code">
+                <span>
+                    &lt;a href="$verify_link">Verify Email&lt;/a>
+                </span>
+            </div>
+        </section>
+
+        <!-- User Dashboard -->
+        <section>
+            <h2>User Dashboard</h2>
+            <p>This is the user dashboard where users can view their profile information and edit it.</p>
+            <p>Uses: <a href="user_dashboard.php">user_dashboard.php</a></p>
+            <img src="images/enhancements/User_Dashboard.png" alt="User Dashboard">
+            <h2>user_dashboard.php</h2>
+            <div class="code">
+                <span>
+                    $stmt = $conn->prepare("SELECT id, firstname, lastname, email, username, role, phonenumber FROM members WHERE username = ? AND email_verified = 1");<br>
+                    $stmt->bind_param("s", $username);<br>
+                    $stmt->execute();<br>
+                    $result = $stmt->get_result();<br>
+                    if ($result->num_rows === 1) {<br>
+                        &nbsp;&nbsp;&nbsp;$userInfo = $result->fetch_assoc();<br>
+                        &nbsp;&nbsp;&nbsp;$_SESSION['user_id'] = $userInfo['id'];<br>
+                    } else {<br>
+                        &nbsp;&nbsp;&nbsp;header("Location: login.php");<br>
+                        &nbsp;&nbsp;&nbsp;exit();<br>
+                    }<br>
+                    $stmt->close();<br>
+<br>
+                    $user_id = $_SESSION['user_id'];<br>
+                    $addressInfo = [];<br>
+                    $creditBalance = 0;<br>
+                    $successMsg = '';<br>
+                    $errorMsg = '';<br>
+<br>
+                    // Fetch address info from new addresses table<br>
+                    $stmt = $conn->prepare("SELECT * FROM members WHERE id = ?");<br>
+                    $stmt->bind_param("i", $user_id);<br>
+                    $stmt->execute();<br>
+                    $result = $stmt->get_result();<br>
+                    if ($result->num_rows > 0) {<br>
+                        &nbsp;&nbsp;&nbsp;$addressInfo = $result->fetch_assoc();<br>
+                    }<br>
+                    $stmt->close();<br>
+<br>
+                    // Fetch credit balance<br>
+                    $stmt = $conn->prepare("SELECT balance FROM topup WHERE login_id = ?");<br>
+                    $stmt->bind_param("s", $username);<br>
+                    $stmt->execute();<br>
+                    $result = $stmt->get_result();<br>
+                    if ($result->num_rows > 0) {<br>
+                        &nbsp;&nbsp;&nbsp;$creditData = $result->fetch_assoc();<br>
+                        &nbsp;&nbsp;&nbsp;$creditBalance = $creditData['balance'];<br>
+                    }<br>
+                    $stmt->close();<br>
+<br>
+                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {<br>
+                        &nbsp;&nbsp;&nbsp;if (isset($_POST['update_personal'])) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$firstname = htmlspecialchars(trim($_POST['firstname']));<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$lastname = htmlspecialchars(trim($_POST['lastname']));<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$email = htmlspecialchars(trim($_POST['email']));<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$phonenumber = htmlspecialchars(trim($_POST['phonenumber']));<br>
+<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$stmt = $conn->prepare("UPDATE members SET firstname = ?, lastname = ?, email = ?, phonenumber = ? WHERE id = ?");<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$stmt->bind_param("ssssi", $firstname, $lastname, $email, $phonenumber, $user_id);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ($stmt->execute()) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$successMsg = "Personal information updated successfully!";<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$errorMsg = "Error updating personal information: " . $stmt->error;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$stmt->close();<br>
+                        &nbsp;&nbsp;&nbsp;}<br>
+<br>
+                        &nbsp;&nbsp;&nbsp;if (isset($_POST['update_address'])) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$streetaddress = htmlspecialchars(trim($_POST['streetaddress']));<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$citytown = htmlspecialchars(trim($_POST['citytown']));<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$state = htmlspecialchars(trim($_POST['state']));<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$postcode = htmlspecialchars(trim($_POST['postcode']));<br>
+<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!empty($addressInfo)) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$stmt = $conn->prepare("UPDATE members SET streetaddress = ?, citytown = ?, state = ?, postcode = ? WHERE id = ?");<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$stmt->bind_param("ssssi", $streetaddress, $citytown, $state, $postcode, $user_id);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$stmt = $conn->prepare("INSERT INTO members (id, streetaddress, citytown, state, postcode) VALUES (?, ?, ?, ?, ?)");<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$stmt->bind_param("issss", $user_id, $streetaddress, $citytown, $state, $postcode);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ($stmt->execute()) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$successMsg = empty($addressInfo) ? "Address added successfully!" : "Address updated successfully!";<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$errorMsg = "Error saving address: " . $stmt->error;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$stmt->close();<br>
+                        &nbsp;&nbsp;&nbsp;}<br>
+<br>
+                    }<br>
+<br>
+                    $conn->close();
                 </span>
             </div>
             <h2>verification_email.php</h2>
