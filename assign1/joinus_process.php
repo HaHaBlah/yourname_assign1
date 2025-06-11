@@ -109,7 +109,7 @@ require_once __DIR__ . '/anti_spam_check.php';
             if (isset($_FILES['PhotoFile']) && $_FILES['PhotoFile']['error'] === UPLOAD_ERR_OK) {
                 // 1) check PHP’s own limits
                 if ($_FILES['PhotoFile']['size'] > 200 * 1024) {
-                    $errors['photofile'] = 'Photo exceeds 200 KB limit.';
+                    $errors['photofile'] = 'Photo exceeds 200 KB limit.';
                     $uploadOk = false;
                 } else {
                     $photoName   = basename($_FILES['PhotoFile']['name']);
