@@ -25,6 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Product not found.");
     }
 
+    // Debugging
+
+
     // Determine if user is logged in
     $is_member = !empty($username);
 
@@ -126,6 +129,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </body>
     </html>
     <?php
+    echo "<pre>";
+
+    echo "</pre>";
     exit;
 } else {
     header("Location: product.php");
