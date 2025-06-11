@@ -46,11 +46,11 @@
                     $subject = "Re: Your enquiry at Brew & Go Coffee";<br>
                     $body = get_enquiry_reply_email($to_name, $reply_msg);<br>
                     $headers = "From: Brew & Go <taphahablah@gmail.com>\r\n";<br>
-                    $headers .= "Reply-To: taphahablah@gmail.com\r\n";<br>
-                    $headers .= "MIME-Version: 1.0\r\n";<br>
-                    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";<br>
-                    <br>
-                    mail($to_email, $subject, $body, $headers)<br>
+                        $headers .= "Reply-To: taphahablah@gmail.com\r\n";<br>
+                        $headers .= "MIME-Version: 1.0\r\n";<br>
+                        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";<br>
+                        <br>
+                        mail($to_email, $subject, $body, $headers)<br>
                 </span>
             </div>
             <h2>member_save.php</h2>
@@ -407,7 +407,7 @@
             </summary>
             <p>This feature allows the admin to send an email to the user after replying to their enquiry. The email will
                 contain the reply message.</p>
-            <p>Uses: Allows the admin to reply directly to the user without needing to open the email. The system automatically transfer the response to the email.
+            <p>Uses: <a href="reply_enquiries.php">reply_enquiries.php</a></p>
             <img src="images/enhancements/auto_email_send.png" alt="Email Verification">
             <h2>reply_enquiries.php</h2>
             <div class="code">
@@ -542,6 +542,39 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="firstname"<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="&lt;?= htmlspecialchars($userProfile['firstname']) ?&gt;"&gt;<br>
                     &lt;?php endif; ?&gt;
+                </span>
+            </div>
+        </details>
+
+        <!-- Password Reset Feature -->
+        <details id="password-reset-feature">
+            <summary>
+                <h2>Password Reset Feature</h2>
+            </summary>
+            <p>This feature allows users to reset their passwords if forgotten.</p>
+            <p>Uses: <a href="login.php">login.php</a> and <a href="email_templates.php">email_templates.php</a></p>
+            <img src="images/enhancements/Reset_Password.png" alt="Password Reset">
+            <img src="images/enhancements/Reset_Password2.png" alt="Password Reset">
+            <img src="images/enhancements/Reset_Password3.png" alt="Password Reset">
+            <h2>login.php</h2>
+            <div class="code">
+                <span>
+                    $link = "https://{$_SERVER['HTTP_HOST']}"<br>
+                    . dirname($_SERVER['REQUEST_URI'])<br>
+                    . "/reset_password.php?email=" . urlencode($email)<br>
+                    . "&token={$token}";<br>
+                    $subject = "Reset your Brew & Go password";<br>
+                    <br>
+                    require_once "email_templates.php"; // or email_templates.php if you put it there<br>
+                    $body = get_password_reset_email($firstname ?: 'Member', $link);<br>
+                    <br>
+                    @mail(<br>
+                    $email,<br>
+                    $subject,<br>
+                    $body,<br>
+                    "From: no-reply@yourdomain.com\r\n"<br>
+                    &nbsp;&nbsp;&nbsp;. "Content-Type: text/html; charset=UTF-8\r\n"<br>
+                    );
                 </span>
             </div>
         </details>
