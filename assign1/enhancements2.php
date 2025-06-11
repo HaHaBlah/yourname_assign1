@@ -400,6 +400,83 @@
             </div>
         </details>
 
+        <!-- Auto Email send after clicked reply -->
+        <details id="auto-email-send">
+            <summary>
+                <h2>Auto Email Send After Clicked Reply</h2>
+            </summary>
+            <p>This feature allows the admin to send an email to the user after replying to their enquiry. The email will
+                contain the reply message.</p>
+            <p>Uses: Allows the admin to reply directly to the user without needing to open the email. The system automatically transfer the response to the email.
+            <img src="images/enhancements/auto_email_send.png" alt="Email Verification">
+            <h2>reply_enquiries.php</h2>
+            <div class="code">
+                <span>
+                    &lt;section class="login-container" id="reply-enquiry"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;h2&gt;Reply to Enquiry #&lt;?php echo $enq_id; ?&gt;&lt;/h2&gt;<br><br>
+
+                    &nbsp;&nbsp;&nbsp;&lt;?php if ($error): ?&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="error-msg"&gt;&lt;?= htmlspecialchars($error) ?&gt;&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;?php elseif ($success): ?&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="success-msg"&gt;&lt;?= htmlspecialchars($success) ?&gt;&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;?php endif; ?&gt;<br><br>
+
+                    &nbsp;&nbsp;&nbsp;&lt;section class="enquiry-details"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Enquiry Details&lt;/h3&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table class="enquiry-table"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Name:&lt;/th&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;&lt;?= htmlspecialchars("{$fn} {$ln}") ?&gt;&lt;/td&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Email:&lt;/th&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;&lt;?= htmlspecialchars($email) ?&gt;&lt;/td&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Type:&lt;/th&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;&lt;?= htmlspecialchars($etype) ?&gt;&lt;/td&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Submitted:&lt;/th&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;&lt;?= htmlspecialchars($submitted) ?&gt;&lt;/td&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Message:&lt;/th&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;&lt;?= nl2br(htmlspecialchars($msg)) ?&gt;&lt;/td&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;?php if ($old_reply): ?&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Already Replied:&lt;/th&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;&lt;?= nl2br(htmlspecialchars($old_reply)) ?&gt;&lt;/td&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Replied At:&lt;/th&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;&lt;?= htmlspecialchars($old_reply_at) ?&gt;&lt;/td&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;?php endif; ?&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;/section&gt;<br><br>
+
+                    &nbsp;&nbsp;&nbsp;&lt;section class="reply-form"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Your Reply&lt;/h3&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form method="post"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea name="reply_message" rows="6" style="width:100%;" placeholder="Write your response here…"&gt;&lt;?= htmlspecialchars($_POST['reply_message'] ?? '') ?&gt;&lt;/textarea&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="submit"&gt;Send Reply&lt;/button&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;/section&gt;<br><br>
+
+                    &nbsp;&nbsp;&nbsp;&lt;p&gt;&lt;a href="admin_dashboard.php"&gt;← Back to Dashboard&lt;/a&gt;&lt;/p&gt;<br>
+                    &lt;/section&gt;
+                </span>
+            </div>
+        </details>
+
         <!-- Current Date Feature -->
         <details id="current-date-feature">
             <summary>
@@ -412,6 +489,59 @@
             <div class="code">
                 <span>
                     &lt;?php echo date("Y"); ?>
+                </span>
+            </div>
+        </details>
+
+        <!-- Hide Form -->
+        <details id="hide-form-feature">
+            <summary>
+                <h2>Hide Form Feature</h2>
+            </summary>
+            <p>This feature allows you to hide a form on the webpage.</p>
+            <p>Uses: <a href="form.inc">form.inc</a></p>
+            <img src="images/enhancements/Hide_Form.png" alt="Hide Form">
+            <h2>enquiry.php</h2>
+            <div class="code">
+                <span>
+                    &lt;?php<br>
+                    // Check if user is logged in and fetch firstname<br>
+                    if ($isLoggedIn) {<br>
+                    &nbsp;&nbsp;&nbsp;$username = $_SESSION['username'];<br>
+                    &nbsp;&nbsp;&nbsp;$stmt = $conn-&gt;prepare("&lt;br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SELECT firstname<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FROM members<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WHERE username = ?<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LIMIT 1<br>
+                    &nbsp;&nbsp;&nbsp;");<br>
+                    &nbsp;&nbsp;&nbsp;$stmt-&gt;bind_param("s", $username);<br>
+                    &nbsp;&nbsp;&nbsp;$stmt-&gt;execute();<br>
+                    &nbsp;&nbsp;&nbsp;$userProfile = $stmt-&gt;get_result()-&gt;fetch_assoc() ?: [];<br>
+                    &nbsp;&nbsp;&nbsp;$stmt-&gt;close();<br>
+                    }<br><br>
+
+                    // Determine whether to show the firstname field<br>
+                    $hasPersonal = !empty($userProfile['firstname']);<br>
+                    $showPersonal = ! $hasPersonal;<br>
+                    ?&gt;<br><br>
+
+                    &lt;!-- HTML Form Field for First Name --&gt;<br>
+                    &lt;?php if ($showPersonal): ?&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;input<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class="responsive-hover"<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type="text"<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="firstname"<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder="First name"<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxlength="25"<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;required<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pattern="[A-Za-z\s]+"<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="&lt;?= htmlspecialchars($userProfile['firstname'] ?? '') ?&gt;"<br>
+                    &nbsp;&nbsp;&nbsp;/&gt;&lt;br&gt;<br>
+                    &lt;?php else: ?&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;input type="hidden"<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="firstname"<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="&lt;?= htmlspecialchars($userProfile['firstname']) ?&gt;"&gt;<br>
+                    &lt;?php endif; ?&gt;
                 </span>
             </div>
         </details>
