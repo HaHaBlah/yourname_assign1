@@ -1,3 +1,5 @@
+<!-- Ignore the erorr: this file is used for UI testing -->
+ 
 <?php
 
 /*

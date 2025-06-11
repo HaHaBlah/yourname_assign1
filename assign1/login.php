@@ -5,7 +5,6 @@
 
 session_start();
 if (!empty($_SESSION['logged_in'])) {
-  // If admin, go to admin panel; otherwise go to member welcome
   $dest = ($_SESSION['role'] === 'admin')
         ? 'admin_dashboard.php'
         : 'user_dashboard.php';
@@ -17,7 +16,7 @@ include "inc/database_connection.inc";
 // include("inc/login_status.inc");
 // session_start();
 
-// 1) Ensure password_resets table exists
+// Ensure password_resets table exists
 $sql = <<<SQL
 CREATE TABLE IF NOT EXISTS `password_resets` (
   `email`      VARCHAR(255) NOT NULL,
@@ -30,22 +29,22 @@ if (! $conn->query($sql)) {
   die("Failed to create password_resets table: " . $conn->error);
 }
 
-// 2) Handle “Forgot password” form submission
+// Handle “Forgot password” form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['forgot_email'])) {
   $email = trim($_POST['forgot_email']);
 
-  // a) Check user exists
+  // Check user exists
   $stmt = $conn->prepare("SELECT id FROM members WHERE email = ?");
   $stmt->bind_param('s', $email);
   $stmt->execute();
   $stmt->store_result();
 
   if ($stmt->num_rows === 1) {
-    // b) Generate token + expiry
+    // Generate token & expiry
     $token   = bin2hex(random_bytes(50));
     $expires = date('Y-m-d H:i:s', time() + 3600);
 
-    // c) Upsert into password_resets
+    // Upsert into password_resets
     $up = $conn->prepare("
           INSERT INTO password_resets (email, token, expires_at)
           VALUES (?, ?, ?)
@@ -56,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['forgot_email'])) {
     $up->bind_param('sss', $email, $token, $expires);
     $up->execute();
 
-    // d) Send the reset email
+    // Send the reset email
     $link = "https://{$_SERVER['HTTP_HOST']}"
       . dirname($_SERVER['REQUEST_URI'])
       . "/reset_password.php?email=" . urlencode($email)
@@ -72,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['forgot_email'])) {
     $name_stmt->close();
 
     // Use the new HTML template
-    require_once "email_templates.php"; // or email_templates.php if you put it there
+    require_once "email_templates.php";
     $body = get_password_reset_email($firstname ?: 'Member', $link);
 
     @mail(
@@ -89,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['forgot_email'])) {
   }
 }
 
-// 3) Decide which view to show
+// Decide which view to show
 $action = $_GET['action'] ?? '';
 ?>
 <!DOCTYPE html>
@@ -183,8 +182,8 @@ $action = $_GET['action'] ?? '';
             <div class="login-bottom">
               <a href="registration.php">Don't have an account?</a>
             </div>
-          </div> <!-- /.login-right -->
-        </div> <!-- /.login-panel -->
+          </div>
+        </div>
       </section>
     <?php endif; ?>
 

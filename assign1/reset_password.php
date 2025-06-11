@@ -1,11 +1,9 @@
 <?php
-// reset_password.php
-// ----------------------------------------------------------------
 
 include "inc/database_connection.inc";
 session_start();
 
-// 1) Fetch and validate email + token from query
+// Fetch and validate email + token from query
 $email = $_GET['email']   ?? '';
 $token = $_GET['token']   ?? '';
 $error = '';
@@ -15,7 +13,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($token) !== 100) {
     $error = "Invalid password reset link.";
 }
 
-// 2) If POST, handle the new password submission
+// If POST, handle the new password submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['new_password'], $_POST['confirm_password'])) {
     $new  = $_POST['new_password'];
     $conf = $_POST['confirm_password'];
@@ -25,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['new_password'], $_POS
     } elseif ($new !== $conf) {
         $error = "Passwords do not match.";
     } else {
-        // re-validate token is still valid
+        // Re-validate token is still valid
         $stmt = $conn->prepare("
             SELECT expires_at
               FROM password_resets
@@ -42,27 +40,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['new_password'], $_POS
         $stmt->close();
 
         if (!$error) {
-            // hash and update the user's password
+            // Hash and Update
             $hash = password_hash($new, PASSWORD_DEFAULT);
             $up2  = $conn->prepare("UPDATE members SET password = ? WHERE email = ?");
             $up2->bind_param('ss', $hash, $email);
             $up2->execute();
             $up2->close();
 
-            // delete the reset token so it can't be reused
+            // Delete the reset token
             $del = $conn->prepare("DELETE FROM password_resets WHERE email = ?");
             $del->bind_param('s', $email);
             $del->execute();
             $del->close();
 
-            // redirect to login with a success flag
+            // Redirect to login with a success flag
             header("Location: login.php?reset=success");
             exit;
         }
     }
 }
 
-// 3) If no POST or there was an error, check link validity before showing form
+
 if (empty($_POST) && empty($error)) {
     $stmt = $conn->prepare("
         SELECT expires_at

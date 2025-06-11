@@ -109,13 +109,13 @@ require_once("verification_email.php");
     if ($username && preg_match('/^[a-zA-Z0-9]{3,10}$/', $username)) {
         $valid['username'] = "Username is valid.";
     } else {
-        $errors['username'] = "Username must be alphanumeric and between 3 and 10 characters long."; //I need to check with this
+        $errors['username'] = "Username must be alphanumeric and between 3 and 10 characters long."; //I need to check with this // Fixed ✅
     }
 
     if ($password && strlen($password) >= 6) {
         $valid['password'] = "Password is valid.";
     } else {
-        $errors['password'] = "Password must be at least 6 characters long."; //I need to check with this
+        $errors['password'] = "Password must be at least 6 characters long."; //I need to check with this // Fixed ✅
     }
     ?>
 
@@ -124,20 +124,20 @@ require_once("verification_email.php");
 
     <?php
     if (count($errors) === 0) {
-        // ✅ Hash the password before saving
+        // Hash the password before saving
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         // Generate verification token and expiry
         $token = bin2hex(random_bytes(32));
-        $expires = date('Y-m-d H:i:s', time() + 300); // 5 minutes from now
+        $expires = date('Y-m-d H:i:s', time() + 300); // 5 minutes verification
 
-        // ✅ Prepare the INSERT query
+        // Prepare the INSERT query
         $stmt = $conn->prepare(
             "INSERT INTO members (firstname, lastname, email, username, password, verification_token, verification_expires)
                 VALUES (?, ?, ?, ?, ?, ?, ?)"
         );
 
-        // ✅ Bind the variables to the query
+        // Bind the variables to the query
         $stmt->bind_param(
             "sssssss",
             $firstname,
@@ -149,7 +149,7 @@ require_once("verification_email.php");
             $expires
         );
 
-        // ✅ Execute the query and check if it worked
+        // Execute the query and check if it worked
         if ($stmt->execute()) {
             // Send verification email
             $verify_link = "http://{$_SERVER['HTTP_HOST']}/yourname_assign1/assign1/verify_email.php?token=$token";
@@ -168,7 +168,7 @@ require_once("verification_email.php");
             unset($_SESSION['form_data']); // Clear saved inputs
             echo "</main>";
         } else {
-            // Insert failed (e.g. duplicate username)
+            // Insert failed
             echo "<main>";
             echo "<h1>Registration Failed</h1>";
             echo "<p>Error: " . htmlspecialchars($stmt->error) . "</p>";
@@ -176,7 +176,7 @@ require_once("verification_email.php");
             echo "</main>";
         }
 
-        $stmt->close(); //end
+        $stmt->close();
 
     } else {
         // Show error messages

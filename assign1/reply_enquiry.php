@@ -1,23 +1,23 @@
 <?php
 // reply_enquiries.php
 
-// 1) Ensure admin is logged in
+// Ensure admin is logged in
 include("inc/login_status.inc");
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
   header('Location: login.php?error=not_authorized');
   exit;
 }
 
-// 2) Database connection
-include("inc/database_connection.inc"); // defines $conn = mysqli_connect(...)
+// Database connection
+include("inc/database_connection.inc");
 require_once "email_templates.php";
 
-// 3) Show PHP errors while debugging
+// Show PHP errors while debugging
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// 4) Get the enquiry ID
+// Get the enquiry ID
 if (empty($_GET['id']) || !ctype_digit($_GET['id'])) {
   die("Invalid enquiry ID.");
 }
@@ -26,14 +26,14 @@ $enq_id = (int)$_GET['id'];
 $error   = '';
 $success = '';
 
-// 5) Handle the reply submission
+// Handle the reply submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $reply_msg = trim($_POST['reply_message'] ?? '');
 
   if ($reply_msg === '') {
     $error = "Please enter a reply message.";
   } else {
-    // 5a) Look up the original enquiry’s email & name
+    // Look up the original enquiry's email & name
     $stmt = $conn->prepare(
       "SELECT email, firstname
                FROM enquiries
@@ -46,8 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($stmt->fetch()) {
       $stmt->close();
 
-      // 5b) Override sendmail to use your Gmail + App Password
-      //    Make sure you've created an App Password for taphahablah@gmail.com
+      // Override sendmail
       ini_set(
         'sendmail_path',
         '"C:\\xampp\\sendmail\\sendmail.exe" '
@@ -56,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           . '-t'
       );
 
-      // 5c) Build and send the mail
+      // Build and send the mail
       $subject = "Re: Your enquiry at Brew & Go Coffee";
       $body    = get_enquiry_reply_email($to_name, $reply_msg);
       $headers  = "From: Brew & Go. <taphahablah@gmail.com>\r\n";
@@ -65,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
       if (mail($to_email, $subject, $body, $headers)) {
-        // 5d) Record the reply in your DB
+        // Record the reply in your DB
         $upd = $conn->prepare(
           "UPDATE enquiries
                         SET reply_message = ?,
@@ -87,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 }
 
-// 6) Fetch the full enquiry details for display
+// Fetch the full enquiry details for display
 $stmt = $conn->prepare(
   "SELECT firstname, lastname, email, enquirytype, message, submitted_at, reply_message, reply_sent_at
        FROM enquiries

@@ -7,13 +7,13 @@ $username   = "root";
 $password   = "";
 $dbname     = "brew&go_db";
 
-// 1. Connect to MySQL (no DB selected yet)
+// Connect to MySQL (no DB selected yet)
 $conn = new mysqli($servername, $username, $password);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// 2. Create the database if it doesn't exist
+// Create the database if it doesn't exist
 $sql = "CREATE DATABASE IF NOT EXISTS `$dbname`
          DEFAULT CHARACTER SET utf8mb4
          COLLATE utf8mb4_general_ci";
@@ -21,10 +21,10 @@ if (! $conn->query($sql)) {
   die("Database creation failed: " . $conn->error);
 }
 
-// 3. Select the database
+// Select the database
 $conn->select_db($dbname);
 
-// 4. Create the products table if it doesn't exist
+// Create the products table if it doesn't exist
 $sql = "
   CREATE TABLE IF NOT EXISTS `products` (
     `id`        INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -41,7 +41,7 @@ if (! $conn->query($sql)) {
   die("Table creation failed: " . $conn->error);
 }
 
-// 5. Populate table if it's empty
+// Populate table if it's empty
 $result = $conn->query("SELECT COUNT(*) AS cnt FROM `products`");
 $row    = $result->fetch_assoc();
 if ((int)$row['cnt'] === 0) {
@@ -74,7 +74,7 @@ if ((int)$row['cnt'] === 0) {
   }
 }
 
-// 6. Handle search
+// Handle search
 $keyword = '';
 $results = [];
 

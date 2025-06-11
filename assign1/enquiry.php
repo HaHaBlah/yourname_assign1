@@ -1,9 +1,9 @@
 <?php
-// 1) Initialise DB & check login
+// Initialise DB & check login
 require_once "inc/database_connection.inc";
 require_once "inc/login_status.inc";
 
-// 2) If the user is logged in, fetch any saved profile/address data
+// If the user is logged in, fetch any saved profile/address data
 $isLoggedIn = !empty($_SESSION['logged_in']);
 $userProfile = [];
 
@@ -22,7 +22,7 @@ if ($isLoggedIn) {
     $stmt->close();
 }
 
-// 3) Decide which sections need to be shown
+// Decide which sections need to be shown
 $hasPersonal = !empty($userProfile['firstname'])
             && !empty($userProfile['lastname'])
             && !empty($userProfile['email'])
@@ -107,7 +107,6 @@ $showAddress  = ! $hasAddress;
                 >
               </fieldset>
             <?php else: ?>
-              <!-- already have personal info: carry it forward as hidden -->
               <input type="hidden"
                      name="firstname"
                      value="<?= htmlspecialchars($userProfile['firstname']) ?>">
@@ -182,7 +181,6 @@ $showAddress  = ! $hasAddress;
                 >
               </fieldset>
             <?php else: ?>
-              <!-- already have address: hidden fields -->
               <input type="hidden"
                      name="streetaddress"
                      value="<?= htmlspecialchars($userProfile['streetaddress']) ?>">

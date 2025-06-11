@@ -91,23 +91,8 @@ require_once __DIR__ . '/anti_spam_check.php';
                 $uploadOk = false;
             }
 
-            // if (isset($_FILES['FilePhoto']) && $_FILES['FilePhoto']['error'] == 0) {
-            //     if ($_FILES['FilePhoto']['size'] <= 200 * 1024) {
-            //         $photoTarget = $uploadDir . basename($_FILES['FilePhoto']['name']);
-            //         if (move_uploaded_file($_FILES['FilePhoto']['tmp_name'], $photoTarget)) {
-            //             $photofile = $photoTarget;
-            //         } else {
-            //             $uploadOk = false;
-            //         }
-            //     } else {
-            //         $uploadOk = false;
-            //     }
-            // } else {
-            //     $uploadOk = false;
-            // }
-
+            // Handle photo upload with file size limits
             if (isset($_FILES['PhotoFile']) && $_FILES['PhotoFile']['error'] === UPLOAD_ERR_OK) {
-                // 1) check PHP’s own limits
                 if ($_FILES['PhotoFile']['size'] > 200 * 1024) {
                     $errors['photofile'] = 'Photo exceeds 200 KB limit.';
                     $uploadOk = false;
@@ -115,12 +100,10 @@ require_once __DIR__ . '/anti_spam_check.php';
                     $photoName   = basename($_FILES['PhotoFile']['name']);
                     $photoTarget = $uploadDir . DIRECTORY_SEPARATOR . $photoName;
 
-                    // 2) ensure the folder is ready
                     if (!is_dir($uploadDir) || !is_writable($uploadDir)) {
                         $errors['photofile'] = 'Server error: upload folder not writable.';
                         $uploadOk = false;
                     }
-                    // 3) attempt the move
                     elseif (move_uploaded_file($_FILES['PhotoFile']['tmp_name'], $photoTarget)) {
                         $photofile = $photoTarget;
                     } else {

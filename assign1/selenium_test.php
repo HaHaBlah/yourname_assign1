@@ -6,6 +6,7 @@ use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\WebDriverBy;
 
 $host = 'http://localhost:4444/';
+//$host = 'http://192.168.1.104:4444/'; // Selenium server URL
 $capabilities = DesiredCapabilities::firefox();
 
 $driver = RemoteWebDriver::create($host, $capabilities);

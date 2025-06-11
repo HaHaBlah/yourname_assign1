@@ -2,7 +2,7 @@
 include("inc/database_connection.inc");
 include("inc/login_status.inc");
 
-// --- 1) Connect & select database ---
+// Connect & select database
 $servername = "localhost";
 $dbUser     = "root";
 $dbPass     = "";
@@ -17,7 +17,7 @@ if (! $conn->query("CREATE DATABASE IF NOT EXISTS `$dbName`")) {
 }
 $conn->select_db($dbName);
 
-// --- 2) Create 'topup' table if it doesn't exist ---
+// Create 'topup' table if it doesn't exist
 $createTableSql = <<<SQL
 CREATE TABLE IF NOT EXISTS topup (
     id                 INT AUTO_INCREMENT PRIMARY KEY,
@@ -35,7 +35,7 @@ if (! $conn->query($createTableSql)) {
     die("Error creating topup table: " . $conn->error);
 }
 
-// --- 3) Bulk-sync all members → topup every refresh ---
+// Bulk-sync all members → topup every refresh
 $syncSql = <<<SQL
 INSERT INTO topup (login_id, email, balance)
 SELECT username, email, 0
@@ -47,7 +47,7 @@ if (! $conn->query($syncSql)) {
     die("Error syncing members: " . $conn->error);
 }
 
-// --- 4) Handle form submission ---
+// Handle form submission
 $message = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $login_id = trim($_POST['login_id']);

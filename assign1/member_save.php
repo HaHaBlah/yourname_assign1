@@ -1,5 +1,4 @@
 <?php
-// member_save.php
 include("inc/login_status.inc");
 include("inc/database_connection.inc");
 
@@ -8,7 +7,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     exit;
 }
 
-// collect & validate
+// Collect & validate
 $firstname = trim($_POST['firstname'] ?? '');
 $lastname  = trim($_POST['lastname']  ?? '');
 $email     = trim($_POST['email']     ?? '');
@@ -19,11 +18,11 @@ if (!$firstname || !$lastname || !$email || !$username || !$password) {
     die("All fields are required.");
 }
 
-// hash the password
+// Hash the password
 $hashed = password_hash($password, PASSWORD_DEFAULT);
 
 if (isset($_POST['id']) && ctype_digit($_POST['id'])) {
-    // --- UPDATE ---
+    // UPDATE
     $id   = (int)$_POST['id'];
     $sql  = "UPDATE members
              SET firstname=?, lastname=?, email=?, username=?, password=?, email_verified=1
@@ -39,7 +38,7 @@ if (isset($_POST['id']) && ctype_digit($_POST['id'])) {
     );
 
 } else {
-    // --- INSERT ---
+    // INSERT
     $sql  = "INSERT INTO members
              (firstname, lastname, email, username, password, reg_date, email_verified)
              VALUES (?, ?, ?, ?, ?, NOW(), 1)";

@@ -1,5 +1,4 @@
 <?php
-// member_delete.php
 include("inc/login_status.inc");
 include("inc/database_connection.inc");
 

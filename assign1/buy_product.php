@@ -4,10 +4,10 @@ include("inc/login_status.inc");
 include("inc/database_connection.inc");
 
 $username = $_SESSION['username'] ?? null;
-// Detect admin by login flag or role
+
 $is_admin = (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true)
     || (isset($_SESSION['role']) && $_SESSION['role'] === 'admin');
-// Only non-admin logged-in users are "members"
+
 $is_member = !empty($username) && !$is_admin;
 
 $content = '';
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $price = 0.00;
         }
 
-        // === STEP 1: Add-on selection ===
+        // Add-on selection
         if ($step === 'select_addon') {
             $title = 'Confirm Purchase';
             ob_start(); ?>
@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php
             $content = ob_get_clean();
         }
-        // === STEP 2: Final confirmation ===
+        // Final confirmation
         else if ($step === 'show_final') {
             $title = 'Final Confirmation';
             ob_start(); ?>
@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <?php
             $content = ob_get_clean();
         }
-        // === STEP 3: Process purchase ===
+        // Process purchase
         else if ($step === 'confirm_purchase') {
             if ($is_admin) {
                 $title = 'Purchase Successful';

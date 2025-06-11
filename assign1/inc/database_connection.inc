@@ -4,10 +4,10 @@ if (basename(__FILE__) == basename($_SERVER['PHP_SELF'])) {
     exit('No direct access allowed.');
 }
 
-// === Database connection settings ===
+// Connect to MySQL database
 $host     = 'localhost';
 $db_username = 'root';
-$db_password = ''; // Default XAMPP password
+$db_password = '';
 $database = 'brew&go_db';
 
 $conn = new mysqli($host, $db_username, $db_password);
@@ -15,19 +15,16 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// === Create database if it does not exist ===
 $sql = "CREATE DATABASE IF NOT EXISTS `$database`";
 if (!$conn->query($sql)) {
     die("Database creation failed: " . $conn->error);
 }
 
-// === Select the database ===
 $conn->select_db($database);
-
-// === Set charset ===
 $conn->set_charset('utf8mb4');
 
-// === Create members table if not exists ===
+
+//Create tables with different table names
 $sql = "CREATE TABLE IF NOT EXISTS members (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     firstname VARCHAR(25) NOT NULL,
@@ -179,12 +176,10 @@ $stmt->close();
 $conn->select_db($database);
 ?>
 
-<?php //replaces php.ini file in XAMPP
-// Source and destination paths
+<?php
 $source = __DIR__ . '/php.ini';  
 $destination = 'C:/xampp/php/php.ini';
 
-// Copy and overwrite
 if (!copy($source, $destination)) {
     die("Failed to replace php.ini");
 } 
@@ -192,7 +187,6 @@ if (!copy($source, $destination)) {
 $source = __DIR__ . '/sendmail.ini';  
 $destination = 'C:/xampp/sendmail/sendmail.ini';
 
-// Copy and overwrite
 if (!copy($source, $destination)) {
     die("Failed to replace sendmail.ini");
 } 

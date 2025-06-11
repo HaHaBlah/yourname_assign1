@@ -5,7 +5,7 @@
 <!-- If admin, then show admin logo -->
 <?php include("inc/login_status.inc"); ?>
 
-<?php // Enable this later
+<?php
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     header('Location: login.php?error=not_authorized');
     exit;
@@ -48,9 +48,9 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
             $username = "root";
             $password = "";
             $dbname = "brew&go_db";
-            // Create connection
+
             $conn = mysqli_connect($servername, $username, $password, $dbname);
-            // Check connection
+
             if (!$conn) {
                 die("Connection failed: " . mysqli_connect_error());
             }
