@@ -109,6 +109,11 @@ $stmt->close();
   <meta charset="UTF-8">
   <title>Reply to Enquiry #<?php echo $enq_id; ?> – Brew &amp; Go</title>
   <link rel="stylesheet" href="styles/style.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
@@ -148,14 +153,14 @@ $stmt->close();
             <td><?= nl2br(htmlspecialchars($msg)) ?></td>
           </tr>
           <?php if ($old_reply): ?>
-          <tr>
-            <th>Already Replied:</th>
-            <td><?= nl2br(htmlspecialchars($old_reply)) ?></td>
-          </tr>
-          <tr>
-            <th>Replied At:</th>
-            <td><?= htmlspecialchars($old_reply_at) ?></td>
-          </tr>
+            <tr>
+              <th>Already Replied:</th>
+              <td><?= nl2br(htmlspecialchars($old_reply)) ?></td>
+            </tr>
+            <tr>
+              <th>Replied At:</th>
+              <td><?= htmlspecialchars($old_reply_at) ?></td>
+            </tr>
           <?php endif; ?>
         </table>
       </section>
