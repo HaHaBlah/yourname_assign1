@@ -1,4 +1,11 @@
-<?php include("database_connection.inc"); ?>
+<?php
+// Ensure session is started
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+include("database_connection.inc");
+?>
+
 <nav>
     <div class="nav-selector">
         <a href="index.php">
@@ -6,7 +13,7 @@
         </a>
         <div class="nav-text">
             <a href="index.php">Brew & Go. Coffee</a>
-            <?php if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true): ?>
+            <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
                 <div class="admin-label">Admin</div>
             <?php endif; ?>
         </div>
@@ -39,9 +46,10 @@
         <li><a href="joinus.php">Join Us</a></li>
         <li><a href="enquiry.php">Enquiry</a></li>
         <li><a href="registration.php">Membership</a></li>
+        
         <li id="nav-login" class="nav-selector">
             <div class="Dropdown_Start">
-                <?php if (!isset($_SESSION['admin_logged_in'])): ?>
+                <?php if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true): ?>
                     <div class="login-wrapper">
                         <a href="login.php">Login</a>
                         <a class="center" href="login.php">
@@ -56,10 +64,9 @@
                     </div>
                     <div class="Dropdown_Content">
                         <ul>
-                            <?php if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === false): ?>
+                            <?php if ($_SESSION['role'] === 'member'): ?>
                                 <li><a href="user_dashboard.php">Dashboard</a></li>
-                            <?php endif; ?>
-                            <?php if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true): ?>
+                            <?php elseif ($_SESSION['role'] === 'admin'): ?>
                                 <li><a href="admin_dashboard.php">Dashboard</a></li>
                             <?php endif; ?>
                             <li><a href="logout.php">Log Out</a></li>

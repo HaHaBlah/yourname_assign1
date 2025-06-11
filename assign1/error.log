@@ -93,3 +93,6 @@
 2025-06-10 19:25:28 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 69: Login failed: username 'timmy' not found or email not verified
 2025-06-10 19:25:41 | Error [512] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 69: Login failed: username 'Wei Bao' not found or email not verified
 >>>>>>> 57bf2dce86f26f01b046d2f716e6f1d6fe43bb3b
+2025-06-11 03:48:54 | Error [2] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 46: Undefined variable $role
+2025-06-11 03:57:13 | Error [2] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 46: Undefined variable $role
+2025-06-11 04:39:36 | Error [2] in C:\xampp\htdocs\yourname_assign1\assign1\login_process.php on line 46: Undefined variable $role

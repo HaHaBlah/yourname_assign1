@@ -1,131 +1,207 @@
-<!--Done-->
+<?php
+// 1) Initialise DB & check login
+require_once "inc/database_connection.inc";
+require_once "inc/login_status.inc";
+
+// 2) If the user is logged in, fetch any saved profile/address data
+$isLoggedIn = !empty($_SESSION['logged_in']);
+$userProfile = [];
+
+if ($isLoggedIn) {
+    $username = $_SESSION['username'];
+    $stmt = $conn->prepare("
+        SELECT firstname, lastname, email, phonenumber,
+               streetaddress, citytown, state, postcode
+          FROM members
+         WHERE username = ?
+         LIMIT 1
+    ");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $userProfile = $stmt->get_result()->fetch_assoc() ?: [];
+    $stmt->close();
+}
+
+// 3) Decide which sections need to be shown
+$hasPersonal = !empty($userProfile['firstname'])
+            && !empty($userProfile['lastname'])
+            && !empty($userProfile['email'])
+            && !empty($userProfile['phonenumber']);
+
+$hasAddress  = !empty($userProfile['streetaddress'])
+            && !empty($userProfile['citytown'])
+            && !empty($userProfile['state'])
+            && !empty($userProfile['postcode']);
+
+$showPersonal = ! $hasPersonal;
+$showAddress  = ! $hasAddress;
+?>
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Automatically initialise database -->
-<?php include("inc/database_connection.inc"); ?>
-
-<!-- Check if user/ admin has logged in -->
-<!-- If admin, then show admin logo -->
-<?php include("inc/login_status.inc"); ?>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="Hii Wei Bao">
-    <title>Enquiry form</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
-    <link rel="stylesheet" href="styles/style.css">
+  <meta charset="utf-8">
+  <title>Contact Us – Brew &amp; Go Coffee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/style.css">
 </head>
-
 <body>
-    <?php include("inc/top_navigation_bar.inc"); ?>
-    <header class="location-header" id="image-Coffee_Beans_Bg">
-        <img src="images/Coffee_Beans_Bg.png" alt="Coffee Beans Background">
-    </header>
+  <?php include "inc/top_navigation_bar.inc"; ?>
 
-    <main class="no-margin-top">
-        <section class="login-container" id="enquiry-container">
-            <div class="login-left">
-                <img src="images/Brew&Go_logo.png" alt="Brew & Go logo">
+  <main class="no-margin-top">
+    <section id="enquiry-container" class="login-container">
+      <div class="login-left">
+        <img src="images/Brew&Go_logo.png" alt="Brew & Go logo">
+        <h2>Contact Us ☕</h2>
+        <p>We are here to help!</p>
+      </div>
 
-                <h2>Contact Us ☕</h2>
-                <p>We are here to help!</p>
-            </div>
-            <div class="login-right">
-                <form action="enquiry_process.php" method="post" enctype="multipart/form-data">
-                    <fieldset>
-                        <fieldset>
-                            <legend>
-                                <strong>Personal Information</strong>
-                            </legend>
-                            <input class="responsive-hover" type="text" placeholder="First name" name="firstname"
-                                maxlength="25" required="required" pattern="[A-Za-z\s]+" value="<?php echo htmlspecialchars($data['firstname'] ?? ''); ?>"
-                                title="Alphabetical characters only; Maximum 25 characters." id="firstname"><br>
+      <div class="login-right">
+        <form action="enquiry_process.php" method="post">
+          <fieldset>
+            <!-- Personal Information -->
+            <?php if ($showPersonal): ?>
+            <fieldset>
+              <legend><strong>Personal Information</strong></legend>
+              <input
+                class="responsive-hover"
+                type="text"
+                name="firstname"
+                placeholder="First name"
+                maxlength="25"
+                required
+                pattern="[A-Za-z\s]+"
+                value="<?= htmlspecialchars($userProfile['firstname'] ?? '') ?>"
+              ><br>
 
-                            <input class="responsive-hover" type="text" placeholder="Last name" name="lastname"
-                                maxlength="25" required="required" pattern="[A-Za-z\s]+" value="<?php echo htmlspecialchars($data['lastname'] ?? ''); ?>"
-                                title="Alphabetical characters only; Maximum 25 characters." id="lastname"><br>
+              <input
+                class="responsive-hover"
+                type="text"
+                name="lastname"
+                placeholder="Last name"
+                maxlength="25"
+                required
+                pattern="[A-Za-z\s]+"
+                value="<?= htmlspecialchars($userProfile['lastname'] ?? '') ?>"
+              ><br>
 
-                            <input class="responsive-hover" type="email" placeholder="Enter your e-mail address" value="<?php echo htmlspecialchars($data['email'] ?? ''); ?>"
-                                name="email" required="required" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/">
-                            <br>
-                            <input class="responsive-hover" type="text" placeholder="Phone Number" id="phonenumber" value="<?php echo htmlspecialchars($data['phonenumber'] ?? ''); ?>"
-                                name="phonenumber" maxlength="11" required="required" pattern="\d{10,11}"
-                                title="Format:0123456789.">
-                        </fieldset>
-                        <fieldset>
-                            <legend>
-                                <strong>Address</strong>
-                            </legend>
-                            <label for="streetaddress">Street Address:</label>
-                            <input class="responsive-hover" type="text" placeholder="Street Address" id="streetaddress"
-                                name="streetaddress" maxlength="40" required="required" value="<?php echo htmlspecialchars($data['streetaddress'] ?? ''); ?>">
-                            <br>
-                            <label for="ct">City/Town:</label>
-                            <input class="responsive-hover" type="text" placeholder="City/Town" id="citytown" name="citytown"
-                                maxlength="20" required="required" pattern="[A-Za-z\s]+"
-                                title="Alphabetical characters only; Maximum 20 characters." value="<?php echo htmlspecialchars($data['citytown'] ?? ''); ?>">
-                            <br>
+              <input
+                class="responsive-hover"
+                type="email"
+                name="email"
+                placeholder="E-mail address"
+                required
+                value="<?= htmlspecialchars($userProfile['email'] ?? '') ?>"
+              ><br>
 
-                            <label for="state">State:</label>
-                            <select id="state" name="state" required="required">
+              <input
+                class="responsive-hover"
+                type="text"
+                name="phonenumber"
+                placeholder="Phone Number"
+                maxlength="11"
+                required
+                pattern="\d{10,11}"
+                title="Format: 0123456789"
+                value="<?= htmlspecialchars($userProfile['phonenumber'] ?? '') ?>"
+              >
+            </fieldset>
+            <?php endif; ?>
 
-                                <option value="">Select a state</option>
-                                <option value="Perlis">Perlis</option>
-                                <option value="Kedah">Kedah</option>
-                                <option value="Penang">Penang</option>
-                                <option value="Perak">Perak</option>
-                                <option value="Selangor">Selangor</option>
-                                <option value="Negeri Sembilan">Negeri Sembilan</option>
-                                <option value="Melaka">Melaka</option>
-                                <option value="Johor">Johor</option>
-                                <option value="Kelantan">Kelantan</option>
-                                <option value="Terengganu">Terengganu</option>
-                                <option value="Pahang">Pahang</option>
-                                <option value="Sabah">Sabah</option>
-                                <option value="Sarawak">Sarawak</option>
-                                <option value="Kuala Lumpur">Kuala Lumpur</option>
-                                <option value="Putrajaya">Putrajaya</option>
-                                <option value="Labuan">Labuan</option>
-                            </select>
-                            <br>
-                            <label for="postcode">Postcode:</label>
-                            <input class="responsive-hover" type="text" placeholder="Postcode" id="postcode"
-                                name="postcode" maxlength="5" required="required" pattern="\d{5}"
-                                title="5-digit postcode only." value="<?php echo htmlspecialchars($data['postcode'] ?? ''); ?>">
-                        </fieldset>
+            <!-- Address -->
+            <?php if ($showAddress): ?>
+            <fieldset>
+              <legend><strong>Address</strong></legend>
+              <label for="streetaddress">Street Address:</label><br>
+              <input
+                class="responsive-hover"
+                type="text"
+                id="streetaddress"
+                name="streetaddress"
+                placeholder="Street Address"
+                maxlength="40"
+                required
+                value="<?= htmlspecialchars($userProfile['streetaddress'] ?? '') ?>"
+              ><br>
 
-                        <br>
+              <label for="citytown">City/Town:</label><br>
+              <input
+                class="responsive-hover"
+                type="text"
+                id="citytown"
+                name="citytown"
+                placeholder="City/Town"
+                maxlength="20"
+                required
+                pattern="[A-Za-z\s]+"
+                value="<?= htmlspecialchars($userProfile['citytown'] ?? '') ?>"
+              ><br>
 
-                        <fieldset>
-                            <legend>
-                                <strong>Enquiry</strong>
-                            </legend>
-                            <select id="enquirytype" name="enquirytype" required="required">
-                                <option value="">Select an enquiry type</option>
-                                <option value="Product">Products</option>
-                                <option value="Membership">Membership</option>
-                                <option value="Pop-up">Pop-up Market Activities</option>
-                            </select>
-                            <br>
+              <label for="state">State:</label><br>
+              <select id="state" name="state" required>
+                <option value="">Select a state</option>
+                <?php
+                  $states = [
+                    'Perlis','Kedah','Penang','Perak','Selangor',
+                    'Negeri Sembilan','Melaka','Johor','Kelantan',
+                    'Terengganu','Pahang','Sabah','Sarawak',
+                    'Kuala Lumpur','Putrajaya','Labuan'
+                  ];
+                  foreach ($states as $st) {
+                      $sel = ($userProfile['state'] ?? '') === $st ? ' selected' : '';
+                      echo "<option value=\"$st\"$sel>$st</option>";
+                  }
+                ?>
+              </select><br>
 
-                            <label for="message">Your Message:</label>
-                            <textarea placeholder="Your Message" id="message" name="message" required="required"
-                                rows="3" cols="40"><?php echo htmlspecialchars($data['message'] ?? ''); ?></textarea>
-                        </fieldset>
-                        <button class="responsive-hover-button" type="submit">Send Enquiry</button>
-                        <button class="responsive-hover-button" type="reset">Clear Form</button>
-                    </fieldset>
-                </form>
-            </div>
-        </section>
-    </main>
-    <?php include("inc/scroll_to_top_button.inc"); ?>
-    <?php include("inc/footer.inc"); ?>
-    <?php unset($_SESSION['form_data']); ?>
+              <label for="postcode">Postcode:</label><br>
+              <input
+                class="responsive-hover"
+                type="text"
+                id="postcode"
+                name="postcode"
+                placeholder="Postcode"
+                maxlength="5"
+                required
+                pattern="\d{5}"
+                value="<?= htmlspecialchars($userProfile['postcode'] ?? '') ?>"
+              >
+            </fieldset>
+            <?php endif; ?>
+
+            <!-- Enquiry Details (always shown) -->
+            <fieldset>
+              <legend><strong>Enquiry</strong></legend>
+              <select id="enquirytype" name="enquirytype" required>
+                <option value="">Select an enquiry type</option>
+                <option value="Product">Products</option>
+                <option value="Membership">Membership</option>
+                <option value="Pop-up">Pop-up Market Activities</option>
+              </select><br>
+
+              <label for="message">Your Message:</label><br>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Your Message"
+                required
+                rows="3"
+                cols="40"
+              ><?= htmlspecialchars($data['message'] ?? '') ?></textarea>
+            </fieldset>
+
+            <button class="responsive-hover-button" type="submit">
+              Send Enquiry
+            </button>
+            <button class="responsive-hover-button" type="reset">
+              Clear Form
+            </button>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <?php include "inc/scroll_to_top_button.inc"; ?>
+  <?php include "inc/footer.inc"; ?>
 </body>
-
 </html>
