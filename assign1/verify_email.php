@@ -46,7 +46,7 @@ $token = $_GET['token'] ?? '';
                         if ($verified) {
                             echo "<h3>Email already verified.</h3>";
                         } elseif (strtotime($expires) >= time()) {
-                            // Mark as verified
+                            // Mark Verified
                             $update = $conn->prepare("UPDATE members SET email_verified=1, verification_token=NULL, verification_expires=NULL WHERE id=?");
                             $update->bind_param("i", $id);
                             $update->execute();

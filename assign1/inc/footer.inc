@@ -1,12 +1,9 @@
 <?php
-// inc/footerbare.inc
-
-// 1. Safely include the DB connection only once
 if (!isset($conn)) {
   require_once __DIR__ . '/database_connection.inc';
 }
 
-// 2. Get the 5 latest updates
+// Latest update
 $sql = "SELECT update_message, photofile FROM updates ORDER BY id DESC LIMIT 1";
 $res = $conn->query($sql);
 ?>
@@ -14,7 +11,7 @@ $res = $conn->query($sql);
   <div class="footer-container">
     <div class="row">
 
-      <!-- Column 1: Navigation -->
+      <!-- Navigation -->
       <div class="footer-col">
         <h4>Overview</h4>
         <ul>
@@ -29,7 +26,7 @@ $res = $conn->query($sql);
         </ul>
       </div>
 
-      <!-- Column 2: Team -->
+      <!-- Team -->
       <div class="footer-col">
         <h4><a href="about.php">The Team</a></h4>
         <ul>
@@ -40,7 +37,7 @@ $res = $conn->query($sql);
         </ul>
       </div>
 
-      <!-- Column 3: Extras -->
+      <!-- Extras -->
       <div class="footer-col">
         <h4>Extra</h4>
         <ul>
@@ -50,7 +47,7 @@ $res = $conn->query($sql);
         </ul>
       </div>
 
-      <!-- Column 4: Social & Contact -->
+      <!-- Social & Contact -->
       <div class="footer-col">
         <h4>Follow Us</h4>
         <div class="social-links">
@@ -67,7 +64,7 @@ $res = $conn->query($sql);
         <p>Email: <a href="mailto:brewngo.coffee@gmail.com">brewngo.coffee@gmail.com</a></p>
       </div>
 
-      <!-- Column 5: Facebook Embed -->
+      <!-- Facebook Embed -->
       <div class="footer-col">
         <h4>Latest From Us</h4>
         <iframe
@@ -78,7 +75,7 @@ $res = $conn->query($sql);
         </iframe>
       </div>
 
-      <!-- Column 6: Latest Updates -->
+      <!-- Latest Updates -->
       <div class="footer-col">
         <h4>Latest Update</h4>
         <?php if ($res && $res->num_rows): ?>

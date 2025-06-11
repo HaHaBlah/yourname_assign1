@@ -78,7 +78,7 @@ $found = $stmt->fetch();
 $stmt->close();
 
 if (! $found) {
-    // First time for this IP: insert and treat as first attempt
+    // Use for IP block
     $attemptCount = 1;
     $firstAttempt = $now;
     $blockedUntil = 0;

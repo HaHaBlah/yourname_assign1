@@ -47,7 +47,7 @@ require_once __DIR__ . '/anti_spam_check.php';
 
         $conn->select_db($dbname);
 
-        // $sql = "
+        // $sql = " // No need this anymore because we have move this code to database_connection.inc
         //   CREATE TABLE IF NOT EXISTS enquiries (
         //     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         //     firstname VARCHAR(25) NOT NULL,

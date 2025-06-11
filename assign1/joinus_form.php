@@ -58,7 +58,7 @@ $showVerification = ! $hasVerification;
         <form action="joinus_process.php" method="post" enctype="multipart/form-data">
           <fieldset>
 
-            <!-- always show Personal Details -->
+            <!-- Always show Personal Details -->
             <fieldset>
               <legend><strong>Personal Details</strong></legend>
               <input
@@ -105,7 +105,7 @@ $showVerification = ! $hasVerification;
               >
             </fieldset>
 
-            <!-- Address: show only if missing, else hidden -->
+            <!-- Address: only show when missing, else hidden -->
             <?php if ($showAddress): ?>
             <fieldset>
               <legend><strong>Address</strong></legend>
@@ -176,7 +176,7 @@ $showVerification = ! $hasVerification;
                      value="<?= htmlspecialchars($userData['postcode']) ?>">
             <?php endif; ?>
 
-            <!-- Verification: show only if missing, else hidden -->
+            <!-- Verification: only show when missing, else hidden -->
             <?php if ($showVerification): ?>
             <fieldset>
               <legend><strong>Verification</strong></legend>

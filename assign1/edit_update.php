@@ -74,7 +74,6 @@ require_once __DIR__ . '/anti_spam_check.php';
                     $uploadOk = false;
                 }
             } else {
-                // No file uploaded, but that's OK
                 $uploadOk = true;
                 $photofile = '';
             }

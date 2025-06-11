@@ -5,5 +5,4 @@ set_error_handler(function($errno, $errstr, $errfile, $errline) {
     error_log($error_message, 3, __DIR__ . '/error.log');
 });
 
-// ...existing code...
 ?>

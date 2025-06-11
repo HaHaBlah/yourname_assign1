@@ -30,7 +30,7 @@ if ($username === '' || $userPassword === '') {
     exit;
 }
 
-// --- 1) Attempt admin login ---
+// Attempt admin login
 $stmt = $conn->prepare("SELECT password FROM admin WHERE username = ?");
 $stmt->bind_param('s', $username);
 $stmt->execute();
@@ -50,7 +50,7 @@ if ($stmt->num_rows === 1) {
 }
 $stmt->close();
 
-// --- 2) Attempt member login ---
+// Attempt member login
 $stmt = $conn->prepare("
     SELECT password, role
       FROM members
@@ -74,12 +74,12 @@ if (! password_verify($userPassword, $hash)) {
     exit;
 }
 
-// --- 3) Success: set session + redirect by role ---
+// Success: set session + redirect by role
 $_SESSION['logged_in'] = true;
 $_SESSION['username']  = $username;
 $_SESSION['role']      = $role;
 
-// send admin to admin dashboard; all others to user dashboard
+// Send admin to admin dashboard; all others to user dashboard
 $dest = ($role === 'admin')
       ? 'admin_dashboard.php'
       : 'welcome.php';

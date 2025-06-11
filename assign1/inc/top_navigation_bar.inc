@@ -1,5 +1,4 @@
 <?php
-// Ensure session is started, database is initialised on every page cuz it's in the navbars and footer
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
