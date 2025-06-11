@@ -113,7 +113,7 @@ $res = $conn->query($sql);
 
       <!-- Footer Copyright -->
       <div class="footer-col">
-        <small>&copy; 2025 Brew & Go Coffee</small>
+        <small>&copy; <?php echo date("Y"); ?> Brew & Go Coffee</small>
       </div>
 
     </div>

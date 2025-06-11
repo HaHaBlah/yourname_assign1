@@ -238,10 +238,6 @@ $conn->close();
                 </form>
             </div>
         </div>
-        
-        <div class="dashboard-footer">
-            <p>Brew & Go &copy; <?php echo date("Y"); ?> | Your Coffee Companion</p>
-        </div>
     </div>
     
     <?php include("inc/scroll_to_top_button.inc"); ?>

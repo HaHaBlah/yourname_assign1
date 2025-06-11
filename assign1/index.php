@@ -180,12 +180,14 @@
     <!--Footer Section-->
     <footer>
         <div class="footer-container">
-            <div>
-                <a class="our-video responsive-hover-button" href="https://youtu.be/2sI68nrl5yE">Our Video</a>
+            <div class="footer-button-group">
+                <a class="our-video responsive-hover-button" href="https://youtu.be/2sI68nrl5yE">Our Video 1</a>
+                <a class="our-video responsive-hover-button" href="https://youtu.be/hQ4CyE3SvJU">Our Video 2</a>
             </div>
             <?php include("inc/footer.inc"); ?>
         </div>
     </footer>
+
 </body>
 
 </html>

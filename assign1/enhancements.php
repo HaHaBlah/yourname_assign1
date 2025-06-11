@@ -22,8 +22,10 @@
     <?php include("inc/top_navigation_bar.inc"); ?>
 
     <main class="enhancements">
-        <section>
-            <h2>Scroll to Top Button</h2>
+        <details>
+            <summary>
+                <h2>Scroll to Top Button</h2>
+            </summary>
             <p>A button that when clicked, scrolls all the way back to the top of the page</p>
             <p>Found on All Pages</p>
             <video src="images/enhancements/Scroll_to_Top_Button.mp4" autoplay loop muted></video>
@@ -58,11 +60,13 @@
                     &nbsp;&nbsp;&nbsp;opacity: 1;<br>}
                 </span>
             </div>
-        </section>
+        </details>
 
-        <section>
+        <details>
             <!--Flip card-->
-            <h2>Flip card effects</h2>
+            <summary>
+                <h2>Flip card effects</h2>
+            </summary>
             <p>When an object was hovered, it will flip</p>
             <video src="images/enhancements/Flipping_cards.mp4" autoplay loop muted></video>
             <h2>HTML</h2>
@@ -120,11 +124,13 @@
                     &#125;
                 </span>
             </div>
-        </section>
+        </details>
 
         <!--Dropdown Menu-->
-        <section>
-            <h2>Dropdown Menu</h2>
+        <details>
+            <summary>
+                <h2>Dropdown Menu</h2>
+            </summary>
             <p>A Menu that reveals more options when hovered over</p>
             <p>Found in All Pages at the top navigation bar</p>
             <img src="images/enhancements/Dropdown_Menu.png" alt="Dropdown Menu">
@@ -152,11 +158,13 @@
                 &nbsp;&nbsp;&nbsp;display: inline-block;<br>
                 }
             </div>
-        </section>
+        </details>
 
-        <section>
+        <details>
             <!--Color Change when Hover-->
-            <h2>Color Change when Hover effect</h2>
+            <summary>
+                <h2>Color Change when Hover effect</h2>
+            </summary>
             <p>When an object was hovered, it will change color</p>
             <video src="images/enhancements/Color_Change_when_Hover.mp4" autoplay loop muted></video>
             <h2>HTML</h2>
@@ -207,11 +215,13 @@
                     &#125;
                 </span>
             </div>
-        </section>
+        </details>
 
-        <section>
+        <details>
             <!--Animated conic gradient border--><!--Not yet done-->
-            <h2>Animated conic gradient border</h2>
+            <summary>
+                <h2>Animated conic gradient border</h2>
+            </summary>
             <p>Moving Border effect around the profile photos</p>
             <video src="images/enhancements/Animated_conic_gradient_border.mp4" autoplay loop muted></video>
             <h2>HTML</h2>
@@ -292,11 +302,13 @@
                     &#125;
                 </span>
             </div>
-        </section>
+        </details>
 
         <!--Embedded Social Media-->
-        <section>
-            <h2>Embedded Social Media</h2>
+        <details>
+            <summary>
+                <h2>Embedded Social Media</h2>
+            </summary>
             <p>An embedded Facebook document</p>
             <p>Found in all pages at the footer</p>
             <img src="images/enhancements/Embedded_Social_Media.png" alt="Embedded Social Media">
@@ -307,11 +319,13 @@
                 scrolling="no" allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">&lt;/iframe>
             </div>
-        </section>
+        </details>
 
         <!--Interactive Hover-->
-        <section>
-            <h2>Hover Effects 2</h2>
+        <details>
+            <summary>
+                <h2>Hover Effects 2</h2>
+            </summary>
             <p>When hovered over, some elements change appearance</p>
             <p>Found on all pages</p>
             <video src="images/enhancements/Responsive_Hover.mp4" autoplay loop muted></video>
@@ -323,11 +337,13 @@
                 &nbsp;&nbsp;&nbsp;transform: scale(1.01);<br>
                 }
             </div>
-        </section>
+        </details>
 
         <!--Responsive webpage resizing-->
-        <section>
-            <h2>Responsive Webpage Resizing</h2>
+        <details>
+            <summary>
+                <h2>Responsive Webpage Resizing</h2>
+            </summary>
             <p>Pages account for different viewport sizes.</p>
             <p>Found on all pages</p>
             <video src="images/enhancements/Responsive_Resizing.mp4" autoplay loop muted></video>
@@ -344,11 +360,13 @@
                 &nbsp;&nbsp;&nbsp;}<br>
                 }
             </div>
-        </section>
+        </details>
 
         <!--Live Input Validation-->
-        <section>
-            <h2>Live Input Validation</h2>
+        <details>
+            <summary>
+                <h2>Live Input Validation</h2>
+            </summary>
             <p>When an input is in the wrong format, it will show up red</p>
             <p>Found on <a href="login.php">login.php</a>, <a href="registration.php">registration.php</a>, <a
                     href="enquiry.php">enquiry.php</a> and <a href="joinus_form.php">joinus_form.php</a></p>
@@ -360,11 +378,13 @@
                 &nbsp;&nbsp;&nbsp;color: red;<br>
                 }
             </div>
-        </section>
+        </details>
 
         <!--Interactive Map-->
-        <section>
-            <h2>Interactive Map</h2>
+        <details>
+            <summary>
+                <h2>Interactive Map</h2>
+            </summary>
             <p>An embedded Google Map document</p>
             <p>Found in <a href="location1.php">location1.php</a> and <a href="location2.php">location2.php</a></p>
             <img src="images/enhancements/Interactive_Map.png" alt="Interactive Map">
@@ -374,7 +394,7 @@
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15953.675113405434!2d110.3657563!3d1.5176329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba7003da964cb%3A0xf8d14c19ed1634a4!2sBrew%20and%20Go!5e0!3m2!1sen!2smy!4v1744122746072!5m2!1sen!2smy"
                 allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">&lt;/iframe>
             </div>
-        </section>
+        </details>
 
     </main>
     <?php include("inc/scroll_to_top_button.inc"); ?>
