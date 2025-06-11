@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <head>
             <title>Confirm Purchase</title>
-            <link rel="stylesheet" href="styles/buy.css" />
+            <link rel="stylesheet" href="styles/buy.css">
 
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -117,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <head>
             <title>Final Confirmation</title>
-            <link rel="stylesheet" href="styles/buy.css" />
+            <link rel="stylesheet" href="styles/buy.css">
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="description" content="Final Confirmation">
