@@ -124,7 +124,7 @@
                 <h2>Job Application Module</h2>
             </summary>
             <p>This feature allows users to submit their resume and photo by uploading the photo into the website.</p>
-            <p>Uses: joinus_process.php and view_job.php</p>
+            <p>Uses: <a href="joinus_process.php">joinus_process.php</a> and <a href="view_job.php">view_job.php</a></p>
             <video src="images/enhancements/Job_Application.mp4" autoplay loop muted></video>
             <h2>joinus_process.php</h2>
             <div class="code">
@@ -407,9 +407,9 @@
             </summary>
             <p>This feature allows the admin to send an email to the user after replying to their enquiry. The email will
                 contain the reply message.</p>
-            <p>Uses: <a href="reply_enquiries.php">reply_enquiries.php</a></p>
+            <p>Uses: <a href="reply_enquiry.php">reply_enquiry.php</a></p>
             <img src="images/enhancements/auto_email_send.png" alt="Email Verification">
-            <h2>reply_enquiries.php</h2>
+            <h2>reply_enquiry.php</h2>
             <div class="code">
                 <span>
                     &lt;section class="login-container" id="reply-enquiry"&gt;<br>
@@ -499,7 +499,7 @@
                 <h2>Hide Form Feature</h2>
             </summary>
             <p>This feature allows you to hide a form on the webpage.</p>
-            <p>Uses: <a href="form.inc">form.inc</a></p>
+            <p>Uses: <a href="enquiry.php">enquiry.php</a></p>
             <img src="images/enhancements/Hide_Form.png" alt="Hide Form">
             <h2>enquiry.php</h2>
             <div class="code">
