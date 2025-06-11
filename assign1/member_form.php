@@ -38,40 +38,49 @@ if (isset($_GET['id']) && ctype_digit($_GET['id'])) {
   <?php include("inc/top_navigation_bar.inc"); ?>
 
   <main>
-    <h1><?= $edit ? "Edit" : "Add New" ?> Member</h1>
+    <section class="login-container" id="member-form">
+      <h2><?= $edit ? "Edit Member" : "Add New Member" ?></h2>
 
-    <form action="member_save.php" method="post">
-      <?php if ($edit): ?>
-        <input type="hidden" name="id" value="<?= $id ?>">
-      <?php endif; ?>
+      <form action="member_save.php" method="post" class="member-form">
+        <?php if ($edit): ?>
+          <input type="hidden" name="id" value="<?= $id ?>">
+        <?php endif; ?>
 
-      <label>First Name
-        <input type="text" name="firstname" required
-               value="<?= htmlspecialchars($member['firstname']) ?>">
-      </label><br>
+        <label>
+          First Name
+          <input type="text" name="firstname" required
+                 value="<?= htmlspecialchars($member['firstname']) ?>">
+        </label>
 
-      <label>Last Name
-        <input type="text" name="lastname" required
-               value="<?= htmlspecialchars($member['lastname']) ?>">
-      </label><br>
+        <label>
+          Last Name
+          <input type="text" name="lastname" required
+                 value="<?= htmlspecialchars($member['lastname']) ?>">
+        </label>
 
-      <label>Email
-        <input type="email" name="email" required
-               value="<?= htmlspecialchars($member['email']) ?>">
-      </label><br>
+        <label>
+          Email
+          <input type="email" name="email" required
+                 value="<?= htmlspecialchars($member['email']) ?>">
+        </label>
 
-      <label>Username
-        <input type="text" name="username" required
-               value="<?= htmlspecialchars($member['username']) ?>">
-      </label><br>
+        <label>
+          Username
+          <input type="text" name="username" required
+                 value="<?= htmlspecialchars($member['username']) ?>">
+        </label>
 
-      <label>Password
-        <input type="password" name="password" required>
-        <small><?= $edit ? "(enter new password to change)" : "" ?></small>
-      </label><br>
+        <label>
+          Password
+          <input type="password" name="password" required>
+          <small><?= $edit ? "(enter new password to change)" : "" ?></small>
+        </label>
 
-      <button type="submit"><?= $edit ? "Update" : "Create" ?></button>
-    </form>
+        <button type="submit" class="responsive-hover-button"><?= $edit ? "Update" : "Create" ?></button>
+      </form>
+
+      <p><a href="view_membership.php">← Back to Memberships</a></p>
+    </section>
   </main>
 
   <?php include("inc/footer.inc"); ?>
