@@ -83,6 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <button type="submit" class="buyproduct-btn">Confirm</button>
                     <a href="product.php" class="buyproduct-link"><button type="button" class="buyproduct-btn-alt">Back to products</button></a>
                 </form>
+                <p>Check add-on and click Confirm to see the final price. Click Confirm again to purchase.</p>
             </div>
         <?php
             $content = ob_get_clean();
@@ -116,6 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <button type="submit" class="buyproduct-btn">Confirm Purchase</button>
                     <a href="product.php" class="buyproduct-link"><button type="button" class="buyproduct-btn-alt">Back to products</button></a>
                 </form>
+                <p>Click Confirm Purchase to complete your order</p>
             </div>
 <?php
             $content = ob_get_clean();
