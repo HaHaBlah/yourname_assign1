@@ -6,7 +6,7 @@ include("inc/database_connection.inc");
 $username = $_SESSION['username'] ?? null;
 // Detect admin by login flag or role
 $is_admin = (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true)
-         || (isset($_SESSION['role']) && $_SESSION['role'] === 'admin');
+    || (isset($_SESSION['role']) && $_SESSION['role'] === 'admin');
 // Only non-admin logged-in users are "members"
 $is_member = !empty($username) && !$is_admin;
 
@@ -57,34 +57,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ob_start(); ?>
             <div class="buyproduct-container">
                 <h2 class="buyproduct-title">Confirm Purchase</h2>
-                <p class="buyproduct-info">Product: <?=htmlspecialchars($product['name'])?></p>
+                <p class="buyproduct-info">Product: <?= htmlspecialchars($product['name']) ?></p>
                 <?php if ($is_admin): ?>
                     <p class="buyproduct-p"><strong class="buyproduct-strong">Admin: Free of charge</strong></p>
                 <?php elseif ($is_member): ?>
-                    <p class="buyproduct-p">Member Price (MP): RM<?=number_format($mp,2)?></p>
-                    <p class="buyproduct-p">Your balance: RM<?=number_format($user['balance'] ?? 0,2)?></p>
+                    <p class="buyproduct-p">Member Price (MP): RM<?= number_format($mp, 2) ?></p>
+                    <p class="buyproduct-p">Your balance: RM<?= number_format($user['balance'] ?? 0, 2) ?></p>
                 <?php else: ?>
-                    <p class="buyproduct-p">Normal Price (NP): RM<?=number_format($np,2)?></p>
+                    <p class="buyproduct-p">Normal Price (NP): RM<?= number_format($np, 2) ?></p>
                     <p class="buyproduct-p"><em>Login to get member price and balance deduction.</em></p>
                 <?php endif; ?>
                 <form method="post" action="buy_product.php">
-                    <input type="hidden" name="product_id" value="<?=$product_id?>">
+                    <input type="hidden" name="product_id" value="<?= $product_id ?>">
                     <input type="hidden" name="step" value="show_final">
                     <label class="buyproduct-label">
-                        <input type="checkbox" class="buyproduct-checkbox" name="addon" value="yes" <?= $addon_selected?'checked':'' ?>> Add Oat Milk (+RM2.00)
+                        <input type="checkbox" class="buyproduct-checkbox" name="addon" value="yes" <?= $addon_selected ? 'checked' : '' ?>> Add Oat Milk (+RM2.00)
                     </label>
                     <br><br>
                     <?php if ($is_admin): ?>
                         <strong class="buyproduct-strong">Final Price: Free of charge</strong>
                     <?php else: ?>
-                        <strong class="buyproduct-strong">Final Price: RM<?=number_format($price,2)?></strong>
+                        <strong class="buyproduct-strong">Final Price: RM<?= number_format($price, 2) ?></strong>
                     <?php endif; ?>
                     <br><br>
                     <button type="submit" class="buyproduct-btn">Confirm</button>
                     <a href="product.php" class="buyproduct-link"><button type="button" class="buyproduct-btn-alt">Back to products</button></a>
                 </form>
             </div>
-            <?php
+        <?php
             $content = ob_get_clean();
         }
         // === STEP 2: Final confirmation ===
@@ -93,31 +93,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ob_start(); ?>
             <div class="buyproduct-container">
                 <h2 class="buyproduct-title">Final Confirmation</h2>
-                <p class="buyproduct-info">Product: <?=htmlspecialchars($product['name'])?></p>
+                <p class="buyproduct-info">Product: <?= htmlspecialchars($product['name']) ?></p>
                 <?php if ($is_admin): ?>
                     <p class="buyproduct-p"><strong class="buyproduct-strong">Admin: Free of charge</strong></p>
                 <?php elseif ($is_member): ?>
-                    <p class="buyproduct-p">Member Price (MP): RM<?=number_format($mp,2)?></p>
-                    <p class="buyproduct-p">Your balance: RM<?=number_format($user['balance'] ?? 0,2)?></p>
+                    <p class="buyproduct-p">Member Price (MP): RM<?= number_format($mp, 2) ?></p>
+                    <p class="buyproduct-p">Your balance: RM<?= number_format($user['balance'] ?? 0, 2) ?></p>
                 <?php else: ?>
-                    <p class="buyproduct-p">Normal Price (NP): RM<?=number_format($np,2)?></p>
+                    <p class="buyproduct-p">Normal Price (NP): RM<?= number_format($np, 2) ?></p>
                 <?php endif; ?>
                 <?php if ($addon_selected): ?><p class="buyproduct-p"><strong class="buyproduct-strong">Oat Milk added (+RM2.00)</strong></p><?php endif; ?>
                 <?php if ($is_admin): ?>
                     <strong class="buyproduct-strong">Final Price: Free of charge</strong>
                 <?php else: ?>
-                    <strong class="buyproduct-strong">Final Price: RM<?=number_format($price,2)?></strong>
+                    <strong class="buyproduct-strong">Final Price: RM<?= number_format($price, 2) ?></strong>
                 <?php endif; ?>
                 <form method="post" action="buy_product.php">
-                    <input type="hidden" name="product_id" value="<?=$product_id?>">
+                    <input type="hidden" name="product_id" value="<?= $product_id ?>">
                     <input type="hidden" name="step" value="confirm_purchase">
-                    <input type="hidden" name="addon" value="<?=$addon_selected?'yes':''?>">
+                    <input type="hidden" name="addon" value="<?= $addon_selected ? 'yes' : '' ?>">
                     <br><br>
                     <button type="submit" class="buyproduct-btn">Confirm Purchase</button>
                     <a href="product.php" class="buyproduct-link"><button type="button" class="buyproduct-btn-alt">Back to products</button></a>
                 </form>
             </div>
-            <?php
+<?php
             $content = ob_get_clean();
         }
         // === STEP 3: Process purchase ===
@@ -141,7 +141,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $content = '
                     <div class="buyproduct-container">
                         <h2 class="buyproduct-title">Purchase Successful</h2>
-                        <p class="buyproduct-success">Purchase successful! New balance: RM'.number_format($new_balance,2).'</p>
+                        <p class="buyproduct-success">Purchase successful! New balance: RM' . number_format($new_balance, 2) . '</p>
                         <a href="product.php"><button type="button" class="buyproduct-btn-alt">Back to products</button></a>
                     </div>';
                 } else if (!$user) {
@@ -177,8 +177,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title><?=htmlspecialchars($title)?></title>
+    <title><?= htmlspecialchars($title) ?></title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Buy Product">
@@ -186,7 +187,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="icon" href="images/Brew&Go_logo.png" type="image/png">
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body class="buyproduct-body">
-<?= $content ?>
+    <?php include("inc/top_navigation_bar.inc"); ?>
+    <main>
+    <?= $content ?>
+    </main>
+    <?php include("inc/scroll_to_top_button.inc"); ?>
+
+    <?php include("inc/footer.inc"); ?>
 </body>
+
 </html>
