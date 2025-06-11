@@ -41,13 +41,13 @@
         <section class="registration-perks">
             <h1>Membership</h1>
             <ul>
-                <li>To become a member, you can choose to top-up RM30, RM50, RM100 or RM200.</li>
+                <li>To become a member, you may top up your account with any amount, up to a maximum of RM1000.</li>
                 <li>The money that you top-up will be stored as credits.</li>
                 <li>Remaining credit in your account cannot be withdrawn.</li>
                 <li>Our membership is for lifetime.</li>
-                <li>In an event of insufficient credit balance, a minimum top-up of RM30 is required to continue
+                <!-- <li>In an event of insufficient credit balance, a minimum top-up of RM30 is required to continue
                     enjoying member price.</li>
-                <li>Members can choose to top-up RM50, RM100. or RM200.</li>
+                <li>Members can choose to top-up RM50, RM100. or RM200.</li> -->
             </ul>
 
             <h1>Membership PERKS</h1>
@@ -57,7 +57,7 @@
                 <li>Psstt: you may even get free drinks from us for FIVE DAYS STRAIGHT!!</li>
             </ul>
 
-            <img src="images/Join_member/duitnow.svg" alt="Join Member" class="registration-qr">
+            <!-- <img src="images/Join_member/duitnow.svg" alt="Join Member" class="registration-qr">
             <br>
             <label for="myFile">Upload your payment receipt here:</label>
             <br>
@@ -66,7 +66,7 @@
                 <label for="myFile" class="btn-upload responsive-hover-button">Choose File</label>
             </div>
             <br>
-            <input class="btn-upload responsive-hover-button" type="submit" value="Send">
+            <input class="btn-upload responsive-hover-button" type="submit" value="Send"> -->
         </section>
 
         <br>

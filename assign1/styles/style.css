@@ -666,7 +666,7 @@ legend {
     color: var(--accent-color-1);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
 
     nav ul li {
         margin-left: 15px;
@@ -773,8 +773,8 @@ footer * {
 }
 
 footer button, footer .our-video {
-    margin: auto;
-    /* display: table; */
+    /* margin: auto; */
+    display: table;
     text-align: center;
     border-radius: var(--border-radius);
     color: var(--footer-background);
@@ -785,7 +785,18 @@ footer button, footer .our-video {
     margin-bottom: 10px;
     font-weight: 900;
     text-decoration: none;
-    
+}
+
+.footer-button-group {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+footer .our-video {
+    display: inline-block;
 }
 
 footer button:hover {
