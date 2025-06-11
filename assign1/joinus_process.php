@@ -91,18 +91,46 @@ require_once __DIR__ . '/anti_spam_check.php';
                 $uploadOk = false;
             }
 
-            if (isset($_FILES['FilePhoto']) && $_FILES['FilePhoto']['error'] == 0) {
-                if ($_FILES['FilePhoto']['size'] <= 200 * 1024) {
-                    $photoTarget = $uploadDir . basename($_FILES['FilePhoto']['name']);
-                    if (move_uploaded_file($_FILES['FilePhoto']['tmp_name'], $photoTarget)) {
-                        $photofile = $photoTarget;
-                    } else {
+            // if (isset($_FILES['FilePhoto']) && $_FILES['FilePhoto']['error'] == 0) {
+            //     if ($_FILES['FilePhoto']['size'] <= 200 * 1024) {
+            //         $photoTarget = $uploadDir . basename($_FILES['FilePhoto']['name']);
+            //         if (move_uploaded_file($_FILES['FilePhoto']['tmp_name'], $photoTarget)) {
+            //             $photofile = $photoTarget;
+            //         } else {
+            //             $uploadOk = false;
+            //         }
+            //     } else {
+            //         $uploadOk = false;
+            //     }
+            // } else {
+            //     $uploadOk = false;
+            // }
+
+            if (isset($_FILES['PhotoFile']) && $_FILES['PhotoFile']['error'] === UPLOAD_ERR_OK) {
+                // 1) check PHP’s own limits
+                if ($_FILES['PhotoFile']['size'] > 200 * 1024) {
+                    $errors['photofile'] = 'Photo exceeds 200 KB limit.';
+                    $uploadOk = false;
+                } else {
+                    $photoName   = basename($_FILES['PhotoFile']['name']);
+                    $photoTarget = $uploadDir . DIRECTORY_SEPARATOR . $photoName;
+
+                    // 2) ensure the folder is ready
+                    if (!is_dir($uploadDir) || !is_writable($uploadDir)) {
+                        $errors['photofile'] = 'Server error: upload folder not writable.';
                         $uploadOk = false;
                     }
-                } else {
-                    $uploadOk = false;
+                    // 3) attempt the move
+                    elseif (move_uploaded_file($_FILES['PhotoFile']['tmp_name'], $photoTarget)) {
+                        $photofile = $photoTarget;
+                    } else {
+                        $errors['photofile'] = 'Failed to move uploaded file.';
+                        $uploadOk = false;
+                    }
                 }
             } else {
+                $code = $_FILES['PhotoFile']['error'] ?? 'no key';
+                $errors['photofile'] = "Upload error (code {$code}).";
                 $uploadOk = false;
             }
 
@@ -147,11 +175,12 @@ require_once __DIR__ . '/anti_spam_check.php';
             echo '<p>Invalid request method.</p>';
         }
 
-        $conn->close();
+
         ?>
         <?php include("inc/scroll_to_top_button.inc"); ?>
     </main>
     <?php include("inc/footer.inc"); ?>
+    <?php $conn->close(); ?>
 </body>
 
 </html>

@@ -49,6 +49,10 @@
 /*Join us form start*/
 #joinus-container {
     height: 1140px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 #joinus-container select {
@@ -3678,7 +3682,7 @@ h2 span {
 
 .reply-btn {
   background-color: #6d4c41;
-  color: #FFF;
+  color: #FFF !important;
   text-decoration: none;
   padding: 4px 8px;
   border-radius: 3px;

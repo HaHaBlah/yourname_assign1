@@ -58,114 +58,143 @@ $showAddress  = ! $hasAddress;
       <div class="login-right">
         <form action="enquiry_process.php" method="post">
           <fieldset>
+
             <!-- Personal Information -->
             <?php if ($showPersonal): ?>
-            <fieldset>
-              <legend><strong>Personal Information</strong></legend>
-              <input
-                class="responsive-hover"
-                type="text"
-                name="firstname"
-                placeholder="First name"
-                maxlength="25"
-                required
-                pattern="[A-Za-z\s]+"
-                value="<?= htmlspecialchars($userProfile['firstname'] ?? '') ?>"
-              ><br>
+              <fieldset>
+                <legend><strong>Personal Information</strong></legend>
+                <input
+                  class="responsive-hover"
+                  type="text"
+                  name="firstname"
+                  placeholder="First name"
+                  maxlength="25"
+                  required
+                  pattern="[A-Za-z\s]+"
+                  value="<?= htmlspecialchars($userProfile['firstname'] ?? '') ?>"
+                ><br>
 
-              <input
-                class="responsive-hover"
-                type="text"
-                name="lastname"
-                placeholder="Last name"
-                maxlength="25"
-                required
-                pattern="[A-Za-z\s]+"
-                value="<?= htmlspecialchars($userProfile['lastname'] ?? '') ?>"
-              ><br>
+                <input
+                  class="responsive-hover"
+                  type="text"
+                  name="lastname"
+                  placeholder="Last name"
+                  maxlength="25"
+                  required
+                  pattern="[A-Za-z\s]+"
+                  value="<?= htmlspecialchars($userProfile['lastname'] ?? '') ?>"
+                ><br>
 
-              <input
-                class="responsive-hover"
-                type="email"
-                name="email"
-                placeholder="E-mail address"
-                required
-                value="<?= htmlspecialchars($userProfile['email'] ?? '') ?>"
-              ><br>
+                <input
+                  class="responsive-hover"
+                  type="email"
+                  name="email"
+                  placeholder="E-mail address"
+                  required
+                  value="<?= htmlspecialchars($userProfile['email'] ?? '') ?>"
+                ><br>
 
-              <input
-                class="responsive-hover"
-                type="text"
-                name="phonenumber"
-                placeholder="Phone Number"
-                maxlength="11"
-                required
-                pattern="\d{10,11}"
-                title="Format: 0123456789"
-                value="<?= htmlspecialchars($userProfile['phonenumber'] ?? '') ?>"
-              >
-            </fieldset>
+                <input
+                  class="responsive-hover"
+                  type="text"
+                  name="phonenumber"
+                  placeholder="Phone Number"
+                  maxlength="11"
+                  required
+                  pattern="\d{10,11}"
+                  title="Format: 0123456789"
+                  value="<?= htmlspecialchars($userProfile['phonenumber'] ?? '') ?>"
+                >
+              </fieldset>
+            <?php else: ?>
+              <!-- already have personal info: carry it forward as hidden -->
+              <input type="hidden"
+                     name="firstname"
+                     value="<?= htmlspecialchars($userProfile['firstname']) ?>">
+              <input type="hidden"
+                     name="lastname"
+                     value="<?= htmlspecialchars($userProfile['lastname']) ?>">
+              <input type="hidden"
+                     name="email"
+                     value="<?= htmlspecialchars($userProfile['email']) ?>">
+              <input type="hidden"
+                     name="phonenumber"
+                     value="<?= htmlspecialchars($userProfile['phonenumber']) ?>">
             <?php endif; ?>
 
             <!-- Address -->
             <?php if ($showAddress): ?>
-            <fieldset>
-              <legend><strong>Address</strong></legend>
-              <label for="streetaddress">Street Address:</label><br>
-              <input
-                class="responsive-hover"
-                type="text"
-                id="streetaddress"
-                name="streetaddress"
-                placeholder="Street Address"
-                maxlength="40"
-                required
-                value="<?= htmlspecialchars($userProfile['streetaddress'] ?? '') ?>"
-              ><br>
+              <fieldset>
+                <legend><strong>Address</strong></legend>
+                <label for="streetaddress">Street Address:</label><br>
+                <input
+                  class="responsive-hover"
+                  type="text"
+                  id="streetaddress"
+                  name="streetaddress"
+                  placeholder="Street Address"
+                  maxlength="40"
+                  required
+                  value="<?= htmlspecialchars($userProfile['streetaddress'] ?? '') ?>"
+                ><br>
 
-              <label for="citytown">City/Town:</label><br>
-              <input
-                class="responsive-hover"
-                type="text"
-                id="citytown"
-                name="citytown"
-                placeholder="City/Town"
-                maxlength="20"
-                required
-                pattern="[A-Za-z\s]+"
-                value="<?= htmlspecialchars($userProfile['citytown'] ?? '') ?>"
-              ><br>
+                <label for="citytown">City/Town:</label><br>
+                <input
+                  class="responsive-hover"
+                  type="text"
+                  id="citytown"
+                  name="citytown"
+                  placeholder="City/Town"
+                  maxlength="20"
+                  required
+                  pattern="[A-Za-z\s]+"
+                  value="<?= htmlspecialchars($userProfile['citytown'] ?? '') ?>"
+                ><br>
 
-              <label for="state">State:</label><br>
-              <select id="state" name="state" required>
-                <option value="">Select a state</option>
-                <?php
-                  $states = [
-                    'Perlis','Kedah','Penang','Perak','Selangor',
-                    'Negeri Sembilan','Melaka','Johor','Kelantan',
-                    'Terengganu','Pahang','Sabah','Sarawak',
-                    'Kuala Lumpur','Putrajaya','Labuan'
-                  ];
-                  foreach ($states as $st) {
-                      $sel = ($userProfile['state'] ?? '') === $st ? ' selected' : '';
-                      echo "<option value=\"$st\"$sel>$st</option>";
-                  }
-                ?>
-              </select><br>
+                <label for="state">State:</label><br>
+                <select id="state" name="state" required>
+                  <option value="">Select a state</option>
+                  <?php
+                    $states = [
+                      'Perlis','Kedah','Penang','Perak','Selangor',
+                      'Negeri Sembilan','Melaka','Johor','Kelantan',
+                      'Terengganu','Pahang','Sabah','Sarawak',
+                      'Kuala Lumpur','Putrajaya','Labuan'
+                    ];
+                    foreach ($states as $st) {
+                        $sel = ($userProfile['state'] ?? '') === $st ? ' selected' : '';
+                        echo "<option value=\"$st\"$sel>$st</option>";
+                    }
+                  ?>
+                </select><br>
 
-              <label for="postcode">Postcode:</label><br>
-              <input
-                class="responsive-hover"
-                type="text"
-                id="postcode"
-                name="postcode"
-                placeholder="Postcode"
-                maxlength="5"
-                required
-                pattern="\d{5}"
-                value="<?= htmlspecialchars($userProfile['postcode'] ?? '') ?>"
-              >
-            </fieldset>
+                <label for="postcode">Postcode:</label><br>
+                <input
+                  class="responsive-hover"
+                  type="text"
+                  id="postcode"
+                  name="postcode"
+                  placeholder="Postcode"
+                  maxlength="5"
+                  required
+                  pattern="\d{5}"
+                  value="<?= htmlspecialchars($userProfile['postcode'] ?? '') ?>"
+                >
+              </fieldset>
+            <?php else: ?>
+              <!-- already have address: hidden fields -->
+              <input type="hidden"
+                     name="streetaddress"
+                     value="<?= htmlspecialchars($userProfile['streetaddress']) ?>">
+              <input type="hidden"
+                     name="citytown"
+                     value="<?= htmlspecialchars($userProfile['citytown']) ?>">
+              <input type="hidden"
+                     name="state"
+                     value="<?= htmlspecialchars($userProfile['state']) ?>">
+              <input type="hidden"
+                     name="postcode"
+                     value="<?= htmlspecialchars($userProfile['postcode']) ?>">
             <?php endif; ?>
 
             <!-- Enquiry Details (always shown) -->
@@ -195,6 +224,7 @@ $showAddress  = ! $hasAddress;
             <button class="responsive-hover-button" type="reset">
               Clear Form
             </button>
+
           </fieldset>
         </form>
       </div>

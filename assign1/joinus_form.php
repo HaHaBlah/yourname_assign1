@@ -57,6 +57,7 @@ $showVerification = ! $hasVerification;
       <div class="login-right">
         <form action="joinus_process.php" method="post" enctype="multipart/form-data">
           <fieldset>
+
             <!-- always show Personal Details -->
             <fieldset>
               <legend><strong>Personal Details</strong></legend>
@@ -98,13 +99,13 @@ $showVerification = ! $hasVerification;
                 placeholder="Phone Number"
                 maxlength="11"
                 required
-                pattern="\d{10}"
+                pattern="\d{10,11}"
                 title="Format:0123456789."
                 value="<?= htmlspecialchars($userData['phonenumber'] ?? '') ?>"
               >
             </fieldset>
 
-            <!-- Address: only if we don't already have it -->
+            <!-- Address: show only if missing, else hidden -->
             <?php if ($showAddress): ?>
             <fieldset>
               <legend><strong>Address</strong></legend>
@@ -164,9 +165,18 @@ $showVerification = ! $hasVerification;
                 value="<?= htmlspecialchars($userData['postcode'] ?? '') ?>"
               >
             </fieldset>
+            <?php else: ?>
+              <input type="hidden" name="streetaddress"
+                     value="<?= htmlspecialchars($userData['streetaddress']) ?>">
+              <input type="hidden" name="citytown"
+                     value="<?= htmlspecialchars($userData['citytown']) ?>">
+              <input type="hidden" name="state"
+                     value="<?= htmlspecialchars($userData['state']) ?>">
+              <input type="hidden" name="postcode"
+                     value="<?= htmlspecialchars($userData['postcode']) ?>">
             <?php endif; ?>
 
-            <!-- Verification: only if we don't already have it -->
+            <!-- Verification: show only if missing, else hidden -->
             <?php if ($showVerification): ?>
             <fieldset>
               <legend><strong>Verification</strong></legend>
@@ -188,6 +198,11 @@ $showVerification = ! $hasVerification;
                 accept="image/*"
               >
             </fieldset>
+            <?php else: ?>
+              <input type="hidden" name="CVFile"
+                     value="<?= htmlspecialchars($userData['CVFile']) ?>">
+              <input type="hidden" name="PhotoFile"
+                     value="<?= htmlspecialchars($userData['PhotoFile']) ?>">
             <?php endif; ?>
 
             <br>
@@ -199,6 +214,7 @@ $showVerification = ! $hasVerification;
                 Clear Form
               </button>
             <?php endif; ?>
+
           </fieldset>
         </form>
       </div>

@@ -77,9 +77,12 @@ $adminName = htmlspecialchars($_SESSION['username'], ENT_QUOTES, 'UTF-8');
                 <ul class="enquiries-preview">
                     <?php while ($row = mysqli_fetch_assoc($previewResult)): 
                         $msg     = $row['message'];
-                        $preview = mb_strlen($msg) > 30 
-                                ? mb_substr($msg, 0, 30) . '…' 
-                                : $msg;
+                        $words = preg_split('/\s+/', trim($msg));
+                        if (count($words) > 30) {
+                            $preview = implode(' ', array_slice($words, 0, 30)) . '…';
+                        } else {
+                            $preview = $msg;
+                        }
                     ?>
                     <li>
                         <div class="preview-text">

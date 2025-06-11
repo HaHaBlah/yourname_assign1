@@ -94,7 +94,7 @@ $res = $conn->query($sql);
         <?php else: ?>
           <p>No updates at the moment.</p>
         <?php endif; ?>
-        <?php if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true): ?>
+        <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
           <div class="update-form">
             <form action="edit_update.php" method="post" enctype="multipart/form-data">
               <fieldset>

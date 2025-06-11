@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       // 5c) Build and send the mail
       $subject = "Re: Your enquiry at Brew & Go Coffee";
       $body    = get_enquiry_reply_email($to_name, $reply_msg);
-      $headers  = "From: Brew & Go <taphahablah@gmail.com>\r\n";
+      $headers  = "From: Brew & Go. <taphahablah@gmail.com>\r\n";
       $headers .= "Reply-To: taphahablah@gmail.com\r\n";
       $headers .= "MIME-Version: 1.0\r\n";
       $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
