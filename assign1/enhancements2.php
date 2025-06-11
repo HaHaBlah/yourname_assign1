@@ -150,10 +150,40 @@
         <section>
             <h2>Member Top-up Module</h2>
             <p>This feature allows members to do top up into their accounts.</p>
-            <p>Uses: <a href="member_topup.php">member_topup.php</a></p>
+            <p>Uses: <a href="member_topup.php">member_topup.php</a> and <a href="user_dashboard.php">user_dashboard.php</a></p>
+            <img src="images/enhancements/Topup.png" alt="Top Up">
+            <img src="images/enhancements/Topup2.png" alt="Top Up2">
             <h2>member_topup.php</h2>
             <div class="code">
                 <span>
+                    $syncSql = &lt;&lt;&lt;SQL<br>
+                    INSERT INTO topup (login_id, email, balance)<br>
+                    SELECT username, email, 0<br>
+                        &nbsp;&nbsp;&nbsp;FROM members<br>
+                    ON DUPLICATE KEY UPDATE<br>
+                        &nbsp;&nbsp;&nbsp;email   = VALUES(email)<br>
+                    SQL;<br>
+                    if (! $conn->query($syncSql)) {<br>
+                        &nbsp;&nbsp;&nbsp;die("Error syncing members: " . $conn->error);<br>
+                    }<br>
+<br>
+                    $newBalance = $currentBalance + $amount;<br>
+<br>
+                    $update = $conn->prepare(<br>
+                    "UPDATE topup<br>
+                        &nbsp;&nbsp;&nbsp;SET balance           = ?,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;last_topup_method = ?,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;last_topup_amount = ?,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;last_topup_time   = NOW()<br>
+                        &nbsp;&nbsp;&nbsp;WHERE login_id = ? AND email = ?"<br>
+                    );<br>
+                    $update->bind_param("dsdss",<br>
+                        &nbsp;&nbsp;&nbsp;$newBalance,<br>
+                        &nbsp;&nbsp;&nbsp;$method,<br>
+                        &nbsp;&nbsp;&nbsp;$amount,<br>
+                        &nbsp;&nbsp;&nbsp;$login_id,<br>
+                        &nbsp;&nbsp;&nbsp;$email<br>
+                    );
                 </span>
             </div>
         </section>
